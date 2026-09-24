@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+import Party from '../components/Party.astro';
+import Quote from '../components/Quote.astro';
+import Source from '../components/Source.astro';
+import PickBox from '../components/PickBox.astro';
+import { t, tx, href, fmtDate, type Lang } from '../i18n/ui';
+import { sortPolls, type Race } from '../lib/data';
+
+interface Props { race: Race; lang: Lang }
+const { race, lang } = Astro.props;
+const d = race.data;
+const office = tx(d.office, lang);
+const polls = sortPolls(d.polls);
+// Columns for the poll table: candidates in ballot order that appear in any poll.
+const pollNames = d.candidates.map((c) => c.name).filter((n) => polls.some((p) => n in p.results));
+const partyOf = (n: string) => d.candidates.find((c) => c.name === n)?.party ?? 'Other';
+const sponsorText = (p: (typeof polls)[number]) =>
+  p.sponsor_type === 'independent'
+    ? p.sponsor === 'none' ? t(lang, 'race.sponsorNone') : `${t(lang, 'race.sponsor')} ${p.sponsor}`
+    : p.sponsor_type === 'unknown' ? t(lang, 'race.sponsorUnknown') : `${t(lang, 'race.campaignPoll')}: ${p.sponsor}`;
+const title = d.district ? `${office}` : office;
+const es = lang === 'es';
+---
+<Base lang={lang} title={title} description={`${office}: ${d.candidates.map((c) => c.name).join(', ')}`} editPath={`data/idaho/races/${race.id}.yaml`} updated={fmtDate(d.updated, lang)}>
+  <p class="small"><a href={href(lang, '/races')}>← {t(lang, 'nav.races')}</a></p>
+  <h1>{office}</h1>
+  <p class="muted">
+    {t(lang, `races.${d.level}` as any)}{d.district ? ` · ${d.district}` : ''} ·
+    <a href="https://voteidaho.gov/" rel="noopener" target="_blank">{t(lang, 'race.seeBallot')}</a>
+  </p>
+
+  {d.depth === 'not-researched' && <p class="note">{t(lang, 'race.notResearched')}</p>}
+
+  <PickBox race={race} lang={lang} />
+
+  {d.controls && (
+    <section>
+      <h2>{t(lang, 'race.controls')}</h2>
+      <p>{tx(d.controls, lang)} {d.controls_source && <Source source={d.controls_source} label={`(${t(lang, 'common.source')})`} />}</p>
+    </section>
+  )}
+
+  <section>
+    <h2>{t(lang, 'race.candidates')}</h2>
+    <div class="grid">
+      {d.candidates.map((c) => (
+        <article class="card cand">
+          <h3>{c.name} <Party party={c.party} lang={lang} /></h3>
+          <p class="small muted">
+            {t(lang, `party.${c.party}` as any)}
+            {c.incumbent && <> · <strong>{t(lang, 'cand.incumbent')}</strong></>}
+            {c.withdrawn && <> · <strong>{t(lang, 'cand.withdrawn')}</strong></>}
+          </p>
+          {c.bio && <p class="small">{tx(c.bio, lang)}</p>}
+          {c.quote && <Quote quote={c.quote} lang={lang} />}
+          {c.website && <p class="small"><a href={c.website} rel="noopener" target="_blank">{t(lang, 'cand.website')}</a></p>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  {polls.length > 0 && (
+    <section>
+      <h2>{t(lang, 'race.polls')}</h2>
+      {polls.length > 1 && <p class="small muted">{t(lang, 'race.pollCaution')}</p>}
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>{es ? 'Encuestadora y fechas' : 'Pollster and dates'}</th>
+              {pollNames.map((n) => <th class="num">{n.split(' ').slice(-1)[0]}</th>)}
+              <th class="num">{t(lang, 'race.undecided')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {polls.map((p) => (
+              <tr>
+                <td>
+                  <a href={p.source.url} rel="noopener" target="_blank">{p.pollster}</a><br />
+                  <span class="small muted">{p.start} – {p.end} · {p.sample}{p.margin_of_error ? ` · ±${p.margin_of_error.replace(/^±/, '')}` : ''}</span><br />
+                  <span class={`small ${p.sponsor_type === 'independent' ? '' : 'muted'}`}>{sponsorText(p)}</span>
+                </td>
+                {pollNames.map((n) => <td class="num">{p.results[n] ?? '–'}</td>)}
+                <td class="num">{p.undecided ?? '–'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {(() => {
+        const latest = polls.find((p) => p.sponsor_type === 'independent') ?? polls[0];
+        const rows = pollNames.map((n) => ({ n, v: latest.results[n] ?? 0 })).sort((a, b) => b.v - a.v);
+        return (
+          <div class="bars card">
+            <p class="small muted">{latest.pollster}, {latest.end}</p>
+            {rows.map((r) => (
+              <div class="bar-row">
+                <span>{r.n}</span>
+                <div class="bar"><span class={partyOf(r.n)} style={`width:${Math.min(r.v, 100)}%`}></span></div>
+                <span class="num">{r.v}%</span>
+              </div>
+            ))}
+          </div>
+        );
+      })()}
+    </section>
+  )}
+
+  {d.scenarios.length > 0 && (
+    <section>
+      <h2>{t(lang, 'race.scenarios')}</h2>
+      {d.scenarios.map((s) => (
+        <div class="card scenario">
+          <h3>{es ? `Si usted apoya a ${s.voters_of}` : `If you support ${s.voters_of}`}</h3>
+          <p>{tx(s.text, lang)}</p>
+        </div>
+      ))}
+    </section>
+  )}
+
+  {d.history.length > 0 && (
+    <section>
+      <h2>{t(lang, 'race.history')}</h2>
+      <div class="table-scroll">
+        <table>
+          <tbody>
+            {d.history.map((h) => (
+              <tr>
+                <td>{h.label}</td>
+                <td>{h.result}</td>
+                <td class="num"><strong>{h.margin}</strong></td>
+                <td><Source source={h.source} label={t(lang, 'common.source')} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {d.unverified.length > 0 && (
+    <details>
+      <summary>{t(lang, 'race.unverified')} ({d.unverified.length})</summary>
+      <ul class="small">{d.unverified.map((u) => <li>{u}</li>)}</ul>
+    </details>
+  )}
+
+  {d.sources.length > 0 && (
+    <details>
+      <summary>{t(lang, 'race.sources')} ({d.sources.length})</summary>
+      <ul class="small">{d.sources.map((s) => <li><Source source={s} /></li>)}</ul>
+    </details>
+  )}
+</Base>
+
+<style>
+  .cand h3 { margin-top: 0; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .scenario { margin: 10px 0; }
+  .scenario h3 { margin-top: 0; }
+  .bars { margin-top: 12px; display: grid; gap: 8px; }
+  .bars p { margin: 0; }
+  .bar-row { display: grid; grid-template-columns: minmax(90px, 30%) 1fr 3.2em; gap: 10px; align-items: center; font-size: 0.93rem; }
+  .bar-row .num { text-align: right; font-variant-numeric: tabular-nums; }
+</style>

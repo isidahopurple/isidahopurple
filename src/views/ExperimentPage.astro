@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Party from '../components/Party.astro';
+import { t, tx, href, type Lang } from '../i18n/ui';
+import { getRaces } from '../lib/data';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const races = (await getRaces()).filter((r) => r.data.depth === 'full');
+---
+<Base lang={lang} title={t(lang, 'nav.experiment')} description={es ? 'Nuestra hipótesis, el método que usamos para recomendar, y cómo sabremos si acertamos.' : 'Our hypothesis, the method behind every pick, and how we’ll know if we were right.'}>
+  <h1>{es ? 'El experimento' : 'The experiment'}</h1>
+
+  <h2>{es ? 'La hipótesis' : 'The hypothesis'}</h2>
+  <p class="big">
+    {es
+      ? 'Idaho es un estado de un solo partido. Nuestra hipótesis: es más competitivo de lo que parece si los votantes no republicanos se unen detrás del único candidato con posibilidades en cada contienda.'
+      : 'Idaho is a one-party state. Our hypothesis: it’s more competitive than it looks if non-Republican voters team up behind the one candidate in reach in each race.'}
+  </p>
+  <p>
+    {es
+      ? 'Esto no es una encuesta disfrazada ni una campaña. Es una pregunta con una respuesta que conoceremos el 3 de noviembre. Lo hace una persona de Idaho, Ronald Baird, sin donaciones y sin coordinación con ninguna campaña.'
+      : 'This isn’t a push poll or a campaign. It’s a question with an answer we’ll all see on Nov 3. It’s made by one Idahoan, Ronald Baird, with no donations and no coordination with any campaign.'}
+  </p>
+
+  <h2 id="method">{es ? 'El método' : 'The method'}</h2>
+  <p>{es ? 'Escribimos la regla antes de aplicarla, como los sitios de voto táctico del Reino Unido. En cada contienda:' : 'We wrote the rule down before applying it, the way tactical-voting sites in the UK do. In each race:'}</p>
+  <ol>
+    <li>{es
+      ? 'Si hay una encuesta reciente independiente (no pagada por una campaña o partido), la recomendación es el candidato no republicano con más apoyo en esa encuesta.'
+      : 'If there’s a recent independent poll (not paid for by a campaign or party), the pick is the non-Republican candidate polling highest in it.'}</li>
+    <li>{es
+      ? 'Si no hay encuesta independiente, la recomendación es el candidato no republicano (o su partido) que quedó más alto en la última elección comparable.'
+      : 'If there’s no independent poll, the pick is the non-Republican candidate (or that candidate’s party) that finished highest in the last comparable election.'}</li>
+    <li>{es
+      ? 'Si solo hay un candidato no republicano en la boleta, es una contienda de dos: lo que importa es la participación.'
+      : 'If only one non-Republican is on the ballot, it’s a two-way race: what matters is turnout.'}</li>
+    <li>{es
+      ? 'Si las encuestas se contradicen o la respuesta no es clara, la etiqueta es “No es seguro” y explicamos por qué.'
+      : 'If the polls conflict or the answer isn’t clear, the label is “Not sure” and we explain why.'}</li>
+    <li>{es
+      ? 'Las excepciones se hacen a mano, por escrito y a la vista.'
+      : 'Exceptions are made by hand, in writing, in the open.'}</li>
+  </ol>
+  <p class="small muted">{es
+    ? 'Mostramos las encuestas pagadas por campañas, siempre marcadas, pero nunca las usamos para recomendar. Decimos “puede hacer que sea una contienda real”, nunca “va a ganar”.'
+    : 'We show campaign-paid polls, always labeled, but never use them to make a pick. We say “can make this a real race,” never “will win.”'}</p>
+
+  <h2>{es ? 'Qué no hacemos' : 'What we don’t do'}</h2>
+  <ul>
+    <li>{es ? 'No recogemos ni entregamos boletas de nadie. En Idaho eso es un delito (Código de Idaho 18-2324).' : 'We never collect or deliver anyone’s ballot. In Idaho that’s a crime (Idaho Code 18-2324).'}</li>
+    <li>{es ? 'No damos premios, recompensas ni apuestas por participar (18-2319, 18-2314).' : 'No prizes, rewards or bets for taking part (18-2319, 18-2314).'}</li>
+    <li>{es ? 'Nunca pedimos fotos de boletas.' : 'We never ask for a photo of your ballot.'}</li>
+    <li>{es ? 'No tomamos posición sobre las medidas en la boleta.' : 'We take no position on ballot measures.'}</li>
+    <li>{es ? 'No aceptamos donaciones ni ayuda de campañas, y no compartimos datos con nadie.' : 'We take no donations or campaign help, and share data with no one.'}</li>
+  </ul>
+
+  <h2>{es ? 'Las recomendaciones' : 'The picks'}</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>{es ? 'Contienda' : 'Race'}</th><th>{es ? 'Recomendación' : 'Pick'}</th><th>{es ? 'Etiqueta' : 'Label'}</th></tr></thead>
+      <tbody>
+        {races.map((r) => {
+          const c = r.data.candidates.find((x) => x.name === r.data.pick.candidate);
+          return (
+            <tr>
+              <td><a href={href(lang, `/races/${r.id}`)}>{tx(r.data.office, lang)}</a></td>
+              <td>{c ? <>{c.name} <Party party={c.party} lang={lang} /></> : '–'}</td>
+              <td class="small">{t(lang, `pick.${r.data.pick.label}` as any)}{!r.data.pick.approved && <> <span class="tag draft">{t(lang, 'race.pickPending')}</span></>}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>{es ? 'Cómo sabremos' : 'How we’ll know'}</h2>
+  <p>{es
+    ? 'Después del 3 de noviembre publicaremos los resultados junto a la hipótesis: ¿subió el voto por los candidatos recomendados comparado con 2022 y 2024? Publicaremos la respuesta honestamente, sea cual sea.'
+    : 'After Nov 3 we’ll publish the results next to the hypothesis: did the vote for the picks rise compared with 2022 and 2024? We’ll publish the answer honestly either way.'}</p>
+</Base>
+<style>.big { font-size: 1.2rem; font-weight: 600; }</style>

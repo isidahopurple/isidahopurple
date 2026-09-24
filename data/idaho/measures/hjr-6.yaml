@@ -1,0 +1,41 @@
+title: "Idaho HJR 6, the English as Official State Language Amendment"
+short_name: "HJR 6"
+order: 2
+kind: constitutional-amendment
+summary: >-
+  HJR 6 would add a section to the Idaho Constitution making English the
+  official state language. Public meetings, documents and public school
+  instruction would be in English, except where federal law requires another
+  language. English is already Idaho's official language in state law, but not
+  in the constitution.
+yes_means: >-
+  English becomes the official state language in the Idaho Constitution, and
+  government proceedings, documents and public instruction must be in English
+  unless federal law requires otherwise.
+no_means: >-
+  No change to the Idaho Constitution. English stays the official state
+  language in state law (Idaho Code 73-121) only.
+passes_with: >-
+  A majority of the votes cast on the question. (The Idaho Constitution,
+  Article XX, Section 1, says a "majority of the electors" must ratify an
+  amendment.)
+supporters: []
+opponents: []
+official:
+  name: "Idaho Secretary of State, 2026 Voter Pamphlet (HJR 6, page 5)"
+  url: "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+  date: "2026-09-24"
+sources:
+  - name: "VoteIdaho.gov: Initiatives & Amendments"
+    url: "https://voteidaho.gov/initiatives-amendments/"
+  - name: "Idaho Legislature: HJR 6 (2025) full text and history"
+    url: "https://legislature.idaho.gov/sessioninfo/2025/legislation/HJR006"
+  - name: "Idaho Constitution, Article XX, Section 1 (how amendments are ratified)"
+    url: "https://legislature.idaho.gov/statutesrules/idconst/ArtXX/Sect1/"
+  - name: "Ballotpedia: Idaho HJR 6 (2026)"
+    url: "https://ballotpedia.org/Idaho_HJR_6,_English_as_Official_State_Language_Amendment_(2026)"
+unverified:
+  - "No organized campaign for or against HJR 6 was found. Ballotpedia reports $0 raised on either side as of Aug 10, 2026. Supporters and opponents are left empty rather than listing individual lawmakers. In 2025 it passed the House 59-8 and the Senate 30-5."
+  - "Passing threshold: the constitution says 'a majority of the electors.' Ballotpedia and past practice treat this as a simple majority of votes cast on the question. No SoS page states it outright."
+  - "Order (2) follows the voter pamphlet. Printed ballot order is not confirmed."
+updated: "2026-09-24"

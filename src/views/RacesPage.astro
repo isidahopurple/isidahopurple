@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Party from '../components/Party.astro';
+import { t, tx, href, type Lang } from '../i18n/ui';
+import { getRaces, getMeasures, LEVELS, type Race } from '../lib/data';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const races = await getRaces();
+const measures = await getMeasures();
+const byLevel = (lvl: string) => races.filter((r) => r.data.level === lvl);
+const districts = [...new Set(byLevel('legislative').map((r) => r.data.district!))];
+const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick.candidate);
+---
+<Base lang={lang} title={t(lang, 'nav.races')}>
+  <h1>{es ? 'Toda la boleta' : 'The whole ballot'}</h1>
+  <p>
+    {es
+      ? 'Cada contienda, con la recomendación de nuestro método y el porqué. Su boleta depende de dónde vive: '
+      : 'Every race, with our method’s pick and the reason for it. Your ballot depends on where you live: '}
+    <a href="https://voteidaho.gov/" rel="noopener" target="_blank">{t(lang, 'race.seeBallot')}</a>.
+    {es ? ' Para saber su distrito legislativo: ' : ' To find your legislative district: '}
+    <a href="https://legislature.idaho.gov/legislators/whosmylegislator/" rel="noopener" target="_blank">{es ? '¿Quién es mi legislador?' : 'Who’s my legislator?'}</a>
+  </p>
+
+  {LEVELS.filter((l) => l !== 'legislative').map((lvl) => byLevel(lvl).length > 0 && (
+    <section>
+      <h2>{t(lang, `races.${lvl}` as any)}</h2>
+      <ul class="race-list">
+        {byLevel(lvl).map((r) => (
+          <li>
+            <a href={href(lang, `/races/${r.id}`)}>{tx(r.data.office, lang)}</a>
+            <span class="small">
+              {pickOf(r) ? <>{pickOf(r)!.name} <Party party={pickOf(r)!.party} lang={lang} /></> : <span class="muted">{t(lang, `pick.${r.data.pick.label}` as any)}</span>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  {districts.length > 0 && (
+    <section>
+      <h2>{t(lang, 'races.legislative')}</h2>
+      <p class="small muted">{es ? 'Distritos del condado de Ada y distritos reñidos. Más distritos pronto.' : 'Ada County districts and close districts elsewhere. More districts coming.'}</p>
+      {districts.map((dist) => (
+        <details open={byLevel('legislative').some((r) => r.data.district === dist && r.data.depth === 'full')}>
+          <summary>{es ? 'Distrito' : 'District'} {dist.replace('LD', '')}</summary>
+          <ul class="race-list">
+            {byLevel('legislative').filter((r) => r.data.district === dist).map((r) => (
+              <li>
+                <a href={href(lang, `/races/${r.id}`)}>{r.data.seat}</a>
+                <span class="small">
+                  {pickOf(r) ? <>{pickOf(r)!.name} <Party party={pickOf(r)!.party} lang={lang} /></> : <span class="muted">{t(lang, `pick.${r.data.pick.label}` as any)}</span>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </section>
+  )}
+
+  {measures.length > 0 && (
+    <section id="measures">
+      <h2>{t(lang, 'races.measures')}</h2>
+      <p class="small muted">{t(lang, 'measure.neutral')}</p>
+      <ul class="race-list">
+        {measures.map((m) => (
+          <li><a href={href(lang, `/measures/${m.id}`)}>{m.data.short_name}: {tx(m.data.title, lang)}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>

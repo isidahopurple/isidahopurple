@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, CONTACT_EMAIL, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+---
+<Base lang={lang} title={t(lang, 'nav.privacy')}>
+  <h1>{t(lang, 'nav.privacy')}</h1>
+  <h2>{es ? 'Hoy' : 'Today'}</h2>
+  <p>{es
+    ? 'Este sitio no usa cookies, ni analítica, ni formularios, ni rastreadores de terceros. No sabemos quién es usted.'
+    : 'This site uses no cookies, no analytics, no forms and no third-party trackers. We don’t know who you are.'}</p>
+  <p>{es
+    ? 'El sitio está alojado en Cloudflare, que procesa datos técnicos básicos (como su dirección IP) para entregar las páginas y protegerlas de ataques. No tenemos acceso a esos registros como lista de visitantes.'
+    : 'The site is hosted on Cloudflare, which processes basic technical data (like your IP address) to deliver pages and protect them from attacks. We don’t get those logs as a list of visitors.'}</p>
+  <p>{es
+    ? 'Los enlaces a VoteIdaho, a su condado y a las fuentes lo llevan a otros sitios con sus propias políticas.'
+    : 'Links to VoteIdaho, your county and our sources take you to other sites with their own policies.'}</p>
+
+  <h2>{es ? 'Cuando abra el contador' : 'When the count opens'}</h2>
+  <p>{es ? 'Planeamos un contador verificado por correo electrónico. Esta es la promesa, y actualizaremos esta página antes de abrirlo:' : 'We plan a count verified by email. Here’s the promise, and we’ll update this page before it opens:'}</p>
+  <ul>
+    <li>{es ? 'Guardamos solo una huella cifrada de su correo (para contar a cada persona una vez), su condado o distrito, y el día.' : 'We keep only a scrambled fingerprint of your email (so each person counts once), your county or district, and the day.'}</li>
+    <li>{es ? 'No guardamos su correo, a menos que usted lo pida en el correo de verificación.' : 'We don’t keep your email, unless you ask us to in the verification email.'}</li>
+    <li>{es ? 'Si usa la búsqueda por dirección para hallar su distrito, la dirección se envía al servicio de geocodificación de la Oficina del Censo de EE. UU. y no la guardamos.' : 'If you use the address lookup to find your district, the address goes to the US Census Bureau’s geocoder and we don’t store it.'}</li>
+    <li>{es ? 'Nunca compartimos datos con campañas, partidos ni nadie más.' : 'We never share data with campaigns, parties or anyone else.'}</li>
+    <li>{es ? 'Borramos todo después de la elección.' : 'We delete everything after the election.'}</li>
+  </ul>
+
+  <h2>{es ? 'Preguntas' : 'Questions'}</h2>
+  <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+</Base>

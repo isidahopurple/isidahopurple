@@ -1,0 +1,40 @@
+title: "Advisory Question - House Bill 932: Which of the following guns should be designated as the state gun of Idaho?"
+short_name: "State gun question"
+order: 4
+kind: advisory
+summary: >-
+  This is a non-binding question. It asks voters to pick one of six guns to be
+  Idaho's official state gun. The result only advises the Legislature, which
+  would have to pass a separate law in a future session to name a state gun.
+yes_means: >-
+  This question has no Yes or No. You pick one of six choices: (a) Winchester
+  Model 1894 (.30-30); (b) Winchester Model 1873 "Gun that Won the West"
+  (.44-40); (c) 1873 Colt Single Action Army Revolver "Peacemaker" (.45 Colt);
+  (d) M1 Garand rifle (.30-06); (e) Colt M1911 .45 automatic Colt pistol (.45
+  ACP); or (f) Remington Model 700 bolt-action rifle (.30-06).
+no_means: >-
+  There is no No option. You can skip this question and the rest of your ballot
+  still counts. Whatever the result, nothing becomes law unless the Legislature
+  acts later.
+passes_with: >-
+  Nothing passes or fails. The Secretary of State counts the votes and the
+  results "guide the Legislature" (House Bill 932). The result is not binding.
+supporters: []
+opponents: []
+official:
+  name: "Idaho Secretary of State, 2026 Voter Pamphlet (Advisory Question, pages 13-14)"
+  url: "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+  date: "2026-09-24"
+sources:
+  - name: "Idaho Legislature: House Bill 932 (2026)"
+    url: "https://legislature.idaho.gov/sessioninfo/2026/legislation/H0932/"
+  - name: "House Bill 932 text (PDF)"
+    url: "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2026/legislation/H0932.pdf"
+  - name: "Ballotpedia: Idaho Official State Gun Question (2026)"
+    url: "https://ballotpedia.org/Idaho_Official_State_Gun_Question_(2026)"
+unverified:
+  - "No campaign committees for any option (Ballotpedia, Aug 2026), so supporters and opponents are left empty. HB 932 passed the House 68-0 and the Senate 32-0 and was signed April 2, 2026 (Ballotpedia)."
+  - "HB 932 does not say how the result is decided (for example, most votes wins)."
+  - "Order (4) follows the voter pamphlet. Printed ballot order is not confirmed."
+  - "The site schema only allows Yes/No fields. The template should show this question's six choices properly."
+updated: "2026-09-24"

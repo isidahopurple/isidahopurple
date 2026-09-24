@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Source from '../components/Source.astro';
+import { t, tx, href, fmtDate, type Lang } from '../i18n/ui';
+import type { Measure } from '../lib/data';
+
+interface Props { measure: Measure; lang: Lang }
+const { measure, lang } = Astro.props;
+const d = measure.data;
+const title = `${d.short_name}: ${tx(d.title, lang)}`;
+---
+<Base lang={lang} title={d.short_name} description={tx(d.summary, lang)} editPath={`data/idaho/measures/${measure.id}.yaml`} updated={fmtDate(d.updated, lang)}>
+  <p class="small"><a href={href(lang, '/races#measures')}>← {t(lang, 'races.measures')}</a></p>
+  <h1>{title}</h1>
+  <p class="note">{t(lang, 'measure.neutral')}</p>
+  <p>{tx(d.summary, lang)}</p>
+  <div class="grid">
+    <div class="card"><h2 class="h">{t(lang, 'measure.yes')}</h2><p>{tx(d.yes_means, lang)}</p></div>
+    <div class="card"><h2 class="h">{t(lang, 'measure.no')}</h2><p>{tx(d.no_means, lang)}</p></div>
+  </div>
+  <p><strong>{t(lang, 'measure.passes')}:</strong> {tx(d.passes_with, lang)}</p>
+  <p><a href={d.official.url} rel="noopener" target="_blank">{t(lang, 'measure.official')}</a> ({d.official.name})</p>
+
+  {(d.supporters.length > 0 || d.opponents.length > 0) && (
+    <div class="grid">
+      <div>
+        <h2>{t(lang, 'measure.supporters')}</h2>
+        <ul>{d.supporters.map((s) => <li>{s.name} <Source source={s.source} label={`(${t(lang, 'common.source')})`} /></li>)}</ul>
+      </div>
+      <div>
+        <h2>{t(lang, 'measure.opponents')}</h2>
+        <ul>{d.opponents.map((s) => <li>{s.name} <Source source={s.source} label={`(${t(lang, 'common.source')})`} /></li>)}</ul>
+      </div>
+    </div>
+  )}
+
+  {d.unverified.length > 0 && (
+    <details>
+      <summary>{t(lang, 'race.unverified')} ({d.unverified.length})</summary>
+      <ul class="small">{d.unverified.map((u) => <li>{u}</li>)}</ul>
+    </details>
+  )}
+  {d.sources.length > 0 && (
+    <details>
+      <summary>{t(lang, 'race.sources')} ({d.sources.length})</summary>
+      <ul class="small">{d.sources.map((s) => <li><Source source={s} /></li>)}</ul>
+    </details>
+  )}
+</Base>
+<style>.h { margin-top: 0; font-size: 1.1rem; }</style>

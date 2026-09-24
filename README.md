@@ -1,43 +1,25 @@
-# Astro Starter Kit: Minimal
+# Is Idaho Purple?
 
-```sh
-npm create astro@latest -- --template minimal
-```
+An open experiment for Idaho's Nov 3, 2026 general election: how to vote, the whole ballot with sourced quotes, and a published method for the "vote math" in each race. Live at https://isidahopurple.com.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## How it works
+- Every fact lives in `data/idaho/` as YAML, with a source URL. The schema is `src/content.config.ts`; the build fails on bad data.
+- Pages are Astro (`src/views/`), in English (`/`) and Spanish (`/es/`).
+- Hosted as static assets on Cloudflare Workers.
 
-## 🚀 Project Structure
+## Commands (Node 22+)
+| Command | What it does |
+|---|---|
+| `npm run dev` | Local dev server |
+| `npm run build` | Production build into `dist/` |
+| `npm run deploy:preview` | Review build (noindex, includes `/review`) to the preview worker |
+| `npm run deploy` | Production deploy to isidahopurple.com |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Contributing
+Read `docs/CONTRIBUTING.md`. Every quote needs a URL; every pick follows the published method.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Forking for your state
+Copy `data/idaho/` to `data/<state>/`, change `STATE` in `src/content.config.ts`, and replace the Idaho-specific copy in `src/views/`.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License
+Code: MIT (`LICENSE`). Original text and data: CC BY 4.0. Quotes belong to the people quoted and link to their sources.

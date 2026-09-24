@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import Source from '../components/Source.astro';
+import { t, tx, href, type Lang } from '../i18n/ui';
+import { getElection, type ElectionItem } from '../lib/data';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const e = await getElection();
+// Pull the first URL out of a data value, for button links.
+const urlOf = (item?: ElectionItem) => {
+  if (!item) return undefined;
+  const m = tx(item.value, 'en').match(/https?:\/\/\S+/);
+  return m ? m[0].replace(/[).,]+$/, '') : item.source.url;
+};
+const val = (item?: ElectionItem) => (item ? tx(item.value, lang) : '');
+const note = (item?: ElectionItem) => (item?.note ? tx(item.note, lang) : '');
+
+const steps = [
+  {
+    title: es ? '¿Estoy registrado?' : 'Am I registered?',
+    body: es
+      ? 'Tarda un minuto. Si se mudó o cambió de nombre, actualice su registro.'
+      : 'It takes a minute. If you moved or changed your name, update your registration.',
+    items: ['register_deadline', 'same_day_registration'],
+    buttons: [
+      { label: es ? 'Revisar mi registro' : 'Check my registration', key: 'check_registration_url' },
+      { label: es ? 'Registrarme en línea' : 'Register online', key: 'register_online_url' },
+    ],
+  },
+  {
+    title: es ? 'Pida su boleta de voto ausente (o vote temprano)' : 'Request an absentee ballot (or vote early)',
+    body: es
+      ? 'Cualquier votante de Idaho puede votar por correo. No necesita una razón. También puede votar temprano en persona.'
+      : 'Any Idaho voter can vote by mail. You don’t need a reason. You can also vote early in person.',
+    items: ['absentee_request_deadline', 'absentee_request_rules', 'ada_early_voting', 'early_voting_statewide'],
+    buttons: [{ label: es ? 'Pedir boleta de voto ausente' : 'Request an absentee ballot', key: 'absentee_request_url' }],
+  },
+  {
+    title: es ? 'Devuélvala a tiempo' : 'Return it in time',
+    body: es
+      ? 'Su boleta debe LLEGAR antes de las 8 p.m. del 3 de noviembre. El matasellos no cuenta.'
+      : 'Your ballot must ARRIVE by 8 p.m. on Nov 3. A postmark doesn’t count.',
+    items: ['absentee_return_deadline', 'absentee_mail_advice', 'ada_drop_boxes', 'absentee_at_polling_place'],
+    buttons: [{ label: es ? 'Rastrear mi boleta' : 'Track my ballot', key: 'absentee_track_url' }],
+  },
+];
+const dateKeys = ['absentee_ballots_mailed', 'ada_early_voting', 'register_deadline', 'absentee_request_deadline', 'emergency_absentee', 'election_day', 'absentee_return_deadline'];
+const shown = new Set(steps.flatMap((s) => s.items));
+---
+<Base lang={lang} title={t(lang, 'nav.vote')} description={es ? 'Cómo votar en Idaho en 3 pasos, con fechas oficiales.' : 'How to vote in Idaho in 3 steps, with official dates.'} editPath="data/idaho/election.yaml">
+  <h1>{es ? 'Cómo votar en 3 pasos' : 'How to vote in 3 steps'}</h1>
+  <p class="lede">
+    {es
+      ? 'Todo aquí viene de fuentes oficiales, con enlace. Si algo no coincide, confíe en VoteIdaho.gov o en su condado, y avísenos.'
+      : 'Everything here comes from official sources, linked. If anything disagrees, trust VoteIdaho.gov or your county, and tell us.'}
+  </p>
+
+  <ol class="steps">
+    {steps.map((s) => (
+      <li class="card">
+        <h2 class="step-title">{s.title}</h2>
+        <p>{s.body}</p>
+        {s.items.filter((k) => e[k]).map((k) => (
+          <div class="fact">
+            <p><strong>{tx(e[k].label, lang)}:</strong> {val(e[k])} <Source source={e[k].source} label={`(${t(lang, 'common.source')})`} /></p>
+            {note(e[k]) && <p class="small muted">{note(e[k])}</p>}
+            {!e[k].verified && <p class="small"><span class="tag draft">{es ? 'Por confirmar' : 'Being confirmed'}</span></p>}
+          </div>
+        ))}
+        <p class="btns">
+          {s.buttons.filter((b) => e[b.key]).map((b, i) => (
+            <a class={`btn ${i ? 'ghost' : ''}`} href={urlOf(e[b.key])} rel="noopener" target="_blank">{b.label}</a>
+          ))}
+        </p>
+      </li>
+    ))}
+  </ol>
+
+  {e.ballot_collection_warning && (
+    <div class="note warn">
+      <p><strong>{es ? 'Importante: ' : 'Important: '}</strong>{val(e.ballot_collection_warning)} <Source source={e.ballot_collection_warning.source} label={`(${t(lang, 'common.source')})`} /></p>
+    </div>
+  )}
+
+  <h2>{es ? 'Fechas clave' : 'Key dates'}</h2>
+  <div class="table-scroll">
+    <table>
+      <tbody>
+        {dateKeys.filter((k) => e[k]).map((k) => (
+          <tr><th scope="row">{tx(e[k].label, lang)}</th><td>{val(e[k])}</td><td><Source source={e[k].source} label={t(lang, 'common.source')} /></td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>{es ? 'Si vota en persona' : 'If you vote in person'}</h2>
+  {['voter_id_polls', 'no_id_affidavit', 'find_polling_place_url', 'sample_ballot_url'].filter((k) => e[k]).map((k) => (
+    <div class="fact">
+      <p><strong>{tx(e[k].label, lang)}:</strong> {val(e[k])} <Source source={e[k].source} label={`(${t(lang, 'common.source')})`} /></p>
+      {note(e[k]) && <p class="small muted">{note(e[k])}</p>}
+    </div>
+  ))}
+
+  <h2>{es ? 'Más' : 'More'}</h2>
+  {Object.entries(e).filter(([k]) => !shown.has(k) && !dateKeys.includes(k) && !['voter_id_polls', 'no_id_affidavit', 'find_polling_place_url', 'sample_ballot_url', 'ballot_collection_warning', 'check_registration_url', 'register_online_url', 'absentee_request_url', 'absentee_track_url'].includes(k)).map(([, item]) => (
+    <div class="fact">
+      <p><strong>{tx(item.label, lang)}:</strong> {val(item)} <Source source={item.source} label={`(${t(lang, 'common.source')})`} /></p>
+      {note(item) && <p class="small muted">{note(item)}</p>}
+    </div>
+  ))}
+
+  <p class="card">
+    {es ? 'Después de votar: ' : 'Once you’ve voted: '}
+    <a href={href(lang, '/races')}>{es ? 'vea toda la boleta y las matemáticas del voto' : 'see the whole ballot and the vote math'}</a>.
+  </p>
+</Base>
+<style>
+  .step-title { margin: 6px 0 4px; font-size: 1.25rem; }
+  .fact p { margin: 0.35rem 0; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .warn { margin-top: 20px; }
+  th[scope='row'] { color: var(--ink); font-size: 0.93rem; }
+</style>

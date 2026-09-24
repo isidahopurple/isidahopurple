@@ -1,0 +1,7 @@
+---
+import { t, type Lang } from '../i18n/ui';
+interface Props { party: string; lang: Lang }
+const { party, lang } = Astro.props;
+const key = `party.${party}` as Parameters<typeof t>[1];
+---
+<span class={`party party-${party}`} title={t(lang, key)}>{party === 'NP' ? t(lang, key) : party}</span>

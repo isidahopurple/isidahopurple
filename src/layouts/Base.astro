@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+import { t, href, otherLangPath, ATTRIBUTION, REPO_URL, REPO_PUBLIC, CONTACT_EMAIL, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  editPath?: string; // repo path of the data file behind this page
+  updated?: string;
+}
+const { lang, title, description, editPath, updated } = Astro.props;
+const preview = import.meta.env.PUBLIC_PREVIEW === '1';
+const siteName = t(lang, 'site.name');
+const fullTitle = title ? `${title} · ${siteName}` : siteName;
+const desc = description ?? t(lang, 'site.tagline');
+const path = Astro.url.pathname;
+const canonical = new URL(path, 'https://isidahopurple.com').href;
+const alt = new URL(otherLangPath(lang, path), 'https://isidahopurple.com').href;
+const nav = [
+  { key: 'nav.vote', path: '/vote' },
+  { key: 'nav.races', path: '/races' },
+  { key: 'nav.experiment', path: '/experiment' },
+  { key: 'nav.about', path: '/about' },
+] as const;
+const isCurrent = (p: string) => path.replace(/\/$/, '').endsWith(p) || path.includes(`${p}/`);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang === 'en' ? 'es' : 'en'} href={alt} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#5b2d8e" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title ?? siteName} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://isidahopurple.com/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {preview && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    <a class="skip" href="#main">{t(lang, 'nav.skip')}</a>
+    {preview && <div class="preview">{t(lang, 'preview.banner')}</div>}
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href={href(lang, '/')}>
+          <span class="brand-mark" aria-hidden="true"></span>{siteName}
+        </a>
+        <div class="lang" role="group" aria-label="Language / Idioma">
+          <a href={lang === 'en' ? path : otherLangPath(lang, path)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}><span aria-hidden="true">🇺🇸</span> English</a>
+          <a href={lang === 'es' ? path : otherLangPath(lang, path)} hreflang="es" lang="es" aria-current={lang === 'es' ? 'true' : undefined}>Español</a>
+        </div>
+      </div>
+      <nav class="wrap main-nav" aria-label="Main">
+        {nav.map((n) => (
+          <a href={href(lang, n.path)} aria-current={isCurrent(n.path) ? 'page' : undefined}>{t(lang, n.key)}</a>
+        ))}
+      </nav>
+    </header>
+    <div class="deadline">
+      <div class="wrap">
+        <strong>{t(lang, 'deadline.banner')}</strong>
+        <a href={href(lang, '/vote')}>{t(lang, 'deadline.cta')}</a>
+      </div>
+    </div>
+    <main id="main" class="wrap">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="attribution">{ATTRIBUTION[lang]}</p>
+        <p>
+          {t(lang, 'footer.source')} <a href={`mailto:${CONTACT_EMAIL}`}>{t(lang, 'footer.contact')}</a>.
+          {t(lang, 'footer.open')}
+          {REPO_PUBLIC && editPath && <> <a href={`${REPO_URL}/blob/main/${editPath}`}>{t(lang, 'footer.edit')}</a>.</>}
+        </p>
+        {updated && <p class="muted">{t(lang, 'footer.updated')}: {updated}</p>}
+        <nav class="footer-nav" aria-label="Footer">
+          <a href={href(lang, '/')}>{t(lang, 'nav.home')}</a>
+          <a href={href(lang, '/vote')}>{t(lang, 'nav.vote')}</a>
+          <a href={href(lang, '/races')}>{t(lang, 'nav.races')}</a>
+          <a href={href(lang, '/experiment')}>{t(lang, 'nav.experiment')}</a>
+          <a href={href(lang, '/about')}>{t(lang, 'nav.about')}</a>
+          <a href={href(lang, '/privacy')}>{t(lang, 'nav.privacy')}</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

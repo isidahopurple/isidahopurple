@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, href, ATTRIBUTION, CONTACT_EMAIL, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+---
+<Base lang={lang} title={t(lang, 'nav.about')}>
+  <h1>{es ? 'Quién hace esto' : 'Who made this'}</h1>
+  <p>{es
+    ? 'Soy Ronald Baird y vivo en Idaho. Hice este sitio por mi cuenta, con mi propio dinero, porque quería saber si Idaho es tan rojo como todos dicen, o si solo lo parece.'
+    : 'I’m Ronald Baird, and I live in Idaho. I built this site on my own, with my own money, because I wanted to know whether Idaho is as red as everyone says, or whether it just looks that way.'}</p>
+  <p>{es
+    ? 'La idea viene del libro Alchemy de Rory Sutherland: a veces una buena pregunta cambia más que un buen argumento. Así que en lugar de decirle por quién votar, publicamos una hipótesis, un método y las fuentes, y dejamos que el 3 de noviembre dé la respuesta.'
+    : 'The idea comes from Rory Sutherland’s book Alchemy: sometimes a good question moves people more than a good argument. So instead of telling you who to vote for, we publish a hypothesis, a method and the sources, and let Nov 3 give the answer.'}</p>
+
+  <h2>{es ? 'Reglas que me puse' : 'Rules I set for myself'}</h2>
+  <ul>
+    <li>{es ? 'Sin donaciones. Todo lo pago yo, y el gasto total se mantiene muy por debajo de $100.' : 'No donations. I pay for everything, and total spending stays far under $100.'}</li>
+    <li>{es ? 'Sin coordinación con ninguna campaña o partido. No soy miembro, voluntario, donante ni empleado de ninguno este ciclo.' : 'No coordination with any campaign or party. I’m not a member, volunteer, donor or staffer for any of them this cycle.'}</li>
+    <li>{es ? 'Sin anuncios pagados.' : 'No paid ads.'}</li>
+    <li>{es ? 'Cada dato con su fuente. Cada candidato recibe una cita justa, la que ellos mismos elegirían.' : 'Every fact has a source. Every candidate gets one fair quote, the kind they’d choose themselves.'}</li>
+    <li>{es ? 'Código abierto (licencia MIT) y datos abiertos (CC BY 4.0), para que cualquier estado pueda copiarlo.' : 'Open-source code (MIT license) and open data (CC BY 4.0), so any state can copy it.'}</li>
+  </ul>
+
+  <h2>{es ? 'Cómo se hizo' : 'How it was built'}</h2>
+  <p>{es
+    ? 'Escribí este sitio con la ayuda de Claude, un asistente de inteligencia artificial. La IA ayudó a investigar y a escribir código; cada recomendación y cada cita las reviso yo. Si encuentra un error, avíseme y lo corrijo.'
+    : 'I built this site with help from Claude, an AI assistant. The AI helped with research and code; I review every pick and every quote. If you find a mistake, tell me and I’ll fix it.'}</p>
+
+  <h2>{es ? 'Contacto' : 'Contact'}</h2>
+  <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+
+  <h2>{es ? 'Atribución' : 'Attribution'}</h2>
+  <p class="card">{ATTRIBUTION[lang]}</p>
+  <p class="small"><a href={href(lang, '/privacy')}>{t(lang, 'nav.privacy')}</a></p>
+</Base>

@@ -1,0 +1,15 @@
+---
+import Source from './Source.astro';
+import { t, type Lang } from '../i18n/ui';
+interface Props {
+  quote: { text: string; translation_es?: string; date: string; context: string; verified: boolean; source: { name: string; url: string; date?: string } };
+  lang: Lang;
+}
+const { quote, lang } = Astro.props;
+---
+<blockquote>
+  <p>“{quote.text}”</p>
+  {lang === 'es' && quote.translation_es && <p class="muted small" lang="es">Traducción: “{quote.translation_es}”</p>}
+  <p class="cite">{quote.context} · {quote.date} · <Source source={quote.source} /></p>
+  {!quote.verified && <p class="cite"><span class="tag draft">{t(lang, 'quote.unverified')}</span></p>}
+</blockquote>

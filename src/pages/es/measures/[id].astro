@@ -1,0 +1,9 @@
+---
+import MeasurePage from '../../../views/MeasurePage.astro';
+import { getMeasures } from '../../../lib/data';
+export async function getStaticPaths() {
+  return (await getMeasures()).map((measure) => ({ params: { id: measure.id }, props: { measure } }));
+}
+const { measure } = Astro.props;
+---
+<MeasurePage measure={measure} lang="es" />

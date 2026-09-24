@@ -1,0 +1,51 @@
+title: "Idaho HJR 4, the Grant Legislature Exclusive Authority and Prohibit Citizen-Initiated Measures on Marijuana, Narcotics, and Psychoactive Substances Amendment"
+short_name: "HJR 4"
+order: 1
+kind: constitutional-amendment
+summary: >-
+  HJR 4 would change the Idaho Constitution so that only the Legislature could
+  make marijuana, narcotics or other psychoactive drugs legal. Voters would no
+  longer be able to legalize these drugs through a citizen ballot initiative.
+  It would take effect right away if voters approve it.
+yes_means: >-
+  Only the Idaho Legislature could legalize marijuana, narcotics or other
+  psychoactive substances. Citizens could not use a ballot initiative to do it.
+no_means: >-
+  No change to the Idaho Constitution. Citizens could still use the ballot
+  initiative process to try to change Idaho's drug laws, and the Legislature
+  keeps its current power too.
+passes_with: >-
+  A majority of the votes cast on the question. (The Idaho Constitution,
+  Article XX, Section 1, says a "majority of the electors" must ratify an
+  amendment.)
+supporters:
+  - name: "Idaho Senate Republican Caucus"
+    source:
+      name: "Idaho Senate Republican Caucus: Idaho Senate Passes HJR 4 to Protect State from Drug Legalization Efforts"
+      url: "https://idsenategop.org/press-releases/idaho-senate-passes-hjr-4-to-protect-state-from-drug-legalization-efforts"
+      date: "2025-03-14"
+opponents:
+  - name: "Reclaim Idaho"
+    source:
+      name: "Idaho State Journal: Opinion: Consider voting no on HJR 4"
+      url: "https://www.idahostatejournal.com/freeaccess/opinion-consider-voting-no-on-hjr-4/article_45a59163-92d4-4c86-a90b-c00f7a9f4560.html"
+official:
+  name: "Idaho Secretary of State, 2026 Voter Pamphlet (HJR 4, page 4)"
+  url: "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+  date: "2026-09-24"
+sources:
+  - name: "VoteIdaho.gov: Initiatives & Amendments"
+    url: "https://voteidaho.gov/initiatives-amendments/"
+  - name: "Idaho Legislature: HJR 4 (2025) full text and history"
+    url: "https://legislature.idaho.gov/sessioninfo/2025/legislation/HJR004"
+  - name: "Idaho Constitution, Article XX, Section 1 (how amendments are ratified)"
+    url: "https://legislature.idaho.gov/statutesrules/idconst/ArtXX/Sect1/"
+  - name: "Ballotpedia: Idaho HJR 4 (2026)"
+    url: "https://ballotpedia.org/Idaho_HJR_4,_Grant_Legislature_Exclusive_Authority_and_Prohibit_Citizen-Initiated_Measures_on_Marijuana,_Narcotics,_and_Psychoactive_Substances_Amendment_(2026)"
+unverified:
+  - "The title is the name the Secretary of State uses on VoteIdaho.gov. The question printed on the ballot is the 'Shall Section 26, Article III...' wording in the voter pamphlet. Check the printed ballot."
+  - "Passing threshold: the constitution says 'a majority of the electors.' Ballotpedia and past practice treat this as a simple majority of votes cast on the question. No SoS page states it outright."
+  - "Order (1) follows the voter pamphlet. Printed ballot order is not confirmed."
+  - "Ballotpedia shows no registered campaign committee for or against HJR 4 as of Aug 10, 2026."
+  - "The pamphlet date is the date we accessed it, not a publication date."
+updated: "2026-09-24"

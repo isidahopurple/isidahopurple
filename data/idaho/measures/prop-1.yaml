@@ -1,0 +1,80 @@
+title: "Proposition One: Reproductive Freedom and Privacy Act (Measure creating right to abortion before fetus viability, and post-viability to protect health; right to privacy; healthcare provider liability protections)"
+short_name: "Prop 1"
+order: 3
+kind: initiative
+summary: >-
+  Prop 1 is a citizen initiative that would add a right to reproductive freedom
+  and privacy to Idaho law. It would allow abortion until fetal viability, and
+  after that only in a medical emergency. It also covers contraception,
+  fertility treatment and pregnancy care, and it would stop the state from
+  punishing patients or health care providers for care the law allows. It
+  would take effect Jan. 1, 2027.
+yes_means: >-
+  Idaho law would include a right to abortion before fetal viability, and after
+  viability in a medical emergency. It would also include a right to make other
+  reproductive health decisions, and it would protect health care providers from
+  discipline or civil or criminal liability for that care.
+no_means: >-
+  No change to Idaho's current law. Abortion stays banned except to prevent the
+  death of the pregnant woman, and in the first trimester in cases of rape or
+  incest reported to law enforcement.
+passes_with: "A simple majority (more than half) of the votes cast on the question."
+supporters:
+  - name: "Idahoans United for Women & Families (sponsor)"
+    source:
+      name: "Idaho Secretary of State, 2026 Voter Pamphlet (pro argument, page 7)"
+      url: "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+  - name: "Idaho Democratic Party"
+    source:
+      name: "Idaho Democratic Party: endorses the Reproductive Freedom and Privacy Act"
+      url: "https://idahodems.org/idaho-democratic-party-endorses-reproductive-freedom-and-privacy-act/"
+      date: "2025-09-30"
+  - name: "ACLU of Idaho"
+    source:
+      name: "ACLU of Idaho: Prop 1 FAQ"
+      url: "https://www.acluidaho.org/idahos-abortion-ballot-initiative-prop-1-faq/"
+  - name: "Planned Parenthood Alliance Advocates"
+    source:
+      name: "Planned Parenthood Alliance Advocates: Idaho Prop 1"
+      url: "https://www.plannedparenthoodaction.org/planned-parenthood-alliance-advocates/elections/candidate-endorsements-id/prop-1"
+opponents:
+  - name: "Idaho Family Policy Center, Idaho Chooses Life, Right to Life Idaho, Too Extreme for Idaho, and the Roman Catholic Diocese of Boise"
+    source:
+      name: "Idaho Secretary of State, 2026 Voter Pamphlet (con argument, page 8)"
+      url: "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+  - name: "Idaho Republican Party"
+    source:
+      name: "Idaho Republican Party: The truth about the radical abortion initiative"
+      url: "https://idgop.org/the-truth-about-the-radical-abortion-initiative/"
+  - name: "The Church of Jesus Christ of Latter-day Saints (Idaho leaders)"
+    source:
+      name: "Deseret News: Latter-day Saint leaders join other faiths to oppose Idaho abortion vote"
+      url: "https://www.deseret.com/faith/2026/09/17/latter-day-saint-leaders-join-other-faiths-in-opposing-idaho-abortion-vote/"
+      date: "2026-09-17"
+  - name: "Idaho Freedom Foundation"
+    source:
+      name: "Idaho Freedom Foundation: Abortion initiative is on the November ballot"
+      url: "https://idahofreedom.org/press-release-abortion-initiative-is-on-the-november-ballot/"
+official:
+  name: "Idaho Secretary of State, 2026 Voter Pamphlet (Proposition One, pages 5-12)"
+  url: "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+  date: "2026-09-24"
+sources:
+  - name: "Idaho Secretary of State press release: Reproductive Freedom and Privacy Act Initiative Qualifies"
+    url: "https://press.voteidaho.gov/press-release/2026-ballot-initiatives/"
+    date: "2026-07-14"
+  - name: "Initiative full text, ballot titles and funding statement (SoS)"
+    url: "https://archive.sos.idaho.gov/elections/initiatives/2026/RFPA.pdf"
+  - name: "Fiscal impact statement (SoS)"
+    url: "https://archive.sos.idaho.gov/elections/initiatives/2026/RFPA-FiscalImpact.pdf"
+  - name: "VoteIdaho.gov: Initiatives & Amendments"
+    url: "https://voteidaho.gov/initiatives-amendments/"
+  - name: "Ballotpedia: Idaho Proposition 1 (2026)"
+    url: "https://ballotpedia.org/Idaho_Proposition_1,_Reproductive_Freedom_and_Privacy_Act_Initiative_(2026)"
+unverified:
+  - "The title combines the pamphlet heading ('Proposition One: Reproductive Freedom & Privacy Act') with the Attorney General's official short ballot title. Check the exact wording on the printed ballot."
+  - "idgop.org blocked automated reading, so the Idaho Republican Party's opposition comes from Ballotpedia's listing and was not read at the source. The Deseret News (LDS Church), Idaho Freedom Foundation and Idaho Democratic Party pages were read and confirm each group's stance."
+  - "ACLU of Idaho and Planned Parenthood Alliance Advocates are listed as supporters by Ballotpedia. Their pages load, but their stances were not read in full."
+  - "Passing threshold: Ballotpedia says initiated statutes need a simple majority. No SoS page states it outright."
+  - "Order (3) follows the voter pamphlet. Printed ballot order is not confirmed."
+updated: "2026-09-24"

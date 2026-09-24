@@ -1,0 +1,217 @@
+# Voter logistics for the Nov 3, 2026 Idaho general election (Ada County focus).
+# Checked against official pages on 2026-09-24. Every entry with verified: true was read on the source page.
+# Idaho Code 18-2305: dates and procedures here must match official sources exactly. Re-check before launch.
+
+election_day:
+  label: Election Day
+  value: "Tue Nov 3, 2026. Polls are open 8 a.m. to 8 p.m. local time."
+  note: "You must vote at the polling place for your home address. If you are in line by 8 p.m., you can still vote. The county elections office is also open 8 a.m. to 8 p.m. that day."
+  source: { name: VoteIdaho 2026 Election Calendar (revised Aug 6, 2026), url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
+  verified: true
+
+polls_line_at_close:
+  label: In line when polls close
+  value: "If you are in line by 8 p.m. on Election Day, you may still vote."
+  source: { name: VoteIdaho Guide to Voting in Person, url: "https://voteidaho.gov/guide-to-vote-in-person/" }
+  verified: true
+
+register_deadline:
+  label: Register to vote (mail or online)
+  value: "Fri Oct 23, 2026, 5 p.m."
+  note: "Your registration must reach the county clerk by then. Online registration needs a current Idaho driver's license or state ID card. After Oct 23 you can still register in person at early voting or at your polling place on Election Day."
+  source: { name: VoteIdaho 2026 Election Calendar (revised Aug 6, 2026), url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
+  verified: true
+
+register_online_url:
+  label: Register or update your registration online
+  value: "https://votertools.voteidaho.gov/TEDElectionLink/VoterServices/wizard/ovr"
+  note: "The official VoteIdaho online form. You need a current Idaho driver's license or free state ID card. Update your registration if you moved, changed your name, or have not voted in four years."
+  source: { name: VoteIdaho, Registering to Vote, url: "https://voteidaho.gov/voter-registration/" }
+  verified: true
+
+register_eligibility:
+  label: Who can register
+  value: "You must be 18 or older, a U.S. citizen, and an Idaho resident for at least 30 days before Election Day."
+  note: "If you have a felony conviction, you can register once you finish all the terms of your sentence."
+  source: { name: VoteIdaho, Registering to Vote, url: "https://voteidaho.gov/voter-registration/" }
+  verified: true
+
+same_day_registration:
+  label: Register when you vote
+  value: "Yes. You can register in person at early voting or at your polling place on Election Day."
+  note: "Bring a photo ID (Idaho driver's license or ID card, U.S. passport or federal photo ID, tribal photo ID, or an Idaho concealed weapons license). Also bring proof of your address. That can be the same photo ID if it shows your current address, or a utility bill (not a cell phone bill), bank or credit card statement, paystub, lease or mortgage, property tax bill, proof of insurance, a letter from a social service agency, or an enrollment letter from an Idaho high school or university."
+  source: { name: VoteIdaho, Registering to Vote, url: "https://voteidaho.gov/voter-registration/" }
+  verified: true
+
+check_registration_url:
+  label: Am I registered?
+  value: "https://votertools.voteidaho.gov/TEDElectionLink/VoterServices/voter-search/ovr-voter-search?returnUrl=VoterServices%2Fvoter%2Fvoter-profile"
+  note: "Look up your voter record on VoteIdaho. It also shows your absentee ballot status and your sample ballot."
+  source: { name: VoteIdaho, Registering to Vote, url: "https://voteidaho.gov/voter-registration/" }
+  verified: true
+
+absentee_request_deadline:
+  label: Ask for an absentee (mail) ballot
+  value: "Fri Oct 23, 2026, 5 p.m. Your request must be RECEIVED by the county clerk by then."
+  note: "Ada County says to allow 7 to 10 days to process a request, plus a few days for the ballot to reach you by mail. Ask early."
+  source: { name: VoteIdaho 2026 Election Calendar (revised Aug 6, 2026), url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
+  verified: true
+
+absentee_request_url:
+  label: Request an absentee ballot online
+  value: "https://votertools.voteidaho.gov/TEDElectionLink/VoterServices/voter-search/ovr-voter-search?returnUrl=VoterServices%2Fwizard%2Frequest-my-vote-by-mail"
+  note: "The official VoteIdaho online request. There is also a paper form: https://archive.voteidaho.gov/download/forms/absentee_ballot_request.pdf"
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: true
+
+absentee_request_rules:
+  label: Absentee request rules
+  value: "You need a new request each calendar year. Online, you need your Idaho driver's license or state ID number and the last 4 digits of your Social Security number."
+  note: "Any registered Idaho voter can vote absentee. No reason is needed. On the request, you pick which of this year's elections you want ballots for. If you asked earlier in 2026, check that you picked November. You don't upload or scan your ID. In Ada County you can also send the paper form by mail, fax or email, or bring it to the Elections Office."
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: true
+
+absentee_mailing_start_statewide:
+  label: When counties start mailing absentee ballots
+  value: "Sept 18, 2026. County clerks must begin mailing ballots to voters who asked for one."
+  source: { name: VoteIdaho 2026 Election Calendar (revised Aug 6, 2026), url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
+  verified: true
+
+absentee_ballots_mailed:
+  label: Ada County absentee ballots are going out
+  value: "Yes. Ada County had issued 29,910 absentee ballots for the November election as of Sept 23, 2026, 9:30 a.m."
+  note: "This number is from the Ada County absentee dashboard. The dashboard does not give the exact day mailing started. It shows a 'Mailing Starts' marker before Sept 25. If you requested a ballot and it hasn't come, check your status on VoteIdaho or call Ada County Elections."
+  source: { name: Ada County Elections, Early Voting and Absentee Ballot Data, url: "https://adacounty.id.gov/elections/absentee-ballot-tracking/" }
+  verified: true
+
+absentee_return_deadline:
+  label: Return your absentee ballot
+  value: "It must be RECEIVED by 8 p.m. on Tue Nov 3, 2026. A postmark does not count."
+  note: "Sign the outside of the return envelope, because every signature is checked. Use blue or black ink. Add postage if you mail it. You can return it by mail, to an official drop box, or to your county elections office."
+  source: { name: Idaho Code 34-1005, url: "https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch10/sect34-1005/" }
+  verified: true
+
+absentee_mail_advice:
+  label: When to mail your ballot
+  value: "No official mail-by date is published. Mail it as early as you can, or use a drop box."
+  note: "We could not find a suggested mail-by date from Ada County or the Secretary of State. VoteIdaho tells overseas voters to mail as soon as possible in case of delays. Only a ballot that arrives by 8 p.m. Nov 3 counts."
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: false
+
+absentee_track_url:
+  label: Track your absentee ballot
+  value: "https://votertools.voteidaho.gov/TEDElectionLink/VoterServices/voter-search/ovr-voter-search?returnUrl=VoterServices%2Ftimeline%2Ftrack-my-vote-by-mail"
+  note: "Shows whether your county mailed your ballot and whether it got your completed ballot back."
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: true
+
+absentee_vote_in_person_instead:
+  label: Got an absentee ballot but want to vote in person?
+  value: "Bring your absentee ballot to early voting or to your polling place. A poll worker will cancel it and give you a new ballot."
+  source: { name: VoteIdaho FAQ, url: "https://voteidaho.gov/frequently-asked-questions/" }
+  verified: true
+
+ada_drop_boxes:
+  label: Ada County ballot drop boxes
+  value: "Ada County Elections, 400 N Benjamin Ln, Ste 100, Boise 83704; Boise City Hall, 150 N Capitol Blvd, Boise 83702; Meridian City Hall, 33 E Broadway Ave, Meridian 83642; Eagle City Hall, 660 E Civic Ln, Eagle 83616; Kuna City Hall, 751 W 4th St, Kuna 83634; Star City Hall, 10769 W State St, Star 83669."
+  note: "The last drop-off time is 8 p.m. on Nov 3. Ada County does not post drop box opening hours. Its guides say the sites are video monitored and recorded 24/7. That describes the cameras, not when you can use the box."
+  source: { name: Ada County Elections, Absentee Voting, url: "https://adacounty.id.gov/elections/absentee-voting/" }
+  verified: true
+
+ada_elections_office:
+  label: Ada County Elections Office
+  value: "400 N Benjamin Ln, Ste 100, Boise, ID 83704. Phone (208) 287-6860. Email elections@adacounty.id.gov."
+  note: "Call this number if you made a mistake on your mail ballot. The 208-287-7080 number in the site footer is Ada County's general line."
+  source: { name: Ada County Elections, About Us, url: "https://adacounty.id.gov/elections/about-us/" }
+  verified: true
+
+absentee_at_polling_place:
+  label: Can I drop my absentee ballot at a polling place on Election Day?
+  value: "Not confirmed. To be safe, use a drop box, the Ada County Elections Office, or the mail."
+  note: "We found no official answer either way. VoteIdaho and Ada County list only mail, drop boxes and the county elections office as return options. Idaho Code 34-1005 says the ballot must reach the county clerk by 8 p.m. VoteIdaho does say you can bring an absentee ballot to your polling place and swap it for a new ballot to vote there. A person must confirm the drop-off question with Ada County Elections at (208) 287-6860."
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: false
+
+early_voting_statewide:
+  label: Early voting in Idaho
+  value: "Counties that offer early voting may start Tue Oct 13, 2026. Early voting ends Fri Oct 30, 2026, at 5 p.m."
+  note: "Each county sets its own days and sites. Idaho Code 34-1012 says early voting may begin on or after the fourth Monday before the election. Bring the same photo ID as on Election Day. You can register there too."
+  source: { name: VoteIdaho 2026 Election Calendar (revised Aug 6, 2026), url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
+  verified: true
+
+ada_early_voting:
+  label: Early voting in Ada County
+  value: "Mon Oct 19 to Fri Oct 30, 2026. Weekdays only, 8 a.m. to 5 p.m. Go to any site: Ada County Elections, 400 N Benjamin Ln, Boise; Boise City Hall, 150 N Capitol Blvd, Boise; Eagle Public Library, 100 N Stierman Way, Eagle; Meridian City Hall, 33 E Broadway Ave, Meridian; Library! at Bown Crossing, 2153 E Riverwalk Dr, Boise; Star City Hall, 10769 W State St, Star; Kuna City Hall Council Chambers, 757 W 4th St, Kuna; Lake Hazel Library, 10489 W Lake Hazel Rd, Boise; Orchard Park Library, 1268 W Orch Pk Dr, Meridian; Expo Idaho Western Town Building, 5610 N Glenwood St, Garden City."
+  note: "Ten sites. You can use any site no matter where you live in the county. More at https://adacounty.id.gov/elections/early-voting/"
+  source: { name: Ada County Elections, Early Voting, url: "https://adacounty.id.gov/elections/early-voting/" }
+  verified: true
+
+emergency_absentee:
+  label: Emergency absentee ballot (hospital only)
+  value: "Only if you are in the hospital and can't vote in person. You can apply from Thu Oct 29 until 5 p.m. Mon Nov 2, 2026."
+  note: "Your hospital stay must have started after 5 p.m. on Oct 23. You can't use this if you already asked for an absentee ballot for this election. You must sign the application yourself. The ballot still has to reach the county clerk by 8 p.m. Nov 3."
+  source: { name: Idaho Code 34-1002A, url: "https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch10/sect34-1002a/" }
+  verified: true
+
+voter_id_polls:
+  label: Photo ID to vote in person
+  value: "Idaho driver's license or Idaho ID card; U.S. passport or other U.S. government photo ID; tribal photo ID; or an Idaho concealed weapons license (regular or enhanced)."
+  note: "Student IDs are not on the list. They were removed in 2023. The same ID rules apply at early voting."
+  source: { name: Idaho Code 34-1113, url: "https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch11/sect34-1113/" }
+  verified: true
+
+no_id_affidavit:
+  label: No photo ID? Sign an affidavit
+  value: "If you are already registered, you can sign a Personal Identification Affidavit instead. Starting July 1, 2026, it asks for your name, address, AND either your date of birth or your Idaho driver's license or ID card number."
+  note: "Poll workers check what you write against your voter record before giving you a ballot. Lying on the affidavit is a felony. This change comes from Senate Bill 1322 (2026 Session Law ch. 240, in effect July 1, 2026). Some VoteIdaho pages still describe the older version, which asked only for name and address. If you are not registered yet, you need a real photo ID to register at the polls."
+  source: { name: Idaho Code 34-1114, url: "https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch11/sect34-1114/" }
+  verified: true
+
+no_provisional_ballots:
+  label: Provisional ballots
+  value: "Idaho does not use provisional ballots."
+  note: "If you aren't registered, you can register at early voting or at your polling place with a photo ID and proof of address."
+  source: { name: VoteIdaho FAQ, url: "https://voteidaho.gov/frequently-asked-questions/" }
+  verified: true
+
+polls_no_campaign_gear:
+  label: No campaign gear at the polls
+  value: "Don't wear or bring anything that promotes a candidate, party or issue on the ballot. You may bring notes."
+  note: "Electioneering is banned within 250 feet of a voting location (Idaho Code 18-2318)."
+  source: { name: VoteIdaho Guide to Voting in Person, url: "https://voteidaho.gov/guide-to-vote-in-person/" }
+  verified: true
+
+sample_ballot_url:
+  label: See your sample ballot
+  value: "https://votertools.voteidaho.gov/ElectionLink/ElectionLink/VoterSearch.aspx"
+  note: "Look up your voter record, then scroll to Sample Ballot. Ada County also has a 'View my ballot' tool at https://gisprod.adacounty.id.gov/apps/electionday/ (enter your address; use Edge, Chrome or Firefox)."
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: true
+
+find_polling_place_url:
+  label: Find your polling place
+  value: "https://votertools.voteidaho.gov/TEDElectionLink/VoterServices/voter/where-do-I-vote"
+  note: "Your polling place is based on your home address, and it can change between elections. Check before you go. Ada County's locator is at https://gisprod.adacounty.id.gov/apps/electionday/"
+  source: { name: VoteIdaho, Casting Your Ballot, url: "https://voteidaho.gov/casting-your-ballot/" }
+  verified: true
+
+district_lookup_url:
+  label: Who's my legislator?
+  value: "https://legislature.idaho.gov/legislators/whosmylegislator/"
+  note: "Type your address to find your legislative district and your state senator and representatives."
+  source: { name: Idaho Legislature, url: "https://legislature.idaho.gov/legislators/whosmylegislator/" }
+  verified: true
+
+ballot_collection_warning:
+  label: "Don't carry other people's ballots"
+  value: "In Idaho it is a crime to collect or deliver someone else's ballot, voted or blank, unless the law allows it."
+  note: "The law allows election officials, mail carriers and delivery companies. It also allows someone the voter pays themselves, a relative, a member of the voter's household, and a caregiver (unless the voter is in memory or cognitive care). A relative, household member or caregiver can carry at most 6 voted and 6 blank ballots per election. Candidates, and anyone who works or volunteers for a party, candidate or campaign group, can't use the relative, household or caregiver exceptions. Breaking this law is a misdemeanor. It is a felony if someone other than the voter paid you, or if it involves 10 or more ballots. This site will never collect or deliver ballots."
+  source: { name: Idaho Code 18-2324, url: "https://legislature.idaho.gov/statutesrules/idstat/title18/t18ch23/sect18-2324/" }
+  verified: true
+
+sos_contact:
+  label: Idaho Secretary of State, Elections
+  value: "(208) 334-2852. elections@sos.idaho.gov. 700 W Jefferson, #E205, Boise, ID 83702 (State Capitol, East Wing, 2nd floor). Monday to Friday, 8 a.m. to 5 p.m."
+  note: "For questions about your own ballot or polling place, your county elections office is usually the faster help."
+  source: { name: VoteIdaho, url: "https://voteidaho.gov/voter-registration/" }
+  verified: true

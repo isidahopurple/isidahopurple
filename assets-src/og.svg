@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#c0392b"/><stop offset="0.5" stop-color="#7b3fc0"/><stop offset="1" stop-color="#1f4fa3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#1a1224"/>
+  <rect x="0" y="600" width="1200" height="30" fill="url(#g)"/>
+  <text x="80" y="250" font-family="DejaVu Sans, sans-serif" font-weight="800" font-size="112" fill="url(#g)">Is Idaho Purple?</text>
+  <text x="84" y="340" font-family="DejaVu Sans, sans-serif" font-size="42" fill="#efeaf6">An open experiment for the Nov 3 election.</text>
+  <text x="84" y="400" font-family="DejaVu Sans, sans-serif" font-size="34" fill="#b3a9c2">Every race. Every source. How to vote by Oct 23.</text>
+  <text x="84" y="540" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="34" fill="#c9a8f0">isidahopurple.com</text>
+</svg>

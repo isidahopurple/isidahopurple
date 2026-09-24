@@ -1,0 +1,48 @@
+---
+// Owner's review checklist. Built only in preview; production build deletes /review.
+import Base from '../layouts/Base.astro';
+import { tx, type Lang } from '../i18n/ui';
+import { getRaces, getMeasures, getElection } from '../lib/data';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const races = await getRaces();
+const measures = await getMeasures();
+const election = await getElection();
+const quotes = races.flatMap((r) => r.data.candidates.filter((c) => c.quote).map((c) => ({ r, c })));
+const unverifiedQuotes = quotes.filter((q) => !q.c.quote!.verified);
+const missingQuotes = races.filter((r) => r.data.depth === 'full').flatMap((r) => r.data.candidates.filter((c) => !c.quote && !c.withdrawn).map((c) => ({ r, c })));
+const flags = races.filter((r) => r.data.review_flags.length);
+const drafts = races.filter((r) => !r.data.pick.approved && r.data.pick.candidate);
+const electionUnverified = Object.entries(election).filter(([, v]) => !v.verified);
+---
+<Base lang={lang} title="Review checklist">
+  <h1>Review checklist</h1>
+  <p class="muted">Only in preview builds. {drafts.length} draft picks · {flags.length} races flagged · {quotes.length} quotes ({unverifiedQuotes.length} unverified, {missingQuotes.length} missing) · {electionUnverified.length} unconfirmed dates/procedures.</p>
+
+  <h2>1. Flags (Republican matches the pick on abortion / climate / power bills)</h2>
+  <ul>{flags.flatMap((r) => r.data.review_flags.map((f) => <li><a href={`/races/${r.id}`}>{tx(r.data.office, 'en')}</a>: {f}</li>))}</ul>
+
+  <h2>2. Unconfirmed dates and procedures</h2>
+  <ul>{electionUnverified.map(([k, v]) => <li><strong>{tx(v.label, 'en')}</strong> ({k}): {tx(v.note ?? v.value, 'en')}</li>)}</ul>
+
+  <h2>3. Draft picks</h2>
+  <div class="table-scroll"><table>
+    <tbody>{drafts.map((r) => <tr><td><a href={`/races/${r.id}`}>{tx(r.data.office, 'en')}</a></td><td>{r.data.pick.candidate}</td><td>{r.data.pick.label}</td><td class="small">{tx(r.data.pick.reasoning, 'en')}</td></tr>)}</tbody>
+  </table></div>
+
+  <h2>4. Every quote</h2>
+  {quotes.map(({ r, c }) => (
+    <div class="card q">
+      <p class="small"><a href={`/races/${r.id}`}>{tx(r.data.office, 'en')}</a> · <strong>{c.name}</strong> ({c.party}) {!c.quote!.verified && <span class="tag draft">unverified</span>}</p>
+      <p>“{c.quote!.text}”</p>
+      <p class="cite">{c.quote!.context} · {c.quote!.date} · <a href={c.quote!.source.url}>{c.quote!.source.name}</a></p>
+    </div>
+  ))}
+  {missingQuotes.length > 0 && <p>Missing quotes: {missingQuotes.map(({ r, c }) => `${c.name} (${tx(r.data.office, 'en')})`).join('; ')}</p>}
+
+  <h2>5. Still unverified, per race</h2>
+  <ul>{races.filter((r) => r.data.unverified.length).map((r) => <li><a href={`/races/${r.id}`}>{tx(r.data.office, 'en')}</a><ul>{r.data.unverified.map((u) => <li class="small">{u}</li>)}</ul></li>)}</ul>
+  <ul>{measures.filter((m) => m.data.unverified.length).map((m) => <li>{m.data.short_name}<ul>{m.data.unverified.map((u) => <li class="small">{u}</li>)}</ul></li>)}</ul>
+</Base>
+<style>.q { margin: 10px 0; } .q p { margin: 0.3rem 0; }</style>

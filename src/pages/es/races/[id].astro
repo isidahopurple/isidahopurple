@@ -1,0 +1,9 @@
+---
+import RacePage from '../../../views/RacePage.astro';
+import { getRaces } from '../../../lib/data';
+export async function getStaticPaths() {
+  return (await getRaces()).map((race) => ({ params: { id: race.id }, props: { race } }));
+}
+const { race } = Astro.props;
+---
+<RacePage race={race} lang="es" />
