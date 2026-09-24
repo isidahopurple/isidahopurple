@@ -1,0 +1,109 @@
+office: State Senate, District 26
+level: legislative
+district: LD26
+seat: Senate
+order: 178
+depth: full
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Ron Taylor
+  party: D
+  incumbent: true
+  quote:
+    text: The people of District 26 should vote for me for several reasons, the most important is that
+      I prioritize people over politics. I do not adhere to a party platform, nor do I pledge to vote
+      a certain way before legislation is even written.
+    date: '2026-08-24'
+    context: His answer to why people should vote for him, in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election candidate survey
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-senate-district-26
+      date: '2026-08-24'
+    verified: true
+- name: Bryan Hyde
+  party: R
+  incumbent: false
+  bio: His campaign site describes a long career in talk radio, advertising and public speaking; no prior
+    elected office found.
+  website: https://www.bryanhydeforsenate.com/
+  quote:
+    text: My vision is of a transparent, responsive and limited government that stays in its own lane,
+      protects our rights and affords us the freedom to pursue happiness without undue interference.
+    date: '2026-06-14'
+    context: Campaign post "Why I'm Running for the Idaho Senate."
+    source:
+      name: Bryan Hyde for Senate
+      url: https://www.bryanhydeforsenate.com/why-im-running-for-the-idaho-senate
+      date: '2026-06-14'
+    verified: true
+- name: Shaila Tate
+  party: I
+  incumbent: false
+  bio: Independent; says in a 2026 candidate survey that she has interned at the Legislature since age
+    18.
+  quote:
+    text: My top priorities for my district should be everyone's top priority, the Next Generation. A
+      politician is only thinking about the next election, a patriot is always thinking about the next
+      generation. I want to give the Next Gen. a voice!
+    date: '2026-08-24'
+    context: Her top priorities, in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election candidate survey
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-senate-district-26
+      date: '2026-08-24'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD26 Senate
+  result: Taylor (D) 51.6, Lickley (R) 48.4
+  margin: D+3.3
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD26 Senate
+  result: Taylor (D) 45.6, Lickley (R) 43.9, Tate (I) 10.5
+  margin: D+1.6
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: clear
+  candidate: Ron Taylor
+  rule: '2'
+  reasoning: 'There is no independent poll of this race. Under rule 2 the pick is the non-Republican who
+    finished highest last time: Ron Taylor (D) won in 2024 with 45.6%, while a different independent candidate
+    (Kala Tate) took 10.5%. Taylor''s 2024 margin was 1.6 points, smaller than the independent''s share,
+    so a split non-Republican vote could decide this seat. This is a hold: Taylor holds the seat now.
+    District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare
+    directly.'
+  approved: false
+scenarios:
+- voters_of: Shaila Tate
+  text: 'If you are drawn to Shaila Tate, that is a real choice and an independent voice matters. The
+    numbers are worth knowing, though: in 2024 an independent candidate took about 10% here and the seat
+    was decided by 1.6 points. If your main goal is to keep this seat from going to the Republican candidate,
+    Ron Taylor is the non-Republican who has won it twice. If you prefer Tate on the issues, vote for
+    her; this is only about how the math works in a close three-way race.'
+unverified:
+- Shaila Tate (2026) is not the same person as Kala Tate, the 2024 independent candidate. Her survey answer
+  mentions her mother's and grandmother's 2024 campaigns, which suggests a family link; that is an inference,
+  not confirmed.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+updated: '2026-09-24'

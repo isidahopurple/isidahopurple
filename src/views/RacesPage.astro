@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Party from '../components/Party.astro';
+import DistrictFinder from '../components/DistrictFinder.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getRaces, getMeasures, LEVELS, type Race } from '../lib/data';
 
@@ -23,6 +24,7 @@ const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick
     {es ? ' Para saber su distrito legislativo: ' : ' To find your legislative district: '}
     <a href="https://legislature.idaho.gov/legislators/whosmylegislator/" rel="noopener" target="_blank">{es ? '¿Quién es mi legislador?' : 'Who’s my legislator?'}</a>
   </p>
+  <DistrictFinder lang={lang} />
 
   {LEVELS.filter((l) => l !== 'legislative').map((lvl) => byLevel(lvl).length > 0 && (
     <section>

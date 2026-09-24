@@ -1,0 +1,80 @@
+office: "Superintendent of Public Instruction"
+level: statewide
+order: 15
+depth: full
+controls: "The Superintendent leads the State Department of Education. The department carries out State Board of Education policy for K-12 schools, distributes state school funds, runs statewide testing and licenses educators. Local districts and charter schools run day-to-day operations, and the Legislature sets school funding."
+controls_source:
+  name: "Idaho State Department of Education: About Us"
+  url: "https://sde.idaho.gov/about-us/"
+candidates:
+  - name: "Debbie Critchfield"
+    party: R
+    incumbent: true
+    bio: "Superintendent since 2023; from Oakley; former Cassia County school board member and former State Board of Education member."
+    website: "https://debbie4idaho.com/"
+    quote:
+      text: "Four years ago, I promised to put Idaho’s students first and lead with integrity and common sense. I’m proud of the progress we’ve made together for Idaho’s students, families, schools and communities. There is still important work ahead, and I’m ready to keep building on what we’ve started."
+      date: "2026-08-24"
+      context: "Answer to \"why should people vote for you?\" in the CBS2/KBOI 2026 candidate survey."
+      source:
+        name: "CBS2 / idahonews.com: 2026 general election survey, Superintendent of Public Instruction"
+        url: "https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-superintendent-of-public-instruction"
+        date: "2026-08-24"
+      verified: true
+  - name: "Becky Sundin Mitchell"
+    party: D
+    bio: "2018 Idaho Teacher of the Year; middle school science teacher in Caldwell; lives in Canyon County."
+    website: "https://becky4idaho.com/"
+    quote:
+      text: "Idahoans should vote for me because the person leading public education should understand public education from the classroom up."
+      date: "2026-08-24"
+      context: "Answer to \"why should people vote for you?\" in the CBS2/KBOI 2026 candidate survey."
+      source:
+        name: "CBS2 / idahonews.com: 2026 general election survey, Superintendent of Public Instruction"
+        url: "https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-superintendent-of-public-instruction"
+        date: "2026-08-24"
+      verified: true
+  - name: "Teresa Roundy"
+    party: C
+    bio: "Garden City resident; former wildland firefighter and teacher."
+    quote:
+      text: "I am asking for your vote to help rebuild Idaho's schools into safe, world-class institutions."
+      date: "2026-08-24"
+      context: "Answer to \"why should people vote for you?\" in the CBS2/KBOI 2026 candidate survey."
+      source:
+        name: "CBS2 / idahonews.com: 2026 general election survey, Superintendent of Public Instruction"
+        url: "https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-superintendent-of-public-instruction"
+        date: "2026-08-24"
+      verified: true
+polls: []
+history:
+  - year: 2022
+    label: "2022 Idaho Superintendent of Public Instruction"
+    result: "Critchfield (R) 69.8, Gilbert (D) 30.2"
+    margin: "R+39.6"
+    source:
+      name: "Idaho Secretary of State, 2022 General Election canvass (statewide, by county)"
+      url: "https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip"
+pick:
+  label: clear
+  candidate: "Becky Sundin Mitchell"
+  rule: "Rule 2: no independent poll; the Democrat was the highest non-Republican finisher in 2022 (the only one on that ballot)."
+  reasoning: "With no poll, the method points to the Democrat. Her party took about 30 percent here in 2022, while Constitution candidates drew 4 to 5 percent in other statewide races. This is a roughly 40-point race. One nuance: Critchfield supports parental choice but says the school choice tax credit policy \"lacks transparency and accountability\" (CBS2/KBOI survey), while both challengers oppose the credit (Idaho Education News)."
+  approved: false
+scenarios:
+  - voters_of: "Teresa Roundy"
+    text: "If you mainly want a change from the incumbent, the method says the Democrat is the non-Republican with a track record of real vote share in this race. If you agree with Roundy's platform, voting your values is also a legitimate choice."
+review_flags: []
+unverified:
+  - "Roundy's statement that she co-founded the Idaho chapter of Moms Demand Action is her own claim and is not included in her bio."
+sources:
+  - name: "Idaho Secretary of State candidate list, 2026 General (run.voteidaho.gov, marked final list)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "Idaho Education News: Superintendent candidates spar over funding, private schools and politics"
+    url: "https://www.idahoednews.org/top-news/superintendent-candidates-spar-over-funding-private-schools-and-politics/"
+    date: "2026-09-23"
+  - name: "Idaho Capital Sun via Boise State Public Radio: Idaho's Republican state officials are all running for re-election"
+    url: "https://www.boisestatepublicradio.org/politics-government/2026-03-02/idaho-election-republican-governor-secretary-state"
+    date: "2026-03-02"
+updated: "2026-09-24"

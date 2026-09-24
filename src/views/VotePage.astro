@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Source from '../components/Source.astro';
+import DistrictFinder from '../components/DistrictFinder.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getElection, type ElectionItem } from '../lib/data';
 
@@ -111,8 +112,10 @@ const shown = new Set(steps.flatMap((s) => s.items));
     </div>
   ))}
 
+  <h2>{es ? 'Su boleta' : 'Your ballot'}</h2>
+  <DistrictFinder lang={lang} />
   <p class="card">
-    {es ? 'Después de votar: ' : 'Once you’ve voted: '}
+    {es ? 'Antes de votar: ' : 'Before you vote: '}
     <a href={href(lang, '/races')}>{es ? 'vea toda la boleta y las matemáticas del voto' : 'see the whole ballot and the vote math'}</a>.
   </p>
 </Base>

@@ -1,0 +1,50 @@
+office: State Senate, District 14
+level: legislative
+district: LD14
+seat: Senate
+order: 142
+depth: short
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: C. Scott Grow
+  party: R
+  incumbent: true
+- name: Kirsten Faith Richardson
+  party: C
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD14 Senate
+  result: Grow (R) 84.9, Richardson (C) 15.1
+  margin: R+69.7
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Kirsten Faith Richardson
+  rule: '3'
+  reasoning: Kirsten Faith Richardson is the only non-Republican on the ballot, so this is a two-way race
+    and turnout is what matters. Under the published method the only non-Republican is the pick, even
+    though she is a Constitution Party candidate.
+  approved: false
+review_flags:
+- The only non-Republican is a Constitution Party candidate. Constitution Party platforms are generally
+  to the right of the Republican Party, so the rule-3 pick may not fit the site's purpose. A human should
+  decide whether a written rule-5 exception (no-pick) applies.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-24'

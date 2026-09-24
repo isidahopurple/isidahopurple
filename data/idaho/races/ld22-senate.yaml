@@ -1,0 +1,54 @@
+office: State Senate, District 22
+level: legislative
+district: LD22
+seat: Senate
+order: 166
+depth: short
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Lori Den Hartog
+  party: R
+  incumbent: true
+  bio: Senate Majority Leader; Senate floor sponsor of H0897 (2026), the data-center tax bill.
+- name: Karlie Easley
+  party: D
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD22 Senate
+  result: Den Hartog (R) 66.6, Pierce (D) 33.4
+  margin: R+33.3
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Karlie Easley
+  rule: '3'
+  reasoning: Karlie Easley is the only non-Republican on the ballot, so this is a two-way race and turnout
+    is what matters.
+  approved: false
+review_flags:
+- Sen. Lori Den Hartog (R) was the Senate floor sponsor of H0897 (2026) and is listed as a contact on
+  its statement of purpose. The bill would have narrowed the data-center sales tax exemption and added
+  energy and water reporting; it passed both chambers (House 68-0, Senate 34-0) but died when the House
+  did not take up the Senate amendments. She may match the pick on power bills and data centers; a human
+  should review.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho Legislature, H0897 (2026) bill page and statement of purpose
+  url: https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/
+updated: '2026-09-24'

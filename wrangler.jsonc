@@ -2,15 +2,16 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "isidahopurple",
   "compatibility_date": "2026-09-01",
-  "assets": { "directory": "./dist", "not_found_handling": "404-page" },
+  "main": "worker/index.js",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "404-page", "run_worker_first": ["/api/*"] },
   "workers_dev": false,
   "routes": [{ "pattern": "isidahopurple.com", "custom_domain": true }],
   "env": {
-    // Review build: npm run deploy:preview → isidahopurple-preview.<account>.workers.dev (noindex, shows /review)
+    // Review build: npm run deploy:preview → preview.isidahopurple.com (noindex, includes /review)
     "preview": {
       "name": "isidahopurple-preview",
-      "workers_dev": true,
-      "routes": []
+      "workers_dev": false,
+      "routes": [{ "pattern": "preview.isidahopurple.com", "custom_domain": true }]
     }
   }
 }

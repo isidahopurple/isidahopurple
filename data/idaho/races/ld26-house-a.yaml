@@ -1,0 +1,109 @@
+office: State House, District 26, Seat A
+level: legislative
+district: LD26
+seat: House A
+order: 179
+depth: full
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Mike Pohanka
+  party: R
+  incumbent: true
+  website: https://mikepohanka.com/
+  quote:
+    text: 'My approach to governing is simple: get all the parties in the room, talk it through, and work
+      the problem. I ran on the promise to be your voice, not Boise''s voice back home — and that''s a
+      promise I intend to keep.'
+    date: '2026-08-24'
+    context: His answer on representing constituents, in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election candidate survey
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-26a
+      date: '2026-08-24'
+    verified: true
+- name: Anita Janis
+  party: D
+  incumbent: false
+  website: https://www.anitajanisforidaho.com/
+  quote:
+    text: I am not a career politician and am not beholden to special interests or large donors. My campaign
+      is built from the ground up, driven by genuine concern for the impact of recent legislation on everyday
+      Idahoans. I am running because I believe we can do better.
+    date: '2026-08-24'
+    context: Her answer to why people should vote for her, in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election candidate survey
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-26a
+      date: '2026-08-24'
+    verified: true
+- name: Bella Schiffler
+  party: I
+  incumbent: false
+  quote:
+    text: I will put God’s voice back on top of the government mountain. Vote for me, Bella Schiffler,
+      if you want truth, righteousness, purity, and ultimately God back on top of our government!
+    date: '2026-08-24'
+    context: Closing lines of her answer to why people should vote for her, in a TV-station candidate
+      survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election candidate survey
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-26a
+      date: '2026-08-24'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD26 House A
+  result: Burns (D) 50.1, Pohanka (R) 49.9
+  margin: D+0.2
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD26 House A
+  result: Pohanka (R) 51.2, Burns (D) 48.8
+  margin: R+2.4
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: clear
+  candidate: Anita Janis
+  rule: '2'
+  reasoning: 'There is no independent poll of this race. Under rule 2 the pick is the non-Republican candidate
+    or party that finished highest last time: the Democratic nominee (Ned Burns) took 48.8% in 2024 and
+    won the seat in 2022 by 37 votes. Anita Janis is the 2026 Democratic nominee. With a 2.4-point margin
+    in 2024 and an independent now on the ballot, a split non-Republican vote could decide this seat.
+    District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare
+    directly.'
+  approved: false
+scenarios:
+- voters_of: Bella Schiffler
+  text: 'If Bella Schiffler speaks for you, that is a fair choice. It helps to know the history: this
+    seat was decided by 37 votes in 2022 and by 2.4 points in 2024, with only two candidates both times.
+    The Democratic nominee has come closest to the Republican each time. If your main goal is to change
+    who holds this seat, Anita Janis is the candidate the numbers point to. If you prefer Schiffler on
+    the issues, vote for her.'
+review_flags:
+- 'Rep. Mike Pohanka (R): Voted aye on H0897 (2026 data-center tax bill) when it passed the House 68-0.
+  The vote was unanimous, so it is weak evidence of a match on power bills and data centers, but a human
+  should review.'
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- name: Idaho Legislature, H0897 (2026) bill page and statement of purpose
+  url: https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/
+updated: '2026-09-24'

@@ -1,0 +1,80 @@
+office: State Senate, District 15
+level: legislative
+district: LD15
+seat: Senate
+order: 145
+depth: full
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Desi Burbank
+  party: R
+  incumbent: false
+  website: https://www.desi4idaho.com
+  quote:
+    text: I believe our state legislature should be made up of people who listen, work hard, and focus
+      on practical solutions that help Idaho families thrive. I'm running for the Idaho State Legislature
+      because I want to bring a strong voice for families, schools, and our community to the Capitol—and
+      continue a lifetime commitment to serving others.
+    date: '2026-05-14'
+    context: Her answer to "Who are you?" in the Ballotpedia candidate survey; the same text is on her
+      campaign site.
+    source:
+      name: Ballotpedia candidate survey
+      url: https://ballotpedia.org/Desi_Burbank
+      date: '2026-05-14'
+    verified: true
+- name: Nancy Gregory
+  party: D
+  incumbent: false
+  website: https://www.nancygregory4idaho.com
+  quote:
+    text: Public schools are working very hard to do a good job for their communities.
+    date: '2025-10-09'
+    context: Interview when she launched her Senate campaign, about school funding and levies.
+    source:
+      name: Idaho Education News
+      url: https://www.idahoednews.org/news/longtime-school-trustee-targets-senate-seat-in-boise-swing-district/
+      date: '2025-10-09'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD15 Senate
+  result: Just (D) 49.8, Galloway (R) 48.0, Clendenon (C) 2.2
+  margin: D+1.8
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD15 Senate
+  result: Galloway (R) 51.8, Just (D) 48.2
+  margin: R+3.7
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Nancy Gregory
+  rule: '3'
+  reasoning: 'Nancy Gregory is the only non-Republican on the ballot, so this is a two-way race and turnout
+    is what matters. Open seat: Sen. Codi Galloway (R) is not on the ballot. The seat flipped from D+1.8
+    in 2022 to R+3.7 in 2024, so turnout and avoiding undervotes decide it. District lines were the same
+    in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+  approved: false
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+updated: '2026-09-24'

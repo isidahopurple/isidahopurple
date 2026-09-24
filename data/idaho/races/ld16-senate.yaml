@@ -1,0 +1,49 @@
+office: State Senate, District 16
+level: legislative
+district: LD16
+seat: Senate
+order: 148
+depth: short
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Soñia Galaviz
+  party: D
+  incumbent: false
+  bio: Currently the state representative for LD16 Seat A.
+- name: Geoffrey Surbeck
+  party: R
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD16 Senate
+  result: Rabe (D) 58.7, Rich (R) 41.3
+  margin: D+17.5
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Soñia Galaviz
+  rule: '3'
+  reasoning: 'Soñia Galaviz is the only non-Republican on the ballot, so this is a two-way race and turnout
+    is what matters. This is a hold: a Democrat (Sen. Ali Rabe, not on the 2026 ballot) holds this seat
+    now.'
+  approved: false
+unverified:
+- Why Sen. Ali Rabe is not on the 2026 ballot was not checked.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-24'

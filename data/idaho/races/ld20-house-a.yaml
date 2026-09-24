@@ -1,0 +1,45 @@
+office: State House, District 20, Seat A
+level: legislative
+district: LD20
+seat: House A
+order: 161
+depth: short
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Joe A Palmer
+  party: R
+  incumbent: true
+- name: Jennifer Stephens
+  party: D
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD20 House A
+  result: Palmer (R) 71.0, Navarro (D) 29.0
+  margin: R+42.0
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Jennifer Stephens
+  rule: '3'
+  reasoning: Jennifer Stephens is the only non-Republican on the ballot, so this is a two-way race and
+    turnout is what matters.
+  approved: false
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-24'

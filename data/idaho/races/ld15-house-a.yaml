@@ -1,0 +1,80 @@
+office: State House, District 15, Seat A
+level: legislative
+district: LD15
+seat: House A
+order: 146
+depth: full
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Steve Berch
+  party: D
+  incumbent: true
+  website: https://www.berch4idaho.com
+  quote:
+    text: It is about bringing government closer to all our citizens. I do this by being accessible and
+      responsive, publishing legislative newsletters, holding Town Hall meetings and continuing to visit
+      with people at their door.
+    date: '2026-09-24'
+    context: Why he serves, on his campaign homepage (undated page, read 2026-09-24).
+    source:
+      name: Berch for Idaho campaign site
+      url: https://www.berch4idaho.com/
+    verified: true
+- name: Steve Keyser
+  party: R
+  incumbent: false
+  website: https://stevekeyser4idaho.com
+  quote:
+    text: Idahoans deserve to keep more of what they earn. If I am elected to the Idaho State House of
+      Representatives, I will fight for property tax and grocery tax relief for Idaho families.
+    date: '2026-09-05'
+    context: First of his "3 key messages" in the Ballotpedia candidate survey.
+    source:
+      name: Ballotpedia candidate survey
+      url: https://ballotpedia.org/Steve_Keyser
+      date: '2026-09-05'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD15 House A
+  result: Berch (D) 52.9, Keyser (R) 47.1
+  margin: D+5.9
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD15 House A
+  result: Berch (D) 50.5, Tipton (R) 49.5
+  margin: D+0.9
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Steve Berch
+  rule: '3'
+  reasoning: 'Steve Berch is the only non-Republican on the ballot, so this is a two-way race and turnout
+    is what matters. This is a hold: Berch (D) holds this seat now. It was the closest 2024 legislative
+    race in Ada County districts LD14-LD22 (227 votes), and this is a 2022 rematch with Keyser. District
+    lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+  approved: false
+unverified:
+- Berch's quote is from an undated campaign homepage; the date shown is when it was read.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+updated: '2026-09-24'

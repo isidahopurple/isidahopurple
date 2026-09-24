@@ -1,0 +1,62 @@
+office: "State Controller"
+level: statewide
+order: 14
+depth: full
+controls: "The Controller is the state's chief fiscal officer: the office keeps the state's accounts, sets accounting controls, authorizes state payments and runs state payroll. The Controller also sits on the State Land Board and the Board of Examiners."
+controls_source:
+  name: "Idaho State Controller's Office: Duties of the State Controller"
+  url: "https://www.sco.idaho.gov/Pages/Duties-of-the-State-Controller.aspx"
+candidates:
+  - name: "Brandon D Woolf"
+    party: R
+    incumbent: true
+    bio: "State Controller since his 2012 appointment, then elected in 2014 and re-elected since; from Preston."
+    website: "https://brandonwoolf.com/"
+    quote:
+      text: "My focus has always and continues to be protecting taxpayer dollars and ensuring our state government operates efficiently and openly."
+      date: "2026-02-24"
+      context: "Campaign release announcing that he filed for re-election."
+      source:
+        name: "Brandon Woolf campaign release"
+        url: "https://brandonwoolf.com/wp-content/uploads/2026/02/Brandon-Woolf-Officially-Files-for-Re-Election-as-Idaho-State-Controller.pdf"
+        date: "2026-02-24"
+      verified: true
+  - name: "Rakesh Mohan"
+    party: D
+    bio: "Longtime director of the Legislature's nonpartisan Office of Performance Evaluations; retired in June 2024."
+    website: "https://www.mohan4statecontroller.com/"
+    quote:
+      text: "After 14 years, it is time for change in the Office of the State Controller! I say this because the last major IT project, commonly known as Luma, launched by the State Controller faced many implementation challenges and cost-overruns in millions as reported by the legislature’s nonpartisan Office of Performance Evaluations."
+      date: "2026-09-24"
+      context: "\"My Priorities\" section of his campaign website (the page is undated; the date is when it was read)."
+      source:
+        name: "Rakesh Mohan for State Controller"
+        url: "https://www.mohan4statecontroller.com/"
+      verified: true
+polls: []
+history:
+  - year: 2022
+    label: "2022 Idaho State Controller"
+    result: "Woolf (R) 69.5, David (D) 26.8, Gardner (C) 3.7"
+    margin: "R+42.7"
+    source:
+      name: "Idaho Secretary of State, 2022 General Election canvass (statewide, by county)"
+      url: "https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip"
+pick:
+  label: two-way
+  candidate: "Rakesh Mohan"
+  rule: "Rule 3: only one non-Republican on the ballot."
+  reasoning: "Mohan is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. He is better known than most down-ballot Democrats, but the Democrat lost this office by about 43 points in 2022 and no public poll exists."
+  approved: false
+scenarios: []
+review_flags: []
+unverified:
+  - "Mohan's quote is from an undated campaign-site page. The date shown is when it was read (2026-09-24), not when it was written."
+sources:
+  - name: "Idaho Secretary of State candidate list, 2026 General (run.voteidaho.gov, marked final list)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "Idaho Capital Sun via Boise State Public Radio: Idaho's Republican state officials are all running for re-election"
+    url: "https://www.boisestatepublicradio.org/politics-government/2026-03-02/idaho-election-republican-governor-secretary-state"
+    date: "2026-03-02"
+updated: "2026-09-24"

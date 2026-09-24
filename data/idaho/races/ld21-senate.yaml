@@ -1,0 +1,48 @@
+office: State Senate, District 21
+level: legislative
+district: LD21
+seat: Senate
+order: 163
+depth: short
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Treg A. Bernt
+  party: R
+  incumbent: true
+- name: Brenda H. Quick
+  party: D
+  incumbent: false
+  withdrawn: true
+history:
+- year: 2024
+  label: 2024 LD21 Senate
+  result: Bernt (R) 74.3, Long (L) 25.7
+  margin: R+48.5
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: no-pick
+  candidate: null
+  rule: none
+  reasoning: 'Uncontested: only one active candidate. The Democratic nominee, Brenda H. Quick, withdrew
+    on 2026-08-05 according to the Secretary of State filing list, and no replacement is listed.'
+  approved: false
+unverified:
+- Whether Brenda H. Quick's name is still printed on the ballot after her 2026-08-05 withdrawal.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-24'

@@ -3,4 +3,4 @@
 interface Props { source: { name: string; url: string; date?: string }; label?: string }
 const { source, label } = Astro.props;
 ---
-<a class="cite" href={source.url} rel="noopener" target="_blank">{label ?? source.name}{source.date ? `, ${source.date}` : ''}</a>
+<a class="cite" href={source.url} rel="noopener" target="_blank">{label ?? `${source.name}${source.date ? `, ${source.date}` : ''}`}</a>

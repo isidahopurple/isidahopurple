@@ -1,0 +1,83 @@
+office: State House, District 26, Seat B
+level: legislative
+district: LD26
+seat: House B
+order: 180
+depth: full
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Lyle Johnstone
+  party: R
+  incumbent: false
+  bio: His campaign site says he served on the Northside Soil and Water Conservation District board.
+  website: https://www.johnstoneforhouse.com/
+  quote:
+    text: I am running for the Idaho House to ensure government focuses on practical solutions that protect
+      Idaho's future while preserving the values that make our state a great place to live, work, and
+      raise a family.
+    date: '2026-09-24'
+    context: Campaign homepage (undated page, read 2026-09-24).
+    source:
+      name: Johnstone for House campaign site
+      url: https://www.johnstoneforhouse.com/
+    verified: true
+- name: Kevin Marsh
+  party: D
+  incumbent: false
+  website: https://www.kevinmarshforidaho.com/
+  quote:
+    text: Citizens of Blaine, Jerome, and Lincoln counties should vote for me, because I put the interests
+      of their communities first. I will protect water supplies in our district and prioritize local control
+      in government and schools.
+    date: '2026-08-24'
+    context: His answer to why people should vote for him, in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election candidate survey
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-26b
+      date: '2026-08-24'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD26 House B
+  result: Nelsen (R) 50.3, Metzler Fitzgerald (D) 49.7
+  margin: R+0.5
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD26 House B
+  result: Nelsen (R) 51.5, Hansen (D) 48.5
+  margin: R+3.1
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Kevin Marsh
+  rule: '3'
+  reasoning: 'Kevin Marsh is the only non-Republican on the ballot, so this is a two-way race and turnout
+    is what matters. Open seat: Rep. Jack Nelsen (R) is not on the ballot. The seat was decided by 84
+    votes in 2022 and 3.1 points in 2024. District lines were the same in 2022 and 2024 (the post-2020-census
+    map), so both results compare directly.'
+  approved: false
+unverified:
+- Johnstone's quote is from an undated campaign homepage; the date shown is when it was read. Kevin Marsh's
+  website URL was found by search and only checked to load.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+updated: '2026-09-24'

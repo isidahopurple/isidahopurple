@@ -1,0 +1,45 @@
+office: State House, District 19, Seat A
+level: legislative
+district: LD19
+seat: House A
+order: 158
+depth: short
+controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
+  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
+  senator and two representatives.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Monica C. Church
+  party: D
+  incumbent: true
+- name: Bryan Hopkins
+  party: R
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD19 House A
+  result: Church (D) 65.6, Feederle (R) 34.4
+  margin: D+31.1
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Monica C. Church
+  rule: '3'
+  reasoning: 'Monica C. Church is the only non-Republican on the ballot, so this is a two-way race and
+    turnout is what matters. This is a hold: a Democrat holds this seat now.'
+  approved: false
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-24'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-24'

@@ -1,0 +1,61 @@
+---
+// Address → legislative district, county, US House district. Uses /api/district (US Census geocoder).
+import { href, type Lang } from '../i18n/ui';
+import { getRaces } from '../lib/data';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const ids = (await getRaces()).map((r) => r.id);
+const strings = es
+  ? { ld: 'Distrito legislativo', county: 'Condado', cd: 'Distrito del Congreso de EE. UU.', see: 'Ver sus contiendas', notFound: 'No encontramos esa dirección en Idaho. Pruebe con calle, ciudad y código postal, o use la búsqueda oficial.', error: 'La búsqueda no está disponible ahora. Use la búsqueda oficial.', looking: 'Buscando…', senate: 'Senado estatal', houseA: 'Cámara, puesto A', houseB: 'Cámara, puesto B', usHouse: 'Cámara de EE. UU.', notYet: 'Aún no tenemos página para este distrito.' }
+  : { ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
+const base = href(lang, '/races/');
+---
+<form class="finder card" data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
+  <label for="addr"><strong>{es ? '¿En qué distrito vivo?' : 'Which district am I in?'}</strong></label>
+  <div class="row">
+    <input id="addr" name="address" autocomplete="street-address" placeholder={es ? 'Calle, ciudad, código postal' : 'Street, city, ZIP'} required minlength="5" />
+    <button class="btn" type="submit">{es ? 'Buscar' : 'Look up'}</button>
+  </div>
+  <p class="small muted">
+    {es
+      ? 'Su dirección va a la Oficina del Censo de EE. UU. para la búsqueda. No la guardamos. '
+      : 'Your address goes to the US Census Bureau for the lookup. We don’t store it. '}
+    <a href="https://legislature.idaho.gov/legislators/whosmylegislator/" rel="noopener" target="_blank">{es ? 'Búsqueda oficial' : 'Official lookup'}</a>
+  </p>
+  <div class="out" aria-live="polite"></div>
+</form>
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('form.finder')) {
+    const ids: string[] = JSON.parse(form.dataset.ids!);
+    const s = JSON.parse(form.dataset.strings!);
+    const base = form.dataset.base!;
+    const out = form.querySelector<HTMLDivElement>('.out')!;
+    const link = (id: string, label: string) => (ids.includes(id) ? `<li><a href="${base}${id}">${label}</a></li>` : '');
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const address = (new FormData(form).get('address') as string).trim();
+      out.textContent = s.looking;
+      try {
+        const r = await fetch(`/api/district?address=${encodeURIComponent(address)}`);
+        const d = await r.json();
+        if (!r.ok) { out.textContent = d.error === 'lookup_unavailable' ? s.error : s.notFound; return; }
+        const n = d.ld;
+        const links = [link(`us-house-${d.cd}`, `${s.usHouse} ${d.cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB)].join('');
+        out.innerHTML = `<p><strong>${s.ld}: ${n ?? '?'}</strong> · ${s.county}: ${d.county ?? '?'} · ${s.cd}: ${d.cd ?? '?'}</p>` +
+          (links ? `<p>${s.see}:</p><ul>${links}</ul>` : `<p class="small muted">${s.notYet}</p>`);
+      } catch {
+        out.textContent = s.error;
+      }
+    });
+  }
+</script>
+
+<style>
+  .finder { margin: 16px 0; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  input { flex: 1 1 220px; min-height: 46px; padding: 8px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
+  .out :global(p) { margin: 0.4rem 0; }
+</style>

@@ -69,8 +69,8 @@ img { max-width: 100%; }
 .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 0.88rem; }
 .lang a { padding: 6px 12px; text-decoration: none; color: var(--muted); min-height: 36px; display: flex; align-items: center; gap: 4px; }
 .lang a[aria-current] { background: var(--purple-soft); color: var(--purple-ink); font-weight: 700; }
-.main-nav { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
-.main-nav a { padding: 10px 12px; border-radius: 8px; text-decoration: none; color: var(--ink); white-space: nowrap; font-weight: 600; font-size: 0.97rem; }
+.main-nav { display: flex; flex-wrap: wrap; gap: 2px; padding-bottom: 6px; }
+.main-nav a { padding: 9px 10px; border-radius: 8px; text-decoration: none; color: var(--ink); white-space: nowrap; font-weight: 600; font-size: 0.97rem; }
 .main-nav a[aria-current] { background: var(--purple-soft); color: var(--purple-ink); }
 
 .deadline { background: var(--purple); color: #fff; font-size: 0.95rem; }
