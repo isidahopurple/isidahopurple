@@ -6,12 +6,18 @@
   "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "404-page", "run_worker_first": ["/api/*"] },
   "workers_dev": false,
   "routes": [{ "pattern": "isidahopurple.com", "custom_domain": true }],
+  // Pledge tally. Secrets (wrangler secret put): RESEND_API_KEY, TURNSTILE_SECRET, HMAC_SECRET.
+  // Until all three exist the pledge API answers "not_open" and the site shows "coming soon".
+  "d1_databases": [{ "binding": "DB", "database_name": "isidahopurple", "database_id": "5561ed9e-71eb-44ad-9f49-cfe6dca51495" }],
+  "triggers": { "crons": ["0 15 * * *"] }, // 9 a.m. Boise: send verification emails queued over yesterday's limit
   "env": {
     // Review build: npm run deploy:preview → preview.isidahopurple.com (noindex, includes /review)
     "preview": {
       "name": "isidahopurple-preview",
       "workers_dev": false,
-      "routes": [{ "pattern": "preview.isidahopurple.com", "custom_domain": true }]
+      "routes": [{ "pattern": "preview.isidahopurple.com", "custom_domain": true }],
+      "d1_databases": [{ "binding": "DB", "database_name": "isidahopurple-preview", "database_id": "26187aa4-ce03-4f84-a268-5ec9af53ba1f" }],
+      "triggers": { "crons": [] }
     }
   }
 }

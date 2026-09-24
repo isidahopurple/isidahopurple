@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Party from '../components/Party.astro';
+import Pledge from '../components/Pledge.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getRaces, sortPolls } from '../lib/data';
 
@@ -104,15 +105,7 @@ const REG_SOURCE = 'https://archive.voteidaho.gov/data/voter-registrations/20260
     <p><a class="btn" href={href(lang, '/vote')}>{es ? 'Empezar' : 'Start'}</a></p>
   </section>
 
-  <section>
-    <h2>{es ? 'Únase al experimento' : 'Join the experiment'}</h2>
-    <div class="card">
-      <p>{es
-        ? 'Pronto: un contador verificado de idahoanos que ponen a prueba si este estado es tan rojo como todos dicen. Sin premios, sin apuestas, sin listas de correo sin su permiso.'
-        : 'Coming soon: a verified count of Idahoans testing whether this state is as red as everyone says. No prizes, no bets, no mailing list unless you ask to be on one.'}</p>
-      <p class="small muted">{es ? 'Mientras tanto, lo más útil es asegurarse de que usted y tres amigos puedan votar.' : 'Meanwhile, the most useful thing you can do is make sure you and three friends can vote.'}</p>
-    </div>
-  </section>
+  <Pledge lang={lang} />
 </Base>
 <style>
   .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }

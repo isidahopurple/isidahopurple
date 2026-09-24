@@ -1,5 +1,6 @@
 // Worker in front of the static site. Only /api/* runs code; every other path is a static asset.
 // Privacy: nothing here logs or stores addresses. See /privacy.
+import { pledge, verify, tally, drainOutbox } from './pledge.js';
 
 const CENSUS = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress';
 const STATE_FIPS = '16'; // Idaho
@@ -46,10 +47,16 @@ async function district(url) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/api/district' && request.method === 'GET') return district(url);
+    if (url.pathname === '/api/pledge' && request.method === 'POST') return pledge(request, env);
+    if (url.pathname === '/api/verify' && request.method === 'GET') return verify(url, env);
+    if (url.pathname === '/api/tally' && request.method === 'GET') return tally(request, env, ctx);
     if (url.pathname.startsWith('/api/')) return json({ error: 'not_found' }, 404);
     return env.ASSETS.fetch(request);
+  },
+  async scheduled(_event, env, ctx) {
+    ctx.waitUntil(drainOutbox(env));
   },
 };

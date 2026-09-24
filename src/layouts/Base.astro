@@ -77,7 +77,7 @@ const isCurrent = (p: string) => path.replace(/\/$/, '').endsWith(p) || path.inc
       <div class="wrap">
         <p class="attribution">{ATTRIBUTION[lang]}</p>
         <p>
-          {t(lang, 'footer.source')} <a href={`mailto:${CONTACT_EMAIL}`}>{t(lang, 'footer.contact')}</a>.
+          {t(lang, 'footer.source')} <a href={`mailto:${CONTACT_EMAIL}`}>{t(lang, 'footer.contact')}</a>.{' '}
           {t(lang, 'footer.open')}
           {REPO_PUBLIC && editPath && <> <a href={`${REPO_URL}/blob/main/${editPath}`}>{t(lang, 'footer.edit')}</a>.</>}
         </p>

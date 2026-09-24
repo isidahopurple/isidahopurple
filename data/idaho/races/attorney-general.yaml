@@ -1,0 +1,64 @@
+office: "Attorney General"
+level: statewide
+order: 11
+depth: full
+controls: "The Attorney General is the state's lawyer: the office represents state agencies in court, advises them on the law, and issues legal opinions to legislators and statewide officers on request. The Attorney General also sits on the State Land Board."
+controls_source:
+  name: "Idaho Code 67-1401 (duties of the Attorney General)"
+  url: "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch14/sect67-1401/"
+candidates:
+  - name: "Raul R. Labrador"
+    party: R
+    incumbent: true
+    bio: "Attorney General since 2023; former U.S. Representative for Idaho's 1st District and a founding member of the House Freedom Caucus."
+    website: "https://raullabrador.com/"
+    quote:
+      text: "When I ran for Attorney General, I promised to aggressively defend Idaho's values. The legal battles over life, parental rights, and fairness in women's sports are far from over. Idahoans deserve an Attorney General who shares their conservative principles, stands firm, takes these fights to the highest courts, and never apologizes for defending our laws."
+      date: "2026-02-26"
+      context: "Statement announcing that he filed for re-election, as reported by KMVT."
+      source:
+        name: "KMVT: Idaho's attorney general announces his run for re-election"
+        url: "https://www.kmvt.com/2026/02/27/idahos-attorney-general-announces-his-run-re-election/"
+        date: "2026-02-26"
+      verified: true
+  - name: "Lori Hickman"
+    party: D
+    bio: "Boise attorney with about 20 years of practice; former board chair of Mormon Women for Ethical Government."
+    website: "https://www.lori4idaho.com/"
+    quote:
+      text: "The attorney general is the people's lawyer. This office must be grounded in ethics, sound legal analysis, and respect for the Constitution. Idaho deserves an attorney general who puts people and the legal process ahead of politics."
+      date: "2026-02-27"
+      context: "Statement announcing her campaign, in an Idaho Democratic Party release."
+      source:
+        name: "Idaho Democratic Party: Lori Hickman announces campaign for Idaho Attorney General"
+        url: "https://idahodems.org/lori-hickman-announces-campaign-for-idaho-attorney-general-promises-professional-people-first-leadership/"
+        date: "2026-02-27"
+      verified: true
+polls: []
+history:
+  - year: 2022
+    label: "2022 Idaho Attorney General"
+    result: "Labrador (R) 62.6, Arkoosh (D) 37.4"
+    margin: "R+25.2"
+    source:
+      name: "Idaho Secretary of State, 2022 General Election canvass (statewide, by county)"
+      url: "https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip"
+pick:
+  label: two-way
+  candidate: "Lori Hickman"
+  rule: "Rule 3: only one non-Republican on the ballot."
+  reasoning: "Hickman is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. The 25-point margin in 2022 was the closest statewide race that year, and the Democrat carried Ada County (Arkoosh 95,467 to Labrador 88,131). It is still a long shot statewide, with no public poll."
+  approved: false
+scenarios: []
+review_flags: []
+unverified: []
+sources:
+  - name: "Idaho Secretary of State candidate list, 2026 General (run.voteidaho.gov, marked final list)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "Idaho Constitution, Article IX, Section 7 (State Board of Land Commissioners)"
+    url: "https://legislature.idaho.gov/statutesrules/idconst/ArtIX/Sect7/"
+  - name: "Idaho Capital Sun via Boise State Public Radio: Idaho's Republican state officials are all running for re-election"
+    url: "https://www.boisestatepublicradio.org/politics-government/2026-03-02/idaho-election-republican-governor-secretary-state"
+    date: "2026-03-02"
+updated: "2026-09-24"

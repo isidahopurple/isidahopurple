@@ -1,0 +1,338 @@
+office: "US Senate"
+level: federal
+order: 1
+featured: true
+depth: full
+
+controls: >-
+  One of Idaho's two US senators, elected for a six-year term. The Senate passes
+  federal laws together with the House, votes to confirm or reject federal judges,
+  Supreme Court justices and cabinet members, and approves treaties by a two-thirds vote.
+controls_source:
+  name: "US Senate: Powers and Procedures"
+  url: "https://www.senate.gov/about/powers-procedures.htm"
+
+candidates:
+  - name: "Jim Risch"
+    party: R
+    incumbent: true
+    bio: >-
+      US senator since 2009 and chairman of the Senate Foreign Relations Committee;
+      former Idaho governor and lieutenant governor. Seeking a fourth term.
+    website: "https://senatorrisch.com/"
+    quote:
+      text: >-
+        It's a great time for America. I want to continue working with President Trump
+        to get government out of the way. We now have a president who is focused on
+        reducing government spending, returning power to the states, and cutting red
+        tape—issues I have devoted my career to accomplishing.
+      date: "2025-04-04"
+      context: "Risch campaign press release announcing his 2026 re-election campaign"
+      source:
+        name: "Jim Risch for U.S. Senate: Senator Risch Announces Re-election Campaign"
+        url: "https://senatorrisch.com/senator-risch-announces-re-election-campaign-trump-endorses-risch/"
+        date: "2025-04-04"
+      verified: true
+
+  - name: "Todd Achilles"
+    party: I
+    bio: >-
+      Army veteran (tank commander and armor officer) and former Democratic state
+      representative from Boise, running as an independent.
+    website: "https://www.achillesforidaho.com/"
+    quote:
+      text: >-
+        I am running as a candidate for the United States Senate because the two-party
+        system has failed America. ... I reject the left-right divide because the
+        challenge ahead of us is those at the top versus those at the bottom — those in
+        power against the people. I will fight for all Idahoans, not billionaires or
+        extremists.
+      date: "2026-09-24"
+      context: "Campaign website home page, his statement on why he is running (page is undated; date is when we read it)"
+      source:
+        name: "Achilles for Idaho (campaign website)"
+        url: "https://www.achillesforidaho.com/"
+      verified: true
+
+  - name: "Natalie Fleming"
+    party: I
+    bio: >-
+      Independent from the Treasure Valley with a technology and supply-chain
+      background. Listed on the ballot as "Natalie M Fleming". She also ran for this
+      seat in 2020 and got 3.0%.
+    website: "https://nataliefleming.info/"
+    quote:
+      text: >-
+        When the earth is well cared for — the earth God gave us — there is plenty for
+        all of us to prosper. That is what I believe. That is what I am running on.
+      date: "2026-09-24"
+      context: "Closing statement on the About page of her campaign website (page is undated; date is when we read it)"
+      source:
+        name: "Natalie Fleming for US Senate: About"
+        url: "https://nataliefleming.info/about-natalie-m-fleming/"
+      verified: true
+
+  - name: "Matt Loesby"
+    party: L
+    bio: >-
+      Software developer and Idaho Libertarian Party regional chair. He ran for the US
+      House (1st District) in 2024 and got 2.1%.
+    website: "https://www.loesby.us/"
+    quote:
+      text: >-
+        The US Government is doing all it can to destroy our liberty, our culture, our
+        wealth, and our future. Send me to Congress, so I can slow them down while we
+        rebuild Idaho.
+      date: "2026-09-24"
+      context: >-
+        Home page of his campaign website. The text was written for his 2024 US House
+        run, and the site is still the one he lists for 2026. Date is when we read it.
+      source:
+        name: "Matt Loesby for Idaho (campaign website)"
+        url: "https://www.loesby.us/"
+      verified: true
+
+polls:
+  - pollster: "Advanced Targeting Research (3-candidate ballot)"
+    start: "2026-09-13"
+    end: "2026-09-16"
+    sample: "700 RV"
+    margin_of_error: "±3.7"
+    sponsor: >-
+      Not disclosed. The memo says only that the survey "was not commissioned by any
+      candidate in this race."
+    sponsor_type: unknown
+    results:
+      "Todd Achilles": 45.5
+      "Jim Risch": 39.4
+      "Matt Loesby": 4.5
+    undecided: 10.6
+    source:
+      name: "Advanced Targeting Research: Idaho Statewide General Election Survey (public release memo)"
+      url: "https://www.advancedtargetingresearch.com/_files/ugd/03a624_0fca9a6dd7f846f7bc96f97429561064.pdf"
+      date: "2026-09-17"
+
+  - pollster: "Advanced Targeting Research (2-candidate ballot)"
+    start: "2026-09-13"
+    end: "2026-09-16"
+    sample: "700 RV"
+    margin_of_error: "±3.7"
+    sponsor: >-
+      Not disclosed. The memo says only that the survey "was not commissioned by any
+      candidate in this race."
+    sponsor_type: unknown
+    results:
+      "Todd Achilles": 50.1
+      "Jim Risch": 38.5
+    undecided: 11.4
+    source:
+      name: "Advanced Targeting Research: Idaho Statewide General Election Survey (public release memo)"
+      url: "https://www.advancedtargetingresearch.com/_files/ugd/03a624_0fca9a6dd7f846f7bc96f97429561064.pdf"
+      date: "2026-09-17"
+
+  - pollster: "Peak Insights"
+    start: "2026-08-11"
+    end: "2026-08-13"
+    sample: "500 LV"
+    margin_of_error: "±4.0"
+    sponsor: "Risch campaign"
+    sponsor_type: campaign
+    results:
+      "Jim Risch": 52
+      "Todd Achilles": 18
+      "Natalie Fleming": 9
+      "Matt Loesby": 2
+    undecided: 17
+    source:
+      name: "Spokesman-Review / Idaho Statesman: In race for Risch's seat, polls show vastly different outcomes"
+      url: "https://www.spokesman.com/stories/2026/aug/24/in-race-for-rischs-seat-polls-show-vastly-differen/"
+      date: "2026-08-24"
+
+  - pollster: "The Bullfinch Group (3-candidate ballot)"
+    start: "2026-08-04"
+    end: "2026-08-07"
+    sample: "608 LV"
+    margin_of_error: "±3.9"
+    sponsor: "Achilles campaign"
+    sponsor_type: campaign
+    results:
+      "Jim Risch": 34
+      "Todd Achilles": 30
+      "Matt Loesby": 4
+    undecided: 32
+    source:
+      name: "The Bullfinch Group: Independent Todd Achilles Within 4 Points Among Likely Voters"
+      url: "https://www.thebullfinchgroup.com/post/for-immediate-release-independent-todd-achilles-within-4-points-among-likely-voters"
+      date: "2026-08-13"
+
+  - pollster: "The Bullfinch Group (2-candidate ballot)"
+    start: "2026-08-04"
+    end: "2026-08-07"
+    sample: "608 LV"
+    margin_of_error: "±3.9"
+    sponsor: "Achilles campaign"
+    sponsor_type: campaign
+    results:
+      "Todd Achilles": 38
+      "Jim Risch": 33
+    undecided: 29
+    source:
+      name: "The Bullfinch Group: Independent Todd Achilles Leads Incumbent Jim Risch in Two-Way Head-to-Head Matchup"
+      url: "https://www.thebullfinchgroup.com/post/for-immediate-release-independent-todd-achilles-leads-incumbent-jim-risch-in-two-way-head-to-head-m"
+      date: "2026-08-19"
+
+  - pollster: "Change Research"
+    start: "2026-07-28"
+    end: "2026-07-30"
+    sample: "1,213 LV"
+    margin_of_error: "±3.0"
+    sponsor: "Stegner for Idaho (John Stegner's campaign for governor)"
+    sponsor_type: campaign
+    results:
+      "Jim Risch": 45
+      "Todd Achilles": 21
+      "Natalie Fleming": 8
+      "Matt Loesby": 2
+    undecided: 22
+    source:
+      name: "Stegner for Idaho: July 2026 Toplines (Change Research)"
+      url: "https://docs.google.com/document/d/1u6Y5rUbSLEoS0nBgXqKarEzHEQCOzxPjj_Wm27eHKE8/"
+
+  - pollster: "The Bullfinch Group"
+    start: "2026-05-29"
+    end: "2026-06-01"
+    sample: "774 RV"
+    margin_of_error: "±3.5"
+    sponsor: "Achilles campaign"
+    sponsor_type: campaign
+    results:
+      "Jim Risch": 40
+      "Todd Achilles": 36
+    undecided: 24
+    source:
+      name: "The Bullfinch Group: Independent Todd Achilles Surges on Informed Ballot"
+      url: "https://www.thebullfinchgroup.com/post/for-immediate-release-independent-todd-achilles-surges-on-informed-ballot"
+      date: "2026-06-02"
+
+  - pollster: "Public Policy Polling"
+    start: "2026-03-16"
+    end: "2026-03-17"
+    sample: "639 RV"
+    margin_of_error: "±3.9"
+    sponsor: >-
+      Achilles campaign, as reported by Wikipedia. The PPP memo itself does not name
+      a client, and the Achilles campaign publicized the results.
+    sponsor_type: campaign
+    results:
+      "Jim Risch": 48
+      "Todd Achilles": 34
+    undecided: 18
+    source:
+      name: "Public Policy Polling memo: Senator Risch at Risk in a One-on-One Matchup With Independent Todd Achilles"
+      url: "https://data.ddhq.io/polls/2026/03/21/Public-Policy-Polling-Idaho"
+      date: "2026-03-20"
+
+history:
+  - year: 2020
+    label: "2020 US Senate (Idaho)"
+    result: "Risch (R) 62.6, Paulette Jordan (D) 33.3, Natalie Fleming (I) 3.0, Ray Writz (C) 1.2"
+    margin: "R+29.4"
+    source:
+      name: "Wikipedia: 2020 United States Senate election in Idaho (results cite the Idaho Secretary of State's official statewide results)"
+      url: "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Idaho"
+
+pick:
+  label: clear
+  candidate: "Todd Achilles"
+  rule: >-
+    Rule 1 (independent poll), with a caveat. The only poll not paid for by a campaign
+    is Advanced Targeting Research (Sept 13–16). Its memo says no candidate commissioned
+    it but does not name who did. Achilles is the top non-Republican in that poll and in
+    every other 2026 poll, including Risch's own.
+  reasoning: >-
+    With the Democratic nominee off the ballot, Todd Achilles is the one non-Republican
+    with a real base of support. The polls disagree sharply on the gap: Risch's own poll
+    has him up 34 points, while the Advanced Targeting Research poll has Achilles up 11
+    head-to-head. A Boise State political scientist says the gap is most likely down to
+    how each poll decides who is a "likely voter." What the polls agree on is that no
+    other challenger is close to Achilles, so if non-Republican voters come together
+    behind him, this can become a real race. We are not predicting that he wins.
+  approved: false
+
+scenarios:
+  - voters_of: "Natalie Fleming"
+    text: >-
+      Natalie Fleming is running on values many voters share. But she polled 8 to 9% in
+      the two polls that included her, and Achilles polled 18 to 50% across all of them.
+      If your main goal is a different senator than Jim Risch, a vote for Achilles is the
+      one most likely to count toward that. If you vote for Fleming, you are voting for
+      what she stands for, and that is a legitimate choice.
+  - voters_of: "Matt Loesby"
+    text: >-
+      Matt Loesby polled 2 to 5%. If you are a libertarian voting to send a message, your
+      vote does that. If you would mainly like to see Risch replaced, Achilles is the
+      challenger with enough support to make that possible. He is also running as an
+      independent, outside both parties.
+  - voters_of: "David Roth (withdrawn)"
+    text: >-
+      David Roth won the Democratic primary, then withdrew. His name will not be on the
+      November ballot, so there is no Democrat to vote for in this race. The choices are
+      Risch, Achilles, Fleming and Loesby.
+  - voters_of: "Undecided Republicans"
+    text: >-
+      If you have voted for Jim Risch before and are weighing your choice this time, read
+      both men in their own words above. Achilles is running as an independent, not as a
+      Democrat. Whichever way you go, the choice is yours to make, and we respect it.
+
+review_flags:
+  - >-
+    Poll sponsor: the only non-campaign poll (Advanced Targeting Research, Sept 13–16)
+    does not name its sponsor. The memo says it "was not commissioned by any candidate
+    in this race", which does not rule out a party or PAC. It is a little-known firm, and
+    the poll left Natalie Fleming off the ballot question. The rule-1 pick of Achilles
+    holds either way, because every poll has him as the top non-Republican.
+  - >-
+    Label: we used "clear" because every poll agrees on who the top non-Republican is.
+    The polls conflict wildly on the Risch–Achilles margin (Risch +34 to Achilles +11).
+    If you read rule 4 as "polls conflict means not-sure", change the label.
+  - >-
+    Power bills and data centers: no Risch statement on Idaho Power rates or data centers
+    was found. His issues page backs nuclear energy and hydropower, which is not a match
+    with the pick's position. As a legislator in 2025, Achilles questioned whether the
+    utilities commission "lacks the tools" to measure the impact of data centers on rates
+    (sourced below). No review flag was triggered on abortion, climate or power bills.
+
+unverified:
+  - "Who paid for the Advanced Targeting Research poll. The memo says no candidate commissioned it, and that is all it says."
+  - "That the March Public Policy Polling survey was paid for by the Achilles campaign. Wikipedia says so, but the PPP memo does not name a client."
+  - "The Fleming (9) and Loesby (2) numbers in Risch's August Peak Insights poll come from Wikipedia, which cites a reporter's post on X. The news story we cite confirms only Risch 52, Achilles 18."
+  - "The Bullfinch sample size and margin of error (608 LV, ±3.9 for August; 774 RV, ±3.5 for May–June) come from Wikipedia. The Bullfinch pages we could read did not show them."
+  - "Not listed in the poll table: two earlier polls that included David Roth (Peak Insights, June 6–7, for the Risch campaign, and a Change Research ballot from July 28–30). Roth is no longer on the ballot."
+  - "The official SoS candidate list shows Roth's withdrawal dated Sept 1, 2026. News reports say he filed the form Aug 28, before the Sept 4 deadline. Either way his name is off the ballot."
+
+sources:
+  - name: "Idaho Secretary of State candidate search, 2026 General (final list; Roth shown as Withdrawn)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "Idaho Ed News / Idaho Capital Sun: Idaho U.S. Senate candidate David Roth removes name from general election ballot"
+    url: "https://www.idahoednews.org/news/idaho-us-senate-candidate-david-roth-removes-name-from-general-election-ballot/"
+    date: "2026-09-03"
+  - name: "Idaho Capital Sun: Idaho Democrat David Roth ends campaign for US Senate seat held by Risch"
+    url: "https://idahocapitalsun.com/2026/07/28/idaho-democrat-david-roth-ends-campaign-for-us-senate-seat-held-by-risch/"
+    date: "2026-07-28"
+  - name: "Political Wire: Risch Trails in Idaho Senate Race"
+    url: "https://politicalwire.com/2026/09/18/risch-trails-in-idaho-senate-race/"
+    date: "2026-09-18"
+  - name: "Advanced Targeting Research: Reports page"
+    url: "https://www.advancedtargetingresearch.com/reports"
+  - name: "Senator Risch: Peak Insights June poll release (Risch campaign)"
+    url: "https://senatorrisch.com/polling/"
+  - name: "Spokesman-Review: Meta, Micron projects will guzzle Idaho electricity, lawmakers say (Achilles on data centers, as a state representative)"
+    url: "https://www.spokesman.com/stories/2025/mar/26/meta-micron-projects-will-guzzle-idaho-electricity/"
+    date: "2025-03-26"
+  - name: "Jim Risch for U.S. Senate: Issues (energy and hydropower positions)"
+    url: "https://senatorrisch.com/issues/"
+  - name: "Wikipedia: 2026 United States Senate election in Idaho (poll table and sponsor notes)"
+    url: "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho"
+
+updated: "2026-09-24"

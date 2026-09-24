@@ -1,0 +1,299 @@
+office: "Governor"
+level: statewide
+order: 2
+featured: true
+depth: full
+
+controls: >-
+  Idaho's chief executive, elected for a four-year term. The governor signs or vetoes
+  bills, can veto individual items in budget bills, and appoints many state officials,
+  including the three Public Utilities Commissioners who set Idaho Power's rates (with
+  state Senate approval).
+controls_source:
+  name: "Idaho Constitution, Article IV (Executive Department)"
+  url: "https://legislature.idaho.gov/statutesrules/idconst/ArtIV/"
+
+candidates:
+  - name: "Brad Little"
+    party: R
+    incumbent: true
+    bio: >-
+      Governor since 2019 and a former lieutenant governor. Seeking
+      a third term.
+    website: "https://littleforidaho.com/"
+    quote:
+      text: >-
+        Teresa and I are honored to serve the people of Idaho. Together, we've made Idaho
+        the most prosperous state in the nation while fiercely defending our enduring
+        core values — faith, family, and freedom.
+      date: "2026-02-24"
+      context: "Statement announcing his campaign for a third term, as reported by KIFI Local News 8"
+      source:
+        name: "KIFI Local News 8: Governor Brad Little to run for 3rd term"
+        url: "https://localnews8.com/news/2026/02/24/governor-brad-little-to-run-for-3rd-term/"
+        date: "2026-02-24"
+      verified: true
+
+  - name: "Terri Pickens"
+    party: D
+    bio: >-
+      Boise attorney and founder of Pickens Law. Grew up in Pocatello. She ran for
+      lieutenant governor in 2022.
+    website: "https://terriforidaho.com/"
+    quote:
+      text: >-
+        I grew up in Pocatello, where hard work and strong communities meant everything.
+        We were taught to leave things better than we found them—and that's why I'm
+        running for governor.
+      date: "2026-09-24"
+      context: "Campaign website home page (undated; date is when we read it)"
+      source:
+        name: "Terri Pickens for Governor (campaign website)"
+        url: "https://terriforidaho.com/"
+      verified: true
+
+  - name: "John Stegner"
+    party: I
+    bio: >-
+      Former Idaho Supreme Court justice (2018–2023) who served about 25 years as a
+      judge. Running as an independent. Listed on the ballot as "John R. Stegner".
+    website: "https://www.stegnerforidaho.com/"
+    quote:
+      text: >-
+        Idaho deserves leaders who listen, solve problems, and do what's right when it
+        matters most. ... I'm a lifelong Idahoan, former Idaho Supreme Court Justice, and
+        principled leader running for Governor because I believe Idaho can do better.
+      date: "2026-09-24"
+      context: "Campaign website home page (undated; date is when we read it)"
+      source:
+        name: "John Stegner for Governor (campaign website)"
+        url: "https://www.stegnerforidaho.com/"
+      verified: true
+
+  - name: "Paul Sand"
+    party: L
+    bio: >-
+      Retired software engineer and former White Bird city council member. He was the
+      2022 Libertarian nominee for governor and got 1.1%.
+    website: "https://paulsand.org/"
+    quote:
+      text: >-
+        Voting for me should be considered as a vote against the entire corrupt political
+        establishment in Idaho. My campaign is not about me, it is about you.
+      date: "2026-09-03"
+      context: "His campaign website, in the platform section below a Sept 3, 2026 update"
+      source:
+        name: "Paul Sand (campaign website)"
+        url: "https://paulsand.org/"
+      verified: true
+
+  - name: "Pro-Life"
+    party: C
+    bio: >-
+      Organic farmer from Letha, born Marvin Richardson, who legally changed his name to
+      Pro-Life. He is a frequent Constitution Party candidate and got 5.1% for lieutenant
+      governor in 2022.
+    website: "http://prolife-idaho.com/"
+    quote:
+      text: "Don't vote for the lesser of evils. You always have a choice. Vote by principle."
+      date: "2026-09-24"
+      context: "Headline of the campaign website he shares with his wife (undated; date is when we read it)"
+      source:
+        name: "ProLife Idaho (campaign website)"
+        url: "http://prolife-idaho.com/"
+      verified: true
+
+  - name: "Jacob Burnett"
+    party: I
+    bio: >-
+      Official write-in candidate. His name is not printed on the ballot. To vote for
+      him you write his name in.
+
+polls:
+  - pollster: "Advanced Targeting Research"
+    start: "2026-09-13"
+    end: "2026-09-16"
+    sample: "700 RV"
+    margin_of_error: "±3.7"
+    sponsor: >-
+      Not disclosed. The memo says only that the survey "was not commissioned by any
+      candidate in this race."
+    sponsor_type: unknown
+    results:
+      "Brad Little": 37.3
+      "Terri Pickens": 27.2
+      "John Stegner": 12.8
+      "Paul Sand": 2.8
+    undecided: 19.9
+    source:
+      name: "Advanced Targeting Research: Idaho Statewide General Election Survey (public release memo)"
+      url: "https://www.advancedtargetingresearch.com/_files/ugd/03a624_0fca9a6dd7f846f7bc96f97429561064.pdf"
+      date: "2026-09-17"
+
+  - pollster: "Change Research (3-way ballot)"
+    start: "2026-07-28"
+    end: "2026-07-30"
+    sample: "1,213 LV"
+    margin_of_error: "±3.0"
+    sponsor: "Stegner for Idaho (John Stegner's campaign)"
+    sponsor_type: campaign
+    results:
+      "Brad Little": 48
+      "Terri Pickens": 27
+      "John Stegner": 11
+    undecided: 13
+    source:
+      name: "Stegner for Idaho: July 2026 Toplines (Change Research)"
+      url: "https://docs.google.com/document/d/1u6Y5rUbSLEoS0nBgXqKarEzHEQCOzxPjj_Wm27eHKE8/"
+
+  - pollster: "Change Research (test ballot: Little vs. Pickens only)"
+    start: "2026-07-28"
+    end: "2026-07-30"
+    sample: "1,213 LV"
+    margin_of_error: "±3.0"
+    sponsor: "Stegner for Idaho (John Stegner's campaign)"
+    sponsor_type: campaign
+    results:
+      "Brad Little": 54
+      "Terri Pickens": 33
+    undecided: 10
+    source:
+      name: "Stegner for Idaho: July 2026 Toplines (Change Research)"
+      url: "https://docs.google.com/document/d/1u6Y5rUbSLEoS0nBgXqKarEzHEQCOzxPjj_Wm27eHKE8/"
+
+  - pollster: "Change Research (test ballot: Little vs. Stegner only)"
+    start: "2026-07-28"
+    end: "2026-07-30"
+    sample: "1,213 LV"
+    margin_of_error: "±3.0"
+    sponsor: "Stegner for Idaho (John Stegner's campaign)"
+    sponsor_type: campaign
+    results:
+      "Brad Little": 47
+      "John Stegner": 34
+    undecided: 16
+    source:
+      name: "Stegner for Idaho: July 2026 Toplines (Change Research)"
+      url: "https://docs.google.com/document/d/1u6Y5rUbSLEoS0nBgXqKarEzHEQCOzxPjj_Wm27eHKE8/"
+
+history:
+  - year: 2022
+    label: "2022 Governor (Idaho)"
+    result: "Little (R) 60.5, Stephen Heidt (D) 20.3, Ammon Bundy (I) 17.2, Paul Sand (L) 1.1, Chantyrose Davison (C) 0.9"
+    margin: "R+40.2 over the runner-up; R+21.0 over all other candidates combined"
+    source:
+      name: "Wikipedia: 2022 Idaho gubernatorial election (results cite the State of Idaho official election results)"
+      url: "https://en.wikipedia.org/wiki/2022_Idaho_gubernatorial_election"
+
+pick:
+  label: clear
+  candidate: "Terri Pickens"
+  rule: >-
+    Rule 1 (poll), confirmed by rule 2. Pickens is the top non-Republican in both public
+    polls with all the main candidates, including the only one not paid for by a
+    campaign. In 2022 the Democrat (20.3) also finished ahead of the independent (17.2).
+    Owner's decision: Pickens is the pick, with a "Stegner voters" box.
+  reasoning: >-
+    In the Advanced Targeting Research poll, Little is at 37 with 20% undecided, so a
+    majority is not locked in. Pickens (27) and Stegner (13) together come to 40. Pickens
+    leads Stegner by 14 to 16 points in both three-way polls, so she is the challenger
+    with the larger base. If voters who want a new governor come together, this can
+    become a real race. The polls conflict, though: Stegner's own July poll has Little at
+    48 and far ahead, and the sponsor of the September poll is not disclosed.
+  approved: false
+
+scenarios:
+  - voters_of: "John Stegner"
+    text: >-
+      John Stegner spent about 25 years as a judge, including on the Idaho Supreme Court,
+      and he is running a serious campaign. Plenty of Republicans and independents like
+      him, and that is a good reason to take him seriously. Here is what your vote does.
+      Idaho has no runoff: the Idaho Constitution says whoever gets the most votes wins,
+      even with well under half. In the latest poll, Little has 37, Pickens 27 and
+      Stegner 13. Together Pickens and Stegner are ahead of Little, but split two ways,
+      neither one is. When the vote for change is divided, it helps whoever is already
+      in front, and here that is Little. Pickens has more support in both three-way polls,
+      including Stegner's own (27 to 11). If you are open to either challenger, a vote
+      for Pickens is the one most likely to add up to a win. If you are a Republican who
+      would never vote for a Democrat, your vote for Stegner is still a vote for a change
+      in leadership, and you should cast it.
+  - voters_of: "Paul Sand"
+    text: >-
+      Paul Sand says on his own website that beating Little is "very unlikely" and that a
+      vote for him is a protest against the political establishment. If a protest vote is
+      what you want, his name is on the ballot. If you would mainly like a different
+      governor, Pickens is the challenger with the most support.
+  - voters_of: "Pro-Life"
+    text: >-
+      Pro-Life asks voters to "vote by principle", and his website says a vote for him
+      won't change the final outcome. If you vote for him on principle, that is your
+      right. His positions are far from Pickens's, and we are not asking you to switch.
+  - voters_of: "Jacob Burnett (write-in)"
+    text: >-
+      Burnett is an official write-in candidate, so his name is not printed on the
+      ballot. A write-in vote counts only for a registered write-in candidate like him,
+      and you have to write his name in yourself. If you would mainly like a different
+      governor, Pickens is the challenger with the most support in the polls.
+  - voters_of: "Undecided Republicans"
+    text: >-
+      If you have supported Brad Little before and are unsure this time, read each
+      candidate in their own words above. Stegner is a former Idaho Supreme Court justice
+      running as an independent, and Pickens is the Democratic nominee. Whoever you
+      choose, it is your call, and we respect it.
+
+review_flags:
+  - >-
+    Power bills and data centers (a Republican matches the pick's side): on July 24,
+    2026, Gov. Little signed on to the White House "Ratepayer Protection Pledge". He said
+    "we must ensure existing customers are not left paying the bill for new development"
+    and that communities "should have a meaningful voice" when large data centers are
+    proposed. That is close to Stegner's platform: data centers should prove resources
+    are available, and communities should decide. We found no Pickens statement on
+    Idaho Power rates or data centers. Please review before the page presents power
+    bills as a reason to switch.
+  - >-
+    Poll sponsor: the September Advanced Targeting Research poll does not name a
+    sponsor. It says only that no candidate commissioned it. Wikipedia's governor page
+    lists the sponsor as "Self", and a search-engine summary claimed it was the Stegner
+    campaign; neither claim is supported by the memo. Stegner's campaign paid for the July
+    Change Research poll. The pick is Pickens in both polls either way.
+  - >-
+    Abortion: Stegner's website says he supports "Prop 1 should it be passed". Pickens
+    backs reproductive rights. Little is not a match on abortion, so no flag is needed
+    for him on that issue.
+
+unverified:
+  - "Who paid for the Advanced Targeting Research poll."
+  - "The exact July 28–30 dates of the Change Research poll come from Wikipedia. The toplines document gives the sample (1,213 likely voters) and margin of error (±3.0) but no dates."
+  - "Pickens has said she expects Stegner to pull Republican voters away from Little (Idaho Capital Sun, Aug 2026). We could not open the full article, so her exact words are not quoted here."
+  - "Idaho Power is reported to be among Little's campaign donors (Spokesman-Review, May 1, 2026, from a search summary). We have not checked this against the campaign finance records."
+  - "Pickens's position on data centers and Idaho Power rates. We found none on her website or in news searches."
+
+sources:
+  - name: "Idaho Secretary of State candidate search, 2026 General (final list; Burnett listed as an approved write-in)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "Idaho Constitution, Art. IV, Sec. 2: the person with the highest number of votes is elected"
+    url: "https://legislature.idaho.gov/statutesrules/idconst/ArtIV/Sect2/"
+  - name: "Idaho Code 61-201: governor appoints the three Public Utilities Commissioners, with Senate approval"
+    url: "https://legislature.idaho.gov/statutesrules/idstat/Title61/T61CH2/SECT61-201/"
+  - name: "Office of the Governor: Gov. Little joins President Trump at White House to advance Ratepayer Protection Pledge"
+    url: "https://gov.idaho.gov/pressrelease/gov-little-joins-president-trump-at-white-house-to-advance-ratepayer-protection-pledge/"
+    date: "2026-07-24"
+  - name: "Stegner for Idaho: Priorities (data centers, Prop 1, affordability)"
+    url: "https://www.stegnerforidaho.com/priorities"
+  - name: "Terri Pickens for Governor: Issues"
+    url: "https://terriforidaho.com/issues"
+  - name: "Idaho Capital Sun: Idaho governor's race: Pickens, Stegner say they are in it to win it"
+    url: "https://idahocapitalsun.com/2026/08/04/idaho-governors-race-pickens-stegner-say-they-are-in-it-to-win-it/"
+    date: "2026-08-04"
+  - name: "Idaho Capital Sun: Idaho governor's race: Pickens, Stegner support abortion rights ballot initiative"
+    url: "https://idahocapitalsun.com/2026/07/18/idaho-governors-race-pickens-stegner-support-abortion-rights-ballot-initiative/"
+    date: "2026-07-18"
+  - name: "Spokesman-Review: 17 people are running for Idaho governor. Who's got donors on their side?"
+    url: "https://www.spokesman.com/stories/2026/may/01/17-people-are-running-for-idaho-governor-whos-got-/"
+    date: "2026-05-01"
+  - name: "Wikipedia: 2026 Idaho gubernatorial election"
+    url: "https://en.wikipedia.org/wiki/2026_Idaho_gubernatorial_election"
+
+updated: "2026-09-24"
