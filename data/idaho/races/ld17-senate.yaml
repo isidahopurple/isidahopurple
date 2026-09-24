@@ -1,12 +1,14 @@
-office: State Senate, District 17
+office:
+  en: State Senate, District 17
+  es: Senado estatal, Distrito 17
 level: legislative
 district: LD17
 seat: Senate
 order: 151
 depth: short
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -29,8 +31,9 @@ pick:
   label: two-way
   candidate: Carrie Semmelroth
   rule: '3'
-  reasoning: 'Carrie Semmelroth is the only non-Republican on the ballot, so this is a two-way race and
-    turnout is what matters. This is a hold: a Democrat holds this seat now. This is a 2024 rematch.'
+  reasoning:
+    en: 'Carrie Semmelroth is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: a Democrat holds this seat now. This is a 2024 rematch.'
+    es: 'Carrie Semmelroth es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: un demócrata ocupa este escaño ahora. Es una revancha de 2024.'
   approved: false
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'

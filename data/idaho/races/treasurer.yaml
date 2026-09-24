@@ -1,8 +1,12 @@
-office: "State Treasurer"
+office:
+  en: "State Treasurer"
+  es: Tesorero Estatal
 level: statewide
 order: 13
 depth: full
-controls: "The Treasurer is the state's banker: the office receives and invests state money, issues short-term tax anticipation notes, and runs unclaimed property, the IDeal 529 college savings plan, the Idaho Bond Bank and the school bond guaranty program. It does not set tax rates or write the budget."
+controls:
+  en: "The Treasurer is the state's banker: the office receives and invests state money, issues short-term tax anticipation notes, and runs unclaimed property, the IDeal 529 college savings plan, the Idaho Bond Bank and the school bond guaranty program. It does not set tax rates or write the budget."
+  es: 'El tesorero es el banquero del estado: la oficina recibe e invierte el dinero del estado, emite pagarés de corto plazo en anticipación de impuestos (tax anticipation notes) y maneja la propiedad no reclamada, el plan de ahorro universitario IDeal 529, el Idaho Bond Bank y el programa de garantía de bonos escolares. No fija las tasas de impuestos ni escribe el presupuesto.'
 controls_source:
   name: "Idaho State Treasurer: About Us"
   url: "https://sto.idaho.gov/aboutus"
@@ -10,9 +14,12 @@ candidates:
   - name: "Julie A. Ellsworth"
     party: R
     incumbent: true
-    bio: "State Treasurer since 2019; served 12 years in the Idaho House, including as Republican Caucus Chair; former civil mediator, business consultant and public school teacher."
+    bio:
+      en: "State Treasurer since 2019; served 12 years in the Idaho House, including as Republican Caucus Chair; former civil mediator, business consultant and public school teacher."
+      es: Tesorera estatal desde 2019; estuvo 12 años en la Cámara de Representantes de Idaho, incluso como presidenta del Caucus Republicano; fue mediadora civil, consultora de negocios y maestra de escuela pública.
     quote:
       text: "This reaffirmation highlights the strength of Idaho's economy and the sound financial management that protects our taxpayers. By keeping Idaho's top-tier rating, we ensure continued confidence in our state's fiscal stability and investment quality."
+      translation_es: Esta reafirmación muestra la fortaleza de la economía de Idaho y el buen manejo financiero que protege a nuestros contribuyentes. Al mantener la calificación más alta de Idaho, aseguramos que siga habiendo confianza en la estabilidad fiscal de nuestro estado y en la calidad de sus inversiones.
       date: "2025-10-09"
       context: "Official Treasurer's Office release on Moody's affirming Idaho's Aaa credit rating."
       source:
@@ -22,7 +29,9 @@ candidates:
       verified: true
   - name: "Kevin A Jones"
     party: D
-    bio: "Boise resident running as the Democratic nominee."
+    bio:
+      en: "Boise resident running as the Democratic nominee."
+      es: Vive en Boise y es el candidato del Partido Demócrata.
 polls: []
 history:
   - year: 2022
@@ -36,7 +45,9 @@ pick:
   label: two-way
   candidate: "Kevin A Jones"
   rule: "Rule 3: only one non-Republican on the ballot."
-  reasoning: "Jones is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Be realistic: the Democrat lost this office by about 42 points in 2022, and no public poll suggests that has changed."
+  reasoning:
+    en: "Jones is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Be realistic: the Democrat lost this office by about 42 points in 2022, and no public poll suggests that has changed."
+    es: 'Jones es el único candidato no republicano en la boleta, así que es una contienda entre dos y lo que importa es la participación. Sea realista: el demócrata perdió este cargo por unos 42 puntos en 2022, y ninguna encuesta pública indica que eso haya cambiado.'
   approved: false
 scenarios: []
 review_flags: []

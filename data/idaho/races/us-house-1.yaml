@@ -1,0 +1,147 @@
+office:
+  en: "U.S. House, District 1"
+  es: Cámara de Representantes de EE. UU., Distrito 1
+level: federal
+district: "ID-1"
+order: 3
+depth: full
+controls:
+  en: "One of Idaho's two seats in the U.S. House, which votes on federal laws, taxes and spending; the term is two years. In Ada County, District 1 includes most of Meridian and Eagle, Kuna, and a small part of southwest Boise near Lake Hazel Road. Nearly all of Boise is in District 2."
+  es: Uno de los dos escaños de Idaho en la Cámara de Representantes de EE. UU., que vota sobre las leyes federales, los impuestos y el gasto; el periodo es de dos años. En el condado de Ada, el Distrito 1 incluye la mayor parte de Meridian y Eagle, Kuna y una pequeña parte del suroeste de Boise cerca de Lake Hazel Road. Casi todo Boise está en el Distrito 2.
+controls_source:
+  name: "Idaho Press: Commission votes to adopt new legislative, congressional district maps (Ada County split under plan C-3)"
+  url: "https://www.idahopress.com/news/local/commission-votes-to-adopt-new-legislative-congressional-district-maps-for-state/article_6f6fe0c6-e2b8-5d78-97ff-a5e684eacc2f.html"
+  date: "2021-11-05"
+candidates:
+  - name: "Russ Fulcher"
+    party: R
+    incumbent: true
+    bio:
+      en: "U.S. Representative since 2019; grew up on a Meridian dairy farm; former high-tech executive and 10-year Idaho state senator."
+      es: Representante de EE. UU. desde 2019; creció en una granja lechera de Meridian; fue ejecutivo de alta tecnología y senador estatal de Idaho por 10 años.
+    website: "https://russfulcher.com/"
+    quote:
+      text: "Government exists to serve the people, not the other way around."
+      translation_es: El gobierno existe para servir al pueblo, no al revés.
+      date: "2026-09-24"
+      context: "Featured statement on his campaign homepage (the page is undated; the date is when it was read)."
+      source:
+        name: "Russ Fulcher for Idaho campaign website"
+        url: "https://russfulcher.com/"
+      verified: true
+  - name: "Kaylee Peterson"
+    party: D
+    bio:
+      en: "Sixth-generation Idahoan and grassroots organizer from the north Eagle foothills; the Democratic nominee for this seat in 2024."
+      es: Es de Idaho desde hace seis generaciones y organizadora comunitaria de las colinas del norte de Eagle; fue la candidata demócrata a este escaño en 2024.
+    website: "https://kayleeforcongress.com/"
+    quote:
+      text: "I’m not running to represent the interests of corporate lobbyists or out-of-state billionaires. I’m running to represent you."
+      translation_es: No me postulo para representar los intereses de los cabilderos de las corporaciones ni de los multimillonarios de otros estados. Me postulo para representarlo a usted.
+      date: "2026-09-24"
+      context: "About page of her campaign website (the page is undated; the date is when it was read)."
+      source:
+        name: "Kaylee Peterson for Congress: About"
+        url: "https://kayleeforcongress.com/about/"
+      verified: true
+  - name: "Sarah Zabel"
+    party: I
+    bio:
+      en: "Retired Air Force major general (31 years of service) who lives in Bayview; a Republican for three decades before leaving the party."
+      es: Mayor general retirada de la Fuerza Aérea (31 años de servicio) que vive en Bayview; fue republicana por tres décadas antes de dejar el partido.
+    website: "https://www.zabelforcongress.com/"
+    quote:
+      text: "Idaho is bearing the costs of a Congress that works for party leaders, not for us. I'm running to change that."
+      translation_es: Idaho está pagando el precio de un Congreso que trabaja para los líderes de los partidos, no para nosotros. Me postulo para cambiar eso.
+      date: "2026-09-24"
+      context: "Headline statement on her campaign homepage (the page is undated; the date is when it was read)."
+      source:
+        name: "Sarah Zabel for Congress campaign website"
+        url: "https://www.zabelforcongress.com/"
+      verified: true
+  - name: "Brendan J. Gomez"
+    party: C
+    bio:
+      en: "Constitution Party nominee. KMVT reported on Sept. 18, 2026 that he pleaded guilty in Ada County to two counts of possessing child sexually exploitative material, with sentencing set for Nov. 16. His name remains on the ballot."
+      es: Candidato del Partido de la Constitución. KMVT informó el 18 de septiembre de 2026 que se declaró culpable en el condado de Ada de dos cargos de posesión de material de explotación sexual infantil, y que su sentencia está programada para el 16 de noviembre. Su nombre sigue en la boleta.
+polls:
+  - pollster: "SurveyUSA"
+    start: "2026-07-07"
+    end: "2026-07-14"
+    sample: "480 LV"
+    sponsor: "Zabel for Congress"
+    sponsor_type: campaign
+    results:
+      "Russ Fulcher": 45
+      "Kaylee Peterson": 35
+      "Sarah Zabel": 6
+    undecided: 14
+    source:
+      name: "SurveyUSA Election Poll #27952"
+      url: "https://results.surveyusa.com/client/PollReport.aspx?g=48a62c75-2dbc-4948-9e01-cbeccf52c3d6"
+      date: "2026-07-20"
+  - pollster: "Change Research"
+    start: "2026-07-28"
+    end: "2026-07-30"
+    sample: "1,213 LV statewide (ID-1 subsample size not published)"
+    margin_of_error: "3.0 (statewide)"
+    sponsor: "Stegner for Idaho (governor campaign)"
+    sponsor_type: campaign
+    results:
+      "Russ Fulcher": 48
+      "Kaylee Peterson": 27
+      "Sarah Zabel": 5
+      "Brendan J. Gomez": 0
+    undecided: 18
+    source:
+      name: "Change Research toplines for Stegner for Idaho, July 2026"
+      url: "https://docs.google.com/document/d/1u6Y5rUbSLEoS0nBgXqKarEzHEQCOzxPjj_Wm27eHKE8/edit"
+history:
+  - year: 2024
+    label: "2024 U.S. House, Idaho District 1"
+    result: "Fulcher (R) 71.0, Peterson (D) 25.4, Loesby (L) 2.1, Gomez (C) 1.5"
+    margin: "R+45.6"
+    source:
+      name: "Idaho Secretary of State, 2024 General Election raw race results"
+      url: "https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx"
+pick:
+  label: clear
+  candidate: "Kaylee Peterson"
+  rule: "Rule 2: no independent poll; the Democrat was the highest non-Republican finisher in 2024 (25.4 percent)."
+  reasoning:
+    en: "There is no independent poll, so the method uses the last election, where Peterson (the same candidate) took 25 percent and no other non-Republican topped 2 percent. Both public polls were paid for by campaigns, and both show Peterson far ahead of Zabel on the real three-way ballot (35 to 6 and 27 to 5). Zabel does well only in hypothetical head-to-heads without Peterson. This was a 46-point race in 2024, so a pick here will not change the outcome."
+    es: No hay una encuesta independiente, así que el método usa la última elección, en la que Peterson (el mismo candidato) sacó el 25 por ciento y ningún otro candidato no republicano pasó del 2 por ciento. Las dos encuestas públicas fueron pagadas por campañas, y las dos muestran a Peterson muy por delante de Zabel en la boleta real de tres candidatos (35 a 6 y 27 a 5). A Zabel solo le va bien en enfrentamientos hipotéticos de uno contra uno sin Peterson. Esta contienda tuvo 46 puntos de diferencia en 2024, así que una recomendación aquí no va a cambiar el resultado.
+  approved: false
+scenarios:
+  - voters_of: "Sarah Zabel"
+    text:
+      en: "Zabel's own poll found her at 6 percent on the actual ballot, with Peterson at 35. If your main goal is to replace Fulcher, the method points to Peterson. If you are voting for Zabel because of her record and positions, that is a legitimate choice. Just know that the head-to-head numbers her campaign cites assume Peterson is not on the ballot, and she is."
+      es: La propia encuesta de Zabel le dio 6 por ciento en la boleta real, y a Peterson 35. Si lo que más quiere es reemplazar a Fulcher, el método señala a Peterson. Si vota por Zabel por su historial y sus posturas, esa es una decisión legítima. Solo sepa que los números de uno contra uno que cita su campaña suponen que Peterson no está en la boleta, y sí está.
+  - voters_of: "Brendan J. Gomez"
+    text:
+      en: "Gomez remains on the ballot after pleading guilty to felony charges (KMVT, Sept. 18, 2026). He polled at 0 percent in the one public poll that included him."
+      es: Gomez sigue en la boleta después de declararse culpable de delitos graves (KMVT, 18 de septiembre de 2026). Sacó 0 por ciento en la única encuesta pública que lo incluyó.
+review_flags: []
+unverified:
+  - "The Ada County split comes from the 2021 redistricting coverage (plan C-3) and 2020 population counts. It has not been checked against a current precinct map."
+  - "The date of Gomez's guilty plea is not stated in the KMVT article (it says only that he pleaded guilty). It has not been confirmed in iCourt."
+  - "The Change Research memo gives its field dates as \"July 28-39, 2026\", an obvious typo. July 28-30 is assumed."
+  - "Money through June 30 is from search summaries of Capital Sun reporting and was not read directly: Fulcher over $660K, Peterson about $181K, Zabel about $81.5K."
+  - "Candidate-website quotes are undated. The date shown is when they were read."
+sources:
+  - name: "Idaho Secretary of State candidate list, 2026 General (run.voteidaho.gov, marked final list)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "KMVT: Idaho congressional candidate who pleaded guilty to child exploitation charges remains eligible for office"
+    url: "https://www.kmvt.com/2026/09/18/idaho-candidate-convicted-child-sexual-exploitive-material-is-still-eligible-federal-office/"
+    date: "2026-09-18"
+  - name: "Sandpoint Reader: Independent Idaho congressional candidate Sarah Zabel talks with the Reader"
+    url: "https://sandpointreader.com/independent-idaho-congressional-candidate-sarah-zabel-talks-with-the-reader/"
+    date: "2026-02-08"
+  - name: "Rep. Russ Fulcher: About"
+    url: "https://fulcher.house.gov/about"
+  - name: "Change Research poll memo for Stegner for Idaho, July 2026"
+    url: "https://static1.squarespace.com/static/69781c4082a86d0a267710a0/t/6a74eb0bb2c4cb2074c857b6/1786047243520/MEDIA+_+Stegner+For+Idaho+_+July+2026+_+Poll+Memo.pdf"
+  - name: "Idaho 2026 Election Calendar (candidate withdrawal deadline Sept. 4)"
+    url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf"
+updated: "2026-09-24"

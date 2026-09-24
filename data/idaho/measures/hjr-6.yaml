@@ -1,24 +1,34 @@
-title: "Idaho HJR 6, the English as Official State Language Amendment"
+title:
+  en: "Idaho HJR 6, the English as Official State Language Amendment"
+  es: HJR 6 de Idaho, enmienda para hacer del inglés el idioma oficial del estado
 short_name: "HJR 6"
 order: 2
 kind: constitutional-amendment
-summary: >-
-  HJR 6 would add a section to the Idaho Constitution making English the
-  official state language. Public meetings, documents and public school
-  instruction would be in English, except where federal law requires another
-  language. English is already Idaho's official language in state law, but not
-  in the constitution.
-yes_means: >-
-  English becomes the official state language in the Idaho Constitution, and
-  government proceedings, documents and public instruction must be in English
-  unless federal law requires otherwise.
-no_means: >-
-  No change to the Idaho Constitution. English stays the official state
-  language in state law (Idaho Code 73-121) only.
-passes_with: >-
-  A majority of the votes cast on the question. (The Idaho Constitution,
-  Article XX, Section 1, says a "majority of the electors" must ratify an
-  amendment.)
+summary:
+  en: >-
+    HJR 6 would add a section to the Idaho Constitution making English the
+    official state language. Public meetings, documents and public school
+    instruction would be in English, except where federal law requires another
+    language. English is already Idaho's official language in state law, but not
+    in the constitution.
+  es: HJR 6 agregaría una sección a la Constitución de Idaho para hacer del inglés el idioma oficial del estado. Las reuniones públicas, los documentos y la enseñanza en las escuelas públicas serían en inglés, excepto cuando la ley federal exija otro idioma. El inglés ya es el idioma oficial de Idaho en la ley estatal, pero no en la constitución.
+yes_means:
+  en: >-
+    English becomes the official state language in the Idaho Constitution, and
+    government proceedings, documents and public instruction must be in English
+    unless federal law requires otherwise.
+  es: El inglés pasa a ser el idioma oficial del estado en la Constitución de Idaho, y los procedimientos del gobierno, los documentos y la enseñanza pública deben ser en inglés, a menos que la ley federal exija otra cosa.
+no_means:
+  en: >-
+    No change to the Idaho Constitution. English stays the official state
+    language in state law (Idaho Code 73-121) only.
+  es: No cambia la Constitución de Idaho. El inglés sigue siendo el idioma oficial del estado solo en la ley estatal (Código de Idaho 73-121).
+passes_with:
+  en: >-
+    A majority of the votes cast on the question. (The Idaho Constitution,
+    Article XX, Section 1, says a "majority of the electors" must ratify an
+    amendment.)
+  es: La mayoría de los votos emitidos sobre esta pregunta. (La Constitución de Idaho, Artículo XX, Sección 1, dice que una "mayoría de los electores" debe ratificar una enmienda).
 supporters: []
 opponents: []
 official:

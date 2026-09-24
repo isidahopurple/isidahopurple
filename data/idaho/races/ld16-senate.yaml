@@ -1,12 +1,14 @@
-office: State Senate, District 16
+office:
+  en: State Senate, District 16
+  es: Senado estatal, Distrito 16
 level: legislative
 district: LD16
 seat: Senate
 order: 148
 depth: short
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -14,7 +16,9 @@ candidates:
 - name: Soñia Galaviz
   party: D
   incumbent: false
-  bio: Currently the state representative for LD16 Seat A.
+  bio:
+    en: Currently the state representative for LD16 Seat A.
+    es: Actualmente es representante estatal por el LD16, Puesto A.
 - name: Geoffrey Surbeck
   party: R
   incumbent: false
@@ -30,9 +34,9 @@ pick:
   label: two-way
   candidate: Soñia Galaviz
   rule: '3'
-  reasoning: 'Soñia Galaviz is the only non-Republican on the ballot, so this is a two-way race and turnout
-    is what matters. This is a hold: a Democrat (Sen. Ali Rabe, not on the 2026 ballot) holds this seat
-    now.'
+  reasoning:
+    en: 'Soñia Galaviz is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: a Democrat (Sen. Ali Rabe, not on the 2026 ballot) holds this seat now.'
+    es: 'Soñia Galaviz es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: una demócrata (la senadora Ali Rabe, que no está en la boleta de 2026) ocupa este escaño ahora.'
   approved: false
 unverified:
 - Why Sen. Ali Rabe is not on the 2026 ballot was not checked.

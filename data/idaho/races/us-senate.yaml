@@ -1,13 +1,17 @@
-office: "US Senate"
+office:
+  en: "US Senate"
+  es: Senado de EE. UU.
 level: federal
 order: 1
 featured: true
 depth: full
 
-controls: >-
-  One of Idaho's two US senators, elected for a six-year term. The Senate passes
-  federal laws together with the House, votes to confirm or reject federal judges,
-  Supreme Court justices and cabinet members, and approves treaties by a two-thirds vote.
+controls:
+  en: >-
+    One of Idaho's two US senators, elected for a six-year term. The Senate passes
+    federal laws together with the House, votes to confirm or reject federal judges,
+    Supreme Court justices and cabinet members, and approves treaties by a two-thirds vote.
+  es: Uno de los dos senadores de EE. UU. por Idaho, elegido por un periodo de seis años. El Senado aprueba las leyes federales junto con la Cámara de Representantes. También vota para confirmar o rechazar a los jueces federales, a los jueces de la Corte Suprema y a los miembros del gabinete, y aprueba los tratados con dos tercios de los votos.
 controls_source:
   name: "US Senate: Powers and Procedures"
   url: "https://www.senate.gov/about/powers-procedures.htm"
@@ -16,9 +20,11 @@ candidates:
   - name: "Jim Risch"
     party: R
     incumbent: true
-    bio: >-
-      US senator since 2009 and chairman of the Senate Foreign Relations Committee;
-      former Idaho governor and lieutenant governor. Seeking a fourth term.
+    bio:
+      en: >-
+        US senator since 2009 and chairman of the Senate Foreign Relations Committee;
+        former Idaho governor and lieutenant governor. Seeking a fourth term.
+      es: Senador de EE. UU. desde 2009 y presidente del Comité de Relaciones Exteriores del Senado. Fue gobernador y vicegobernador de Idaho. Busca un cuarto periodo.
     website: "https://senatorrisch.com/"
     quote:
       text: >-
@@ -26,6 +32,7 @@ candidates:
         to get government out of the way. We now have a president who is focused on
         reducing government spending, returning power to the states, and cutting red
         tape—issues I have devoted my career to accomplishing.
+      translation_es: Es un gran momento para Estados Unidos. Quiero seguir trabajando con el presidente Trump para que el gobierno no estorbe. Ahora tenemos un presidente enfocado en reducir el gasto del gobierno, devolver el poder a los estados y eliminar trámites innecesarios, temas a los que he dedicado mi carrera.
       date: "2025-04-04"
       context: "Risch campaign press release announcing his 2026 re-election campaign"
       source:
@@ -36,9 +43,11 @@ candidates:
 
   - name: "Todd Achilles"
     party: I
-    bio: >-
-      Army veteran (tank commander and armor officer) and former Democratic state
-      representative from Boise, running as an independent.
+    bio:
+      en: >-
+        Army veteran (tank commander and armor officer) and former Democratic state
+        representative from Boise, running as an independent.
+      es: Veterano del Ejército (comandante de tanque y oficial de blindados) y exrepresentante estatal demócrata de Boise. Se postula como independiente.
     website: "https://www.achillesforidaho.com/"
     quote:
       text: >-
@@ -47,6 +56,7 @@ candidates:
         challenge ahead of us is those at the top versus those at the bottom — those in
         power against the people. I will fight for all Idahoans, not billionaires or
         extremists.
+      translation_es: 'Me postulo como candidato al Senado de los Estados Unidos porque el sistema de dos partidos le ha fallado a Estados Unidos. ... Rechazo la división entre izquierda y derecha porque el reto que tenemos por delante es el de los de arriba contra los de abajo: los que tienen el poder contra el pueblo. Voy a luchar por todos los habitantes de Idaho, no por los multimillonarios ni por los extremistas.'
       date: "2026-09-24"
       context: "Campaign website home page, his statement on why he is running (page is undated; date is when we read it)"
       source:
@@ -56,15 +66,18 @@ candidates:
 
   - name: "Natalie Fleming"
     party: I
-    bio: >-
-      Independent from the Treasure Valley with a technology and supply-chain
-      background. Listed on the ballot as "Natalie M Fleming". She also ran for this
-      seat in 2020 and got 3.0%.
+    bio:
+      en: >-
+        Independent from the Treasure Valley with a technology and supply-chain
+        background. Listed on the ballot as "Natalie M Fleming". She also ran for this
+        seat in 2020 and got 3.0%.
+      es: Independiente del Treasure Valley con experiencia en tecnología y cadenas de suministro. En la boleta aparece como "Natalie M Fleming". También fue candidata a este escaño en 2020 y sacó el 3.0%.
     website: "https://nataliefleming.info/"
     quote:
       text: >-
         When the earth is well cared for — the earth God gave us — there is plenty for
         all of us to prosper. That is what I believe. That is what I am running on.
+      translation_es: Cuando la tierra se cuida bien, la tierra que Dios nos dio, hay suficiente para que todos prosperemos. Eso es lo que creo. Esa es la base de mi campaña.
       date: "2026-09-24"
       context: "Closing statement on the About page of her campaign website (page is undated; date is when we read it)"
       source:
@@ -74,15 +87,18 @@ candidates:
 
   - name: "Matt Loesby"
     party: L
-    bio: >-
-      Software developer and Idaho Libertarian Party regional chair. He ran for the US
-      House (1st District) in 2024 and got 2.1%.
+    bio:
+      en: >-
+        Software developer and Idaho Libertarian Party regional chair. He ran for the US
+        House (1st District) in 2024 and got 2.1%.
+      es: Desarrollador de software y presidente regional del Partido Libertario de Idaho. Fue candidato a la Cámara de Representantes de EE. UU. (Distrito 1) en 2024 y sacó el 2.1%.
     website: "https://www.loesby.us/"
     quote:
       text: >-
         The US Government is doing all it can to destroy our liberty, our culture, our
         wealth, and our future. Send me to Congress, so I can slow them down while we
         rebuild Idaho.
+      translation_es: El gobierno de EE. UU. está haciendo todo lo posible por destruir nuestra libertad, nuestra cultura, nuestra riqueza y nuestro futuro. Mándenme al Congreso para poder frenarlos mientras reconstruimos Idaho.
       date: "2026-09-24"
       context: >-
         Home page of his campaign website. The text was written for his 2024 US House
@@ -249,41 +265,50 @@ pick:
     is Advanced Targeting Research (Sept 13–16). Its memo says no candidate commissioned
     it but does not name who did. Achilles is the top non-Republican in that poll and in
     every other 2026 poll, including Risch's own.
-  reasoning: >-
-    With the Democratic nominee off the ballot, Todd Achilles is the one non-Republican
-    with a real base of support. The polls disagree sharply on the gap: Risch's own poll
-    has him up 34 points, while the Advanced Targeting Research poll has Achilles up 11
-    head-to-head. A Boise State political scientist says the gap is most likely down to
-    how each poll decides who is a "likely voter." What the polls agree on is that no
-    other challenger is close to Achilles, so if non-Republican voters come together
-    behind him, this can become a real race. We are not predicting that he wins.
+  reasoning:
+    en: >-
+      With the Democratic nominee off the ballot, Todd Achilles is the one non-Republican
+      with a real base of support. The polls disagree sharply on the gap: Risch's own poll
+      has him up 34 points, while the Advanced Targeting Research poll has Achilles up 11
+      head-to-head. A Boise State political scientist says the gap is most likely down to
+      how each poll decides who is a "likely voter." What the polls agree on is that no
+      other challenger is close to Achilles, so if non-Republican voters come together
+      behind him, this can become a real race. We are not predicting that he wins.
+    es: 'Como el candidato demócrata ya no está en la boleta, Todd Achilles es el único candidato no republicano con una base real de apoyo. Las encuestas no coinciden para nada sobre la diferencia: la propia encuesta de Risch lo pone 34 puntos adelante, mientras que la encuesta de Advanced Targeting Research pone a Achilles 11 puntos adelante en un enfrentamiento directo. Un politólogo de Boise State dice que lo más probable es que la diferencia se deba a cómo cada encuesta decide quién es un "votante probable". En lo que sí coinciden las encuestas es que ningún otro retador está cerca de Achilles. Así que si los votantes no republicanos se unen detrás de él, esta puede volverse una contienda real. No estamos diciendo que él vaya a ganar.'
   approved: false
 
 scenarios:
   - voters_of: "Natalie Fleming"
-    text: >-
-      Natalie Fleming is running on values many voters share. But she polled 8 to 9% in
-      the two polls that included her, and Achilles polled 18 to 50% across all of them.
-      If your main goal is a different senator than Jim Risch, a vote for Achilles is the
-      one most likely to count toward that. If you vote for Fleming, you are voting for
-      what she stands for, and that is a legitimate choice.
+    text:
+      en: >-
+        Natalie Fleming is running on values many voters share. But she polled 8 to 9% in
+        the two polls that included her, and Achilles polled 18 to 50% across all of them.
+        If your main goal is a different senator than Jim Risch, a vote for Achilles is the
+        one most likely to count toward that. If you vote for Fleming, you are voting for
+        what she stands for, and that is a legitimate choice.
+      es: Natalie Fleming defiende valores que comparten muchos votantes. Pero sacó de 8 a 9% en las dos encuestas que la incluyeron, y Achilles sacó de 18 a 50% en todas. Si lo que más quiere es tener un senador distinto a Jim Risch, un voto por Achilles es el que tiene más probabilidad de contar para eso. Si vota por Fleming, está votando por lo que ella defiende, y esa es una decisión legítima.
   - voters_of: "Matt Loesby"
-    text: >-
-      Matt Loesby polled 2 to 5%. If you are a libertarian voting to send a message, your
-      vote does that. If you would mainly like to see Risch replaced, Achilles is the
-      challenger with enough support to make that possible. He is also running as an
-      independent, outside both parties.
+    text:
+      en: >-
+        Matt Loesby polled 2 to 5%. If you are a libertarian voting to send a message, your
+        vote does that. If you would mainly like to see Risch replaced, Achilles is the
+        challenger with enough support to make that possible. He is also running as an
+        independent, outside both parties.
+      es: Matt Loesby sacó de 2 a 5% en las encuestas. Si usted es libertario y vota para mandar un mensaje, su voto lo hace. Si lo que más quiere es que reemplacen a Risch, Achilles es el retador con suficiente apoyo para hacerlo posible. Él también se postula como independiente, fuera de los dos partidos.
   - voters_of: "David Roth (withdrawn)"
-    text: >-
-      David Roth won the Democratic primary, then withdrew. His name will not be on the
-      November ballot, so there is no Democrat to vote for in this race. The choices are
-      Risch, Achilles, Fleming and Loesby.
+    text:
+      en: >-
+        David Roth won the Democratic primary, then withdrew. His name will not be on the
+        November ballot, so there is no Democrat to vote for in this race. The choices are
+        Risch, Achilles, Fleming and Loesby.
+      es: David Roth ganó la elección primaria demócrata y luego se retiró. Su nombre no estará en la boleta de noviembre, así que no hay un demócrata por quien votar en esta contienda. Las opciones son Risch, Achilles, Fleming y Loesby.
   - voters_of: "Undecided Republicans"
-    text: >-
-      If you have voted for Jim Risch before and are weighing your choice this time, read
-      both men in their own words above. Achilles is running as an independent, not as a
-      Democrat. Whichever way you go, the choice is yours to make, and we respect it.
-
+    text:
+      en: >-
+        If you have voted for Jim Risch before and are weighing your choice this time, read
+        both men in their own words above. Achilles is running as an independent, not as a
+        Democrat. Whichever way you go, the choice is yours to make, and we respect it.
+      es: Si antes ha votado por Jim Risch y esta vez está pensando bien su decisión, lea arriba a los dos en sus propias palabras. Achilles se postula como independiente, no como demócrata. Decida lo que decida, la decisión es suya y la respetamos.
 review_flags:
   - >-
     Poll sponsor: the only non-campaign poll (Advanced Targeting Research, Sept 13–16)

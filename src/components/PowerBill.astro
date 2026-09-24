@@ -1,0 +1,50 @@
+---
+// The power-bill story, facts only. Sources: research/04-issues-verified.md (checked 2026-09-24).
+import { href, type Lang } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const S = {
+  jan: 'https://puc.idaho.gov/Fileroom/PublicFiles/Press/20251231Idaho%20Power%201230%20Release.pdf.pdf',
+  june: 'https://puc.idaho.gov/Fileroom/PublicFiles/Press/20260504Idaho%20Power%200504%20Release.pdf.pdf',
+  juneOrder: 'https://puc.idaho.gov/case/Details/7746',
+  h0897: 'https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/',
+  h0911: 'https://legislature.idaho.gov/sessioninfo/2026/legislation/H0911/',
+  diesel: 'https://gasprices.aaa.com/?state=ID',
+};
+---
+<section>
+  <h2>{es ? '¿Y su factura de luz?' : 'What about your power bill?'}</h2>
+  <div class="grid">
+    <div class="card stat">
+      <p class="num-big">+$12.13</p>
+      <p>{es ? 'al mes para un hogar típico de Idaho Power desde el 1 de enero de 2026.' : 'a month for a typical Idaho Power home since Jan 1, 2026.'}</p>
+      <a class="cite" href={S.jan} rel="noopener" target="_blank">{es ? 'Comisión de Servicios Públicos de Idaho, 30 dic 2025' : 'Idaho Public Utilities Commission, Dec 30, 2025'}</a>
+    </div>
+    <div class="card stat">
+      <p class="num-big">+$3.64</p>
+      <p>{es ? 'al mes más desde el 1 de junio de 2026, por ajustes anuales aprobados.' : 'a month more since June 1, 2026, from approved annual adjustments.'}</p>
+      <a class="cite" href={S.june} rel="noopener" target="_blank">{es ? 'Comisión de Servicios Públicos, 4 may 2026' : 'Idaho PUC, May 4, 2026'}</a> · <a class="cite" href={S.juneOrder} rel="noopener" target="_blank">{es ? 'orden' : 'order'}</a>
+    </div>
+    <div class="card stat">
+      <p class="num-big">{es ? 'Diésel' : 'Diesel'}</p>
+      <p>{es ? 'El diésel en Idaho está en máximos históricos este mes. Vea el precio de hoy.' : 'Idaho diesel hit all-time records this month. Check today’s price.'}</p>
+      <a class="cite" href={S.diesel} rel="noopener" target="_blank">AAA Idaho</a>
+    </div>
+  </div>
+  <p>
+    {es
+      ? 'Los centros de datos son parte de la conversación en ambos partidos. En 2026, un proyecto de ley sobre exenciones fiscales para centros de datos (H0897), con patrocinadores republicanos y demócratas, pasó la Cámara 68-0 y el Senado 34-0, y murió el último día porque la Cámara no votó los cambios del Senado. Otra ley (H0911) sí se aprobó: desde el 1 de julio, las cargas nuevas de 50 megavatios o más deben pagar su propio costo de servicio.'
+      : 'Data centers are on both parties’ minds. In 2026 a data-center tax-break bill (H0897), with Republican and Democratic sponsors, passed the House 68-0 and the Senate 34-0, then died on the last day when the House never voted on the Senate’s changes. Another law (H0911) did pass: since July 1, new loads of 50 megawatts or more must pay their own full cost of service.'}
+    {' '}<a class="cite" href={S.h0897} rel="noopener" target="_blank">H0897</a> · <a class="cite" href={S.h0911} rel="noopener" target="_blank">H0911</a>
+  </p>
+  <p>
+    {es ? 'Lo que dicen los candidatos: ' : 'Where the candidates stand: '}
+    <a href={href(lang, '/races/governor')}>{es ? 'gobernador' : 'governor'}</a>,{' '}
+    <a href={href(lang, '/races/us-senate')}>{es ? 'Senado de EE. UU.' : 'US Senate'}</a>.
+  </p>
+</section>
+<style>
+  .stat p { margin: 0.2rem 0; }
+  .num-big { font-size: 2.2rem; font-weight: 800; color: var(--purple); }
+</style>

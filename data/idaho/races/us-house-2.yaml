@@ -1,0 +1,146 @@
+office:
+  en: "U.S. House, District 2"
+  es: Cámara de Representantes de EE. UU., Distrito 2
+level: federal
+district: "ID-2"
+order: 4
+depth: full
+controls:
+  en: "One of Idaho's two seats in the U.S. House, which votes on federal laws, taxes and spending; the term is two years. In Ada County, District 2 includes nearly all of Boise (about 232,000 of its 236,000 residents in 2020) plus small parts of Meridian and Eagle. The district also covers much of southeast Idaho."
+  es: Uno de los dos escaños de Idaho en la Cámara de Representantes de EE. UU., que vota sobre las leyes federales, los impuestos y el gasto; el periodo es de dos años. En el condado de Ada, el Distrito 2 incluye casi todo Boise (unos 232,000 de sus 236,000 habitantes en 2020), además de pequeñas partes de Meridian y Eagle. El distrito también cubre gran parte del sureste de Idaho.
+controls_source:
+  name: "Idaho Press: Commission votes to adopt new legislative, congressional district maps (Ada County split under plan C-3)"
+  url: "https://www.idahopress.com/news/local/commission-votes-to-adopt-new-legislative-congressional-district-maps-for-state/article_6f6fe0c6-e2b8-5d78-97ff-a5e684eacc2f.html"
+  date: "2021-11-05"
+candidates:
+  - name: "Mike Simpson"
+    party: R
+    incumbent: true
+    bio:
+      en: "U.S. Representative since 1999; former Idaho legislator and former Blackfoot dentist."
+      es: Representante de EE. UU. desde 1999; fue legislador de Idaho y dentista en Blackfoot.
+    website: "https://simpsonforcongress.com/"
+    quote:
+      text: "Securing the border and stopping illegal immigration is the most important issue facing our nation today. I’ll stand with President Trump to end Biden’s disastrous open border policies, build the wall and stop illegal immigration once and for all."
+      translation_es: Asegurar la frontera y detener la inmigración ilegal es el tema más importante que enfrenta nuestro país hoy. Voy a apoyar al presidente Trump para acabar con las desastrosas políticas de fronteras abiertas de Biden, construir el muro y detener la inmigración ilegal de una vez por todas.
+      date: "2026-09-24"
+      context: "Featured statement on his campaign homepage (the page is undated; the date is when it was read)."
+      source:
+        name: "Simpson for Congress campaign website"
+        url: "https://simpsonforcongress.com/"
+      verified: true
+  - name: "Ellie Gilbreath"
+    party: D
+    bio:
+      en: "Ketchum attorney and mediator whose campaign theme is \"Idaho is not for sale.\""
+      es: Abogada y mediadora de Ketchum; el lema de su campaña es "Idaho no está a la venta" ("Idaho is not for sale").
+    quote:
+      text: "The job of a congressman is very clear. It is to represent the voice and interest of your district. It's not your own biases, it's not your party, it's not the donors."
+      translation_es: El trabajo de un congresista es muy claro. Es representar la voz y los intereses de su distrito. No son sus propios prejuicios, no es su partido, no son los donantes.
+      date: "2026-05-23"
+      context: "Interview with East Idaho News about her campaign (the article places \"Gilbreath said\" after the first sentence)."
+      source:
+        name: "East Idaho News: 'Idaho is not for sale': Why Democrat Ellie Gilbreath thinks it's time for change in the state's 2nd Congressional District"
+        url: "https://www.eastidahonews.com/2026/05/idaho-is-not-for-sale-why-democrat-ellie-gilbreath-thinks-its-time-for-change-in-the-states-2nd-congressional-district/"
+        date: "2026-05-23"
+      verified: true
+  - name: "Will Johanson"
+    party: L
+    bio:
+      en: "Boise semiconductor engineer and former Navy nuclear operator."
+      es: Ingeniero de semiconductores de Boise y exoperador nuclear de la Marina.
+    website: "https://www.johansonforidaho.com/"
+    quote:
+      text: "give voters an alternative."
+      translation_es: darles a los votantes una alternativa.
+      date: "2026-09-15"
+      context: "Partial quote in an Idaho Capital Sun story (reprinted by KMVT) on why he is running. He also said Simpson seems \"out of touch with our concerns over affordability and the endless wars that we're fighting around the world.\""
+      source:
+        name: "KMVT (Idaho Capital Sun): Idaho District 2 congressional candidates say they're worried about high cost of living"
+        url: "https://www.kmvt.com/2026/09/16/idaho-district-2-congressional-candidates-say-theyre-worried-about-high-cost-living/"
+        date: "2026-09-16"
+      verified: true
+  - name: "Emre Houser"
+    party: I
+    bio:
+      en: "Air Force and Idaho National Guard veteran (27-plus years, including Iraq in 2003) and Idaho business owner, according to his campaign site."
+      es: Veterano de la Fuerza Aérea y de la Guardia Nacional de Idaho (más de 27 años, incluso en Irak en 2003) y dueño de un negocio en Idaho, según su sitio de campaña.
+    website: "https://www.houserforidaho.com/"
+    quote:
+      text: "For People, not Powerful Interests"
+      translation_es: Por la gente, no por los intereses poderosos
+      date: "2026-09-24"
+      context: "Campaign slogan on his website (the page is undated; the date is when it was read). No first-person quote was found."
+      source:
+        name: "Emre Houser campaign website"
+        url: "https://www.houserforidaho.com/"
+      verified: true
+  - name: "Tripp Charles Hutchinson"
+    party: I
+    bio:
+      en: "Ketchum City Council member, elected in 2023."
+      es: Miembro del Concejo Municipal de Ketchum, elegido en 2023.
+    website: "https://votefortripp.com/"
+    quote:
+      text: "Every Idaho family should be able to live a normal, fulfilled and decent life on one household income."
+      translation_es: Toda familia de Idaho debería poder tener una vida normal, plena y digna con el ingreso de una sola persona en el hogar.
+      date: "2026-09-24"
+      context: "\"Where I Stand\" section of his campaign website (the page is undated; the date is when it was read)."
+      source:
+        name: "Tripp Hutchinson campaign website"
+        url: "https://votefortripp.com/"
+      verified: true
+polls: []
+history:
+  - year: 2024
+    label: "2024 U.S. House, Idaho District 2"
+    result: "Simpson (R) 61.4, Roth (D) 31.0, Corsetti (L) 5.2, Sierra Law (C) 2.4"
+    margin: "R+30.4"
+    source:
+      name: "Idaho Secretary of State, 2024 General Election raw race results"
+      url: "https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx"
+  - year: 2024
+    label: "2024 U.S. House, Idaho District 2, Ada County part only"
+    result: "Roth (D) 51.1, Simpson (R) 42.8, Corsetti (L) 4.5, Sierra Law (C) 1.6"
+    margin: "D+8.4"
+    source:
+      name: "Idaho Secretary of State, 2024 General Election raw race results (Ada County precincts summed)"
+      url: "https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx"
+pick:
+  label: clear
+  candidate: "Ellie Gilbreath"
+  rule: "Rule 2: no independent poll; the Democrat was the highest non-Republican finisher in 2024 (31.0 percent, versus 5.2 for the Libertarian)."
+  reasoning:
+    en: "There is no poll, so the method uses 2024, when the Democrat took 31 percent and no other non-Republican topped 5. Simpson won the district by about 30 points, so realistically this seat is not in play. The Boise part voted for the Democrat, though, so Boise turnout is where a vote here counts most."
+    es: No hay encuesta, así que el método usa 2024, cuando el demócrata sacó el 31 por ciento y ningún otro candidato no republicano pasó del 5. Simpson ganó el distrito por unos 30 puntos, así que en la realidad este escaño no está en juego. Pero la parte de Boise votó por el demócrata, así que la participación en Boise es donde un voto aquí cuenta más.
+  approved: false
+scenarios:
+  - voters_of: "Will Johanson"
+    text:
+      en: "The Libertarian took about 5 percent in 2024. If your main goal is to replace Simpson, the method points to Gilbreath. If you vote Libertarian on principle, that is a legitimate choice."
+      es: El candidato libertario sacó cerca del 5 por ciento en 2024. Si lo que más quiere es reemplazar a Simpson, el método señala a Gilbreath. Si vota por el Partido Libertario por principios, esa es una decisión legítima.
+  - voters_of: "Emre Houser"
+    text:
+      en: "Houser had reported no fundraising to the FEC as of June 30, and no poll includes him. If your main goal is to replace Simpson, the method points to Gilbreath."
+      es: Houser no había reportado ninguna recaudación de fondos a la FEC hasta el 30 de junio, y ninguna encuesta lo incluye. Si lo que más quiere es reemplazar a Simpson, el método señala a Gilbreath.
+  - voters_of: "Tripp Charles Hutchinson"
+    text:
+      en: "Hutchinson's cost-of-living message overlaps with Gilbreath's, and his campaign had raised about $7,500 as of June 30. If your main goal is to replace Simpson, the method points to Gilbreath."
+      es: El mensaje de Hutchinson sobre el costo de vida se parece al de Gilbreath, y su campaña había recaudado unos $7,500 hasta el 30 de junio. Si lo que más quiere es reemplazar a Simpson, el método señala a Gilbreath.
+review_flags: []
+unverified:
+  - "C. Sierra (Constitution; ballot name \"C. Sierra - ID Law - Idaho Lorax\") is listed as Withdrawn on 2026-08-17 in the SoS candidate portal, before the Sept. 4 withdrawal deadline. KMVT/Capital Sun report the candidate died in June. The name should not appear on the ballot, but this has not been checked against a printed sample ballot. The earlier research listed this candidate as active."
+  - "The Ada County split comes from the 2021 redistricting coverage (plan C-3) and 2020 population counts. It has not been checked against a current precinct map."
+  - "Johanson's quote is a partial quote embedded in a news story, not a full sentence of his."
+  - "Houser's quote is a campaign slogan. No first-person quote was found (he could not be reached by the Capital Sun)."
+  - "Simpson's homepage quote refers to Biden-era border policy. It is what his campaign site features, but it may be older text. A more current Simpson quote on health care appears in the Capital Sun story linked in sources."
+sources:
+  - name: "Idaho Secretary of State candidate list, 2026 General (run.voteidaho.gov, marked final list)"
+    url: "https://run.voteidaho.gov/search"
+    date: "2026-09-24"
+  - name: "KMVT (Idaho Capital Sun): Idaho District 2 congressional candidates say they're worried about high cost of living"
+    url: "https://www.kmvt.com/2026/09/16/idaho-district-2-congressional-candidates-say-theyre-worried-about-high-cost-living/"
+    date: "2026-09-16"
+  - name: "Idaho 2026 Election Calendar (candidate withdrawal deadline Sept. 4)"
+    url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf"
+updated: "2026-09-24"

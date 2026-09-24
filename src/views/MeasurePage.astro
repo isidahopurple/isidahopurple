@@ -8,6 +8,11 @@ interface Props { measure: Measure; lang: Lang }
 const { measure, lang } = Astro.props;
 const d = measure.data;
 const title = `${d.short_name}: ${tx(d.title, lang)}`;
+const es = lang === 'es';
+// Advisory questions have choices, not Yes/No.
+const [yesHead, noHead] = d.kind === 'advisory'
+  ? [es ? 'Cómo se vota' : 'How you vote', es ? 'Qué pasa después' : 'What happens next']
+  : [t(lang, 'measure.yes'), t(lang, 'measure.no')];
 ---
 <Base lang={lang} title={d.short_name} description={tx(d.summary, lang)} editPath={`data/idaho/measures/${measure.id}.yaml`} updated={fmtDate(d.updated, lang)}>
   <p class="small"><a href={href(lang, '/races#measures')}>← {t(lang, 'races.measures')}</a></p>
@@ -15,8 +20,8 @@ const title = `${d.short_name}: ${tx(d.title, lang)}`;
   <p class="note">{t(lang, 'measure.neutral')}</p>
   <p>{tx(d.summary, lang)}</p>
   <div class="grid">
-    <div class="card"><h2 class="h">{t(lang, 'measure.yes')}</h2><p>{tx(d.yes_means, lang)}</p></div>
-    <div class="card"><h2 class="h">{t(lang, 'measure.no')}</h2><p>{tx(d.no_means, lang)}</p></div>
+    <div class="card"><h2 class="h">{yesHead}</h2><p>{tx(d.yes_means, lang)}</p></div>
+    <div class="card"><h2 class="h">{noHead}</h2><p>{tx(d.no_means, lang)}</p></div>
   </div>
   <p><strong>{t(lang, 'measure.passes')}:</strong> {tx(d.passes_with, lang)}</p>
   <p><a href={d.official.url} rel="noopener" target="_blank">{t(lang, 'measure.official')}</a> ({d.official.name})</p>

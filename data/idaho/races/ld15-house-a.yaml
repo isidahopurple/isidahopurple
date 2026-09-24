@@ -1,12 +1,14 @@
-office: State House, District 15, Seat A
+office:
+  en: State House, District 15, Seat A
+  es: Cámara de Representantes estatal, Distrito 15, Puesto A
 level: legislative
 district: LD15
 seat: House A
 order: 146
 depth: full
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -16,9 +18,8 @@ candidates:
   incumbent: true
   website: https://www.berch4idaho.com
   quote:
-    text: It is about bringing government closer to all our citizens. I do this by being accessible and
-      responsive, publishing legislative newsletters, holding Town Hall meetings and continuing to visit
-      with people at their door.
+    text: It is about bringing government closer to all our citizens. I do this by being accessible and responsive, publishing legislative newsletters, holding Town Hall meetings and continuing to visit with people at their door.
+    translation_es: Se trata de acercar el gobierno a todos nuestros ciudadanos. Lo hago estando disponible y respondiendo a la gente, publicando boletines legislativos, haciendo reuniones comunitarias (Town Hall) y visitando todavía a la gente en su puerta.
     date: '2026-09-24'
     context: Why he serves, on his campaign homepage (undated page, read 2026-09-24).
     source:
@@ -30,8 +31,8 @@ candidates:
   incumbent: false
   website: https://stevekeyser4idaho.com
   quote:
-    text: Idahoans deserve to keep more of what they earn. If I am elected to the Idaho State House of
-      Representatives, I will fight for property tax and grocery tax relief for Idaho families.
+    text: Idahoans deserve to keep more of what they earn. If I am elected to the Idaho State House of Representatives, I will fight for property tax and grocery tax relief for Idaho families.
+    translation_es: Los habitantes de Idaho merecen quedarse con más de lo que ganan. Si me eligen a la Cámara de Representantes del Estado de Idaho, voy a luchar para bajar el impuesto a la propiedad y el impuesto a los alimentos para las familias de Idaho.
     date: '2026-09-05'
     context: First of his "3 key messages" in the Ballotpedia candidate survey.
     source:
@@ -58,10 +59,9 @@ pick:
   label: two-way
   candidate: Steve Berch
   rule: '3'
-  reasoning: 'Steve Berch is the only non-Republican on the ballot, so this is a two-way race and turnout
-    is what matters. This is a hold: Berch (D) holds this seat now. It was the closest 2024 legislative
-    race in Ada County districts LD14-LD22 (227 votes), and this is a 2022 rematch with Keyser. District
-    lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+  reasoning:
+    en: 'Steve Berch is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: Berch (D) holds this seat now. It was the closest 2024 legislative race in Ada County districts LD14-LD22 (227 votes), and this is a 2022 rematch with Keyser. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+    es: 'Steve Berch es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: Berch (D) ocupa este escaño ahora. Fue la contienda legislativa más cerrada de 2024 en los distritos del condado de Ada LD14-LD22 (227 votos), y es una revancha de 2022 contra Keyser. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
   approved: false
 unverified:
 - Berch's quote is from an undated campaign homepage; the date shown is when it was read.

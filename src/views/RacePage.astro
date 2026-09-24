@@ -21,6 +21,13 @@ const sponsorText = (p: (typeof polls)[number]) =>
     : p.sponsor_type === 'unknown' ? t(lang, 'race.sponsorUnknown') : `${t(lang, 'race.campaignPoll')}: ${p.sponsor}`;
 const title = d.district ? `${office}` : office;
 const es = lang === 'es';
+// Scenario headings: "If you support X", with special wording for non-candidate groups.
+const scenarioHead = (who: string) => {
+  if (/^Undecided Republicans$/i.test(who)) return es ? 'Si usted vota republicano y aún no decide' : 'If you’re a Republican who’s undecided';
+  const name = who.replace(/\s*\((withdrawn|write-in)\)$/, '');
+  const note = /\(withdrawn\)/.test(who) ? (es ? ' (se retiró)' : ' (withdrawn)') : /\(write-in\)/.test(who) ? (es ? ' (por escrito)' : ' (write-in)') : '';
+  return es ? `Si usted apoya a ${name}${note}` : `If you support ${name}${note}`;
+};
 ---
 <Base lang={lang} title={title} description={`${office}: ${d.candidates.map((c) => c.name).join(', ')}`} editPath={`data/idaho/races/${race.id}.yaml`} updated={fmtDate(d.updated, lang)}>
   <p class="small"><a href={href(lang, '/races')}>← {t(lang, 'nav.races')}</a></p>
@@ -112,7 +119,7 @@ const es = lang === 'es';
       <h2>{t(lang, 'race.scenarios')}</h2>
       {d.scenarios.map((s) => (
         <div class="card scenario">
-          <h3>{es ? `Si usted apoya a ${s.voters_of}` : `If you support ${s.voters_of}`}</h3>
+          <h3>{scenarioHead(s.voters_of)}</h3>
           <p>{tx(s.text, lang)}</p>
         </div>
       ))}

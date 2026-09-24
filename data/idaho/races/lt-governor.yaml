@@ -1,8 +1,12 @@
-office: "Lieutenant Governor"
+office:
+  en: "Lieutenant Governor"
+  es: Vicegobernador
 level: statewide
 order: 10
 depth: full
-controls: "The Lieutenant Governor presides over the Idaho Senate and votes only to break a tie. When the governor is out of state, unable to serve or the office is vacant, the Lieutenant Governor acts as governor."
+controls:
+  en: "The Lieutenant Governor presides over the Idaho Senate and votes only to break a tie. When the governor is out of state, unable to serve or the office is vacant, the Lieutenant Governor acts as governor."
+  es: El vicegobernador preside el Senado de Idaho y solo vota para romper un empate. Cuando el gobernador está fuera del estado, no puede ejercer el cargo o el puesto está vacante, el vicegobernador actúa como gobernador.
 controls_source:
   name: "Idaho Constitution, Article IV, Sections 12 and 13"
   url: "https://legislature.idaho.gov/statutesrules/idconst/ArtIV/Sect13/"
@@ -10,10 +14,13 @@ candidates:
   - name: "Scott Bedke"
     party: R
     incumbent: true
-    bio: "Lieutenant Governor since 2023; cattle rancher from Oakley and former Speaker of the Idaho House."
+    bio:
+      en: "Lieutenant Governor since 2023; cattle rancher from Oakley and former Speaker of the Idaho House."
+      es: Vicegobernador desde 2023; ganadero de Oakley y expresidente de la Cámara de Representantes de Idaho.
     website: "https://bedkeforidaho.com/"
     quote:
       text: "Over the last three years as your Lt. Governor, I've worked every day to protect our Idaho way of life and our state's future. I've never forgotten that I work for my fellow Idahoans, and that means defending our freedoms and our borders, limiting government interference, and delivering meaningful tax relief."
+      translation_es: Durante los últimos tres años como su vicegobernador, he trabajado todos los días para proteger nuestra forma de vida en Idaho y el futuro de nuestro estado. Nunca he olvidado que trabajo para mis compañeros de Idaho, y eso significa defender nuestras libertades y nuestras fronteras, limitar la intervención del gobierno y lograr una verdadera reducción de impuestos.
       date: "2025-09-08"
       context: "Statement announcing his 2026 re-election campaign, as reported by KMVT."
       source:
@@ -23,10 +30,13 @@ candidates:
       verified: true
   - name: "Eric Myricks"
     party: D
-    bio: "Treasure Valley entrepreneur and nonprofit founder; former youth pastor."
+    bio:
+      en: "Treasure Valley entrepreneur and nonprofit founder; former youth pastor."
+      es: Empresario del Treasure Valley y fundador de una organización sin fines de lucro; fue pastor de jóvenes.
     website: "https://ericforidaho.com/"
     quote:
       text: "Like Andrus, Eric is a moderate Democrat who believes government works best when it listens, includes, and solves problems for everyone, not just the well-connected few."
+      translation_es: Igual que Andrus, Eric es un demócrata moderado que cree que el gobierno funciona mejor cuando escucha, incluye a todos y resuelve problemas para todos, no solo para unos pocos con buenas conexiones.
       date: "2026-09-24"
       context: "Campaign homepage copy, written in the third person (the page is undated; the date is when it was read)."
       source:
@@ -46,7 +56,9 @@ pick:
   label: two-way
   candidate: "Eric Myricks"
   rule: "Rule 3: only one non-Republican on the ballot."
-  reasoning: "Myricks is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Bedke won by about 34 points in 2022, and no public poll exists, so be realistic about the odds."
+  reasoning:
+    en: "Myricks is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Bedke won by about 34 points in 2022, and no public poll exists, so be realistic about the odds."
+    es: Myricks es el único candidato no republicano en la boleta, así que es una contienda entre dos y lo que importa es la participación. Bedke ganó por unos 34 puntos en 2022 y no hay ninguna encuesta pública, así que sea realista sobre las probabilidades.
   approved: false
 scenarios: []
 review_flags: []

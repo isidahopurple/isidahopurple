@@ -1,12 +1,14 @@
-office: State Senate, District 18
+office:
+  en: State Senate, District 18
+  es: Senado estatal, Distrito 18
 level: legislative
 district: LD18
 seat: Senate
 order: 154
 depth: short
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -24,9 +26,11 @@ history:
     url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
 pick:
   label: no-pick
-  candidate: null
+  candidate:
   rule: none
-  reasoning: 'Uncontested: only one candidate is on the ballot.'
+  reasoning:
+    en: 'Uncontested: only one candidate is on the ballot.'
+    es: 'Sin oposición: solo hay un candidato en la boleta.'
   approved: false
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'

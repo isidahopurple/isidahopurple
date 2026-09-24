@@ -1,12 +1,14 @@
-office: State House, District 15, Seat B
+office:
+  en: State House, District 15, Seat B
+  es: Cámara de Representantes estatal, Distrito 15, Puesto B
 level: legislative
 district: LD15
 seat: House B
 order: 147
 depth: full
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -16,9 +18,8 @@ candidates:
   incumbent: true
   website: https://www.dori4idaho.com
   quote:
-    text: District 15 is more than the place I represent—it is where I live, work, raise my family, care
-      for patients, and run my business. I understand the challenges facing our community because I experience
-      them alongside the people I serve.
+    text: District 15 is more than the place I represent—it is where I live, work, raise my family, care for patients, and run my business. I understand the challenges facing our community because I experience them alongside the people I serve.
+    translation_es: 'El Distrito 15 es más que el lugar que represento: es donde vivo, trabajo, crío a mi familia, atiendo a mis pacientes y tengo mi negocio. Entiendo los retos de nuestra comunidad porque los vivo junto con la gente a la que sirvo.'
     date: '2026-09-24'
     context: Welcome message on her re-election campaign homepage (undated page, read 2026-09-24).
     source:
@@ -30,8 +31,8 @@ candidates:
   incumbent: false
   website: https://www.jae4idaho.com
   quote:
-    text: We don't have to agree on everything to deserve my attention. As your representative, I'll listen,
-      do my homework, and always remember who I was elected to serve.
+    text: We don't have to agree on everything to deserve my attention. As your representative, I'll listen, do my homework, and always remember who I was elected to serve.
+    translation_es: No tenemos que estar de acuerdo en todo para que usted merezca mi atención. Como su representante, voy a escuchar, estudiar bien cada tema y siempre recordar a quién me eligieron para servir.
     date: '2026-09-24'
     context: Why she is running, on her campaign homepage (undated page, read 2026-09-24).
     source:
@@ -57,17 +58,14 @@ pick:
   label: two-way
   candidate: Jae Etchart
   rule: '3'
-  reasoning: Jae Etchart is the only non-Republican on the ballot, so this is a two-way race and turnout
-    is what matters. District lines were the same in 2022 and 2024 (the post-2020-census map), so both
-    results compare directly.
+  reasoning:
+    en: Jae Etchart is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.
+    es: Jae Etchart es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.
   approved: false
 review_flags:
-- 'Rep. Dori Healey (R): Voted aye on H0897 (2026 data-center tax bill) when it passed the House 68-0.
-  The vote was unanimous, so it is weak evidence of a match on power bills and data centers, but a human
-  should review.'
+- 'Rep. Dori Healey (R): Voted aye on H0897 (2026 data-center tax bill) when it passed the House 68-0. The vote was unanimous, so it is weak evidence of a match on power bills and data centers, but a human should review.'
 unverified:
-- Healey's and Etchart's quotes are from undated campaign homepages; the date shown is when they were
-  read.
+- Healey's and Etchart's quotes are from undated campaign homepages; the date shown is when they were read.
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

@@ -1,12 +1,14 @@
-office: State House, District 17, Seat A
+office:
+  en: State House, District 17, Seat A
+  es: Cámara de Representantes estatal, Distrito 17, Puesto A
 level: legislative
 district: LD17
 seat: House A
 order: 152
 depth: short
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -14,8 +16,9 @@ candidates:
 - name: John Gannon
   party: D
   incumbent: true
-  bio: Listed as a contact on the statement of purpose for H0897 (2026), a bill to narrow the data-center
-    sales tax exemption and require energy and water reporting.
+  bio:
+    en: Listed as a contact on the statement of purpose for H0897 (2026), a bill to narrow the data-center sales tax exemption and require energy and water reporting.
+    es: Aparece como contacto en la declaración de propósito del H0897 (2026), un proyecto de ley para limitar la exención del impuesto sobre las ventas para los centros de datos y exigirles que reporten su uso de energía y agua.
 - name: James R Nechwedowich
   party: R
   incumbent: false
@@ -31,10 +34,9 @@ pick:
   label: two-way
   candidate: John Gannon
   rule: '3'
-  reasoning: 'John Gannon is the only non-Republican on the ballot, so this is a two-way race and turnout
-    is what matters. This is a hold: a Democrat holds this seat now. Gannon was one of the three legislators
-    behind H0897, the 2026 bipartisan data-center bill that passed both chambers but died when the House
-    did not take up the Senate amendments.'
+  reasoning:
+    en: 'John Gannon is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: a Democrat holds this seat now. Gannon was one of the three legislators behind H0897, the 2026 bipartisan data-center bill that passed both chambers but died when the House did not take up the Senate amendments.'
+    es: 'John Gannon es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: un demócrata ocupa este escaño ahora. Gannon fue uno de los tres legisladores detrás del H0897, el proyecto de ley bipartidista de 2026 sobre centros de datos. Fue aprobado en las dos cámaras, pero no se convirtió en ley porque la Cámara de Representantes no votó los cambios que hizo el Senado.'
   approved: false
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'

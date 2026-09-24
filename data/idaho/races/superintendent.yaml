@@ -1,8 +1,12 @@
-office: "Superintendent of Public Instruction"
+office:
+  en: "Superintendent of Public Instruction"
+  es: Superintendente de Instrucción Pública
 level: statewide
 order: 15
 depth: full
-controls: "The Superintendent leads the State Department of Education. The department carries out State Board of Education policy for K-12 schools, distributes state school funds, runs statewide testing and licenses educators. Local districts and charter schools run day-to-day operations, and the Legislature sets school funding."
+controls:
+  en: "The Superintendent leads the State Department of Education. The department carries out State Board of Education policy for K-12 schools, distributes state school funds, runs statewide testing and licenses educators. Local districts and charter schools run day-to-day operations, and the Legislature sets school funding."
+  es: El superintendente dirige el Departamento de Educación del Estado. El departamento aplica las políticas de la Junta de Educación del Estado para las escuelas de kínder a 12.º grado, reparte los fondos escolares del estado, maneja los exámenes estatales y da las licencias a los educadores. Los distritos locales y las escuelas chárter manejan el día a día, y la Legislatura decide el financiamiento de las escuelas.
 controls_source:
   name: "Idaho State Department of Education: About Us"
   url: "https://sde.idaho.gov/about-us/"
@@ -10,10 +14,13 @@ candidates:
   - name: "Debbie Critchfield"
     party: R
     incumbent: true
-    bio: "Superintendent since 2023; from Oakley; former Cassia County school board member and former State Board of Education member."
+    bio:
+      en: "Superintendent since 2023; from Oakley; former Cassia County school board member and former State Board of Education member."
+      es: Superintendente desde 2023; de Oakley; fue miembro de la junta escolar del condado de Cassia y de la Junta de Educación del Estado.
     website: "https://debbie4idaho.com/"
     quote:
       text: "Four years ago, I promised to put Idaho’s students first and lead with integrity and common sense. I’m proud of the progress we’ve made together for Idaho’s students, families, schools and communities. There is still important work ahead, and I’m ready to keep building on what we’ve started."
+      translation_es: Hace cuatro años prometí poner primero a los estudiantes de Idaho y dirigir con integridad y sentido común. Estoy orgullosa del progreso que hemos logrado juntos para los estudiantes, las familias, las escuelas y las comunidades de Idaho. Todavía queda trabajo importante por hacer, y estoy lista para seguir construyendo sobre lo que empezamos.
       date: "2026-08-24"
       context: "Answer to \"why should people vote for you?\" in the CBS2/KBOI 2026 candidate survey."
       source:
@@ -23,10 +30,13 @@ candidates:
       verified: true
   - name: "Becky Sundin Mitchell"
     party: D
-    bio: "2018 Idaho Teacher of the Year; middle school science teacher in Caldwell; lives in Canyon County."
+    bio:
+      en: "2018 Idaho Teacher of the Year; middle school science teacher in Caldwell; lives in Canyon County."
+      es: Maestra del Año de Idaho en 2018; maestra de ciencias de secundaria en Caldwell; vive en el condado de Canyon.
     website: "https://becky4idaho.com/"
     quote:
       text: "Idahoans should vote for me because the person leading public education should understand public education from the classroom up."
+      translation_es: Los habitantes de Idaho deben votar por mí porque la persona que dirige la educación pública debe entender la educación pública desde el salón de clases.
       date: "2026-08-24"
       context: "Answer to \"why should people vote for you?\" in the CBS2/KBOI 2026 candidate survey."
       source:
@@ -36,9 +46,12 @@ candidates:
       verified: true
   - name: "Teresa Roundy"
     party: C
-    bio: "Garden City resident; former wildland firefighter and teacher."
+    bio:
+      en: "Garden City resident; former wildland firefighter and teacher."
+      es: Vive en Garden City; fue bombera forestal y maestra.
     quote:
       text: "I am asking for your vote to help rebuild Idaho's schools into safe, world-class institutions."
+      translation_es: Le pido su voto para ayudar a reconstruir las escuelas de Idaho y convertirlas en instituciones seguras y de primer nivel mundial.
       date: "2026-08-24"
       context: "Answer to \"why should people vote for you?\" in the CBS2/KBOI 2026 candidate survey."
       source:
@@ -59,11 +72,15 @@ pick:
   label: clear
   candidate: "Becky Sundin Mitchell"
   rule: "Rule 2: no independent poll; the Democrat was the highest non-Republican finisher in 2022 (the only one on that ballot)."
-  reasoning: "With no poll, the method points to the Democrat. Her party took about 30 percent here in 2022, while Constitution candidates drew 4 to 5 percent in other statewide races. This is a roughly 40-point race. One nuance: Critchfield supports parental choice but says the school choice tax credit policy \"lacks transparency and accountability\" (CBS2/KBOI survey), while both challengers oppose the credit (Idaho Education News)."
+  reasoning:
+    en: "With no poll, the method points to the Democrat. Her party took about 30 percent here in 2022, while Constitution candidates drew 4 to 5 percent in other statewide races. This is a roughly 40-point race. One nuance: Critchfield supports parental choice but says the school choice tax credit policy \"lacks transparency and accountability\" (CBS2/KBOI survey), while both challengers oppose the credit (Idaho Education News)."
+    es: 'Como no hay encuesta, el método señala a la candidata demócrata. Su partido sacó cerca del 30 por ciento aquí en 2022, mientras que los candidatos del Partido de la Constitución sacaron de 4 a 5 por ciento en otras contiendas estatales. Esta es una contienda de unos 40 puntos de diferencia. Un detalle: Critchfield apoya que los padres elijan la escuela, pero dice que la política de crédito fiscal para elegir escuela "no tiene transparencia ni rendición de cuentas" (encuesta de CBS2/KBOI), mientras que los dos retadores se oponen al crédito (Idaho Education News).'
   approved: false
 scenarios:
   - voters_of: "Teresa Roundy"
-    text: "If you mainly want a change from the incumbent, the method says the Democrat is the non-Republican with a track record of real vote share in this race. If you agree with Roundy's platform, voting your values is also a legitimate choice."
+    text:
+      en: "If you mainly want a change from the incumbent, the method says the Democrat is the non-Republican with a track record of real vote share in this race. If you agree with Roundy's platform, voting your values is also a legitimate choice."
+      es: Si lo que más quiere es un cambio de la titular, el método dice que la demócrata es la candidata no republicana con un historial de votos reales en esta contienda. Si está de acuerdo con la plataforma de Roundy, votar según sus valores también es una decisión legítima.
 review_flags: []
 unverified:
   - "Roundy's statement that she co-founded the Idaho chapter of Moms Demand Action is her own claim and is not included in her bio."

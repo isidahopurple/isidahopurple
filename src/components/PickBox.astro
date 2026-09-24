@@ -7,12 +7,14 @@ const { race, lang, compact } = Astro.props;
 const { pick, candidates } = race.data;
 const cand = candidates.find((c) => c.name === pick.candidate);
 const labelKey = `pick.${pick.label}` as Parameters<typeof t>[1];
+const ruleNo = pick.rule.match(/\d/)?.[0];
+const ruleText = ruleNo ? (lang === 'es' ? `Regla ${ruleNo} del método` : `Method rule ${ruleNo}`) : (lang === 'es' ? 'El método no aplica' : 'The method doesn’t apply');
 ---
 <div class="pick card">
   <p class="pick-label"><span class="tag">{t(lang, labelKey)}</span> {!pick.approved && <span class="tag draft">{t(lang, 'race.pickPending')}</span>}</p>
   {cand && <p class="pick-name">{cand.name} <Party party={cand.party} lang={lang} /></p>}
   {!compact && <p>{tx(pick.reasoning, lang)}</p>}
-  {!compact && <p class="small muted">{pick.rule} · <a href={href(lang, '/experiment#method')}>{t(lang, 'pick.method')}</a></p>}
+  {!compact && <p class="small muted">{ruleText} · <a href={href(lang, '/experiment#method')}>{t(lang, 'pick.method')}</a></p>}
 </div>
 <style>
   .pick { border-left: 6px solid #7b3fc0; }

@@ -1,14 +1,18 @@
-office: "Governor"
+office:
+  en: "Governor"
+  es: Gobernador
 level: statewide
 order: 2
 featured: true
 depth: full
 
-controls: >-
-  Idaho's chief executive, elected for a four-year term. The governor signs or vetoes
-  bills, can veto individual items in budget bills, and appoints many state officials,
-  including the three Public Utilities Commissioners who set Idaho Power's rates (with
-  state Senate approval).
+controls:
+  en: >-
+    Idaho's chief executive, elected for a four-year term. The governor signs or vetoes
+    bills, can veto individual items in budget bills, and appoints many state officials,
+    including the three Public Utilities Commissioners who set Idaho Power's rates (with
+    state Senate approval).
+  es: Es el jefe del poder ejecutivo de Idaho y se elige por un periodo de cuatro años. El gobernador firma o veta los proyectos de ley, puede vetar partidas individuales en los proyectos de presupuesto y nombra a muchos funcionarios estatales. Entre ellos están los tres comisionados de la Comisión de Servicios Públicos (Public Utilities Commission), que fijan las tarifas de Idaho Power (con la aprobación del Senado estatal).
 controls_source:
   name: "Idaho Constitution, Article IV (Executive Department)"
   url: "https://legislature.idaho.gov/statutesrules/idconst/ArtIV/"
@@ -17,15 +21,18 @@ candidates:
   - name: "Brad Little"
     party: R
     incumbent: true
-    bio: >-
-      Governor since 2019 and a former lieutenant governor. Seeking
-      a third term.
+    bio:
+      en: >-
+        Governor since 2019 and a former lieutenant governor. Seeking
+        a third term.
+      es: Gobernador desde 2019 y exvicegobernador. Busca un tercer periodo.
     website: "https://littleforidaho.com/"
     quote:
       text: >-
         Teresa and I are honored to serve the people of Idaho. Together, we've made Idaho
         the most prosperous state in the nation while fiercely defending our enduring
         core values — faith, family, and freedom.
+      translation_es: 'Teresa y yo nos sentimos honrados de servir al pueblo de Idaho. Juntos, hemos hecho de Idaho el estado más próspero del país, mientras defendemos con firmeza nuestros valores fundamentales y duraderos: la fe, la familia y la libertad.'
       date: "2026-02-24"
       context: "Statement announcing his campaign for a third term, as reported by KIFI Local News 8"
       source:
@@ -36,15 +43,18 @@ candidates:
 
   - name: "Terri Pickens"
     party: D
-    bio: >-
-      Boise attorney and founder of Pickens Law. Grew up in Pocatello. She ran for
-      lieutenant governor in 2022.
+    bio:
+      en: >-
+        Boise attorney and founder of Pickens Law. Grew up in Pocatello. She ran for
+        lieutenant governor in 2022.
+      es: Abogada de Boise y fundadora de Pickens Law. Creció en Pocatello. Fue candidata a vicegobernadora en 2022.
     website: "https://terriforidaho.com/"
     quote:
       text: >-
         I grew up in Pocatello, where hard work and strong communities meant everything.
         We were taught to leave things better than we found them—and that's why I'm
         running for governor.
+      translation_es: Crecí en Pocatello, donde el trabajo duro y las comunidades unidas lo eran todo. Nos enseñaron a dejar las cosas mejor de como las encontramos, y por eso me postulo para gobernadora.
       date: "2026-09-24"
       context: "Campaign website home page (undated; date is when we read it)"
       source:
@@ -54,15 +64,18 @@ candidates:
 
   - name: "John Stegner"
     party: I
-    bio: >-
-      Former Idaho Supreme Court justice (2018–2023) who served about 25 years as a
-      judge. Running as an independent. Listed on the ballot as "John R. Stegner".
+    bio:
+      en: >-
+        Former Idaho Supreme Court justice (2018–2023) who served about 25 years as a
+        judge. Running as an independent. Listed on the ballot as "John R. Stegner".
+      es: Exjuez de la Corte Suprema de Idaho (2018–2023) que fue juez durante unos 25 años. Se postula como independiente. En la boleta aparece como "John R. Stegner".
     website: "https://www.stegnerforidaho.com/"
     quote:
       text: >-
         Idaho deserves leaders who listen, solve problems, and do what's right when it
         matters most. ... I'm a lifelong Idahoan, former Idaho Supreme Court Justice, and
         principled leader running for Governor because I believe Idaho can do better.
+      translation_es: Idaho merece líderes que escuchen, resuelvan problemas y hagan lo correcto cuando más importa. ... Soy de Idaho de toda la vida, exjuez de la Corte Suprema de Idaho y un líder con principios que se postula para gobernador porque creo que Idaho puede estar mejor.
       date: "2026-09-24"
       context: "Campaign website home page (undated; date is when we read it)"
       source:
@@ -72,14 +85,17 @@ candidates:
 
   - name: "Paul Sand"
     party: L
-    bio: >-
-      Retired software engineer and former White Bird city council member. He was the
-      2022 Libertarian nominee for governor and got 1.1%.
+    bio:
+      en: >-
+        Retired software engineer and former White Bird city council member. He was the
+        2022 Libertarian nominee for governor and got 1.1%.
+      es: Ingeniero de software jubilado y exmiembro del concejo municipal de White Bird. Fue el candidato libertario a gobernador en 2022 y sacó el 1.1%.
     website: "https://paulsand.org/"
     quote:
       text: >-
         Voting for me should be considered as a vote against the entire corrupt political
         establishment in Idaho. My campaign is not about me, it is about you.
+      translation_es: Votar por mí debe verse como un voto en contra de todo el sistema político corrupto de Idaho. Mi campaña no se trata de mí, se trata de ustedes.
       date: "2026-09-03"
       context: "His campaign website, in the platform section below a Sept 3, 2026 update"
       source:
@@ -89,13 +105,16 @@ candidates:
 
   - name: "Pro-Life"
     party: C
-    bio: >-
-      Organic farmer from Letha, born Marvin Richardson, who legally changed his name to
-      Pro-Life. He is a frequent Constitution Party candidate and got 5.1% for lieutenant
-      governor in 2022.
+    bio:
+      en: >-
+        Organic farmer from Letha, born Marvin Richardson, who legally changed his name to
+        Pro-Life. He is a frequent Constitution Party candidate and got 5.1% for lieutenant
+        governor in 2022.
+      es: Agricultor orgánico de Letha. Nació con el nombre de Marvin Richardson y se cambió legalmente el nombre a Pro-Life. Es candidato frecuente del Partido de la Constitución y sacó el 5.1% en la elección para vicegobernador en 2022.
     website: "http://prolife-idaho.com/"
     quote:
       text: "Don't vote for the lesser of evils. You always have a choice. Vote by principle."
+      translation_es: No voten por el menos malo. Siempre tienen opción. Voten por principios.
       date: "2026-09-24"
       context: "Headline of the campaign website he shares with his wife (undated; date is when we read it)"
       source:
@@ -105,10 +124,11 @@ candidates:
 
   - name: "Jacob Burnett"
     party: I
-    bio: >-
-      Official write-in candidate. His name is not printed on the ballot. To vote for
-      him you write his name in.
-
+    bio:
+      en: >-
+        Official write-in candidate. His name is not printed on the ballot. To vote for
+        him you write his name in.
+      es: Candidato oficial por escrito (write-in). Su nombre no aparece impreso en la boleta. Para votar por él, usted tiene que escribir su nombre.
 polls:
   - pollster: "Advanced Targeting Research"
     start: "2026-09-13"
@@ -192,55 +212,65 @@ pick:
     Rule 1 (poll), confirmed by rule 2. Pickens is the top non-Republican in both public
     polls with all the main candidates, including the only one not paid for by a
     campaign. In 2022 the Democrat (20.3) also finished ahead of the independent (17.2).
-    Owner's decision: Pickens is the pick, with a "Stegner voters" box.
-  reasoning: >-
-    In the Advanced Targeting Research poll, Little is at 37 with 20% undecided, so a
-    majority is not locked in. Pickens (27) and Stegner (13) together come to 40. Pickens
-    leads Stegner by 14 to 16 points in both three-way polls, so she is the challenger
-    with the larger base. If voters who want a new governor come together, this can
-    become a real race. The polls conflict, though: Stegner's own July poll has Little at
-    48 and far ahead, and the sponsor of the September poll is not disclosed.
+  reasoning:
+    en: >-
+      In the Advanced Targeting Research poll, Little is at 37 with 20% undecided, so a
+      majority is not locked in. Pickens (27) and Stegner (13) together come to 40. Pickens
+      leads Stegner by 14 to 16 points in both three-way polls, so she is the challenger
+      with the larger base. If voters who want a new governor come together, this can
+      become a real race. The polls conflict, though: Stegner's own July poll has Little at
+      48 and far ahead, and the sponsor of the September poll is not disclosed.
+    es: 'En la encuesta de Advanced Targeting Research, Little tiene 37, con 20% de indecisos, así que no tiene asegurada la mayoría. Pickens (27) y Stegner (13) juntos suman 40. Pickens le gana a Stegner por 14 a 16 puntos en las dos encuestas de tres candidatos, así que ella es la retadora con más apoyo. Si los votantes que quieren un nuevo gobernador se unen, esta puede volverse una contienda real. Sin embargo, las encuestas no coinciden: la propia encuesta de Stegner de julio pone a Little en 48 y muy adelante, y no se sabe quién pagó la encuesta de septiembre.'
   approved: false
 
 scenarios:
   - voters_of: "John Stegner"
-    text: >-
-      John Stegner spent about 25 years as a judge, including on the Idaho Supreme Court,
-      and he is running a serious campaign. Plenty of Republicans and independents like
-      him, and that is a good reason to take him seriously. Here is what your vote does.
-      Idaho has no runoff: the Idaho Constitution says whoever gets the most votes wins,
-      even with well under half. In the latest poll, Little has 37, Pickens 27 and
-      Stegner 13. Together Pickens and Stegner are ahead of Little, but split two ways,
-      neither one is. When the vote for change is divided, it helps whoever is already
-      in front, and here that is Little. Pickens has more support in both three-way polls,
-      including Stegner's own (27 to 11). If you are open to either challenger, a vote
-      for Pickens is the one most likely to add up to a win. If you are a Republican who
-      would never vote for a Democrat, your vote for Stegner is still a vote for a change
-      in leadership, and you should cast it.
+    text:
+      en: >-
+        John Stegner spent about 25 years as a judge, including on the Idaho Supreme Court,
+        and he is running a serious campaign. Plenty of Republicans and independents like
+        him, and that is a good reason to take him seriously. Here is what your vote does.
+        Idaho has no runoff: the Idaho Constitution says whoever gets the most votes wins,
+        even with well under half. In the latest poll, Little has 37, Pickens 27 and
+        Stegner 13. Together Pickens and Stegner are ahead of Little, but split two ways,
+        neither one is. When the vote for change is divided, it helps whoever is already
+        in front, and here that is Little. Pickens has more support in both three-way polls,
+        including Stegner's own (27 to 11). If you are open to either challenger, a vote
+        for Pickens is the one most likely to add up to a win. If you are a Republican who
+        would never vote for a Democrat, your vote for Stegner is still a vote for a change
+        in leadership, and you should cast it.
+      es: 'John Stegner fue juez unos 25 años, incluso en la Corte Suprema de Idaho, y está haciendo una campaña seria. A muchos republicanos e independientes les cae bien, y esa es una buena razón para tomarlo en serio. Esto es lo que hace su voto. Idaho no tiene segunda vuelta: la Constitución de Idaho dice que gana quien saque más votos, aunque sea mucho menos de la mitad. En la encuesta más reciente, Little tiene 37, Pickens 27 y Stegner 13. Juntos, Pickens y Stegner van delante de Little, pero por separado, ninguno de los dos va adelante. Cuando el voto por el cambio se divide, ayuda a quien ya va adelante, y aquí ese es Little. Pickens tiene más apoyo en las dos encuestas de tres candidatos, incluida la del propio Stegner (27 a 11). Si está dispuesto a votar por cualquiera de los dos retadores, un voto por Pickens es el que tiene más probabilidad de sumar para ganar. Si usted es republicano y nunca votaría por un demócrata, su voto por Stegner sigue siendo un voto por un cambio de liderazgo, y debe emitirlo.'
   - voters_of: "Paul Sand"
-    text: >-
-      Paul Sand says on his own website that beating Little is "very unlikely" and that a
-      vote for him is a protest against the political establishment. If a protest vote is
-      what you want, his name is on the ballot. If you would mainly like a different
-      governor, Pickens is the challenger with the most support.
+    text:
+      en: >-
+        Paul Sand says on his own website that beating Little is "very unlikely" and that a
+        vote for him is a protest against the political establishment. If a protest vote is
+        what you want, his name is on the ballot. If you would mainly like a different
+        governor, Pickens is the challenger with the most support.
+      es: Paul Sand dice en su propio sitio web que ganarle a Little es "muy poco probable" y que votar por él es una protesta contra el sistema político. Si lo que quiere es un voto de protesta, su nombre está en la boleta. Si lo que más quiere es otro gobernador, Pickens es la retadora con más apoyo.
   - voters_of: "Pro-Life"
-    text: >-
-      Pro-Life asks voters to "vote by principle", and his website says a vote for him
-      won't change the final outcome. If you vote for him on principle, that is your
-      right. His positions are far from Pickens's, and we are not asking you to switch.
+    text:
+      en: >-
+        Pro-Life asks voters to "vote by principle", and his website says a vote for him
+        won't change the final outcome. If you vote for him on principle, that is your
+        right. His positions are far from Pickens's, and we are not asking you to switch.
+      es: Pro-Life pide a los votantes que "voten por principios", y su sitio web dice que un voto por él no cambiará el resultado final. Si vota por él por principios, está en su derecho. Sus posturas están muy lejos de las de Pickens, y no le estamos pidiendo que cambie su voto.
   - voters_of: "Jacob Burnett (write-in)"
-    text: >-
-      Burnett is an official write-in candidate, so his name is not printed on the
-      ballot. A write-in vote counts only for a registered write-in candidate like him,
-      and you have to write his name in yourself. If you would mainly like a different
-      governor, Pickens is the challenger with the most support in the polls.
+    text:
+      en: >-
+        Burnett is an official write-in candidate, so his name is not printed on the
+        ballot. A write-in vote counts only for a registered write-in candidate like him,
+        and you have to write his name in yourself. If you would mainly like a different
+        governor, Pickens is the challenger with the most support in the polls.
+      es: Burnett es un candidato oficial por escrito (write-in), así que su nombre no aparece impreso en la boleta. Un voto por escrito solo cuenta para un candidato por escrito registrado, como él, y usted mismo tiene que escribir su nombre. Si lo que más quiere es otro gobernador, Pickens es la retadora con más apoyo en las encuestas.
   - voters_of: "Undecided Republicans"
-    text: >-
-      If you have supported Brad Little before and are unsure this time, read each
-      candidate in their own words above. Stegner is a former Idaho Supreme Court justice
-      running as an independent, and Pickens is the Democratic nominee. Whoever you
-      choose, it is your call, and we respect it.
-
+    text:
+      en: >-
+        If you have supported Brad Little before and are unsure this time, read each
+        candidate in their own words above. Stegner is a former Idaho Supreme Court justice
+        running as an independent, and Pickens is the Democratic nominee. Whoever you
+        choose, it is your call, and we respect it.
+      es: Si antes ha apoyado a Brad Little y esta vez no está seguro, lea arriba a cada candidato en sus propias palabras. Stegner es exjuez de la Corte Suprema de Idaho y se postula como independiente, y Pickens es la candidata del Partido Demócrata. Elija a quien elija, la decisión es suya y la respetamos.
 review_flags:
   - >-
     Power bills and data centers (a Republican matches the pick's side): on July 24,

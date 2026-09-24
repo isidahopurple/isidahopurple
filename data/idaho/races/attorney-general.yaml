@@ -1,8 +1,12 @@
-office: "Attorney General"
+office:
+  en: "Attorney General"
+  es: Fiscal General
 level: statewide
 order: 11
 depth: full
-controls: "The Attorney General is the state's lawyer: the office represents state agencies in court, advises them on the law, and issues legal opinions to legislators and statewide officers on request. The Attorney General also sits on the State Land Board."
+controls:
+  en: "The Attorney General is the state's lawyer: the office represents state agencies in court, advises them on the law, and issues legal opinions to legislators and statewide officers on request. The Attorney General also sits on the State Land Board."
+  es: 'El fiscal general es el abogado del estado: la oficina representa a las agencias estatales en los tribunales, les da asesoría legal y, cuando se lo piden, emite opiniones legales para los legisladores y los funcionarios estatales. El fiscal general también es miembro de la Junta de Tierras del Estado (State Land Board).'
 controls_source:
   name: "Idaho Code 67-1401 (duties of the Attorney General)"
   url: "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch14/sect67-1401/"
@@ -10,10 +14,13 @@ candidates:
   - name: "Raul R. Labrador"
     party: R
     incumbent: true
-    bio: "Attorney General since 2023; former U.S. Representative for Idaho's 1st District and a founding member of the House Freedom Caucus."
+    bio:
+      en: "Attorney General since 2023; former U.S. Representative for Idaho's 1st District and a founding member of the House Freedom Caucus."
+      es: Fiscal general desde 2023; fue representante de EE. UU. por el Distrito 1 de Idaho y miembro fundador del House Freedom Caucus.
     website: "https://raullabrador.com/"
     quote:
       text: "When I ran for Attorney General, I promised to aggressively defend Idaho's values. The legal battles over life, parental rights, and fairness in women's sports are far from over. Idahoans deserve an Attorney General who shares their conservative principles, stands firm, takes these fights to the highest courts, and never apologizes for defending our laws."
+      translation_es: Cuando me postulé para fiscal general, prometí defender con fuerza los valores de Idaho. Las batallas legales sobre la vida, los derechos de los padres y la justicia en los deportes femeninos están lejos de terminar. Los habitantes de Idaho merecen un fiscal general que comparta sus principios conservadores, que se mantenga firme, que lleve estas luchas hasta los tribunales más altos y que nunca pida disculpas por defender nuestras leyes.
       date: "2026-02-26"
       context: "Statement announcing that he filed for re-election, as reported by KMVT."
       source:
@@ -23,10 +30,13 @@ candidates:
       verified: true
   - name: "Lori Hickman"
     party: D
-    bio: "Boise attorney with about 20 years of practice; former board chair of Mormon Women for Ethical Government."
+    bio:
+      en: "Boise attorney with about 20 years of practice; former board chair of Mormon Women for Ethical Government."
+      es: Abogada de Boise con unos 20 años de experiencia; fue presidenta de la junta directiva de Mormon Women for Ethical Government.
     website: "https://www.lori4idaho.com/"
     quote:
       text: "The attorney general is the people's lawyer. This office must be grounded in ethics, sound legal analysis, and respect for the Constitution. Idaho deserves an attorney general who puts people and the legal process ahead of politics."
+      translation_es: El fiscal general es el abogado del pueblo. Esta oficina debe basarse en la ética, en un análisis legal sólido y en el respeto a la Constitución. Idaho merece un fiscal general que ponga a las personas y el proceso legal por encima de la política.
       date: "2026-02-27"
       context: "Statement announcing her campaign, in an Idaho Democratic Party release."
       source:
@@ -34,7 +44,21 @@ candidates:
         url: "https://idahodems.org/lori-hickman-announces-campaign-for-idaho-attorney-general-promises-professional-people-first-leadership/"
         date: "2026-02-27"
       verified: true
-polls: []
+polls:
+  - pollster: "Change Research"
+    start: "2026-07-28"
+    end: "2026-07-30"
+    sample: "1,213 LV"
+    margin_of_error: "3.0"
+    sponsor: "Stegner for Idaho (governor campaign)"
+    sponsor_type: campaign
+    results:
+      "Raul R. Labrador": 49
+      "Lori Hickman": 31
+    undecided: 20
+    source:
+      name: "Change Research toplines for Stegner for Idaho, July 2026"
+      url: "https://docs.google.com/document/d/1u6Y5rUbSLEoS0nBgXqKarEzHEQCOzxPjj_Wm27eHKE8/edit"
 history:
   - year: 2022
     label: "2022 Idaho Attorney General"
@@ -47,11 +71,14 @@ pick:
   label: two-way
   candidate: "Lori Hickman"
   rule: "Rule 3: only one non-Republican on the ballot."
-  reasoning: "Hickman is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. The 25-point margin in 2022 was the closest statewide race that year, and the Democrat carried Ada County (Arkoosh 95,467 to Labrador 88,131). It is still a long shot statewide, with no public poll."
+  reasoning:
+    en: "Hickman is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. The 25-point margin in 2022 was the closest statewide race that year, and the Democrat carried Ada County (Arkoosh 95,467 to Labrador 88,131). It is still a long shot statewide, with no public poll."
+    es: Hickman es la única candidata no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. La diferencia de 25 puntos en 2022 fue la contienda estatal más cerrada de ese año, y la demócrata ganó en el condado de Ada (Arkoosh 95,467 contra Labrador 88,131). Aun así, a nivel estatal es muy difícil que gane, y no hay ninguna encuesta pública.
   approved: false
 scenarios: []
 review_flags: []
-unverified: []
+unverified:
+  - "The Change Research poll was paid for by a governor campaign, so it is not independent. Its memo gives field dates as \"July 28-39, 2026\", an obvious typo; July 28-30 is assumed."
 sources:
   - name: "Idaho Secretary of State candidate list, 2026 General (run.voteidaho.gov, marked final list)"
     url: "https://run.voteidaho.gov/search"

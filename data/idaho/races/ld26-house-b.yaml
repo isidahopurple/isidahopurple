@@ -1,12 +1,14 @@
-office: State House, District 26, Seat B
+office:
+  en: State House, District 26, Seat B
+  es: Cámara de Representantes estatal, Distrito 26, Puesto B
 level: legislative
 district: LD26
 seat: House B
 order: 180
 depth: full
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -14,12 +16,13 @@ candidates:
 - name: Lyle Johnstone
   party: R
   incumbent: false
-  bio: His campaign site says he served on the Northside Soil and Water Conservation District board.
+  bio:
+    en: His campaign site says he served on the Northside Soil and Water Conservation District board.
+    es: Su sitio de campaña dice que fue miembro de la junta del Northside Soil and Water Conservation District (distrito de conservación de suelo y agua).
   website: https://www.johnstoneforhouse.com/
   quote:
-    text: I am running for the Idaho House to ensure government focuses on practical solutions that protect
-      Idaho's future while preserving the values that make our state a great place to live, work, and
-      raise a family.
+    text: I am running for the Idaho House to ensure government focuses on practical solutions that protect Idaho's future while preserving the values that make our state a great place to live, work, and raise a family.
+    translation_es: Me postulo para la Cámara de Representantes de Idaho para asegurar que el gobierno se enfoque en soluciones prácticas que protejan el futuro de Idaho y que conserven los valores que hacen de nuestro estado un gran lugar para vivir, trabajar y criar una familia.
     date: '2026-09-24'
     context: Campaign homepage (undated page, read 2026-09-24).
     source:
@@ -31,9 +34,8 @@ candidates:
   incumbent: false
   website: https://www.kevinmarshforidaho.com/
   quote:
-    text: Citizens of Blaine, Jerome, and Lincoln counties should vote for me, because I put the interests
-      of their communities first. I will protect water supplies in our district and prioritize local control
-      in government and schools.
+    text: Citizens of Blaine, Jerome, and Lincoln counties should vote for me, because I put the interests of their communities first. I will protect water supplies in our district and prioritize local control in government and schools.
+    translation_es: Los ciudadanos de los condados de Blaine, Jerome y Lincoln deben votar por mí porque pongo primero los intereses de sus comunidades. Voy a proteger el agua de nuestro distrito y dar prioridad al control local en el gobierno y en las escuelas.
     date: '2026-08-24'
     context: His answer to why people should vote for him, in a TV-station candidate survey.
     source:
@@ -60,14 +62,12 @@ pick:
   label: two-way
   candidate: Kevin Marsh
   rule: '3'
-  reasoning: 'Kevin Marsh is the only non-Republican on the ballot, so this is a two-way race and turnout
-    is what matters. Open seat: Rep. Jack Nelsen (R) is not on the ballot. The seat was decided by 84
-    votes in 2022 and 3.1 points in 2024. District lines were the same in 2022 and 2024 (the post-2020-census
-    map), so both results compare directly.'
+  reasoning:
+    en: 'Kevin Marsh is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Open seat: Rep. Jack Nelsen (R) is not on the ballot. The seat was decided by 84 votes in 2022 and 3.1 points in 2024. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+    es: 'Kevin Marsh es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Escaño abierto: el representante Jack Nelsen (R) no está en la boleta. El escaño se decidió por 84 votos en 2022 y por 3.1 puntos en 2024. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
   approved: false
 unverified:
-- Johnstone's quote is from an undated campaign homepage; the date shown is when it was read. Kevin Marsh's
-  website URL was found by search and only checked to load.
+- Johnstone's quote is from an undated campaign homepage; the date shown is when it was read. Kevin Marsh's website URL was found by search and only checked to load.
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

@@ -1,23 +1,33 @@
-title: "Idaho HJR 4, the Grant Legislature Exclusive Authority and Prohibit Citizen-Initiated Measures on Marijuana, Narcotics, and Psychoactive Substances Amendment"
+title:
+  en: "Idaho HJR 4, the Grant Legislature Exclusive Authority and Prohibit Citizen-Initiated Measures on Marijuana, Narcotics, and Psychoactive Substances Amendment"
+  es: HJR 4 de Idaho, enmienda para darle a la Legislatura la autoridad exclusiva y prohibir las medidas por iniciativa ciudadana sobre marihuana, narcóticos y sustancias psicoactivas
 short_name: "HJR 4"
 order: 1
 kind: constitutional-amendment
-summary: >-
-  HJR 4 would change the Idaho Constitution so that only the Legislature could
-  make marijuana, narcotics or other psychoactive drugs legal. Voters would no
-  longer be able to legalize these drugs through a citizen ballot initiative.
-  It would take effect right away if voters approve it.
-yes_means: >-
-  Only the Idaho Legislature could legalize marijuana, narcotics or other
-  psychoactive substances. Citizens could not use a ballot initiative to do it.
-no_means: >-
-  No change to the Idaho Constitution. Citizens could still use the ballot
-  initiative process to try to change Idaho's drug laws, and the Legislature
-  keeps its current power too.
-passes_with: >-
-  A majority of the votes cast on the question. (The Idaho Constitution,
-  Article XX, Section 1, says a "majority of the electors" must ratify an
-  amendment.)
+summary:
+  en: >-
+    HJR 4 would change the Idaho Constitution so that only the Legislature could
+    make marijuana, narcotics or other psychoactive drugs legal. Voters would no
+    longer be able to legalize these drugs through a citizen ballot initiative.
+    It would take effect right away if voters approve it.
+  es: HJR 4 cambiaría la Constitución de Idaho para que solo la Legislatura pueda legalizar la marihuana, los narcóticos u otras drogas psicoactivas. Los votantes ya no podrían legalizar estas drogas por medio de una iniciativa ciudadana en la boleta. Entraría en vigor de inmediato si los votantes la aprueban.
+yes_means:
+  en: >-
+    Only the Idaho Legislature could legalize marijuana, narcotics or other
+    psychoactive substances. Citizens could not use a ballot initiative to do it.
+  es: Solo la Legislatura de Idaho podría legalizar la marihuana, los narcóticos u otras sustancias psicoactivas. Los ciudadanos no podrían usar una iniciativa en la boleta para hacerlo.
+no_means:
+  en: >-
+    No change to the Idaho Constitution. Citizens could still use the ballot
+    initiative process to try to change Idaho's drug laws, and the Legislature
+    keeps its current power too.
+  es: No cambia la Constitución de Idaho. Los ciudadanos todavía podrían usar el proceso de iniciativa en la boleta para tratar de cambiar las leyes de drogas de Idaho, y la Legislatura también conserva el poder que tiene ahora.
+passes_with:
+  en: >-
+    A majority of the votes cast on the question. (The Idaho Constitution,
+    Article XX, Section 1, says a "majority of the electors" must ratify an
+    amendment.)
+  es: La mayoría de los votos emitidos sobre esta pregunta. (La Constitución de Idaho, Artículo XX, Sección 1, dice que una "mayoría de los electores" debe ratificar una enmienda).
 supporters:
   - name: "Idaho Senate Republican Caucus"
     source:

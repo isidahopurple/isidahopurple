@@ -1,8 +1,12 @@
-office: "State Controller"
+office:
+  en: "State Controller"
+  es: Contralor Estatal
 level: statewide
 order: 14
 depth: full
-controls: "The Controller is the state's chief fiscal officer: the office keeps the state's accounts, sets accounting controls, authorizes state payments and runs state payroll. The Controller also sits on the State Land Board and the Board of Examiners."
+controls:
+  en: "The Controller is the state's chief fiscal officer: the office keeps the state's accounts, sets accounting controls, authorizes state payments and runs state payroll. The Controller also sits on the State Land Board and the Board of Examiners."
+  es: 'El contralor es el principal funcionario fiscal del estado: la oficina lleva las cuentas del estado, fija los controles contables, autoriza los pagos del estado y maneja la nómina estatal. El contralor también es miembro de la Junta de Tierras del Estado (State Land Board) y de la Junta de Examinadores (Board of Examiners).'
 controls_source:
   name: "Idaho State Controller's Office: Duties of the State Controller"
   url: "https://www.sco.idaho.gov/Pages/Duties-of-the-State-Controller.aspx"
@@ -10,10 +14,13 @@ candidates:
   - name: "Brandon D Woolf"
     party: R
     incumbent: true
-    bio: "State Controller since his 2012 appointment, then elected in 2014 and re-elected since; from Preston."
+    bio:
+      en: "State Controller since his 2012 appointment, then elected in 2014 and re-elected since; from Preston."
+      es: Contralor estatal desde que fue nombrado en 2012; después fue elegido en 2014 y reelegido desde entonces. Es de Preston.
     website: "https://brandonwoolf.com/"
     quote:
       text: "My focus has always and continues to be protecting taxpayer dollars and ensuring our state government operates efficiently and openly."
+      translation_es: Mi enfoque siempre ha sido, y sigue siendo, proteger el dinero de los contribuyentes y asegurar que el gobierno de nuestro estado funcione de manera eficiente y abierta.
       date: "2026-02-24"
       context: "Campaign release announcing that he filed for re-election."
       source:
@@ -23,10 +30,13 @@ candidates:
       verified: true
   - name: "Rakesh Mohan"
     party: D
-    bio: "Longtime director of the Legislature's nonpartisan Office of Performance Evaluations; retired in June 2024."
+    bio:
+      en: "Longtime director of the Legislature's nonpartisan Office of Performance Evaluations; retired in June 2024."
+      es: Fue director por muchos años de la Oficina de Evaluaciones de Desempeño (Office of Performance Evaluations), una oficina no partidista de la Legislatura; se jubiló en junio de 2024.
     website: "https://www.mohan4statecontroller.com/"
     quote:
       text: "After 14 years, it is time for change in the Office of the State Controller! I say this because the last major IT project, commonly known as Luma, launched by the State Controller faced many implementation challenges and cost-overruns in millions as reported by the legislature’s nonpartisan Office of Performance Evaluations."
+      translation_es: ¡Después de 14 años, es hora de un cambio en la Oficina del Contralor Estatal! Digo esto porque el último gran proyecto de tecnología, conocido como Luma, que lanzó el contralor estatal, tuvo muchos problemas de implementación y sobrecostos de millones, según informó la Oficina de Evaluaciones de Desempeño, que es no partidista y pertenece a la Legislatura.
       date: "2026-09-24"
       context: "\"My Priorities\" section of his campaign website (the page is undated; the date is when it was read)."
       source:
@@ -46,7 +56,9 @@ pick:
   label: two-way
   candidate: "Rakesh Mohan"
   rule: "Rule 3: only one non-Republican on the ballot."
-  reasoning: "Mohan is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. He is better known than most down-ballot Democrats, but the Democrat lost this office by about 43 points in 2022 and no public poll exists."
+  reasoning:
+    en: "Mohan is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. He is better known than most down-ballot Democrats, but the Democrat lost this office by about 43 points in 2022 and no public poll exists."
+    es: Mohan es el único candidato no republicano en la boleta, así que es una contienda entre dos y lo que importa es la participación. Es más conocido que la mayoría de los demócratas en cargos menos visibles de la boleta, pero el demócrata perdió este cargo por unos 43 puntos en 2022 y no hay ninguna encuesta pública.
   approved: false
 scenarios: []
 review_flags: []

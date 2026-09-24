@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Party from '../components/Party.astro';
 import Pledge from '../components/Pledge.astro';
+import PowerBill from '../components/PowerBill.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getRaces, sortPolls } from '../lib/data';
 
@@ -72,6 +73,8 @@ const REG_SOURCE = 'https://archive.voteidaho.gov/data/voter-registrations/20260
       </div>
     </section>
   )}
+
+  <PowerBill lang={lang} />
 
   <section>
     <h2>{es ? '¿Por qué “morado”?' : 'Why “purple”?'}</h2>

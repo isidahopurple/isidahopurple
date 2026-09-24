@@ -1,24 +1,34 @@
-title: "Advisory Question - House Bill 932: Which of the following guns should be designated as the state gun of Idaho?"
+title:
+  en: "Advisory Question - House Bill 932: Which of the following guns should be designated as the state gun of Idaho?"
+  es: 'Pregunta consultiva - Proyecto de Ley de la Cámara 932 (House Bill 932): ¿Cuál de las siguientes armas debe ser designada como el arma oficial del estado de Idaho?'
 short_name: "State gun question"
 order: 4
 kind: advisory
-summary: >-
-  This is a non-binding question. It asks voters to pick one of six guns to be
-  Idaho's official state gun. The result only advises the Legislature, which
-  would have to pass a separate law in a future session to name a state gun.
-yes_means: >-
-  This question has no Yes or No. You pick one of six choices: (a) Winchester
-  Model 1894 (.30-30); (b) Winchester Model 1873 "Gun that Won the West"
-  (.44-40); (c) 1873 Colt Single Action Army Revolver "Peacemaker" (.45 Colt);
-  (d) M1 Garand rifle (.30-06); (e) Colt M1911 .45 automatic Colt pistol (.45
-  ACP); or (f) Remington Model 700 bolt-action rifle (.30-06).
-no_means: >-
-  There is no No option. You can skip this question and the rest of your ballot
-  still counts. Whatever the result, nothing becomes law unless the Legislature
-  acts later.
-passes_with: >-
-  Nothing passes or fails. The Secretary of State counts the votes and the
-  results "guide the Legislature" (House Bill 932). The result is not binding.
+summary:
+  en: >-
+    This is a non-binding question. It asks voters to pick one of six guns to be
+    Idaho's official state gun. The result only advises the Legislature, which
+    would have to pass a separate law in a future session to name a state gun.
+  es: Esta pregunta no es obligatoria para nadie. Pide a los votantes que elijan una de seis armas para que sea el arma oficial del estado de Idaho. El resultado solo sirve de consejo para la Legislatura, que tendría que aprobar una ley aparte en una sesión futura para nombrar un arma estatal.
+yes_means:
+  en: >-
+    This question has no Yes or No. You pick one of six choices: (a) Winchester
+    Model 1894 (.30-30); (b) Winchester Model 1873 "Gun that Won the West"
+    (.44-40); (c) 1873 Colt Single Action Army Revolver "Peacemaker" (.45 Colt);
+    (d) M1 Garand rifle (.30-06); (e) Colt M1911 .45 automatic Colt pistol (.45
+    ACP); or (f) Remington Model 700 bolt-action rifle (.30-06).
+  es: 'Esta pregunta no tiene Sí ni No. Usted elige una de seis opciones: (a) Winchester Model 1894 (.30-30); (b) Winchester Model 1873 "Gun that Won the West" (.44-40); (c) 1873 Colt Single Action Army Revolver "Peacemaker" (.45 Colt); (d) rifle M1 Garand (.30-06); (e) pistola Colt M1911 .45 automatic Colt (.45 ACP); o (f) rifle de cerrojo Remington Model 700 (.30-06).'
+no_means:
+  en: >-
+    There is no No option. You can skip this question and the rest of your ballot
+    still counts. Whatever the result, nothing becomes law unless the Legislature
+    acts later.
+  es: No hay opción de No. Puede dejar esta pregunta en blanco y el resto de su boleta sí cuenta. Sea cual sea el resultado, nada se vuelve ley a menos que la Legislatura actúe más adelante.
+passes_with:
+  en: >-
+    Nothing passes or fails. The Secretary of State counts the votes and the
+    results "guide the Legislature" (House Bill 932). The result is not binding.
+  es: Nada se aprueba ni se rechaza. La Secretaría de Estado de Idaho cuenta los votos y los resultados "guían a la Legislatura" (House Bill 932). El resultado no es obligatorio.
 supporters: []
 opponents: []
 official:

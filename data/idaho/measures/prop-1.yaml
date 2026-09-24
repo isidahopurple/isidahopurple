@@ -1,24 +1,34 @@
-title: "Proposition One: Reproductive Freedom and Privacy Act (Measure creating right to abortion before fetus viability, and post-viability to protect health; right to privacy; healthcare provider liability protections)"
+title:
+  en: "Proposition One: Reproductive Freedom and Privacy Act (Measure creating right to abortion before fetus viability, and post-viability to protect health; right to privacy; healthcare provider liability protections)"
+  es: 'Proposición Uno: Ley de Libertad Reproductiva y Privacidad (medida que crea el derecho al aborto antes de la viabilidad del feto, y después de la viabilidad para proteger la salud; derecho a la privacidad; protecciones de responsabilidad legal para proveedores de atención médica)'
 short_name: "Prop 1"
 order: 3
 kind: initiative
-summary: >-
-  Prop 1 is a citizen initiative that would add a right to reproductive freedom
-  and privacy to Idaho law. It would allow abortion until fetal viability, and
-  after that only in a medical emergency. It also covers contraception,
-  fertility treatment and pregnancy care, and it would stop the state from
-  punishing patients or health care providers for care the law allows. It
-  would take effect Jan. 1, 2027.
-yes_means: >-
-  Idaho law would include a right to abortion before fetal viability, and after
-  viability in a medical emergency. It would also include a right to make other
-  reproductive health decisions, and it would protect health care providers from
-  discipline or civil or criminal liability for that care.
-no_means: >-
-  No change to Idaho's current law. Abortion stays banned except to prevent the
-  death of the pregnant woman, and in the first trimester in cases of rape or
-  incest reported to law enforcement.
-passes_with: "A simple majority (more than half) of the votes cast on the question."
+summary:
+  en: >-
+    Prop 1 is a citizen initiative that would add a right to reproductive freedom
+    and privacy to Idaho law. It would allow abortion until fetal viability, and
+    after that only in a medical emergency. It also covers contraception,
+    fertility treatment and pregnancy care, and it would stop the state from
+    punishing patients or health care providers for care the law allows. It
+    would take effect Jan. 1, 2027.
+  es: La Prop 1 es una iniciativa ciudadana que agregaría a la ley de Idaho un derecho a la libertad reproductiva y a la privacidad. Permitiría el aborto hasta la viabilidad del feto, y después de eso solo en una emergencia médica. También cubre los anticonceptivos, los tratamientos de fertilidad y la atención del embarazo. Además, impediría que el estado castigue a pacientes o a proveedores de atención médica por la atención que la ley permite. Entraría en vigor el 1 de enero de 2027.
+yes_means:
+  en: >-
+    Idaho law would include a right to abortion before fetal viability, and after
+    viability in a medical emergency. It would also include a right to make other
+    reproductive health decisions, and it would protect health care providers from
+    discipline or civil or criminal liability for that care.
+  es: La ley de Idaho incluiría un derecho al aborto antes de la viabilidad del feto, y después de la viabilidad en una emergencia médica. También incluiría el derecho a tomar otras decisiones de salud reproductiva, y protegería a los proveedores de atención médica de sanciones disciplinarias o de responsabilidad civil o penal por esa atención.
+no_means:
+  en: >-
+    No change to Idaho's current law. Abortion stays banned except to prevent the
+    death of the pregnant woman, and in the first trimester in cases of rape or
+    incest reported to law enforcement.
+  es: No cambia la ley actual de Idaho. El aborto sigue prohibido, excepto para evitar la muerte de la mujer embarazada, y en el primer trimestre en casos de violación o incesto denunciados a la policía.
+passes_with:
+  en: "A simple majority (more than half) of the votes cast on the question."
+  es: Una mayoría simple (más de la mitad) de los votos emitidos sobre esta pregunta.
 supporters:
   - name: "Idahoans United for Women & Families (sponsor)"
     source:

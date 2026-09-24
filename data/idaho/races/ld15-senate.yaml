@@ -1,12 +1,14 @@
-office: State Senate, District 15
+office:
+  en: State Senate, District 15
+  es: Senado estatal, Distrito 15
 level: legislative
 district: LD15
 seat: Senate
 order: 145
 depth: full
-controls: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms;
-  it levies taxes, appropriates public funds and oversees state agencies, and each district elects one
-  senator and two representatives.
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
 controls_source:
   name: Idaho Legislature, Idaho's Citizen Legislature
   url: https://legislature.idaho.gov/resources/citizenlegislature/
@@ -16,13 +18,10 @@ candidates:
   incumbent: false
   website: https://www.desi4idaho.com
   quote:
-    text: I believe our state legislature should be made up of people who listen, work hard, and focus
-      on practical solutions that help Idaho families thrive. I'm running for the Idaho State Legislature
-      because I want to bring a strong voice for families, schools, and our community to the Capitol—and
-      continue a lifetime commitment to serving others.
+    text: I believe our state legislature should be made up of people who listen, work hard, and focus on practical solutions that help Idaho families thrive. I'm running for the Idaho State Legislature because I want to bring a strong voice for families, schools, and our community to the Capitol—and continue a lifetime commitment to serving others.
+    translation_es: Creo que nuestra legislatura estatal debe estar formada por personas que escuchen, trabajen duro y se enfoquen en soluciones prácticas que ayuden a las familias de Idaho a salir adelante. Me postulo para la Legislatura del Estado de Idaho porque quiero llevar al Capitolio una voz fuerte a favor de las familias, las escuelas y nuestra comunidad, y seguir con el compromiso que he tenido toda la vida de servir a los demás.
     date: '2026-05-14'
-    context: Her answer to "Who are you?" in the Ballotpedia candidate survey; the same text is on her
-      campaign site.
+    context: Her answer to "Who are you?" in the Ballotpedia candidate survey; the same text is on her campaign site.
     source:
       name: Ballotpedia candidate survey
       url: https://ballotpedia.org/Desi_Burbank
@@ -34,6 +33,7 @@ candidates:
   website: https://www.nancygregory4idaho.com
   quote:
     text: Public schools are working very hard to do a good job for their communities.
+    translation_es: Las escuelas públicas están trabajando muy duro para hacer un buen trabajo para sus comunidades.
     date: '2025-10-09'
     context: Interview when she launched her Senate campaign, about school funding and levies.
     source:
@@ -60,10 +60,9 @@ pick:
   label: two-way
   candidate: Nancy Gregory
   rule: '3'
-  reasoning: 'Nancy Gregory is the only non-Republican on the ballot, so this is a two-way race and turnout
-    is what matters. Open seat: Sen. Codi Galloway (R) is not on the ballot. The seat flipped from D+1.8
-    in 2022 to R+3.7 in 2024, so turnout and avoiding undervotes decide it. District lines were the same
-    in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+  reasoning:
+    en: 'Nancy Gregory is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Open seat: Sen. Codi Galloway (R) is not on the ballot. The seat flipped from D+1.8 in 2022 to R+3.7 in 2024, so turnout and avoiding undervotes decide it. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
+    es: 'Nancy Gregory es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Escaño abierto: la senadora Codi Galloway (R) no está en la boleta. El escaño pasó de D+1.8 en 2022 a R+3.7 en 2024, así que lo decidirán la participación y que los votantes no dejen esta contienda en blanco. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
   approved: false
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
