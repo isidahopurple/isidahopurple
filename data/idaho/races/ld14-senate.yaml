@@ -28,15 +28,15 @@ history:
     name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
     url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
 pick:
-  label: two-way
-  candidate: Kirsten Faith Richardson
-  rule: '3'
+  label: no-pick
+  candidate: null
+  rule: 'none (rule 5 exception)'
   reasoning:
-    en: Kirsten Faith Richardson is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Under the published method the only non-Republican is the pick, even though she is a Constitution Party candidate.
-    es: Kirsten Faith Richardson es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Según el método publicado, la única opción no republicana es la recomendación, aunque ella es candidata del Partido de la Constitución.
+    en: The only other candidate on the ballot is from the Constitution Party, whose platform is generally to the right of the Republican Party. Backing that candidate wouldn't test our hypothesis, so we make a written exception and make no pick here.
+    es: La única otra opción en la boleta es del Partido de la Constitución, cuya plataforma suele estar a la derecha del Partido Republicano. Apoyar a esa candidatura no pondría a prueba nuestra hipótesis, así que hacemos una excepción por escrito y no recomendamos a nadie aquí.
   approved: false
 review_flags:
-- The only non-Republican is a Constitution Party candidate. Constitution Party platforms are generally to the right of the Republican Party, so the rule-3 pick may not fit the site's purpose. A human should decide whether a written rule-5 exception (no-pick) applies.
+- The only non-Republican is a Constitution Party candidate. Constitution Party platforms are generally to the right of the Republican Party, so the rule-3 pick may not fit the site's purpose. Claude applied a rule-5 exception (no-pick) as the default overnight 2026-09-24; reverse it if you prefer the mechanical rule-3 pick.
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

@@ -41,7 +41,7 @@ const [yesHead, noHead] = d.kind === 'advisory'
 
   {d.unverified.length > 0 && (
     <details>
-      <summary>{t(lang, 'race.unverified')} ({d.unverified.length})</summary>
+      <summary>{t(lang, 'race.unverified')} ({d.unverified.length}){lang === 'es' ? ' · en inglés' : ''}</summary>
       <ul class="small">{d.unverified.map((u) => <li>{u}</li>)}</ul>
     </details>
   )}
