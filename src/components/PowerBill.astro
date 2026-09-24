@@ -8,6 +8,7 @@ const S = {
   jan: 'https://puc.idaho.gov/Fileroom/PublicFiles/Press/20251231Idaho%20Power%201230%20Release.pdf.pdf',
   june: 'https://puc.idaho.gov/Fileroom/PublicFiles/Press/20260504Idaho%20Power%200504%20Release.pdf.pdf',
   juneOrder: 'https://puc.idaho.gov/case/Details/7746',
+  juneFca: 'https://puc.idaho.gov/case/Details/7718',
   h0897: 'https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/',
   h0911: 'https://legislature.idaho.gov/sessioninfo/2026/legislation/H0911/',
   diesel: 'https://gasprices.aaa.com/?state=ID',
@@ -24,11 +25,11 @@ const S = {
     <div class="card stat">
       <p class="num-big">+$3.64</p>
       <p>{es ? 'al mes más desde el 1 de junio de 2026, por ajustes anuales aprobados.' : 'a month more since June 1, 2026, from approved annual adjustments.'}</p>
-      <a class="cite" href={S.june} rel="noopener" target="_blank">{es ? 'Comisión de Servicios Públicos, 4 may 2026' : 'Idaho PUC, May 4, 2026'}</a> · <a class="cite" href={S.juneOrder} rel="noopener" target="_blank">{es ? 'orden' : 'order'}</a>
+      <a class="cite" href={S.june} rel="noopener" target="_blank">{es ? 'Comisión de Servicios Públicos, 4 may 2026' : 'Idaho PUC, May 4, 2026'}</a> · <a class="cite" href={S.juneOrder} rel="noopener" target="_blank">{es ? 'orden PCA' : 'PCA order'}</a> · <a class="cite" href={S.juneFca} rel="noopener" target="_blank">{es ? 'orden FCA' : 'FCA order'}</a>
     </div>
     <div class="card stat">
       <p class="num-big">{es ? 'Diésel' : 'Diesel'}</p>
-      <p>{es ? 'El diésel en Idaho está en máximos históricos este mes. Vea el precio de hoy.' : 'Idaho diesel hit all-time records this month. Check today’s price.'}</p>
+      <p>{es ? 'El diésel en Idaho marcó un récord histórico en septiembre de 2026. Vea el precio de hoy.' : 'Idaho diesel set an all-time record in September 2026. Check today’s price.'}</p>
       <a class="cite" href={S.diesel} rel="noopener" target="_blank">AAA Idaho</a>
     </div>
   </div>

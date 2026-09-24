@@ -11,7 +11,7 @@ election_day:
     es: "Martes 3 de noviembre de 2026. Los lugares de votación están abiertos de 8 a.m. a 8 p.m., hora local."
   note:
     en: "You must vote at the polling place for your home address. If you are in line by 8 p.m., you can still vote. The county elections office is also open 8 a.m. to 8 p.m. that day."
-    es: "Debe votar en el lugar de votación que corresponde a la dirección de su casa. Si está en la fila a las 8 p.m., todavía puede votar. La oficina de elecciones del condado también está abierta de 8 a.m. a 8 p.m. ese día."
+    es: "Debe votar en el lugar de votación que corresponde a la dirección de su casa. Si ya está en la fila antes de las 8 p.m. o a esa hora, todavía puede votar. La oficina de elecciones del condado también está abierta de 8 a.m. a 8 p.m. ese día."
   source: { name: "VoteIdaho 2026 Election Calendar (revised Aug 6, 2026)", url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
   verified: true
 
@@ -21,7 +21,7 @@ polls_line_at_close:
     es: "En la fila al cierre de la votación"
   value:
     en: "If you are in line by 8 p.m. on Election Day, you may still vote."
-    es: "Si está en la fila a las 8 p.m. el Día de las Elecciones, todavía puede votar."
+    es: "Si ya está en la fila antes de las 8 p.m. o a esa hora el Día de las Elecciones, todavía puede votar."
   source: { name: "VoteIdaho Guide to Voting in Person", url: "https://voteidaho.gov/guide-to-vote-in-person/" }
   verified: true
 
@@ -72,9 +72,9 @@ same_day_registration:
     en: "Yes. You can register in person at early voting or at your polling place on Election Day."
     es: "Sí. Puede registrarse en persona durante la votación anticipada o en su lugar de votación el Día de las Elecciones."
   note:
-    en: "Bring a photo ID (Idaho driver's license or ID card, U.S. passport or federal photo ID, tribal photo ID, or an Idaho concealed weapons license). Also bring proof of your address. That can be the same photo ID if it shows your current address, or a utility bill (not a cell phone bill), bank or credit card statement, paystub, lease or mortgage, property tax bill, proof of insurance, a letter from a social service agency, or an enrollment letter from an Idaho high school or university."
-    es: "Traiga una identificación con foto (licencia de conducir o tarjeta de identificación de Idaho, pasaporte de EE. UU. o identificación federal con foto, identificación tribal con foto, o una licencia de Idaho para portar armas ocultas). También traiga un comprobante de domicilio. Puede ser la misma identificación con foto si muestra su dirección actual. También sirve un recibo de servicios públicos (no de teléfono celular), un estado de cuenta del banco o de tarjeta de crédito, un talón de pago, un contrato de renta o de hipoteca, un recibo del impuesto a la propiedad, un comprobante de seguro, una carta de una agencia de servicios sociales o una carta de inscripción de una preparatoria (high school) o universidad de Idaho."
-  source: { name: "VoteIdaho, Registering to Vote", url: "https://voteidaho.gov/voter-registration/" }
+    en: "Bring a photo ID (Idaho driver's license or ID card, U.S. passport or federal photo ID, tribal photo ID, or an Idaho concealed weapons license). Also bring proof of your address. That can be the same photo ID if it shows your current address, or a utility bill (not a cell phone bill), bank or credit card statement, paystub, lease or mortgage, property tax bill, proof of insurance, a letter from a social service agency, an intake document from a care facility, or an enrollment letter from an Idaho high school or university. VoteIdaho's Registering to Vote page lists the same documents but leaves out tribal ID, which the law allows."
+    es: "Traiga una identificación con foto (licencia de conducir o tarjeta de identificación de Idaho, pasaporte de EE. UU. o identificación federal con foto, identificación tribal con foto, o una licencia de Idaho para portar armas ocultas). También traiga un comprobante de domicilio. Puede ser la misma identificación con foto si muestra su dirección actual. También sirve un recibo de servicios públicos (no de teléfono celular), un estado de cuenta del banco o de tarjeta de crédito, un talón de pago, un contrato de renta o de hipoteca, un recibo del impuesto a la propiedad, un comprobante de seguro, una carta de una agencia de servicios sociales, un documento de ingreso a un centro de cuidado o una carta de inscripción de una preparatoria (high school) o universidad de Idaho. La página de VoteIdaho sobre el registro (Registering to Vote) menciona los mismos documentos pero no incluye la identificación tribal, que la ley sí permite."
+  source: { name: "Idaho Code 34-411", url: "https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch4/sect34-411/" }
   verified: true
 
 check_registration_url:
@@ -98,8 +98,8 @@ absentee_request_deadline:
     en: "Fri Oct 23, 2026, 5 p.m. Your request must be RECEIVED by the county clerk by then."
     es: "Viernes 23 de octubre de 2026, 5 p.m. El secretario del condado debe RECIBIR su solicitud a más tardar a esa hora."
   note:
-    en: "Ada County says to allow 7 to 10 days to process a request, plus a few days for the ballot to reach you by mail. Ask early."
-    es: "El condado de Ada dice que procesar una solicitud toma de 7 a 10 días, más unos días para que la boleta le llegue por correo. Pídala con tiempo."
+    en: "Ada County's absentee voting page says to allow 7 to 10 days to process a request, plus a few days for the ballot to reach you by mail. Ask early."
+    es: "La página de voto ausente del condado de Ada dice que procesar una solicitud toma de 7 a 10 días, más unos días para que la boleta le llegue por correo. Pídala con tiempo."
   source: { name: "VoteIdaho 2026 Election Calendar (revised Aug 6, 2026)", url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
   verified: true
 
@@ -124,8 +124,8 @@ absentee_request_rules:
     en: "You need a new request each calendar year. Online, you need your Idaho driver's license or state ID number and the last 4 digits of your Social Security number."
     es: "Necesita hacer una solicitud nueva cada año calendario. En línea, necesita el número de su licencia de conducir o de su tarjeta de identificación de Idaho y los últimos 4 dígitos de su número de Seguro Social."
   note:
-    en: "Any registered Idaho voter can vote absentee. No reason is needed. On the request, you pick which of this year's elections you want ballots for. If you asked earlier in 2026, check that you picked November. You don't upload or scan your ID. In Ada County you can also send the paper form by mail, fax or email, or bring it to the Elections Office."
-    es: "Cualquier votante registrado en Idaho puede votar en ausencia. No necesita dar una razón. En la solicitud, usted elige para cuáles elecciones de este año quiere boletas. Si hizo su solicitud antes en 2026, revise que haya elegido la de noviembre. No tiene que subir ni escanear su identificación. En el condado de Ada también puede enviar el formulario en papel por correo, fax o correo electrónico, o llevarlo a la Oficina de Elecciones."
+    en: "Any registered Idaho voter can vote absentee. No reason is needed. On the request, you pick which of this year's elections you want ballots for. If you asked earlier in 2026, check that you picked November. You don't upload or scan your ID. Ada County's absentee voting page says you can also send the paper form by mail, fax or email, or bring it to the Elections Office."
+    es: "Cualquier votante registrado en Idaho puede votar en ausencia. No necesita dar una razón. En la solicitud, usted elige para cuáles elecciones de este año quiere boletas. Si hizo su solicitud antes en 2026, revise que haya elegido la de noviembre. No tiene que subir ni escanear su identificación. La página de voto ausente del condado de Ada dice que también puede enviar el formulario en papel por correo, fax o correo electrónico, o llevarlo a la Oficina de Elecciones."
   source: { name: "VoteIdaho, Casting Your Ballot", url: "https://voteidaho.gov/casting-your-ballot/" }
   verified: true
 
@@ -160,9 +160,9 @@ absentee_return_deadline:
     en: "It must be RECEIVED by 8 p.m. on Tue Nov 3, 2026. A postmark does not count."
     es: "Debe ser RECIBIDA a más tardar a las 8 p.m. del martes 3 de noviembre de 2026. El matasellos no cuenta."
   note:
-    en: "Sign the outside of the return envelope, because every signature is checked. Use blue or black ink. Add postage if you mail it. You can return it by mail, to an official drop box, or to your county elections office."
-    es: "Firme la parte de afuera del sobre de devolución, porque se revisan todas las firmas. Use tinta azul o negra. Póngale estampillas si la envía por correo. Puede devolverla por correo, en un buzón de boletas oficial o en la oficina de elecciones de su condado."
-  source: { name: "Idaho Code 34-1005", url: "https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch10/sect34-1005/" }
+    en: "Mark your ballot in blue or black ink. Sign the outside of the return envelope, because every signature is checked. Add postage if you mail it. You can return it by mail, to an official drop box, or to your county elections office. Idaho Code 34-1005 sets the 8 p.m. received-by deadline."
+    es: "Marque su boleta con tinta azul o negra. Firme la parte de afuera del sobre de devolución, porque se revisan todas las firmas. Póngale estampillas si la envía por correo. Puede devolverla por correo, en un buzón de boletas oficial o en la oficina de elecciones de su condado. El Código de Idaho 34-1005 fija el plazo: debe recibirse a más tardar a las 8 p.m."
+  source: { name: "VoteIdaho, Casting Your Ballot", url: "https://voteidaho.gov/casting-your-ballot/" }
   verified: true
 
 absentee_mail_advice:
@@ -209,8 +209,8 @@ ada_drop_boxes:
     en: "Ada County Elections, 400 N Benjamin Ln, Ste 100, Boise 83704; Boise City Hall, 150 N Capitol Blvd, Boise 83702; Meridian City Hall, 33 E Broadway Ave, Meridian 83642; Eagle City Hall, 660 E Civic Ln, Eagle 83616; Kuna City Hall, 751 W 4th St, Kuna 83634; Star City Hall, 10769 W State St, Star 83669."
     es: "Ada County Elections, 400 N Benjamin Ln, Ste 100, Boise 83704; Boise City Hall, 150 N Capitol Blvd, Boise 83702; Meridian City Hall, 33 E Broadway Ave, Meridian 83642; Eagle City Hall, 660 E Civic Ln, Eagle 83616; Kuna City Hall, 751 W 4th St, Kuna 83634; Star City Hall, 10769 W State St, Star 83669."
   note:
-    en: "The last drop-off time is 8 p.m. on Nov 3. Ada County does not post drop box opening hours. Its guides say the sites are video monitored and recorded 24/7. That describes the cameras, not when you can use the box."
-    es: "La última hora para dejar su boleta es a las 8 p.m. del 3 de noviembre. El condado de Ada no publica el horario de los buzones. Sus guías dicen que los sitios tienen cámaras que vigilan y graban las 24 horas, los 7 días de la semana. Eso se refiere a las cámaras, no al horario en que puede usar el buzón."
+    en: "The last drop-off time is 8 p.m. on Nov 3. Ada County does not post drop box opening hours."
+    es: "La última hora para dejar su boleta es a las 8 p.m. del 3 de noviembre. El condado de Ada no publica el horario de los buzones."
   source: { name: "Ada County Elections, Absentee Voting", url: "https://adacounty.id.gov/elections/absentee-voting/" }
   verified: true
 
@@ -222,8 +222,8 @@ ada_elections_office:
     en: "400 N Benjamin Ln, Ste 100, Boise, ID 83704. Phone (208) 287-6860. Email elections@adacounty.id.gov."
     es: "400 N Benjamin Ln, Ste 100, Boise, ID 83704. Teléfono (208) 287-6860. Correo electrónico elections@adacounty.id.gov."
   note:
-    en: "Call this number if you made a mistake on your mail ballot. The 208-287-7080 number in the site footer is Ada County's general line."
-    es: "Llame a este número si cometió un error en su boleta por correo. El número 208-287-7080 que aparece al pie de la página es la línea general del condado de Ada."
+    en: "Call this number with questions about your ballot. The 208-287-7080 number in the site footer is Ada County's general line."
+    es: "Llame a este número si tiene preguntas sobre su boleta. El número 208-287-7080 que aparece al pie de la página es la línea general del condado de Ada."
   source: { name: "Ada County Elections, About Us", url: "https://adacounty.id.gov/elections/about-us/" }
   verified: true
 
@@ -248,8 +248,8 @@ early_voting_statewide:
     en: "Counties that offer early voting may start Tue Oct 13, 2026. Early voting ends Fri Oct 30, 2026, at 5 p.m."
     es: "Los condados que ofrecen votación anticipada pueden empezar el martes 13 de octubre de 2026. La votación anticipada termina el viernes 30 de octubre de 2026, a las 5 p.m."
   note:
-    en: "Each county sets its own days and sites. Idaho Code 34-1012 says early voting may begin on or after the fourth Monday before the election. Bring the same photo ID as on Election Day. You can register there too."
-    es: "Cada condado decide sus propios días y lugares. El Código de Idaho 34-1012 dice que la votación anticipada puede empezar el cuarto lunes antes de la elección o después. Traiga la misma identificación con foto que el Día de las Elecciones. Allí también se puede registrar."
+    en: "Each county sets its own days and sites. The state election calendar lists Tue Oct 13 as the first possible day. Bring the same photo ID as on Election Day. You can register there too."
+    es: "Cada condado decide sus propios días y lugares. El calendario electoral del estado indica el martes 13 de octubre como el primer día posible. Traiga la misma identificación con foto que el Día de las Elecciones. Allí también se puede registrar."
   source: { name: "VoteIdaho 2026 Election Calendar (revised Aug 6, 2026)", url: "https://archive.voteidaho.gov/download/2026-election-calendar.pdf", date: "2026-08-06" }
   verified: true
 
@@ -326,8 +326,8 @@ polls_no_campaign_gear:
     en: "Don't wear or bring anything that promotes a candidate, party or issue on the ballot. You may bring notes."
     es: "No use ni lleve nada que promueva a un candidato, un partido o un tema que esté en la boleta. Sí puede llevar sus notas."
   note:
-    en: "Electioneering is banned within 250 feet of a voting location (Idaho Code 18-2318)."
-    es: "Está prohibido hacer campaña a menos de 250 pies (unos 76 metros) de un lugar de votación (Código de Idaho 18-2318)."
+    en: "Electioneering is banned inside a voting location or within 250 feet of its entrance (Idaho Code 18-2318)."
+    es: "Está prohibido hacer campaña dentro de un lugar de votación o a menos de 250 pies (unos 76 metros) de su entrada (Código de Idaho 18-2318)."
   source: { name: "VoteIdaho Guide to Voting in Person", url: "https://voteidaho.gov/guide-to-vote-in-person/" }
   verified: true
 

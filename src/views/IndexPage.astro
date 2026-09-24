@@ -85,15 +85,16 @@ const REG_SOURCE = 'https://archive.voteidaho.gov/data/voter-registrations/20260
         <a class="cite" href={REG_SOURCE} rel="noopener" target="_blank">{es ? 'Secretaría de Estado de Idaho, 1 sep 2026' : 'Idaho Secretary of State, Sept 1, 2026'}</a>
       </div>
       <div class="card stat">
-        <p class="num-big">35.8%</p>
-        <p>{es ? 'no lo son: 24.0% sin afiliación y 11.8% demócratas.' : 'are not: 24.0% unaffiliated and 11.8% Democrats.'}</p>
+        <p class="num-big">37.2%</p>
+        <p>{es ? 'no lo son: 24.0% sin afiliación, 11.8% demócratas y 1.4% libertarios o de la Constitución.' : 'are not: 24.0% unaffiliated, 11.8% Democrats, and 1.4% Libertarian or Constitution.'}</p>
         <a class="cite" href={REG_SOURCE} rel="noopener" target="_blank">{es ? 'Misma fuente' : 'Same source'}</a>
       </div>
       <div class="card stat">
         <p class="num-big">{es ? 'Cerrada' : 'Closed'}</p>
         <p>{es
-          ? 'Las primarias republicanas de Idaho son cerradas, así que algunos no republicanos se registran como republicanos para votar en ellas. El registro exagera la fuerza del partido en noviembre.'
-          : 'Idaho’s Republican primary is closed, so some non-Republicans register as Republicans to vote in it. Registration overstates the party’s strength in November.'}</p>
+          ? 'Solo los republicanos registrados pueden votar en la primaria republicana de Idaho. Quien quiera opinar ahí tiene que registrarse como republicano, así que el registro puede exagerar la fuerza del partido en noviembre.'
+          : 'Only registered Republicans can vote in Idaho’s Republican primary. Anyone who wants a say there has to register as a Republican, so registration may overstate the party’s strength in November.'}</p>
+        <a class="cite" href="https://sos.idaho.gov/elections-division/primary-elections-in-idaho/" rel="noopener" target="_blank">{es ? 'Secretaría de Estado: primarias en Idaho' : 'Idaho Secretary of State: primary elections'}</a>
       </div>
     </div>
   </section>
