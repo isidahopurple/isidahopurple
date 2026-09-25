@@ -2,7 +2,8 @@
 // "Count me in the experiment" (decision C1). Turned on by PUBLIC_TURNSTILE_SITEKEY at build time
 // plus the Worker secrets; otherwise shows "coming soon". No prizes, rewards or bets (Idaho Code 18-2319).
 import { href, type Lang } from '../i18n/ui';
-import { COUNTIES } from '../../worker/pledge.js';
+import { COUNTIES, EMAIL_RE } from '../../worker/pledge.js';
+const EMAIL_PATTERN = EMAIL_RE.source.replace(/^\^|\$$/g, '').replace('[a-z]', '[A-Za-z]');
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -24,7 +25,8 @@ const s = es
       limit: 'Ya le enviamos un enlace hoy. Revise su correo, incluida la carpeta de spam.',
       again: 'Usar otro correo',
       sending: 'Enviando…',
-      queued: 'Hoy hay mucha demanda. Le enviaremos el enlace mañana por la mañana.',
+      queued: 'Hoy hay mucha demanda. Le enviaremos el enlace a {email} mañana por la mañana.',
+      badEmail: 'Esa dirección de correo no parece correcta. Revise si hay errores de escritura.',
       already: 'Ya está contado. ¡Gracias!',
       err: 'Algo salió mal. Revise su correo y condado e intente de nuevo.',
       soon: 'Pronto: un contador verificado de idahoanos que ponen a prueba si este estado es tan rojo como todos dicen. Sin premios, sin apuestas, sin lista de correo a menos que usted lo pida.',
@@ -44,7 +46,8 @@ const s = es
       limit: 'We already sent you a link today. Check your email, including spam.',
       again: 'Use a different email',
       sending: 'Sending…',
-      queued: 'Lots of sign-ups today. We’ll send your link tomorrow morning.',
+      queued: 'Lots of sign-ups today. We’ll send your link to {email} tomorrow morning.',
+      badEmail: 'That email address doesn’t look right. Check it for typos.',
       already: 'You’re already counted. Thank you!',
       err: 'Something went wrong. Check your email and county and try again.',
       soon: 'Coming soon: a verified count of Idahoans testing whether this state is as red as everyone says. No prizes, no bets, no mailing list unless you ask to be on one.',
@@ -65,8 +68,8 @@ const s = es
         <p>{s.countedBody}</p>
         <p><a class="btn" href={href(lang, '/share')}>{es ? 'Compartir' : 'Share'}</a> <a class="btn ghost" href={href(lang, '/')}>{es ? 'Cómo votar' : 'How to vote'}</a></p>
       </div>
-      <form class="pledge-form" data-lang={lang} data-msgs={JSON.stringify({ sent: s.sent, queued: s.queued, already: s.already, err: s.err, limit: s.limit, sending: s.sending, button: s.button, doneBody: s.doneBody })}>
-        <label>{s.email}<input type="email" name="email" required autocomplete="email" /></label>
+      <form class="pledge-form" data-lang={lang} data-msgs={JSON.stringify({ sent: s.sent, queued: s.queued, already: s.already, err: s.err, badEmail: s.badEmail, limit: s.limit, sending: s.sending, button: s.button, doneBody: s.doneBody })}>
+        <label>{s.email}<input type="email" name="email" required autocomplete="email" pattern={EMAIL_PATTERN} title={s.badEmail} /></label>
         <label>{s.county}
           <select name="county" required>
             <option value="">{s.choose}</option>
@@ -103,16 +106,24 @@ const s = es
     const pending = document.getElementById('pledge-pending')!;
     const counted = document.getElementById('pledge-counted')!;
     const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
-    const show = (which: 'form' | 'pending' | 'counted', email?: string) => {
+    const intro = document.querySelector<HTMLElement>('.pledge .count');
+    const show = (which: 'form' | 'pending' | 'counted', email?: string, scroll = false) => {
       form.hidden = which !== 'form';
+      if (intro) intro.hidden = which !== 'form';
       pending.hidden = which !== 'pending';
       counted.hidden = which !== 'counted';
       if (which === 'pending') pending.querySelector('.done-body')!.textContent = msgs.doneBody.replace('{email}', email || '');
+      if (scroll) {
+        const target = which === 'pending' ? pending : which === 'counted' ? counted : form;
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
     };
     const state = store.get();
     if (state === 'counted') show('counted');
     else if (state?.startsWith('pending:')) show('pending', state.slice(8));
-    pending.querySelector('.again')!.addEventListener('click', () => { store.set(''); show('form'); });
+    pending.querySelector('.again')!.addEventListener('click', () => { store.set(''); form.reset(); show('form', undefined, true); });
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
       const f = new FormData(form);
@@ -129,11 +140,14 @@ const s = es
         const d = await r.json();
         if (d.status === 'sent' || d.status === 'queued' || d.status === 'limit') {
           store.set(`pending:${email}`);
-          show('pending', email);
-          if (d.status !== 'sent') pending.querySelector('.done-body')!.textContent = d.status === 'queued' ? msgs.queued : msgs.limit;
+          show('pending', email, true);
+          if (d.status !== 'sent') pending.querySelector('.done-body')!.textContent = d.status === 'queued' ? msgs.queued.replace('{email}', email) : msgs.limit;
         } else if (d.status === 'already') {
           store.set('counted');
-          show('counted');
+          show('counted', undefined, true);
+        } else if (d.status === 'bad_email') {
+          out.textContent = msgs.badEmail;
+          form.querySelector<HTMLInputElement>('input[name="email"]')?.focus();
         } else {
           out.textContent = msgs.err;
         }
@@ -154,7 +168,8 @@ const s = es
   label { display: grid; gap: 4px; font-weight: 600; }
   input, select { min-height: 46px; padding: 8px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
   .msg { font-weight: 700; color: var(--red); }
-  .done { border: 2px solid var(--ok); border-radius: 12px; padding: 16px; background: var(--surface); }
-  .done-title { font-size: 1.25rem; font-weight: 800; color: var(--ok); margin: 0 0 6px; }
+  .done { border: 3px solid var(--ok); border-radius: 14px; padding: 22px 18px; background: color-mix(in srgb, var(--ok) 8%, var(--surface)); text-align: center; outline: none; }
+  .done-title { font-size: 1.45rem; font-weight: 800; color: var(--ok); margin: 0 0 10px; }
+  .done-body { font-size: 1.05rem; }
   .done .btn { margin: 4px 6px 0 0; }
 </style>

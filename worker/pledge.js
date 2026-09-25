@@ -12,6 +12,9 @@ const REPLY_TO = 'contact@isidahopurple.com';
 const SHOW_COUNT_AT = 100; // decision C5
 const PER_EMAIL_PER_DAY = 2; // stops anyone flooding one inbox with confirmation emails
 
+// Something@domain.tld where the ending is letters only (catches typos like .c0m or .8nfo).
+export const EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)*\.[a-z]{2,}$/i;
+
 const enc = new TextEncoder();
 const today = () => new Date().toISOString().slice(0, 10);
 const b64url = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -79,6 +82,7 @@ const EMAIL = {
   },
 };
 
+// Returns 'sent', 'invalid' (the provider rejected the address: don't retry) or 'retry' (rate limit or outage).
 async function sendEmail(env, to, lang, link, remindLink) {
   const m = EMAIL[lang] || EMAIL.en;
   const r = await fetch('https://api.resend.com/emails', {
@@ -86,7 +90,8 @@ async function sendEmail(env, to, lang, link, remindLink) {
     headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
     body: JSON.stringify({ from: FROM, to: [to], reply_to: REPLY_TO, subject: m.subject, html: m.body(link, remindLink), text: m.text(link, remindLink) }),
   });
-  return r.ok;
+  if (r.ok) return 'sent';
+  return r.status === 422 || r.status === 400 ? 'invalid' : 'retry';
 }
 
 // Returns true if under today's budget and records the send.
@@ -105,7 +110,7 @@ export async function pledge(request, env) {
   const ld = Number.isInteger(Number(b.ld)) && Number(b.ld) >= 1 && Number(b.ld) <= 35 ? Number(b.ld) : null;
   const lang = b.lang === 'es' ? 'es' : 'en';
   const door = String(b.door || new URL(request.url).hostname).slice(0, 64);
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) return json({ error: 'bad_email' }, 400);
+  if (!EMAIL_RE.test(email) || email.length > 254) return json({ status: 'bad_email' }, 400);
   if (!county) return json({ error: 'bad_county' }, 400);
   if (!(await turnstileOk(env, b.turnstile, request.headers.get('cf-connecting-ip')))) return json({ error: 'bot_check' }, 400);
 
@@ -122,7 +127,9 @@ export async function pledge(request, env) {
   const remindLink = `${origin}/api/verify?t=${await sign(env, { ...base, e: email })}`;
 
   if (await takeBudget(env)) {
-    if (await sendEmail(env, email, lang, link, remindLink)) return json({ status: 'sent' });
+    const result = await sendEmail(env, email, lang, link, remindLink);
+    if (result === 'sent') return json({ status: 'sent' });
+    if (result === 'invalid') return json({ status: 'bad_email' }, 400);
   }
   await env.DB.prepare('INSERT INTO outbox (email, link, remind_link, lang, created) VALUES (?1, ?2, ?3, ?4, ?5)').bind(email, link, remindLink, lang, today()).run();
   return json({ status: 'queued' });
@@ -161,6 +168,7 @@ export async function drainOutbox(env) {
   const rows = (await env.DB.prepare('SELECT * FROM outbox ORDER BY id LIMIT ?1').bind(DAILY_LIMIT).all()).results;
   for (const r of rows) {
     if (!(await takeBudget(env))) break;
-    if (await sendEmail(env, r.email, r.lang, r.link, r.remind_link)) await env.DB.prepare('DELETE FROM outbox WHERE id = ?1').bind(r.id).run();
+    const result = await sendEmail(env, r.email, r.lang, r.link, r.remind_link);
+    if (result !== 'retry') await env.DB.prepare('DELETE FROM outbox WHERE id = ?1').bind(r.id).run();
   }
 }
