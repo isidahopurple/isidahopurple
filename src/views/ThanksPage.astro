@@ -5,8 +5,8 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
 const m = es
-  ? { none: 'Gracias', counted: '✓ ¡Contado! Gracias por unirse al experimento.', already: 'Ya contábamos con usted. ¡Gracias!', expired: 'Ese enlace venció o no es válido. Inscríbase de nuevo.', remind: 'Le enviaremos 2 o 3 recordatorios y borraremos su correo el 4 de noviembre.', next: 'Lo siguiente: asegúrese de poder votar, y pídale lo mismo a tres amigos.' }
-  : { none: 'Thanks', counted: '✓ Counted! Thanks for joining the experiment.', already: 'You were already counted. Thank you!', expired: 'That link expired or isn’t valid. Please sign up again.', remind: 'We’ll send 2 or 3 reminders and delete your email on Nov 4.', next: 'Next: make sure you can vote, and ask three friends to do the same.' };
+  ? { none: 'Gracias', counted: '✓ ¡Contado! Gracias por unirse al experimento.', already: 'Ya contábamos con usted. ¡Gracias!', expired: 'Ese enlace venció o no es válido. Inscríbase de nuevo.', unsubscribed: 'Listo: ya no le enviaremos recordatorios. Su participación sigue contada.', remind: 'Le enviaremos 2 o 3 recordatorios y borraremos su correo el 4 de noviembre.', next: 'Lo siguiente: asegúrese de poder votar, y pídale lo mismo a tres amigos.' }
+  : { none: 'Thanks', counted: '✓ Counted! Thanks for joining the experiment.', already: 'You were already counted. Thank you!', expired: 'That link expired or isn’t valid. Please sign up again.', unsubscribed: 'Done: no more reminders. You’re still counted.', remind: 'We’ll send 2 or 3 reminders and delete your email on Nov 4.', next: 'Next: make sure you can vote, and ask three friends to do the same.' };
 ---
 <Base lang={lang} title={es ? 'Gracias' : 'Thanks'}>
   <h1 id="thanks-title">{m.none}</h1>

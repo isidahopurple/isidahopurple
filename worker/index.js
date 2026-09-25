@@ -1,6 +1,7 @@
 // Worker in front of the static site. Only /api/* runs code; every other path is a static asset.
 // Privacy: nothing here logs or stores addresses. See /privacy.
 import { pledge, verify, tally, drainOutbox } from './pledge.js';
+import { sendReminders, unsubscribe } from './reminders.js';
 
 const CENSUS = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress';
 const STATE_FIPS = '16'; // Idaho
@@ -64,11 +65,14 @@ export default {
     if (url.pathname === '/api/click' && request.method === 'POST') return click(request, env);
     if (url.pathname === '/api/pledge' && request.method === 'POST') return pledge(request, env);
     if (url.pathname === '/api/verify' && request.method === 'GET') return verify(url, env);
+    if (url.pathname === '/api/unsubscribe' && request.method === 'GET') return unsubscribe(url, env);
+    // Local testing only: wrangler dev with REMINDER_TEST=1 in .dev.vars.
+    if (url.pathname === '/api/test-reminders' && env.REMINDER_TEST === '1') { await sendReminders(env, url.searchParams.get('day')); return new Response('ok'); }
     if (url.pathname === '/api/tally' && request.method === 'GET') return tally(request, env, ctx);
     if (url.pathname.startsWith('/api/')) return json({ error: 'not_found' }, 404);
     return env.ASSETS.fetch(request);
   },
   async scheduled(_event, env, ctx) {
-    ctx.waitUntil(drainOutbox(env));
+    ctx.waitUntil(drainOutbox(env).then(() => sendReminders(env)));
   },
 };

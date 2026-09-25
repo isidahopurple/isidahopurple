@@ -16,7 +16,7 @@ const PER_EMAIL_PER_DAY = 2; // stops anyone flooding one inbox with confirmatio
 export const EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)*\.[a-z]{2,}$/i;
 
 const enc = new TextEncoder();
-const today = () => new Date().toISOString().slice(0, 10);
+export const today = () => new Date().toISOString().slice(0, 10);
 const b64url = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const b64urlText = (s) => b64url(enc.encode(s));
 const fromB64urlText = (s) => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0)));
@@ -25,11 +25,11 @@ async function hmac(secret, data) {
   const key = await crypto.subtle.importKey('raw', enc.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
   return b64url(await crypto.subtle.sign('HMAC', key, enc.encode(data)));
 }
-async function sign(env, payload) {
+export async function sign(env, payload) {
   const body = b64urlText(JSON.stringify(payload));
   return `${body}.${await hmac(env.HMAC_SECRET, `link:${body}`)}`;
 }
-async function unsign(env, token) {
+export async function unsign(env, token) {
   const [body, sig] = String(token || '').split('.');
   if (!body || !sig) return null;
   const expected = await hmac(env.HMAC_SECRET, `link:${body}`);
@@ -95,7 +95,7 @@ async function sendEmail(env, to, lang, link, remindLink) {
 }
 
 // Returns true if under today's budget and records the send.
-async function takeBudget(env) {
+export async function takeBudget(env) {
   const day = today();
   const row = await env.DB.prepare('INSERT INTO send_log (day, sent) VALUES (?1, 1) ON CONFLICT(day) DO UPDATE SET sent = sent + 1 WHERE sent < ?2 RETURNING sent').bind(day, DAILY_LIMIT).first();
   return Boolean(row);
