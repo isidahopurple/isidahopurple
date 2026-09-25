@@ -46,10 +46,22 @@ async function district(url) {
   });
 }
 
+// POST /api/click with body "check" | "register" | "absentee" | "where": count taps, nothing else.
+const BUTTONS = new Set(['check', 'register', 'absentee', 'where']);
+async function click(request, env) {
+  const key = (await request.text()).trim().slice(0, 20);
+  if (env.DB && BUTTONS.has(key)) {
+    await env.DB.prepare('INSERT INTO clicks (day, button, n) VALUES (?1, ?2, 1) ON CONFLICT(day, button) DO UPDATE SET n = n + 1')
+      .bind(new Date().toISOString().slice(0, 10), key).run();
+  }
+  return new Response(null, { status: 204 });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/api/district' && request.method === 'GET') return district(url);
+    if (url.pathname === '/api/click' && request.method === 'POST') return click(request, env);
     if (url.pathname === '/api/pledge' && request.method === 'POST') return pledge(request, env);
     if (url.pathname === '/api/verify' && request.method === 'GET') return verify(url, env);
     if (url.pathname === '/api/tally' && request.method === 'GET') return tally(request, env, ctx);

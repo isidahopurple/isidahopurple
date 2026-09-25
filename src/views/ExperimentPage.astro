@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Party from '../components/Party.astro';
+import Purple from '../components/Purple.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getRaces } from '../lib/data';
 
@@ -10,7 +11,7 @@ const es = lang === 'es';
 const races = (await getRaces()).filter((r) => r.data.depth === 'full');
 ---
 <Base lang={lang} title={t(lang, 'nav.experiment')} description={es ? 'Nuestra hipótesis, el método que usamos para recomendar, y cómo sabremos si acertamos.' : 'Our hypothesis, the method behind every pick, and how we’ll know if we were right.'}>
-  <h1>{es ? 'El experimento' : 'The experiment'}</h1>
+  <Purple lang={lang} />
 
   <h2>{es ? 'La hipótesis' : 'The hypothesis'}</h2>
   <p class="big">

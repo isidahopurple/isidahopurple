@@ -29,7 +29,7 @@ const scenarioHead = (who: string) => {
   return es ? `Si usted apoya a ${name}${note}` : `If you support ${name}${note}`;
 };
 ---
-<Base lang={lang} title={title} description={`${office}: ${d.candidates.map((c) => c.name).join(', ')}`} editPath={`data/idaho/races/${race.id}.yaml`} updated={fmtDate(d.updated, lang)}>
+<Base lang={lang} title={title} description={`${office}: ${d.candidates.map((c) => c.name).join(', ')}`} editPath={`data/idaho/races/${race.id}.yaml`} ogImage={`/og/races/${race.id}${es ? '-es' : ''}.jpg`} updated={fmtDate(d.updated, lang)}>
   <p class="small"><a href={href(lang, '/races')}>← {t(lang, 'nav.races')}</a></p>
   <h1>{office}</h1>
   <p class="muted">

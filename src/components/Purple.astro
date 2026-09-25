@@ -1,0 +1,97 @@
+---
+import Party from './Party.astro';
+import Pledge from './Pledge.astro';
+import PowerBill from './PowerBill.astro';
+import { t, tx, href, type Lang } from '../i18n/ui';
+import { getRaces, sortPolls } from '../lib/data';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const featured = (await getRaces()).filter((r) => r.data.featured);
+const REG_SOURCE = 'https://archive.voteidaho.gov/data/voter-registrations/202609_CountyTotals.csv';
+---
+  <section class="hero">
+    <h1><span class="purple-text">{t(lang, 'site.name')}</span></h1>
+    <p class="lede">
+      {es
+        ? 'Todo el mundo dice que Idaho es rojo. Tal vez sí. Tal vez solo parece así porque quienes quieren un cambio dividen su voto o se quedan en casa. Hagamos el experimento el 3 de noviembre.'
+        : 'Everyone says Idaho is red. Maybe it is. Or maybe it only looks that way because the people who want a change split their votes or stay home. Let’s run the experiment on Nov 3.'}
+    </p>
+    <p class="cta-row">
+      <a class="btn" href={href(lang, '/')}>{es ? 'Primero: asegúrese de poder votar' : 'First: make sure you can vote'}</a>
+      <a class="btn ghost" href="#method">{es ? 'Cómo elegimos' : 'How we pick'}</a>
+    </p>
+  </section>
+
+
+  {featured.length > 0 && (
+    <section>
+      <h2>{t(lang, 'races.featured')}</h2>
+      <div class="grid">
+        {featured.map((r) => {
+          const poll = sortPolls(r.data.polls).find((p) => p.sponsor_type === 'independent');
+          const pick = r.data.candidates.find((c) => c.name === r.data.pick.candidate);
+          const rows = poll
+            ? r.data.candidates.filter((c) => c.name in poll.results).map((c) => ({ c, v: poll.results[c.name] })).sort((a, b) => b.v - a.v)
+            : [];
+          return (
+            <a class="card race-card" href={href(lang, `/races/${r.id}`)}>
+              <h3>{tx(r.data.office, lang)}</h3>
+              {rows.map(({ c, v }) => (
+                <div class="bar-row">
+                  <span>{c.name.split(' ').slice(-1)[0]} <Party party={c.party} lang={lang} /></span>
+                  <div class="bar"><span class={c.party} style={`width:${v}%`}></span></div>
+                  <span class="num">{v}%</span>
+                </div>
+              ))}
+              {poll && <p class="small muted">{poll.pollster}, {poll.start} – {poll.end}. {es ? 'Las encuestas no coinciden; vea todas.' : 'Polls disagree; see them all.'}</p>}
+              {pick && <p><strong>{es ? 'Matemáticas del voto:' : 'Vote math:'}</strong> {pick.name}{!r.data.pick.approved && <span class="tag draft"> {t(lang, 'race.pickPending')}</span>}</p>}
+              <span class="more">{es ? 'Ver la contienda →' : 'See the race →'}</span>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <PowerBill lang={lang} />
+
+  <section>
+    <h2>{es ? '¿Por qué “morado”?' : 'Why “purple”?'}</h2>
+    <div class="grid">
+      <div class="card stat">
+        <p class="num-big">62.8%</p>
+        <p>{es ? 'de los votantes registrados de Idaho son republicanos.' : 'of Idaho’s registered voters are Republicans.'}</p>
+        <a class="cite" href={REG_SOURCE} rel="noopener" target="_blank">{es ? 'Secretaría de Estado de Idaho, 1 sep 2026' : 'Idaho Secretary of State, Sept 1, 2026'}</a>
+      </div>
+      <div class="card stat">
+        <p class="num-big">37.2%</p>
+        <p>{es ? 'no lo son: 24.0% sin afiliación, 11.8% demócratas y 1.4% libertarios o de la Constitución.' : 'are not: 24.0% unaffiliated, 11.8% Democrats, and 1.4% Libertarian or Constitution.'}</p>
+        <a class="cite" href={REG_SOURCE} rel="noopener" target="_blank">{es ? 'Misma fuente' : 'Same source'}</a>
+      </div>
+      <div class="card stat">
+        <p class="num-big">{es ? 'Cerrada' : 'Closed'}</p>
+        <p>{es
+          ? 'Solo los republicanos registrados pueden votar en la primaria republicana de Idaho. Quien quiera opinar ahí tiene que registrarse como republicano, así que el registro puede exagerar la fuerza del partido en noviembre.'
+          : 'Only registered Republicans can vote in Idaho’s Republican primary. Anyone who wants a say there has to register as a Republican, so registration may overstate the party’s strength in November.'}</p>
+        <a class="cite" href="https://sos.idaho.gov/elections-division/primary-elections-in-idaho/" rel="noopener" target="_blank">{es ? 'Secretaría de Estado: primarias en Idaho' : 'Idaho Secretary of State: primary elections'}</a>
+      </div>
+    </div>
+  </section>
+
+
+  <Pledge lang={lang} />
+<style>
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .big { font-size: 1.2rem; font-weight: 600; margin-top: 0; }
+  .race-card { text-decoration: none; color: var(--ink); display: grid; gap: 8px; }
+  .race-card:hover { border-color: var(--purple); }
+  .race-card h3 { margin: 0 0 4px; }
+  .race-card p { margin: 0; }
+  .more { color: var(--purple); font-weight: 700; }
+  .bar-row { display: grid; grid-template-columns: 8.5em 1fr 3em; gap: 8px; align-items: center; font-size: 0.93rem; }
+  .bar-row .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .stat p { margin: 0.2rem 0; }
+  .num-big { font-size: 2.2rem; font-weight: 800; color: var(--purple); }
+</style>

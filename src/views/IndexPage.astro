@@ -1,126 +1,118 @@
 ---
+// Home: the shortest path to voting. Four official links, one line each, then out of the way.
+// Everything else (hypothesis, polls, picks, pledge) lives at /experiment.
 import Base from '../layouts/Base.astro';
-import Party from '../components/Party.astro';
-import Pledge from '../components/Pledge.astro';
-import PowerBill from '../components/PowerBill.astro';
-import { t, tx, href, type Lang } from '../i18n/ui';
-import { getRaces, sortPolls } from '../lib/data';
+import { href, type Lang } from '../i18n/ui';
+import { getElection } from '../lib/data';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
-const featured = (await getRaces()).filter((r) => r.data.featured);
-const REG_SOURCE = 'https://archive.voteidaho.gov/data/voter-registrations/202609_CountyTotals.csv';
+const e = await getElection();
+const url = (k: string) => {
+  const v = e[k]?.value;
+  const s = typeof v === 'string' ? v : v?.en ?? '';
+  return s.match(/https?:\/\/\S+/)?.[0] ?? e[k]?.source.url ?? 'https://voteidaho.gov/';
+};
+
+const actions = es
+  ? [
+      { key: 'check', icon: '✓', title: '¿Estoy registrado?', sub: 'Revíselo en un minuto en el sitio oficial.', url: url('check_registration_url') },
+      { key: 'register', icon: '✎', title: 'Registrarme para votar', sub: 'En línea con su licencia de Idaho o identificación estatal. Fecha límite: viernes 23 de octubre, 5 p.m.', url: url('register_online_url') },
+      { key: 'absentee', icon: '✉', title: 'Votar por correo', sub: 'Pida su boleta de voto ausente. Cualquier votante puede. Su solicitud debe llegar antes del viernes 23 de octubre, 5 p.m.', url: url('absentee_request_url') },
+      { key: 'where', icon: '⌖', title: '¿Dónde voto?', sub: 'Su lugar de votación el 3 de noviembre. En Ada, la votación anticipada es del 19 al 30 de octubre.', url: url('find_polling_place_url') },
+    ]
+  : [
+      { key: 'check', icon: '✓', title: 'Am I registered?', sub: 'Check in about a minute on the official site.', url: url('check_registration_url') },
+      { key: 'register', icon: '✎', title: 'Register to vote', sub: 'Online with your Idaho driver’s license or state ID. Deadline: Fri Oct 23, 5 p.m.', url: url('register_online_url') },
+      { key: 'absentee', icon: '✉', title: 'Vote by mail', sub: 'Request your absentee ballot. Any voter can. Your request must arrive by Fri Oct 23, 5 p.m.', url: url('absentee_request_url') },
+      { key: 'where', icon: '⌖', title: 'Where do I vote?', sub: 'Your polling place for Nov 3. In Ada County, early voting runs Oct 19–30.', url: url('find_polling_place_url') },
+    ];
+const shareText = es
+  ? 'Cómo votar en Idaho: revise su registro, regístrese o pida su boleta por correo. Fecha límite: 23 de octubre.'
+  : 'How to vote in Idaho: check your registration, register, or get a mail ballot. Deadline Oct 23.';
 ---
-<Base lang={lang} description={es
-  ? 'Idaho parece rojo. Nuestra hipótesis: es más competitivo de lo que parece. Averigüémoslo el 3 de noviembre.'
-  : 'Idaho looks deep red. Our hypothesis: it’s more competitive than it looks. Let’s find out on Nov 3.'}>
-  <section class="hero">
-    <h1><span class="purple-text">{t(lang, 'site.name')}</span></h1>
-    <p class="lede">
-      {es
-        ? 'Todo el mundo dice que Idaho es rojo. Tal vez sí. Tal vez solo parece así porque quienes quieren un cambio dividen su voto o se quedan en casa. Hagamos el experimento el 3 de noviembre.'
-        : 'Everyone says Idaho is red. Maybe it is. Or maybe it only looks that way because the people who want a change split their votes or stay home. Let’s run the experiment on Nov 3.'}
+<Base lang={lang}
+  title={es ? 'Cómo votar en Idaho' : 'How to vote in Idaho'}
+  description={es ? 'Revise su registro, regístrese o pida su boleta por correo. Enlaces oficiales. Fecha límite: viernes 23 de octubre, 5 p.m.' : 'Check your registration, register, or get a mail ballot. Official links. Deadline: Fri Oct 23, 5 p.m.'}
+  ogImage={`/og/home${es ? '-es' : ''}.jpg`}>
+  <section class="intro">
+    <h1>{es ? 'Vote en Idaho. Así se hace.' : 'Vote in Idaho. Here’s how.'}</h1>
+    <p class="lede">{es ? 'Cuatro enlaces oficiales. Unos minutos cada uno.' : 'Four official links. A few minutes each.'}</p>
+  </section>
+
+  <ul class="actions">
+    {actions.map((a) => (
+      <li>
+        <a class="action" href={a.url} target="_blank" rel="noopener" data-click={a.key}>
+          <span class="icon" aria-hidden="true">{a.icon}</span>
+          <span class="text"><span class="title">{a.title}</span><span class="sub">{a.sub}</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="official small muted">{es
+    ? <>Se abre <strong>VoteIdaho</strong>, el sitio oficial del estado, en una pestaña nueva. La dirección debe terminar en <strong>voteidaho.gov</strong>.</>
+    : <>Opens <strong>VoteIdaho</strong>, Idaho’s official site, in a new tab. The address should end in <strong>voteidaho.gov</strong>.</>}</p>
+
+  <p class="more">
+    <a href={href(lang, '/vote')}>{es ? 'Guía paso a paso, fechas y qué identificación llevar →' : 'Step-by-step guide, dates and what ID to bring →'}</a>
+  </p>
+
+  <section class="share card">
+    <p class="share-title">{es ? '¿Conoce a alguien que nunca ha votado?' : 'Know someone who’s never voted?'}</p>
+    <p class="small muted">{es ? 'Mándele esta página. Es lo más útil que puede hacer hoy.' : 'Send them this page. It’s the most useful thing you can do today.'}</p>
+    <button class="btn" type="button" id="share" data-text={shareText} data-copied={es ? '¡Enlace copiado!' : 'Link copied!'}>{es ? 'Compartir' : 'Share'}</button>
+    <p class="small"><a href={href(lang, '/share')}>{es ? 'Imágenes para Instagram →' : 'Images for Instagram →'}</a></p>
+  </section>
+
+  <section class="why">
+    <p>
+      <span class="purple-text why-q">{es ? '¿Es Idaho morado?' : 'Is Idaho purple?'}</span>
+      {es ? ' Este sitio también es un experimento abierto. ' : ' This site is also an open experiment. '}
+      <a href={href(lang, '/experiment')}>{es ? 'Vea la hipótesis →' : 'See the hypothesis →'}</a>
     </p>
-    <p class="cta-row">
-      <a class="btn" href={href(lang, '/vote')}>{es ? 'Cuenten conmigo: cómo votar' : 'Count me in: how to vote'}</a>
-      <a class="btn ghost" href={href(lang, '/experiment')}>{es ? 'Cómo funciona el experimento' : 'How the experiment works'}</a>
-    </p>
+    <p class="small"><a href={href(lang, '/races')}>{es ? 'Qué hay en su boleta →' : 'What’s on your ballot →'}</a></p>
   </section>
 
-  <section>
-    <h2>{es ? 'La hipótesis' : 'The hypothesis'}</h2>
-    <div class="card">
-      <p class="big">
-        {es
-          ? 'Idaho es más competitivo de lo que parece si los votantes no republicanos se unen detrás del único candidato con posibilidades reales en cada contienda.'
-          : 'Idaho is more competitive than it looks if non-Republican voters team up behind the one candidate in reach in each race.'}
-      </p>
-      <p class="small muted">
-        {es
-          ? 'Lo decimos abiertamente. Publicamos el método, cada fuente y cada número. Si la hipótesis falla, también lo publicaremos.'
-          : 'We say that out loud. We publish the method, every source and every number. If the hypothesis fails, we’ll publish that too.'}
-      </p>
-    </div>
-  </section>
-
-  {featured.length > 0 && (
-    <section>
-      <h2>{t(lang, 'races.featured')}</h2>
-      <div class="grid">
-        {featured.map((r) => {
-          const poll = sortPolls(r.data.polls).find((p) => p.sponsor_type === 'independent');
-          const pick = r.data.candidates.find((c) => c.name === r.data.pick.candidate);
-          const rows = poll
-            ? r.data.candidates.filter((c) => c.name in poll.results).map((c) => ({ c, v: poll.results[c.name] })).sort((a, b) => b.v - a.v)
-            : [];
-          return (
-            <a class="card race-card" href={href(lang, `/races/${r.id}`)}>
-              <h3>{tx(r.data.office, lang)}</h3>
-              {rows.map(({ c, v }) => (
-                <div class="bar-row">
-                  <span>{c.name.split(' ').slice(-1)[0]} <Party party={c.party} lang={lang} /></span>
-                  <div class="bar"><span class={c.party} style={`width:${v}%`}></span></div>
-                  <span class="num">{v}%</span>
-                </div>
-              ))}
-              {poll && <p class="small muted">{poll.pollster}, {poll.start} – {poll.end}. {es ? 'Las encuestas no coinciden; vea todas.' : 'Polls disagree; see them all.'}</p>}
-              {pick && <p><strong>{es ? 'Matemáticas del voto:' : 'Vote math:'}</strong> {pick.name}{!r.data.pick.approved && <span class="tag draft"> {t(lang, 'race.pickPending')}</span>}</p>}
-              <span class="more">{es ? 'Ver la contienda →' : 'See the race →'}</span>
-            </a>
-          );
-        })}
-      </div>
-    </section>
-  )}
-
-  <PowerBill lang={lang} />
-
-  <section>
-    <h2>{es ? '¿Por qué “morado”?' : 'Why “purple”?'}</h2>
-    <div class="grid">
-      <div class="card stat">
-        <p class="num-big">62.8%</p>
-        <p>{es ? 'de los votantes registrados de Idaho son republicanos.' : 'of Idaho’s registered voters are Republicans.'}</p>
-        <a class="cite" href={REG_SOURCE} rel="noopener" target="_blank">{es ? 'Secretaría de Estado de Idaho, 1 sep 2026' : 'Idaho Secretary of State, Sept 1, 2026'}</a>
-      </div>
-      <div class="card stat">
-        <p class="num-big">37.2%</p>
-        <p>{es ? 'no lo son: 24.0% sin afiliación, 11.8% demócratas y 1.4% libertarios o de la Constitución.' : 'are not: 24.0% unaffiliated, 11.8% Democrats, and 1.4% Libertarian or Constitution.'}</p>
-        <a class="cite" href={REG_SOURCE} rel="noopener" target="_blank">{es ? 'Misma fuente' : 'Same source'}</a>
-      </div>
-      <div class="card stat">
-        <p class="num-big">{es ? 'Cerrada' : 'Closed'}</p>
-        <p>{es
-          ? 'Solo los republicanos registrados pueden votar en la primaria republicana de Idaho. Quien quiera opinar ahí tiene que registrarse como republicano, así que el registro puede exagerar la fuerza del partido en noviembre.'
-          : 'Only registered Republicans can vote in Idaho’s Republican primary. Anyone who wants a say there has to register as a Republican, so registration may overstate the party’s strength in November.'}</p>
-        <a class="cite" href="https://sos.idaho.gov/elections-division/primary-elections-in-idaho/" rel="noopener" target="_blank">{es ? 'Secretaría de Estado: primarias en Idaho' : 'Idaho Secretary of State: primary elections'}</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>{es ? 'Tres pasos antes del 23 de octubre' : 'Three steps before Oct 23'}</h2>
-    <ol class="steps">
-      <li class="card"><strong>{es ? 'Revise su registro.' : 'Check your registration.'}</strong> {es ? 'Un minuto en VoteIdaho.' : 'One minute on VoteIdaho.'}</li>
-      <li class="card"><strong>{es ? 'Pida su boleta de voto ausente' : 'Request an absentee ballot'}</strong> {es ? 'o planee votar temprano.' : 'or plan to vote early.'}</li>
-      <li class="card"><strong>{es ? 'Vote toda la boleta' : 'Vote the whole ballot'}</strong> {es ? 'y devuélvala para que llegue antes de las 8 p.m. del 3 de noviembre.' : 'and return it so it arrives by 8 p.m. Nov 3.'}</li>
-    </ol>
-    <p><a class="btn" href={href(lang, '/vote')}>{es ? 'Empezar' : 'Start'}</a></p>
-  </section>
-
-  <Pledge lang={lang} />
+  <script>
+    // Count outbound clicks by button only (no personal data). See /privacy.
+    for (const a of document.querySelectorAll<HTMLAnchorElement>('a[data-click]')) {
+      a.addEventListener('click', () => { try { navigator.sendBeacon?.('/api/click', a.dataset.click!); } catch {} });
+    }
+    const btn = document.getElementById('share') as HTMLButtonElement | null;
+    btn?.addEventListener('click', async () => {
+      const data = { title: document.title, text: btn.dataset.text!, url: location.origin + location.pathname };
+      try {
+        if (navigator.share) { await navigator.share(data); return; }
+        await navigator.clipboard.writeText(`${data.text} ${data.url}`);
+        btn.textContent = btn.dataset.copied!;
+      } catch {}
+    });
+  </script>
 </Base>
+
 <style>
-  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-  .big { font-size: 1.2rem; font-weight: 600; margin-top: 0; }
-  .race-card { text-decoration: none; color: var(--ink); display: grid; gap: 8px; }
-  .race-card:hover { border-color: var(--purple); }
-  .race-card h3 { margin: 0 0 4px; }
-  .race-card p { margin: 0; }
-  .more { color: var(--purple); font-weight: 700; }
-  .bar-row { display: grid; grid-template-columns: 8.5em 1fr 3em; gap: 8px; align-items: center; font-size: 0.93rem; }
-  .bar-row .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .stat p { margin: 0.2rem 0; }
-  .num-big { font-size: 2.2rem; font-weight: 800; color: var(--purple); }
+  .intro { padding: 22px 0 6px; }
+  .intro h1 { font-size: clamp(2rem, 8.5vw, 3.2rem); margin: 0.2rem 0 0.3rem; }
+  .lede { font-size: 1.15rem; margin: 0; color: var(--muted); }
+  .actions { list-style: none; padding: 0; margin: 18px 0 8px; display: grid; gap: 12px; }
+  .actions li { max-width: none; }
+  .action { display: grid; grid-template-columns: 48px 1fr 20px; gap: 14px; align-items: center; padding: 16px; min-height: 76px;
+    background: var(--surface); border: 2px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow); }
+  .action:hover, .action:focus-visible { border-color: var(--purple); }
+  .icon { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; font-size: 1.5rem; font-weight: 800; color: #fff;
+    background: linear-gradient(135deg, var(--red), #7b3fc0 55%, var(--blue)); }
+  .text { display: grid; gap: 2px; }
+  .title { font-size: 1.2rem; font-weight: 800; }
+  .sub { font-size: 0.92rem; color: var(--muted); line-height: 1.35; }
+  .arrow { color: var(--purple); font-weight: 800; font-size: 1.2rem; }
+  .official { margin: 6px 2px 0; }
+  .more { margin: 18px 0; font-weight: 600; }
+  .share { margin: 22px 0; text-align: center; }
+  .share-title { font-size: 1.15rem; font-weight: 800; margin: 0 0 4px; }
+  .share .btn { margin-top: 8px; min-width: 160px; }
+  .why { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 14px; }
+  .why-q { font-weight: 800; font-size: 1.1rem; }
 </style>

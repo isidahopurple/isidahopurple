@@ -50,7 +50,7 @@ const steps = [
 const dateKeys = ['absentee_ballots_mailed', 'ada_early_voting', 'register_deadline', 'absentee_request_deadline', 'emergency_absentee', 'election_day', 'absentee_return_deadline'];
 const shown = new Set(steps.flatMap((s) => s.items));
 ---
-<Base lang={lang} title={t(lang, 'nav.vote')} description={es ? 'Cómo votar en Idaho en 3 pasos, con fechas oficiales.' : 'How to vote in Idaho in 3 steps, with official dates.'} editPath="data/idaho/election.yaml">
+<Base lang={lang} title={t(lang, 'nav.vote')} description={es ? 'Cómo votar en Idaho en 3 pasos, con fechas oficiales.' : 'How to vote in Idaho in 3 steps, with official dates.'} editPath="data/idaho/election.yaml" ogImage={`/og/home${es ? '-es' : ''}.jpg`}>
   <h1>{es ? 'Cómo votar en 3 pasos' : 'How to vote in 3 steps'}</h1>
   <p class="lede">
     {es
