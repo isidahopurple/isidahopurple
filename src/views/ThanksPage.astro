@@ -5,11 +5,11 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
 const m = es
-  ? { counted: '¡Contado! Gracias por unirse al experimento.', already: 'Ya estaba contado. ¡Gracias!', expired: 'Ese enlace venció o no es válido. Inscríbase de nuevo.', remind: 'Le enviaremos 2 o 3 recordatorios y borraremos su correo el 4 de noviembre.', next: 'Lo siguiente: asegúrese de poder votar, y pídale lo mismo a tres amigos.' }
-  : { counted: 'Counted! Thanks for joining the experiment.', already: 'You were already counted. Thank you!', expired: 'That link expired or isn’t valid. Please sign up again.', remind: 'We’ll send 2 or 3 reminders and delete your email on Nov 4.', next: 'Next: make sure you can vote, and ask three friends to do the same.' };
+  ? { none: 'Gracias', counted: '✓ ¡Contado! Gracias por unirse al experimento.', already: 'Ya contábamos con usted. ¡Gracias!', expired: 'Ese enlace venció o no es válido. Inscríbase de nuevo.', remind: 'Le enviaremos 2 o 3 recordatorios y borraremos su correo el 4 de noviembre.', next: 'Lo siguiente: asegúrese de poder votar, y pídale lo mismo a tres amigos.' }
+  : { none: 'Thanks', counted: '✓ Counted! Thanks for joining the experiment.', already: 'You were already counted. Thank you!', expired: 'That link expired or isn’t valid. Please sign up again.', remind: 'We’ll send 2 or 3 reminders and delete your email on Nov 4.', next: 'Next: make sure you can vote, and ask three friends to do the same.' };
 ---
 <Base lang={lang} title={es ? 'Gracias' : 'Thanks'}>
-  <h1 id="thanks-title">{m.counted}</h1>
+  <h1 id="thanks-title">{m.none}</h1>
   <p id="remind" hidden>{m.remind}</p>
   <p>{m.next}</p>
   <p><a class="btn" href={href(lang, '/vote')}>{es ? 'Cómo votar' : 'How to vote'}</a></p>
@@ -17,6 +17,8 @@ const m = es
     const q = new URLSearchParams(location.search);
     const st = q.get('status');
     if (st && m[st]) document.getElementById('thanks-title').textContent = m[st];
+    // Remember on this device so the form shows "You're counted" instead of asking again.
+    if (st === 'counted' || st === 'already') { try { localStorage.setItem('iip-pledge', 'counted'); } catch {} }
     if (q.get('remind')) document.getElementById('remind').hidden = false;
   </script>
 </Base>

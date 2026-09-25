@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && rm -rf dist/review",
-    "build:preview": "PUBLIC_PREVIEW=1 astro build",
+    "build:preview": "PUBLIC_PREVIEW=1 PUBLIC_TURNSTILE_SITEKEY=0x4AAAAAAFD0qD_71qPbQGfS astro build",
     "deploy": "npm run build && wrangler deploy",
     "deploy:preview": "npm run build:preview && wrangler deploy --env preview",
     "preview": "astro preview",

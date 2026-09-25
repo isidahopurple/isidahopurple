@@ -33,7 +33,12 @@ const base = href(lang, '/races/');
     const s = JSON.parse(form.dataset.strings!);
     const base = form.dataset.base!;
     const out = form.querySelector<HTMLDivElement>('.out')!;
-    const link = (id: string, label: string) => (ids.includes(id) ? `<li><a href="${base}${id}">${label}</a></li>` : '');
+    // Build the result with DOM methods (no innerHTML), so nothing from the lookup can inject markup.
+    const el = (tag: string, text?: string) => { const e = document.createElement(tag); if (text) e.textContent = text; return e; };
+    const link = (id: string, label: string) => {
+      if (!ids.includes(id)) return null;
+      const li = el('li'); const a = el('a', label) as HTMLAnchorElement; a.href = base + id; li.append(a); return li;
+    };
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
       const address = (new FormData(form).get('address') as string).trim();
@@ -42,10 +47,13 @@ const base = href(lang, '/races/');
         const r = await fetch(`/api/district?address=${encodeURIComponent(address)}`);
         const d = await r.json();
         if (!r.ok) { out.textContent = d.error === 'lookup_unavailable' ? s.error : s.notFound; return; }
-        const n = d.ld;
-        const links = [link(`us-house-${d.cd}`, `${s.usHouse} ${d.cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB)].join('');
-        out.innerHTML = `<p><strong>${s.ld}: ${n ?? '?'}</strong> · ${s.county}: ${d.county ?? '?'} · ${s.cd}: ${d.cd ?? '?'}</p>` +
-          (links ? `<p>${s.see}:</p><ul>${links}</ul>` : `<p class="small muted">${s.notYet}</p>`);
+        const n = Number.isInteger(d.ld) ? d.ld : null;
+        const cd = Number.isInteger(d.cd) ? d.cd : null;
+        const items = [link(`us-house-${cd}`, `${s.usHouse} ${cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB)].filter(Boolean) as HTMLElement[];
+        const head = el('p'); head.append(el('strong', `${s.ld}: ${n ?? '?'}`), ` · ${s.county}: ${d.county ?? '?'} · ${s.cd}: ${cd ?? '?'}`);
+        out.replaceChildren(head);
+        if (items.length) { const ul = el('ul'); ul.append(...items); out.append(el('p', `${s.see}:`), ul); }
+        else { const p = el('p', s.notYet); p.className = 'small muted'; out.append(p); }
       } catch {
         out.textContent = s.error;
       }

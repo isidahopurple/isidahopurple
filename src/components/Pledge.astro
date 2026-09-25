@@ -17,6 +17,13 @@ const s = es
       button: 'Cuenten conmigo en el experimento',
       fine: 'Le enviamos un enlace para confirmar. Guardamos solo una huella cifrada de su correo, su condado y el día; nunca su correo, a menos que pida recordatorios. Sin premios, sin apuestas. Todo se borra después de la elección.',
       sent: 'Revise su correo y haga clic en el enlace para que lo contemos.',
+      doneTitle: '¡Casi listo! Revise su correo',
+      doneBody: 'Le enviamos un enlace a {email}. Toque “Cuenten conmigo” en ese correo para que lo contemos. Si no lo ve en unos minutos, revise la carpeta de spam.',
+      countedTitle: '✓ Ya está contado',
+      countedBody: 'Gracias por unirse al experimento. Lo más útil ahora: ayude a tres amigos a asegurarse de que pueden votar.',
+      limit: 'Ya le enviamos un enlace hoy. Revise su correo, incluida la carpeta de spam.',
+      again: 'Usar otro correo',
+      sending: 'Enviando…',
       queued: 'Hoy hay mucha demanda. Le enviaremos el enlace mañana por la mañana.',
       already: 'Ya está contado. ¡Gracias!',
       err: 'Algo salió mal. Revise su correo y condado e intente de nuevo.',
@@ -30,6 +37,13 @@ const s = es
       button: 'Count me in the experiment',
       fine: 'We email you a link to confirm. We keep only a scrambled fingerprint of your email, your county and the day; never your email, unless you ask for reminders. No prizes, no bets. Everything is deleted after the election.',
       sent: 'Check your email and click the link so you’re counted.',
+      doneTitle: 'Almost done! Check your email',
+      doneBody: 'We sent a link to {email}. Tap “Count me in” in that email to be counted. If you don’t see it in a few minutes, check your spam folder.',
+      countedTitle: '✓ You’re counted',
+      countedBody: 'Thanks for joining the experiment. The most useful thing now: help three friends make sure they can vote.',
+      limit: 'We already sent you a link today. Check your email, including spam.',
+      again: 'Use a different email',
+      sending: 'Sending…',
       queued: 'Lots of sign-ups today. We’ll send your link tomorrow morning.',
       already: 'You’re already counted. Thank you!',
       err: 'Something went wrong. Check your email and county and try again.',
@@ -41,7 +55,17 @@ const s = es
   {sitekey ? (
     <>
       <p class="count" data-line={s.line} data-first={s.first}>{s.first}</p>
-      <form class="pledge-form" data-lang={lang} data-msgs={JSON.stringify({ sent: s.sent, queued: s.queued, already: s.already, err: s.err })}>
+      <div class="done" id="pledge-pending" hidden>
+        <p class="done-title">✉ {s.doneTitle}</p>
+        <p class="done-body"></p>
+        <button class="btn ghost again" type="button">{s.again}</button>
+      </div>
+      <div class="done" id="pledge-counted" hidden>
+        <p class="done-title">{s.countedTitle}</p>
+        <p>{s.countedBody}</p>
+        <p><a class="btn" href={href(lang, '/share')}>{es ? 'Compartir' : 'Share'}</a> <a class="btn ghost" href={href(lang, '/')}>{es ? 'Cómo votar' : 'How to vote'}</a></p>
+      </div>
+      <form class="pledge-form" data-lang={lang} data-msgs={JSON.stringify({ sent: s.sent, queued: s.queued, already: s.already, err: s.err, limit: s.limit, sending: s.sending, button: s.button, doneBody: s.doneBody })}>
         <label>{s.email}<input type="email" name="email" required autocomplete="email" /></label>
         <label>{s.county}
           <select name="county" required>
@@ -70,27 +94,54 @@ const s = es
       if (d.show && d.total) count.textContent = count.dataset.line!.replace('[N]', Number(d.total).toLocaleString());
     }).catch(() => {});
   }
+  // Per-device memory of where this visitor is in the flow (convenience only; the server is the source of truth).
+  const KEY = 'iip-pledge';
+  const store = { get: () => { try { return localStorage.getItem(KEY); } catch { return null; } }, set: (v: string) => { try { localStorage.setItem(KEY, v); } catch {} } };
   for (const form of document.querySelectorAll<HTMLFormElement>('form.pledge-form')) {
     const msgs = JSON.parse(form.dataset.msgs!);
     const out = form.querySelector<HTMLElement>('.msg')!;
+    const pending = document.getElementById('pledge-pending')!;
+    const counted = document.getElementById('pledge-counted')!;
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const show = (which: 'form' | 'pending' | 'counted', email?: string) => {
+      form.hidden = which !== 'form';
+      pending.hidden = which !== 'pending';
+      counted.hidden = which !== 'counted';
+      if (which === 'pending') pending.querySelector('.done-body')!.textContent = msgs.doneBody.replace('{email}', email || '');
+    };
+    const state = store.get();
+    if (state === 'counted') show('counted');
+    else if (state?.startsWith('pending:')) show('pending', state.slice(8));
+    pending.querySelector('.again')!.addEventListener('click', () => { store.set(''); show('form'); });
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
       const f = new FormData(form);
-      const btn = form.querySelector('button')!;
+      const email = String(f.get('email') || '').trim();
       btn.disabled = true;
+      btn.textContent = msgs.sending;
+      out.textContent = '';
       try {
         const r = await fetch('/api/pledge', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ email: f.get('email'), county: f.get('county'), ld: f.get('ld'), lang: form.dataset.lang, turnstile: f.get('cf-turnstile-response') }),
+          body: JSON.stringify({ email, county: f.get('county'), ld: f.get('ld'), lang: form.dataset.lang, turnstile: f.get('cf-turnstile-response') }),
         });
         const d = await r.json();
-        out.textContent = msgs[d.status] ?? msgs.err;
-        if (!d.status) btn.disabled = false;
+        if (d.status === 'sent' || d.status === 'queued' || d.status === 'limit') {
+          store.set(`pending:${email}`);
+          show('pending', email);
+          if (d.status !== 'sent') pending.querySelector('.done-body')!.textContent = d.status === 'queued' ? msgs.queued : msgs.limit;
+        } else if (d.status === 'already') {
+          store.set('counted');
+          show('counted');
+        } else {
+          out.textContent = msgs.err;
+        }
       } catch {
         out.textContent = msgs.err;
-        btn.disabled = false;
       }
+      btn.disabled = false;
+      btn.textContent = msgs.button;
       (window as any).turnstile?.reset();
     });
   }
@@ -102,5 +153,8 @@ const s = es
   .pledge-form { display: grid; gap: 12px; max-width: 460px; }
   label { display: grid; gap: 4px; font-weight: 600; }
   input, select { min-height: 46px; padding: 8px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
-  .msg { font-weight: 700; color: var(--ok); }
+  .msg { font-weight: 700; color: var(--red); }
+  .done { border: 2px solid var(--ok); border-radius: 12px; padding: 16px; background: var(--surface); }
+  .done-title { font-size: 1.25rem; font-weight: 800; color: var(--ok); margin: 0 0 6px; }
+  .done .btn { margin: 4px 6px 0 0; }
 </style>

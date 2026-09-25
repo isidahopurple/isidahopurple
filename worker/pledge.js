@@ -10,6 +10,7 @@ const LINK_TTL_MS = 3 * 24 * 3600 * 1000;
 const FROM = 'Is Idaho Purple? <count@isidahopurple.com>';
 const REPLY_TO = 'contact@isidahopurple.com';
 const SHOW_COUNT_AT = 100; // decision C5
+const PER_EMAIL_PER_DAY = 2; // stops anyone flooding one inbox with confirmation emails
 
 const enc = new TextEncoder();
 const today = () => new Date().toISOString().slice(0, 10);
@@ -111,6 +112,9 @@ export async function pledge(request, env) {
   const h = await hmac(env.HMAC_SECRET, `email:${email}`);
   const already = await env.DB.prepare('SELECT 1 FROM pledges WHERE email_hmac = ?1').bind(h).first();
   if (already) return json({ status: 'already' });
+  const sends = await env.DB.prepare('INSERT INTO email_sends (h, day, n) VALUES (?1, ?2, 1) ON CONFLICT(h, day) DO UPDATE SET n = n + 1 WHERE n < ?3 RETURNING n')
+    .bind(h, today(), PER_EMAIL_PER_DAY).first();
+  if (!sends) return json({ status: 'limit' });
 
   const base = { h, c: county, l: ld, g: lang, d: door, x: Date.now() + LINK_TTL_MS };
   const origin = new URL(request.url).origin;
