@@ -23,6 +23,7 @@ const nav = [
   { key: 'nav.vote', path: '/vote' },
   { key: 'nav.races', path: '/races' },
   { key: 'nav.experiment', path: '/experiment' },
+  { key: 'nav.share', path: '/share' },
   { key: 'nav.about', path: '/about' },
 ] as const;
 const isCurrent = (p: string) => path.replace(/\/$/, '').endsWith(p) || path.includes(`${p}/`);
@@ -56,19 +57,34 @@ const isCurrent = (p: string) => path.replace(/\/$/, '').endsWith(p) || path.inc
     <header class="site-header">
       <div class="wrap header-row">
         <a class="brand" href={href(lang, '/')}>
-          <span class="brand-mark" aria-hidden="true"></span>{siteName}
+          <span class="brand-mark" aria-hidden="true"></span><span class="brand-name">{siteName}</span>
         </a>
+        <nav class="main-nav" id="main-nav" aria-label={lang === 'es' ? 'Menú' : 'Menu'}>
+          {nav.map((n) => (
+            <a href={href(lang, n.path)} aria-current={isCurrent(n.path) ? 'page' : undefined}>{t(lang, n.key)}</a>
+          ))}
+        </nav>
         <div class="lang" role="group" aria-label="Language / Idioma">
-          <a href={lang === 'en' ? path : otherLangPath(lang, path)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}><span aria-hidden="true">🇺🇸</span> English</a>
-          <a href={lang === 'es' ? path : otherLangPath(lang, path)} hreflang="es" lang="es" aria-current={lang === 'es' ? 'true' : undefined}>Español</a>
+          <a href={lang === 'en' ? path : otherLangPath(lang, path)} hreflang="en" lang="en" title="English" aria-current={lang === 'en' ? 'true' : undefined}><span aria-hidden="true">🇺🇸</span> EN</a>
+          <a href={lang === 'es' ? path : otherLangPath(lang, path)} hreflang="es" lang="es" title="Español" aria-current={lang === 'es' ? 'true' : undefined}>ES</a>
         </div>
+        <button class="menu-btn" type="button" aria-controls="main-nav" aria-expanded="false" aria-label={lang === 'es' ? 'Abrir menú' : 'Open menu'}>
+          <span aria-hidden="true"></span>
+        </button>
       </div>
-      <nav class="wrap main-nav" aria-label="Main">
-        {nav.map((n) => (
-          <a href={href(lang, n.path)} aria-current={isCurrent(n.path) ? 'page' : undefined}>{t(lang, n.key)}</a>
-        ))}
-      </nav>
     </header>
+    <script>
+      const btn = document.querySelector<HTMLButtonElement>('.menu-btn');
+      const navEl = document.getElementById('main-nav');
+      btn?.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        navEl?.classList.toggle('open', open);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && btn?.getAttribute('aria-expanded') === 'true') { btn.click(); btn.focus(); }
+      });
+    </script>
     <div class="deadline">
       <div class="wrap">
         <strong>{t(lang, 'deadline.banner')}</strong>
@@ -92,6 +108,7 @@ const isCurrent = (p: string) => path.replace(/\/$/, '').endsWith(p) || path.inc
           <a href={href(lang, '/vote')}>{t(lang, 'nav.vote')}</a>
           <a href={href(lang, '/races')}>{t(lang, 'nav.races')}</a>
           <a href={href(lang, '/experiment')}>{t(lang, 'nav.experiment')}</a>
+          <a href={href(lang, '/share')}>{t(lang, 'nav.share')}</a>
           <a href={href(lang, '/about')}>{t(lang, 'nav.about')}</a>
           <a href={href(lang, '/privacy')}>{t(lang, 'nav.privacy')}</a>
         </nav>

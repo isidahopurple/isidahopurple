@@ -61,17 +61,37 @@ img { max-width: 100%; }
 
 .preview { background: var(--amber-soft); color: var(--amber-ink); text-align: center; padding: 6px 16px; font-size: 0.9rem; }
 
-.site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
-.header-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; padding-bottom: 6px; flex-wrap: wrap; }
-.brand { font-weight: 800; font-size: 1.2rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-.brand-mark { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--red) 0 50%, var(--blue) 50% 100%); position: relative; }
+.site-header { background: var(--surface); border-bottom: 1px solid var(--line); position: relative; }
+.header-row { display: flex; align-items: center; gap: 10px; min-height: 60px; }
+.brand { font-weight: 800; font-size: 1.1rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px; min-width: 0; margin-right: auto; }
+.brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand-mark { flex: none; width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--red) 0 50%, var(--blue) 50% 100%); position: relative; }
 .brand-mark::after { content: ''; position: absolute; inset: 5px; border-radius: 3px; background: #7b3fc0; }
-.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 0.88rem; }
-.lang a { padding: 6px 12px; text-decoration: none; color: var(--muted); min-height: 36px; display: flex; align-items: center; gap: 4px; }
+.lang { flex: none; display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 0.85rem; }
+.lang a { padding: 0 10px; text-decoration: none; color: var(--muted); min-height: 40px; display: flex; align-items: center; gap: 4px; white-space: nowrap; }
 .lang a[aria-current] { background: var(--purple-soft); color: var(--purple-ink); font-weight: 700; }
-.main-nav { display: flex; flex-wrap: wrap; gap: 2px; padding-bottom: 6px; }
-.main-nav a { padding: 9px 10px; border-radius: 8px; text-decoration: none; color: var(--ink); white-space: nowrap; font-weight: 600; font-size: 0.97rem; }
+.menu-btn { flex: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); display: grid; place-items: center; cursor: pointer; padding: 0; }
+.menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 20px; height: 2px; background: var(--ink); border-radius: 2px; position: relative; transition: transform 0.15s; }
+.menu-btn span::before, .menu-btn span::after { content: ''; position: absolute; left: 0; }
+.menu-btn span::before { top: -6px; }
+.menu-btn span::after { top: 6px; }
+.menu-btn[aria-expanded='true'] span { background: transparent; }
+.menu-btn[aria-expanded='true'] span::before { transform: translateY(6px) rotate(45deg); }
+.menu-btn[aria-expanded='true'] span::after { transform: translateY(-6px) rotate(-45deg); }
+/* Phone: menu is a drop-down panel under the header */
+.main-nav { display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 8px 24px rgb(0 0 0 / 0.12); padding: 6px 16px 12px; flex-direction: column; }
+.main-nav.open { display: flex; }
+.main-nav a { padding: 12px 10px; border-radius: 8px; text-decoration: none; color: var(--ink); font-weight: 600; font-size: 1.05rem; }
 .main-nav a[aria-current] { background: var(--purple-soft); color: var(--purple-ink); }
+/* Wide screens: inline menu, no hamburger */
+@media (min-width: 1000px) {
+  .menu-btn { display: none; }
+  .brand { margin-right: 0; flex: none; }
+  .site-header .wrap { max-width: 1080px; }
+  .main-nav { display: flex; position: static; flex-direction: row; box-shadow: none; border: 0; padding: 0; margin-left: auto; gap: 2px; background: none; }
+  .main-nav a { padding: 8px 10px; font-size: 0.97rem; white-space: nowrap; }
+}
+@media (max-width: 360px) { .brand { font-size: 1rem; } .lang a { padding: 0 8px; } }
 
 .deadline { background: var(--purple); color: #fff; font-size: 0.95rem; }
 .deadline .wrap { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-top: 8px; padding-bottom: 8px; align-items: baseline; }
