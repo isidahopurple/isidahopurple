@@ -5,7 +5,7 @@ level: legislative
 district: LD14
 seat: Senate
 order: 142
-depth: short
+depth: full
 controls:
   en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
   es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
@@ -16,9 +16,36 @@ candidates:
 - name: C. Scott Grow
   party: R
   incumbent: true
+  bio:
+    en: Retired CPA from Eagle, former West Ada school board chair. In the Senate since 2018; chairs Senate Finance and co-chairs the budget committee (JFAC).
+    es: Contador público jubilado de Eagle y expresidente de la junta escolar de West Ada. En el Senado desde 2018; preside el Comité de Finanzas del Senado y copreside el comité de presupuesto (JFAC).
+  website: https://cscottgrowforidaho.com/
+  quote:
+    text: When the economy is one of the top economies in the nation, that is not the time to be digging into our reserves.
+    translation_es: Cuando la economía es una de las mejores del país, no es momento de echar mano de nuestras reservas.
+    date: '2026-03-02'
+    context: On using Idaho’s rainy-day funds to avoid budget cuts
+    source:
+      name: Idaho Education News
+      url: https://www.idahoednews.org/news/idaho-has-1-3-billion-in-rainy-day-funds-should-that-money-help-public-schools/
+      date: '2026-03-02'
+    verified: true
 - name: Kirsten Faith Richardson
   party: C
   incumbent: false
+  bio:
+    en: Farmer from Letha in Gem County. A Constitution Party candidate 13 times since 2006; she got 15.1% against Grow in 2024.
+    es: Agricultora de Letha, en el condado de Gem. Candidata del Partido de la Constitución 13 veces desde 2006; obtuvo el 15.1% contra Grow en 2024.
+  quote:
+    text: to make people accountable for hearing the truth, to stand for the sanctity of life, to limit government to the written Constitution, and to bring Godly morals and culture to Idaho.
+    translation_es: para que la gente rinda cuentas por escuchar la verdad, defender la santidad de la vida, limitar el gobierno a la Constitución escrita y traer moral y cultura piadosas a Idaho.
+    date: '2018-10-24'
+    context: Why she runs (Idaho Press candidate Q&A, when running in LD8; no newer questionnaire found)
+    source:
+      name: Idaho Press
+      url: https://www.idahopress.com/kirsten-faith-richardson-q-a/article_6a4b2fe3-de68-585d-82e7-5d4c3e900c1b.html
+      date: '2018-10-24'
+    verified: true
 history:
 - year: 2024
   label: 2024 LD14 Senate
@@ -30,21 +57,36 @@ history:
 pick:
   label: no-pick
   candidate: null
-  rule: 'none (rule 5 exception)'
+  rule: none (rule 5 exception)
+  approved: true
   reasoning:
-    en: The only other candidate on the ballot is from the Constitution Party, whose platform is generally to the right of the Republican Party. Backing that candidate wouldn't test our hypothesis, so we make a written exception and make no pick here.
-    es: La única otra opción en la boleta es del Partido de la Constitución, cuya plataforma suele estar a la derecha del Partido Republicano. Apoyar a esa candidatura no pondría a prueba nuestra hipótesis, así que hacemos una excepción por escrito y no recomendamos a nadie aquí.
-  approved: false
-review_flags:
-- The only non-Republican is a Constitution Party candidate. Constitution Party platforms are generally to the right of the Republican Party, so the rule-3 pick may not fit the site's purpose. Claude applied a rule-5 exception (no-pick) as the default overnight 2026-09-24; reverse it if you prefer the mechanical rule-3 pick.
+    en: 'There''s no candidate to team up behind here. The Democrat withdrew in March, and the only other name on the ballot runs to the right of the incumbent: Richardson would establish legal "personhood at fertilization," wants to legislate against birth control pills, and her party calls energy "not a proper function of government." Grow is a mainstream Republican who voted for H0911, the law making data centers pay their own power costs, but also for the 2023 "abortion trafficking" bill and the 2025 private-school tax credit. If you vote in this race, compare their records below.'
+    es: 'Aquí no hay una candidatura alrededor de la cual unirse. El demócrata se retiró en marzo, y el único otro nombre en la boleta está a la derecha del titular: Richardson establecería la "personalidad jurídica desde la fecundación", quiere legislar contra las pastillas anticonceptivas y su partido dice que la energía "no es una función propia del gobierno". Grow es un republicano tradicional que votó a favor de H0911, la ley que obliga a los centros de datos a pagar su propio costo de electricidad, pero también a favor de la ley de "tráfico de aborto" de 2023 y del crédito fiscal para escuelas privadas de 2025. Si vota en esta contienda, compare sus historiales abajo.'
+review_flags: []
 sources:
+- name: 'Idaho Legislature: 2026 H0911'
+  url: https://legislature.idaho.gov/sessioninfo/2026/legislation/H0911/
+- name: 'Idaho Legislature: 2026 H0897'
+  url: https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/
+- name: 'Idaho Legislature: 2023 H0242 ("abortion trafficking")'
+  url: https://legislature.idaho.gov/sessioninfo/2023/legislation/H0242/
+- name: 'Idaho Legislature: 2025 H0093 (parental choice tax credit)'
+  url: https://legislature.idaho.gov/sessioninfo/2025/legislation/H0093/
+- name: 'Idaho Legislature: 2025 H0304 (property tax relief; Grow Senate sponsor)'
+  url: https://legislature.idaho.gov/sessioninfo/2025/legislation/H0304/
+- name: 'Idaho Press: Kirsten Faith Richardson Q&A (2018)'
+  url: https://www.idahopress.com/kirsten-faith-richardson-q-a/article_6a4b2fe3-de68-585d-82e7-5d4c3e900c1b.html
+- name: Constitution Party of Idaho platform
+  url: https://idahocp.com/platform/
+- name: 'Idaho Statesman: District 14 primary (Democrat withdrew)'
+  url: https://www.yahoo.com/news/articles/running-idaho-legislature-district-14-100000584.html
+  date: '2026-05-04'
+- name: Grow campaign bio
+  url: https://cscottgrowforidaho.com/bio/
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search
   date: '2026-09-24'
-- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
-  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
-- name: Idaho Legislature, Senate membership
-  url: https://legislature.idaho.gov/senate/membership/
-- name: Idaho Legislature, House membership
-  url: https://legislature.idaho.gov/house/membership/
-updated: '2026-09-24'
+updated: '2026-09-25'
+unverified:
+- Richardson's positions come from a 2018 questionnaire; no newer one was found.
+- Grow's 2026 primary margin against Mac Raslan was not checked.
