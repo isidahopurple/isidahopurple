@@ -168,16 +168,18 @@ absentee_return_deadline:
 absentee_mail_advice:
   label:
     en: When to mail your ballot
-    es: "Cuándo enviar su boleta por correo"
+    es: Cuándo enviar su boleta por correo
   value:
-    en: "No official mail-by date is published. Mail it as early as you can, or use a drop box."
-    es: "No hay una fecha oficial publicada para enviarla por correo. Envíela lo antes posible o use un buzón de boletas."
+    en: Mail it by Tue Oct 27. After that, use a drop box instead.
+    es: Envíela a más tardar el martes 27 de octubre. Después de esa fecha, use un buzón de boletas.
   note:
-    en: "We could not find a suggested mail-by date from Ada County or the Secretary of State. VoteIdaho tells overseas voters to mail as soon as possible in case of delays. Only a ballot that arrives by 8 p.m. Nov 3 counts."
-    es: "No encontramos una fecha sugerida para enviarla por correo, ni del condado de Ada ni de la Secretaría de Estado de Idaho. VoteIdaho les dice a los votantes en el extranjero que la envíen lo antes posible, por si hay retrasos. Solo cuenta una boleta que llegue a más tardar a las 8 p.m. del 3 de noviembre."
-  source: { name: "VoteIdaho, Casting Your Ballot", url: "https://voteidaho.gov/casting-your-ballot/" }
-  verified: false
-
+    en: The US Postal Service advises mailing a completed ballot "at least one week prior to the deadline." Idaho's deadline is 8 p.m. Nov 3, and only a ballot that arrives by then counts. A postmark does not count.
+    es: El Servicio Postal de EE. UU. recomienda enviar la boleta llena "al menos una semana antes de la fecha límite". En Idaho la fecha límite es las 8 p.m. del 3 de noviembre, y solo cuenta la boleta que llega a tiempo. El matasellos no cuenta.
+  source:
+    name: USPS, Election Mail
+    url: https://about.usps.com/what/government-services/election-mail/
+    date: '2026-09-25'
+  verified: true
 absentee_track_url:
   label:
     en: Track your absentee ballot
@@ -229,17 +231,19 @@ ada_elections_office:
 
 absentee_at_polling_place:
   label:
-    en: Can I drop my absentee ballot at a polling place on Election Day?
-    es: "¿Puedo dejar mi boleta de voto ausente en un lugar de votación el Día de las Elecciones?"
+    en: Returning your absentee ballot on Election Day
+    es: Devolver su boleta de voto ausente el Día de las Elecciones
   value:
-    en: "Not confirmed. To be safe, use a drop box, the Ada County Elections Office, or the mail."
-    es: "No está confirmado. Para estar seguro, use un buzón de boletas, la Oficina de Elecciones del Condado de Ada o el correo."
+    en: Use an Ada County drop box. They take ballots until 8 p.m. on Nov 3, with election staff there at closing time.
+    es: Use un buzón de boletas del condado de Ada. Reciben boletas hasta las 8 p.m. del 3 de noviembre, con personal electoral presente a la hora del cierre.
   note:
-    en: "We found no official answer either way. VoteIdaho and Ada County list only mail, drop boxes and the county elections office as return options. Idaho Code 34-1005 says the ballot must reach the county clerk by 8 p.m. VoteIdaho does say you can bring an absentee ballot to your polling place and swap it for a new ballot to vote there. A person must confirm the drop-off question with Ada County Elections at (208) 287-6860."
-    es: "No encontramos una respuesta oficial, ni a favor ni en contra. VoteIdaho y el condado de Ada solo mencionan el correo, los buzones de boletas y la oficina de elecciones del condado como formas de devolverla. El Código de Idaho 34-1005 dice que la boleta debe llegar al secretario del condado a más tardar a las 8 p.m. VoteIdaho sí dice que puede llevar una boleta de voto ausente a su lugar de votación y cambiarla por una boleta nueva para votar allí. Una persona debe confirmar lo de dejar la boleta con Ada County Elections al (208) 287-6860."
-  source: { name: "VoteIdaho, Casting Your Ballot", url: "https://voteidaho.gov/casting-your-ballot/" }
-  verified: false
-
+    en: Ada County Elections confirmed this by phone on Sept 25, 2026. Whether polling places also accept voted absentee ballots is not confirmed, so use a drop box, the Elections Office, or mail it early.
+    es: Ada County Elections lo confirmó por teléfono el 25 de septiembre de 2026. No está confirmado si los lugares de votación también reciben boletas de voto ausente, así que use un buzón, la Oficina de Elecciones o envíela temprano por correo.
+  source:
+    name: Ada County Elections (phone, Sept 25, 2026); Absentee Voting page
+    url: https://adacounty.id.gov/elections/absentee-voting/
+    date: '2026-09-25'
+  verified: true
 early_voting_statewide:
   label:
     en: Early voting in Idaho

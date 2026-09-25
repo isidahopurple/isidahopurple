@@ -41,13 +41,13 @@ const steps = [
   {
     title: es ? 'Devuélvala a tiempo' : 'Return it in time',
     body: es
-      ? 'Su boleta debe LLEGAR antes de las 8 p.m. del 3 de noviembre. El matasellos no cuenta.'
-      : 'Your ballot must ARRIVE by 8 p.m. on Nov 3. A postmark doesn’t count.',
+      ? 'Envíela por correo a más tardar el 27 de octubre. Debe LLEGAR antes de las 8 p.m. del 3 de noviembre; el matasellos no cuenta. Después del 27, use un buzón de boletas.'
+      : 'Mail it by Oct 27. It must ARRIVE by 8 p.m. on Nov 3, and a postmark doesn’t count. After Oct 27, use a drop box.',
     items: ['absentee_return_deadline', 'absentee_mail_advice', 'ada_drop_boxes', 'absentee_at_polling_place'],
     buttons: [{ label: es ? 'Rastrear mi boleta' : 'Track my ballot', key: 'absentee_track_url' }],
   },
 ];
-const dateKeys = ['absentee_ballots_mailed', 'ada_early_voting', 'register_deadline', 'absentee_request_deadline', 'emergency_absentee', 'election_day', 'absentee_return_deadline'];
+const dateKeys = ['absentee_ballots_mailed', 'ada_early_voting', 'register_deadline', 'absentee_request_deadline', 'absentee_mail_advice', 'emergency_absentee', 'election_day', 'absentee_return_deadline'];
 const shown = new Set(steps.flatMap((s) => s.items));
 ---
 <Base lang={lang} title={t(lang, 'nav.vote')} description={es ? 'Cómo votar en Idaho en 3 pasos, con fechas oficiales.' : 'How to vote in Idaho in 3 steps, with official dates.'} editPath="data/idaho/election.yaml" ogImage={`/og/home${es ? '-es' : ''}.jpg`}>
