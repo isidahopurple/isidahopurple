@@ -34,7 +34,7 @@ pick:
   reasoning:
     en: Casey Hess is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters.
     es: Casey Hess es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación.
-  approved: false
+  approved: true
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

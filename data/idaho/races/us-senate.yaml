@@ -275,7 +275,7 @@ pick:
       other challenger is close to Achilles, so if non-Republican voters come together
       behind him, this can become a real race. We are not predicting that he wins.
     es: 'Como el candidato demócrata ya no está en la boleta, Todd Achilles es el único candidato no republicano con una base real de apoyo. Las encuestas no coinciden para nada sobre la diferencia: la propia encuesta de Risch lo pone 34 puntos adelante, mientras que la encuesta de Advanced Targeting Research pone a Achilles 11 puntos adelante en un enfrentamiento directo. Un politólogo de Boise State dice que lo más probable es que la diferencia se deba a cómo cada encuesta decide quién es un "votante probable". En lo que sí coinciden las encuestas es que ningún otro retador está cerca de Achilles. Así que si los votantes no republicanos se unen detrás de él, esta puede volverse una contienda real. No estamos diciendo que él vaya a ganar.'
-  approved: false
+  approved: true
 
 scenarios:
   - voters_of: "Natalie Fleming"

@@ -111,7 +111,7 @@ pick:
   reasoning:
     en: "There is no independent poll, so the method uses the last election, where Peterson (the same candidate) took 25 percent and no other non-Republican topped 2 percent. Both public polls were paid for by campaigns, and both show Peterson far ahead of Zabel on the real three-way ballot (35 to 6 and 27 to 5). Zabel does well only in hypothetical head-to-heads without Peterson. This was a 46-point race in 2024, so a pick here will not change the outcome."
     es: No hay una encuesta independiente, así que el método usa la última elección, en la que Peterson (el mismo candidato) sacó el 25 por ciento y ningún otro candidato no republicano pasó del 2 por ciento. Las dos encuestas públicas fueron pagadas por campañas, y las dos muestran a Peterson muy por delante de Zabel en la boleta real de tres candidatos (35 a 6 y 27 a 5). A Zabel solo le va bien en enfrentamientos hipotéticos de uno contra uno sin Peterson. Esta contienda tuvo 46 puntos de diferencia en 2024, así que una recomendación aquí no va a cambiar el resultado.
-  approved: false
+  approved: true
 scenarios:
   - voters_of: "Sarah Zabel"
     text:

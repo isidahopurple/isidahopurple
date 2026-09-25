@@ -113,7 +113,7 @@ pick:
   reasoning:
     en: "There is no poll, so the method uses 2024, when the Democrat took 31 percent and no other non-Republican topped 5. Simpson won the district by about 30 points, so realistically this seat is not in play. The Boise part voted for the Democrat, though, so Boise turnout is where a vote here counts most."
     es: No hay encuesta, así que el método usa 2024, cuando el demócrata sacó el 31 por ciento y ningún otro candidato no republicano pasó del 5. Simpson ganó el distrito por unos 30 puntos, así que en la realidad este escaño no está en juego. Pero la parte de Boise votó por el demócrata, así que la participación en Boise es donde un voto aquí cuenta más.
-  approved: false
+  approved: true
 scenarios:
   - voters_of: "Will Johanson"
     text:

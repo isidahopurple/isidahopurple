@@ -59,7 +59,7 @@ pick:
   reasoning:
     en: "Myricks is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Bedke won by about 34 points in 2022, and no public poll exists, so be realistic about the odds."
     es: Myricks es el único candidato no republicano en la boleta, así que es una contienda entre dos y lo que importa es la participación. Bedke ganó por unos 34 puntos en 2022 y no hay ninguna encuesta pública, así que sea realista sobre las probabilidades.
-  approved: false
+  approved: true
 scenarios: []
 review_flags: []
 unverified:

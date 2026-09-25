@@ -74,7 +74,7 @@ pick:
   reasoning:
     en: "Hickman is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. The 25-point margin in 2022 was the closest statewide race that year, and the Democrat carried Ada County (Arkoosh 95,467 to Labrador 88,131). It is still a long shot statewide, with no public poll."
     es: Hickman es la única candidata no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. La diferencia de 25 puntos en 2022 fue la contienda estatal más cerrada de ese año, y la demócrata ganó en el condado de Ada (Arkoosh 95,467 contra Labrador 88,131). Aun así, a nivel estatal es muy difícil que gane, y no hay ninguna encuesta pública.
-  approved: false
+  approved: true
 scenarios: []
 review_flags: []
 unverified:

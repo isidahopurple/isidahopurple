@@ -34,7 +34,7 @@ pick:
   reasoning:
     en: 'Carrie Semmelroth is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: a Democrat holds this seat now. This is a 2024 rematch.'
     es: 'Carrie Semmelroth es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: un demócrata ocupa este escaño ahora. Es una revancha de 2024.'
-  approved: false
+  approved: true
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

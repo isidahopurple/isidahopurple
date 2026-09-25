@@ -63,7 +63,7 @@ pick:
   reasoning:
     en: 'Nancy Gregory is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Open seat: Sen. Codi Galloway (R) is not on the ballot. The seat flipped from D+1.8 in 2022 to R+3.7 in 2024, so turnout and avoiding undervotes decide it. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
     es: 'Nancy Gregory es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Escaño abierto: la senadora Codi Galloway (R) no está en la boleta. El escaño pasó de D+1.8 en 2022 a R+3.7 en 2024, así que lo decidirán la participación y que los votantes no dejen esta contienda en blanco. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
-  approved: false
+  approved: true
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

@@ -37,7 +37,7 @@ pick:
   reasoning:
     en: Karlie Easley is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters.
     es: Karlie Easley es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación.
-  approved: false
+  approved: true
 review_flags:
 - Sen. Lori Den Hartog (R) was the Senate floor sponsor of H0897 (2026) and is listed as a contact on its statement of purpose. The bill would have narrowed the data-center sales tax exemption and added energy and water reporting; it passed both chambers (House 68-0, Senate 34-0) but died when the House did not take up the Senate amendments. She may match the pick on power bills and data centers; a human should review.
 sources:

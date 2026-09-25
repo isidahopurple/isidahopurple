@@ -62,7 +62,7 @@ pick:
   reasoning:
     en: 'Steve Berch is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: Berch (D) holds this seat now. It was the closest 2024 legislative race in Ada County districts LD14-LD22 (227 votes), and this is a 2022 rematch with Keyser. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
     es: 'Steve Berch es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: Berch (D) ocupa este escaño ahora. Fue la contienda legislativa más cerrada de 2024 en los distritos del condado de Ada LD14-LD22 (227 votos), y es una revancha de 2022 contra Keyser. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
-  approved: false
+  approved: true
 unverified:
 - Berch's quote is from an undated campaign homepage; the date shown is when it was read.
 sources:

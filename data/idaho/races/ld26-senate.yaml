@@ -81,7 +81,7 @@ pick:
   reasoning:
     en: 'There is no independent poll of this race. Under rule 2 the pick is the non-Republican who finished highest last time: Ron Taylor (D) won in 2024 with 45.6%, while a different independent candidate (Kala Tate) took 10.5%. Taylor''s 2024 margin was 1.6 points, smaller than the independent''s share, so a split non-Republican vote could decide this seat. This is a hold: Taylor holds the seat now. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
     es: 'No hay ninguna encuesta independiente de esta contienda. Según la regla 2, la recomendación es la opción no republicana que quedó más alto la última vez: Ron Taylor (D) ganó en 2024 con el 45.6%, mientras que otra candidatura independiente (Kala Tate) sacó el 10.5%. La diferencia de Taylor en 2024 fue de 1.6 puntos, menos que el porcentaje de esa candidatura independiente, así que dividir el voto no republicano podría decidir este escaño. Se trata de conservar el escaño: Taylor ocupa el escaño ahora. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
-  approved: false
+  approved: true
 scenarios:
 - voters_of: Shaila Tate
   text:

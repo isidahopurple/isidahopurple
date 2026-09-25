@@ -75,7 +75,7 @@ pick:
   reasoning:
     en: "With no poll, the method points to the Democrat. Her party took about 30 percent here in 2022, while Constitution candidates drew 4 to 5 percent in other statewide races. This is a roughly 40-point race. One nuance: Critchfield supports parental choice but says the school choice tax credit policy \"lacks transparency and accountability\" (CBS2/KBOI survey), while both challengers oppose the credit (Idaho Education News)."
     es: 'Como no hay encuesta, el método señala a la candidata demócrata. Su partido sacó cerca del 30 por ciento aquí en 2022, mientras que los candidatos del Partido de la Constitución sacaron de 4 a 5 por ciento en otras contiendas estatales. Esta es una contienda de unos 40 puntos de diferencia. Un detalle: Critchfield apoya que los padres elijan la escuela, pero dice que la política de crédito fiscal para elegir escuela "no tiene transparencia ni rendición de cuentas" (encuesta de CBS2/KBOI), mientras que los dos retadores se oponen al crédito (Idaho Education News).'
-  approved: false
+  approved: true
 scenarios:
   - voters_of: "Teresa Roundy"
     text:

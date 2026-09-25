@@ -61,7 +61,7 @@ pick:
   reasoning:
     en: Jae Etchart is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.
     es: Jae Etchart es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.
-  approved: false
+  approved: true
 review_flags:
 - 'Rep. Dori Healey (R): Voted aye on H0897 (2026 data-center tax bill) when it passed the House 68-0. The vote was unanimous, so it is weak evidence of a match on power bills and data centers, but a human should review.'
 unverified:

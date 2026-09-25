@@ -48,7 +48,7 @@ pick:
   reasoning:
     en: "Jones is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Be realistic: the Democrat lost this office by about 42 points in 2022, and no public poll suggests that has changed."
     es: 'Jones es el único candidato no republicano en la boleta, así que es una contienda entre dos y lo que importa es la participación. Sea realista: el demócrata perdió este cargo por unos 42 puntos en 2022, y ninguna encuesta pública indica que eso haya cambiado.'
-  approved: false
+  approved: true
 scenarios: []
 review_flags: []
 unverified:

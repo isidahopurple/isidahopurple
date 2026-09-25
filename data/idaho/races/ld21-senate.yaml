@@ -35,7 +35,7 @@ pick:
   reasoning:
     en: 'Uncontested: only one active candidate. The Democratic nominee, Brenda H. Quick, withdrew on 2026-08-05 according to the Secretary of State filing list, and no replacement is listed.'
     es: 'Sin oposición: solo hay un candidato activo. La candidata demócrata, Brenda H. Quick, se retiró el 2026-08-05, según la lista de candidatos de la Secretaría de Estado de Idaho, y no aparece ningún reemplazo.'
-  approved: false
+  approved: true
 unverified:
 - Whether Brenda H. Quick's name is still printed on the ballot after her 2026-08-05 withdrawal.
 sources:

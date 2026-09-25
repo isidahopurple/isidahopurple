@@ -34,7 +34,7 @@ pick:
   reasoning:
     en: 'Loren Petty is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Open seat: Rep. John Vander Woude (R) is not on the ballot; Petty was the 2024 Democratic nominee.'
     es: 'Loren Petty es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Escaño abierto: el representante John Vander Woude (R) no está en la boleta; Petty fue la opción demócrata en 2024.'
-  approved: false
+  approved: true
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

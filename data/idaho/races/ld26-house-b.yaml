@@ -65,7 +65,7 @@ pick:
   reasoning:
     en: 'Kevin Marsh is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Open seat: Rep. Jack Nelsen (R) is not on the ballot. The seat was decided by 84 votes in 2022 and 3.1 points in 2024. District lines were the same in 2022 and 2024 (the post-2020-census map), so both results compare directly.'
     es: 'Kevin Marsh es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Escaño abierto: el representante Jack Nelsen (R) no está en la boleta. El escaño se decidió por 84 votos en 2022 y por 3.1 puntos en 2024. Los límites del distrito fueron los mismos en 2022 y 2024 (el mapa posterior al censo de 2020), así que los dos resultados se pueden comparar directamente.'
-  approved: false
+  approved: true
 unverified:
 - Johnstone's quote is from an undated campaign homepage; the date shown is when it was read. Kevin Marsh's website URL was found by search and only checked to load.
 sources:

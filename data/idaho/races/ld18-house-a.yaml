@@ -31,7 +31,7 @@ pick:
   reasoning:
     en: 'Uncontested: only one candidate is on the ballot.'
     es: 'Sin oposición: solo hay un candidato en la boleta.'
-  approved: false
+  approved: true
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

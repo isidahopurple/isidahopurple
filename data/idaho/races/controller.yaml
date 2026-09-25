@@ -59,7 +59,7 @@ pick:
   reasoning:
     en: "Mohan is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. He is better known than most down-ballot Democrats, but the Democrat lost this office by about 43 points in 2022 and no public poll exists."
     es: Mohan es el único candidato no republicano en la boleta, así que es una contienda entre dos y lo que importa es la participación. Es más conocido que la mayoría de los demócratas en cargos menos visibles de la boleta, pero el demócrata perdió este cargo por unos 43 puntos en 2022 y no hay ninguna encuesta pública.
-  approved: false
+  approved: true
 scenarios: []
 review_flags: []
 unverified:

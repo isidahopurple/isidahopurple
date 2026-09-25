@@ -34,7 +34,7 @@ pick:
   reasoning:
     en: 'Annie Haws is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: a Democrat holds this seat now.'
     es: 'Annie Haws es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: un demócrata ocupa este escaño ahora.'
-  approved: false
+  approved: true
 unverified:
 - Incumbency assumed from the Legislature roster, which lists "Anne Henderson Haws" (D) in LD16 Seat B; the ballot name is "Annie Haws". Confirm they are the same person and how she took the seat (Todd Achilles won it in 2024).
 sources:

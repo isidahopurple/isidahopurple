@@ -37,7 +37,7 @@ pick:
   reasoning:
     en: 'Soñia Galaviz is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. This is a hold: a Democrat (Sen. Ali Rabe, not on the 2026 ballot) holds this seat now.'
     es: 'Soñia Galaviz es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Se trata de conservar el escaño: una demócrata (la senadora Ali Rabe, que no está en la boleta de 2026) ocupa este escaño ahora.'
-  approved: false
+  approved: true
 unverified:
 - Why Sen. Ali Rabe is not on the 2026 ballot was not checked.
 sources:

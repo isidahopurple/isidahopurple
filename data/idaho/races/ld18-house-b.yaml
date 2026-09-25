@@ -34,7 +34,7 @@ pick:
   reasoning:
     en: No Republican is on the ballot (Democrat vs Libertarian), so the consolidation method does not apply.
     es: No hay ningún republicano en la boleta (demócrata contra libertario), así que el método de consolidación no aplica.
-  approved: false
+  approved: true
 sources:
 - name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
   url: https://run.voteidaho.gov/search

@@ -221,7 +221,7 @@ pick:
       become a real race. The polls conflict, though: Stegner's own July poll has Little at
       48 and far ahead, and the sponsor of the September poll is not disclosed.
     es: 'En la encuesta de Advanced Targeting Research, Little tiene 37, con 20% de indecisos, así que no tiene asegurada la mayoría. Pickens (27) y Stegner (13) juntos suman 40. Pickens le gana a Stegner por 14 a 16 puntos en las dos encuestas de tres candidatos, así que ella es la retadora con más apoyo. Si los votantes que quieren un nuevo gobernador se unen, esta puede volverse una contienda real. Sin embargo, las encuestas no coinciden: la propia encuesta de Stegner de julio pone a Little en 48 y muy adelante, y no se sabe quién pagó la encuesta de septiembre.'
-  approved: false
+  approved: true
 
 scenarios:
   - voters_of: "John Stegner"
