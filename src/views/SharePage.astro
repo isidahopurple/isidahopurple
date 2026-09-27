@@ -1,6 +1,8 @@
 ---
 // Ready-made images and captions for Instagram and texting. Built by assets-src/make_cards.py.
 import Base from '../layouts/Base.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import NextStep from '../components/NextStep.astro';
 import { href, type Lang } from '../i18n/ui';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -29,13 +31,20 @@ const text = es
 ---
 <Base lang={lang} title={es ? 'Compartir' : 'Share'} description={es ? 'Imágenes y textos listos para compartir.' : 'Images and captions ready to share.'}>
   <h1>{es ? 'Compártalo' : 'Share it'}</h1>
-  <p class="lede">{es
-    ? 'Mantenga presionada una imagen (o tóquela y guárdela) y súbala a Instagram. Copie el texto para el pie de foto. Instagram no muestra enlaces en las publicaciones, así que ponga isidahopurple.com en su perfil o use un sticker de enlace en una historia.'
-    : 'Press and hold an image (or tap it and save) to post it on Instagram. Copy the caption below it. Instagram doesn’t make links in posts clickable, so put isidahopurple.com in your bio or use a link sticker in a story.'}</p>
+  <p class="lede">{es ? 'Mande el enlace a quien quiera, en un toque.' : 'Send the link to anyone, in one tap.'}</p>
+  <ShareButtons lang={lang} />
+  <p class="small muted">{es
+    ? 'El enlace muestra una vista previa con imagen en mensajes, WhatsApp y Facebook.'
+    : 'The link shows a preview with a picture in texts, WhatsApp and Facebook.'}</p>
+
+  <h2>{es ? 'Para Instagram' : 'For Instagram'}</h2>
+  <p>{es
+    ? 'Instagram no permite compartir enlaces en publicaciones. Mantenga presionada una imagen (o tóquela y guárdela) y súbala. Copie el texto para el pie de foto. Ponga isidahopurple.com en su perfil o use un sticker de enlace en una historia.'
+    : 'Instagram doesn’t allow links in posts. Press and hold an image (or tap it and save) to post it, and copy the caption below it. Put isidahopurple.com in your bio or use a link sticker in a story.'}</p>
 
   {sets.map((s) => (
     <section>
-      <h2>{s.title}</h2>
+      <h3>{s.title}</h3>
       <div class="imgs">
         <a href={`/share/${s.name}-feed${sfx}.jpg`} download><img src={`/share/${s.name}-feed${sfx}.jpg`} alt={s.title} width="1080" height="1350" loading="lazy" /><span>{es ? 'Publicación (4:5)' : 'Feed post (4:5)'}</span></a>
         <a href={`/share/${s.name}-story${sfx}.jpg`} download><img src={`/share/${s.name}-story${sfx}.jpg`} alt={s.title} width="1080" height="1920" loading="lazy" /><span>{es ? 'Historia (9:16)' : 'Story (9:16)'}</span></a>
@@ -45,11 +54,11 @@ const text = es
   ))}
 
   <section>
-    <h2>{es ? 'Por mensaje de texto' : 'By text message'}</h2>
+    <h2>{es ? 'Un mensaje listo para copiar' : 'A ready-made message to copy'}</h2>
     <div class="cap card"><p>{text}</p><button class="btn ghost copy" type="button" data-copy={text}>{es ? 'Copiar texto' : 'Copy text'}</button></div>
-    <p class="small muted">{es ? 'En Signal, iMessage y WhatsApp el enlace muestra una vista previa con imagen.' : 'In Signal, iMessage and WhatsApp the link shows a preview with a picture.'}</p>
   </section>
-  <p class="small muted">{es ? 'Sin anuncios pagados: esto se comparte de persona a persona.' : 'No paid ads: this spreads person to person.'} <a href={href(lang, '/')}>{es ? 'Volver al inicio' : 'Back to home'}</a></p>
+  <p class="small muted">{es ? 'Sin anuncios pagados: esto se comparte de persona a persona.' : 'No paid ads: this spreads person to person.'}</p>
+  <NextStep lang={lang} step="done" />
 
   <script>
     for (const b of document.querySelectorAll<HTMLButtonElement>('button.copy')) {

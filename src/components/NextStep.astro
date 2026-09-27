@@ -1,0 +1,54 @@
+---
+// "Next step" button that carries people along the home-page roadmap without going back.
+import Icon from './Icon.astro';
+import { href, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; step: 6 | 7 | 8 | 9 | 10 | 'done' }
+const { lang, step } = Astro.props;
+const es = lang === 'es';
+const STEPS = {
+  6: { key: 'watch', icon: 'star', path: '/experiment#races-to-watch', en: 'The two races to watch', es: 'Las dos contiendas clave' },
+  7: { key: 'measures', icon: 'scale', path: '/races#measures', en: 'The 4 ballot questions', es: 'Las 4 preguntas de la boleta' },
+  8: { key: 'plan', icon: 'clock', path: '/vote#dates', en: 'Plan your vote', es: 'Planee su voto' },
+  9: { key: 'join', icon: 'heart', path: '/experiment#join', en: 'Count me in', es: 'Cuenten conmigo' },
+  10: { key: 'share', icon: 'share', path: '/share', en: 'Bring three friends', es: 'Traiga a tres amigos' },
+} as const;
+const s = step === 'done' ? null : STEPS[step];
+---
+{s ? (
+  <a class="next-step" href={href(lang, s.path)} data-next={s.key}>
+    <span class="ns-label">{es ? `Siguiente: paso ${step} de 10` : `Next: step ${step} of 10`}</span>
+    <span class="ns-title"><Icon name={s.icon} size={22} /> {es ? s.es : s.en}</span>
+    <Icon name="arrow" size={22} />
+  </a>
+) : (
+  <a class="next-step" href={href(lang, '/')}>
+    <span class="ns-label">{es ? '¡Terminó los 10 pasos!' : 'You’ve reached step 10 of 10'}</span>
+    <span class="ns-title"><Icon name="check" size={22} /> {es ? 'Volver a la lista de pasos' : 'Back to the step list'}</span>
+    <Icon name="arrow" size={22} />
+  </a>
+)}
+
+<script>
+  // Following a next-step button counts that step as visited on the home-page roadmap.
+  for (const a of document.querySelectorAll<HTMLAnchorElement>('a[data-next]')) {
+    a.addEventListener('click', () => {
+      try {
+        const k = 'iip-steps';
+        const s = new Set<string>(JSON.parse(localStorage.getItem(k) || '[]'));
+        if (a.dataset.next !== 'join') s.add(a.dataset.next!);
+        localStorage.setItem(k, JSON.stringify([...s]));
+      } catch {}
+      try { navigator.sendBeacon?.('/api/click', a.dataset.next!); } catch {}
+    });
+  }
+</script>
+
+<style>
+  .next-step { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 2px 12px; align-items: center; margin: 22px 0;
+    padding: 14px 18px; border-radius: 14px; text-decoration: none; color: #fff; background: linear-gradient(135deg, var(--red), #7b3fc0 55%, var(--blue)); box-shadow: var(--shadow); }
+  .next-step:hover { color: #fff; filter: brightness(1.07); }
+  .ns-label { grid-column: 1; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.9; font-weight: 700; }
+  .ns-title { grid-column: 1; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .next-step > :global(svg) { grid-column: 2; grid-row: 1 / span 2; }
+</style>

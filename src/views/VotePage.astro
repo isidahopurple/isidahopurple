@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Source from '../components/Source.astro';
 import DistrictFinder from '../components/DistrictFinder.astro';
+import NextStep from '../components/NextStep.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getElection, type ElectionItem } from '../lib/data';
 
@@ -95,6 +96,7 @@ const shown = new Set(steps.flatMap((s) => s.items));
       </tbody>
     </table>
   </div>
+  <NextStep lang={lang} step={9} />
 
   <h2>{es ? 'Si vota en persona' : 'If you vote in person'}</h2>
   {['voter_id_polls', 'no_id_affidavit', 'find_polling_place_url', 'sample_ballot_url'].filter((k) => e[k]).map((k) => (

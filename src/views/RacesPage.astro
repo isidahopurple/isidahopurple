@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Party from '../components/Party.astro';
 import DistrictFinder from '../components/DistrictFinder.astro';
+import NextStep from '../components/NextStep.astro';
 import { t, tx, href, type Lang } from '../i18n/ui';
 import { getRaces, getMeasures, LEVELS, type Race } from '../lib/data';
 
@@ -25,6 +26,7 @@ const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick
     <a href="https://legislature.idaho.gov/legislators/whosmylegislator/" rel="noopener" target="_blank">{es ? '¿Quién es mi legislador?' : 'Who’s my legislator?'}</a>
   </p>
   <DistrictFinder lang={lang} />
+  <NextStep lang={lang} step={6} />
 
   {LEVELS.filter((l) => l !== 'legislative').map((lvl) => byLevel(lvl).length > 0 && (
     <section>
@@ -73,6 +75,7 @@ const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick
           <li><a href={href(lang, `/measures/${m.id}`)}>{m.data.short_name}: {tx(m.data.title, lang)}</a></li>
         ))}
       </ul>
+      <NextStep lang={lang} step={8} />
     </section>
   )}
 </Base>

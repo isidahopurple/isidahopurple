@@ -1,0 +1,60 @@
+---
+// One big "Send" (the phone's own share sheet) plus plain one-tap links for each app.
+// Instagram has no web share link; the /share page offers images for it instead.
+import Icon from './Icon.astro';
+import { type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const url = es ? 'https://isidahopurple.com/es/' : 'https://isidahopurple.com/';
+const title = es ? 'Cómo votar en Idaho' : 'How to vote in Idaho';
+const text = es
+  ? '¿Ya estás registrado para votar? Aquí están los enlaces oficiales de Idaho, paso a paso. Fecha límite: 23 de octubre.'
+  : 'Are you registered to vote? Here are Idaho’s official links, step by step. Deadline is Oct 23.';
+const e = encodeURIComponent;
+const apps = [
+  { key: 'sms', label: es ? 'Mensaje de texto' : 'Text message', href: `sms:?&body=${e(`${text} ${url}`)}` },
+  { key: 'email', label: es ? 'Correo' : 'Email', href: `mailto:?subject=${e(title)}&body=${e(`${text}\n\n${url}`)}` },
+  { key: 'whatsapp', label: 'WhatsApp', href: `https://wa.me/?text=${e(`${text} ${url}`)}` },
+  { key: 'facebook', label: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${e(url)}` },
+  { key: 'x', label: 'X', href: `https://x.com/intent/post?text=${e(text)}&url=${e(url)}` },
+  { key: 'reddit', label: 'Reddit', href: `https://www.reddit.com/submit?url=${e(url)}&title=${e(title)}` },
+];
+---
+<div class="share-box card" data-url={url} data-title={title} data-text={text}>
+  <button class="btn send" type="button" hidden><Icon name="share" size={22} /> {es ? 'Enviar' : 'Send'}</button>
+  <p class="or small muted" hidden>{es ? 'o elija una app:' : 'or pick an app:'}</p>
+  <div class="apps">
+    {apps.map((a) => (
+      <a class="app" href={a.href} target={a.key === 'sms' || a.key === 'email' ? undefined : '_blank'} rel="noopener" data-app={a.key}>{a.label}</a>
+    ))}
+    <button class="app copy" type="button" data-done={es ? '✓ Copiado' : '✓ Copied'}>{es ? 'Copiar enlace' : 'Copy link'}</button>
+  </div>
+</div>
+
+<script>
+  for (const box of document.querySelectorAll<HTMLElement>('.share-box')) {
+    const { url, title, text } = box.dataset as { url: string; title: string; text: string };
+    const send = box.querySelector<HTMLButtonElement>('.send')!;
+    if (navigator.share) {
+      send.hidden = false;
+      box.querySelector<HTMLElement>('.or')!.hidden = false;
+      send.addEventListener('click', async () => { try { await navigator.share({ title, text, url }); } catch {} });
+    }
+    const copy = box.querySelector<HTMLButtonElement>('.copy')!;
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(url); copy.textContent = copy.dataset.done!; } catch {}
+    });
+  }
+</script>
+
+<style>
+  .share-box { display: grid; gap: 12px; margin: 16px 0 8px; }
+  .send { width: 100%; min-height: 56px; font-size: 1.2rem; gap: 10px; }
+  .or { margin: 0; text-align: center; }
+  .apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+  .app { display: flex; align-items: center; justify-content: center; min-height: 46px; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--line);
+    background: var(--surface); color: var(--ink); font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+  .app:hover { border-color: var(--purple); color: var(--purple-ink); }
+</style>
