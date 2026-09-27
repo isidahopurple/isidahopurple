@@ -28,6 +28,18 @@ function fromGeographies(g, matched, approx) {
   return { matched, approx, county: county?.BASENAME ?? null, ld: upper ? Number(upper.BASENAME) : null, cd: cd ? Number(cd.BASENAME) : null };
 }
 
+// The OpenStreetMap backup can match loosely ("Idaho Falls" → "Post Falls"). Accept its answer only
+// if every place word the person typed appears in what it found.
+const IGNORE = new Set(['id', 'idaho', 'usa', 'us', 'n', 's', 'e', 'w', 'ne', 'nw', 'se', 'sw', 'north', 'south', 'east', 'west',
+  'st', 'street', 'ave', 'avenue', 'rd', 'road', 'dr', 'drive', 'ln', 'lane', 'way', 'blvd', 'boulevard', 'ct', 'court', 'pl', 'place',
+  'cir', 'circle', 'hwy', 'highway', 'pkwy', 'parkway', 'ter', 'terrace', 'trl', 'trail', 'loop', 'apt', 'unit', 'ste', 'suite', 'the', 'of', 'and']);
+const norm = (t) => ` ${t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/idaho (falls|city)/g, 'idaho$1').replace(/[^a-z0-9]+/g, ' ')} `;
+function placeWordsMatch(query, found) {
+  const f = norm(found);
+  const words = norm(query).trim().split(' ').filter((w) => w.length > 1 && !/^\d+$/.test(w) && !IGNORE.has(w));
+  return words.every((w) => f.includes(` ${w} `) || f.includes(` ${w}s `) || f.includes(` ${w.replace(/s$/, '')} `));
+}
+
 async function byCoords(lat, lon, matched, approx) {
   const q = censusParams(new URL(CENSUS_COORDS));
   q.searchParams.set('x', String(lon));
@@ -62,13 +74,14 @@ async function district(url) {
     }
     const n = new URL(NOMINATIM);
     n.searchParams.set('format', 'jsonv2');
-    n.searchParams.set('limit', '1');
+    n.searchParams.set('limit', '5');
     n.searchParams.set('countrycodes', 'us');
     n.searchParams.set('viewbox', '-117.3,49.1,-110.9,41.9');
     n.searchParams.set('bounded', '1');
     n.searchParams.set('q', full);
     const nr = await fetch(n, { headers: { 'user-agent': UA, 'accept-language': 'en' } });
-    const hit = nr.ok ? (await nr.json())?.[0] : null;
+    const hits = nr.ok ? await nr.json() : [];
+    const hit = (Array.isArray(hits) ? hits : []).find((h) => placeWordsMatch(address, h.display_name || ''));
     if (!hit) return json({ error: 'not_found' }, 404);
     const label = String(hit.display_name || '').split(',').slice(0, 4).join(',');
     const out = await byCoords(Number(hit.lat).toFixed(5), Number(hit.lon).toFixed(5), label, true);

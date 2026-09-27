@@ -1,0 +1,48 @@
+office:
+  en: Ada County Clerk (Clerk of the District Court)
+  es: Secretario del Condado de Ada (Secretario del Tribunal de Distrito)
+level: county
+district: Ada
+order: 304
+depth: short
+controls:
+  en: The Clerk of the District Court is also the county auditor and recorder; in Ada County the office runs elections, keeps court records, records documents, issues marriage licenses, and handles the county budget and finance records.
+  es: El secretario del Tribunal de Distrito también es el auditor y registrador del condado; en el Condado de Ada, la oficina organiza las elecciones, guarda los expedientes judiciales, registra documentos, emite licencias de matrimonio y lleva los registros del presupuesto y las finanzas del condado.
+controls_source:
+  name: Ada County Clerk's Office
+  url: https://adacounty.id.gov/clerk/
+candidates:
+- name: Trent Tripple
+  party: R
+  incumbent: true
+  bio:
+    en: Ada County Clerk since January 2023; he was unopposed in 2022 and is unopposed again in 2026.
+    es: Secretario del Condado de Ada desde enero de 2023; no tuvo oposición en 2022 y tampoco la tiene en 2026.
+history:
+- year: 2022
+  label: 2022 Ada County Clerk of the District Court
+  result: Tripple (R) 100 (unopposed)
+  margin: Uncontested
+  source:
+    name: Ada County Elections, November 2022 official results
+    url: https://adacounty.id.gov/clerk/wp-content/uploads/sites/9/2023/01/01-Ada-County-Results-Election-Night-November-2022.pdf
+pick:
+  label: no-pick
+  candidate: null
+  rule: none
+  reasoning:
+    en: 'Uncontested: only one candidate is on the ballot.'
+    es: 'Sin competencia: solo hay una candidatura en la boleta.'
+  approved: true
+review_flags: []
+unverified:
+- The January 2023 start date assumes he took office with the other officials elected in November 2022 (Ballotpedia shows January 9, 2023 for the Assessor elected the same day); not separately confirmed for the Clerk.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Ada County Elections, November 2026 candidate filings
+  url: https://adacounty.id.gov/elections/candidate-filings/
+- name: Idaho Code 34-619 (clerk of the district court is ex officio auditor and recorder)
+  url: https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch6/sect34-619/
+updated: '2026-09-26'

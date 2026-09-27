@@ -1,0 +1,70 @@
+office:
+  en: Ada County Treasurer
+  es: Tesorero del Condado de Ada
+level: county
+district: Ada
+order: 302
+depth: full
+controls:
+  en: The Treasurer keeps and invests the county's public funds and is the ex officio tax collector, collecting the property taxes levied by the county, cities, schools and other taxing districts. The Treasurer is also the public administrator for estates of people who die with no one to handle the estate.
+  es: El tesorero guarda e invierte los fondos públicos del condado y es, por su cargo, el recaudador de impuestos, es decir, cobra los impuestos a la propiedad que fijan el condado, las ciudades, las escuelas y otros distritos. También administra los bienes de las personas que mueren sin nadie que se haga cargo de su herencia.
+controls_source:
+  name: Ada County Treasurer's Office
+  url: https://adacounty.id.gov/treasurer/
+candidates:
+- name: Todd Christensen
+  party: R
+  incumbent: false
+  bio:
+    en: Former chief marketing officer of CapEd Credit Union and past head of business and economic development groups; a commissioner on the Idaho Building Authority.
+    es: Exdirector de mercadeo de CapEd Credit Union y expresidente de organizaciones de desarrollo económico y empresarial; es comisionado de la Idaho Building Authority.
+  website: https://christensenfortreasurer.com/
+  quote:
+    text: Ada County doesn’t need someone to just hold the office; it needs a proven financial steward. ... I have spent my career doing exactly that. I understand government must live within its means, prioritize essential services, and always remain accountable to the people it serves.
+    translation_es: El Condado de Ada no necesita a alguien que solo ocupe el cargo; necesita a un administrador financiero con experiencia comprobada. ... He dedicado mi carrera a hacer exactamente eso. Entiendo que el gobierno debe vivir dentro de sus posibilidades, dar prioridad a los servicios esenciales y rendir siempre cuentas a la gente a la que sirve.
+    date: '2026-09-26'
+    context: '"Why I Seek This Elected Office" section of his campaign website, as quoted word for word on his Ballotpedia page (undated; the date is when it was read).'
+    source:
+      name: Ballotpedia, Todd Christensen (quoting his campaign website)
+      url: https://ballotpedia.org/Todd_Christensen
+    verified: true
+- name: April Frederick
+  party: D
+  incumbent: false
+  bio:
+    en: Won the Democratic nomination unopposed in May 2026.
+    es: Ganó sin oposición la candidatura demócrata en mayo de 2026.
+history:
+- year: 2022
+  label: 2022 Ada County Treasurer
+  result: Mahn (R) 100 (unopposed)
+  margin: Uncontested
+  source:
+    name: Ada County Elections, November 2022 official results
+    url: https://adacounty.id.gov/clerk/wp-content/uploads/sites/9/2023/01/01-Ada-County-Results-Election-Night-November-2022.pdf
+pick:
+  label: two-way
+  candidate: April Frederick
+  rule: '3'
+  reasoning:
+    en: 'April Frederick is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. It is an open seat, but no Democrat ran for treasurer in 2022, so there is no recent margin; in 2024, Republicans beat Democrats in Ada County''s countywide races by 15 to 21 points.'
+    es: 'April Frederick es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Es un escaño abierto, pero ningún demócrata se postuló para tesorero en 2022, así que no hay un margen reciente; en 2024, los republicanos les ganaron a los demócratas en las contiendas de todo el Condado de Ada por entre 15 y 21 puntos.'
+  approved: true
+review_flags: []
+unverified:
+- No quote, campaign website or background could be found for April Frederick; she has not filled out the Ballotpedia survey.
+- Christensen's quote was read on Ballotpedia, which quotes his campaign website; the text was not found on the pages of christensenfortreasurer.com that loaded.
+- Incumbent Treasurer Elizabeth "Beth" Mahn (R) is not on the 2026 ballot.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Ada County Elections, November 2026 candidate filings (incumbent Elizabeth Mahn)
+  url: https://adacounty.id.gov/elections/candidate-filings/
+- name: Ada County Elections, May 2026 primary official results
+  url: https://apps.adacounty.id.gov/ElectionResults/01%20Ada%20County%20Results%20Election%20Night%20May%202026.pdf
+- name: Ada County Elections, November 2024 official results (Commissioner D1 R+15.0, Commissioner D3 R+17.1, Prosecuting Attorney R+20.6)
+  url: https://adacounty.id.gov/elections/wp-content/uploads/sites/38/01-Ada-County-Results-Election-Night-November-2024-2.pdf
+- name: Todd Christensen for Ada County Treasurer, Meet Todd
+  url: https://christensenfortreasurer.com/meet-todd
+updated: '2026-09-26'

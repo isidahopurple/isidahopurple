@@ -1,0 +1,101 @@
+office:
+  en: State Senate, District 6
+  es: Senado estatal, Distrito 6
+level: legislative
+district: LD6
+seat: Senate
+order: 118
+depth: full
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Dan Foreman
+  party: R
+  incumbent: true
+  bio:
+    en: State senator from Viola (Latah County) and retired U.S. Air Force colonel and Moscow police officer; he beat Rep. Lori McCann in the May 2026 Republican primary.
+    es: Senador estatal de Viola (condado de Latah), coronel retirado de la Fuerza Aérea de EE. UU. y policía retirado de Moscow; ganó a la representante Lori McCann en la primaria republicana de mayo de 2026.
+  quote:
+    text: I stand for small, efficient government that abides by the limitations of the Constitution. I am absolutely Pro-Life, and believe we must decrease taxes and government intervention in the private sector.
+    translation_es: Defiendo un gobierno pequeño y eficiente que respete los límites de la Constitución. Soy totalmente provida y creo que debemos bajar los impuestos y reducir la intervención del gobierno en el sector privado.
+    date: '2022-04-14'
+    context: His answer to "Who are you?" in the 2022 Ballotpedia candidate survey. He did not answer the 2026 Ballotpedia or CBS2/FOX9 surveys, and no newer statement of his platform was found.
+    source:
+      name: Ballotpedia candidate survey (secondary source)
+      url: https://ballotpedia.org/Dan_Foreman
+      date: '2022-04-14'
+    verified: true
+- name: Robin Weldy
+  party: D
+  incumbent: false
+  bio:
+    en: Lewiston native and real estate investor with a finance degree; she won the May 2026 Democratic primary over Richard Gayler.
+    es: Nacida en Lewiston, inversionista en bienes raíces y licenciada en finanzas; ganó la primaria demócrata de mayo de 2026 frente a Richard Gayler.
+  website: https://www.weldyforidaho.com/
+  quote:
+    text: Idaho’s District 6 deserves a dedicated, practical leader focused on real local solutions rather than political grandstanding. As a Lewiston native, local business owner, and finance graduate, I bring more than 25 years of real-world experience managing budgets, navigating property assets, and solving tough economic problems.
+    translation_es: El Distrito 6 de Idaho merece a una líder dedicada y práctica, enfocada en soluciones locales reales y no en el lucimiento político. Como nativa de Lewiston, dueña de un negocio local y graduada en finanzas, aporto más de 25 años de experiencia práctica administrando presupuestos, manejando propiedades y resolviendo problemas económicos difíciles.
+    date: '2026-08-24'
+    context: Opening of her answer to "why should people vote for you?" in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election survey, State Senate District 6
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-senate-district-6
+      date: '2026-08-24'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD6 Senate
+  result: Foreman (R) 50.1, Nelson (D) 48.0, Hartley (C) 2.0
+  margin: R+2.1
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD6 Senate
+  result: Foreman (R) 53.3, Parker (D) 46.7
+  margin: R+6.7
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Robin Weldy
+  rule: '3'
+  reasoning:
+    en: Robin Weldy is the only non-Republican on the ballot, so this is a two-way race and turnout decides it. Sen. Dan Foreman (R) won this seat by 2.1 points in 2022 and 6.7 points in 2024 on the same district lines, so it is competitive but has gone Republican both times. District 6 is Latah County (Moscow), Lewis County and part of Nez Perce County including part of Lewiston; about three in four votes for this seat in 2024 were cast in Latah County.
+    es: Robin Weldy es la única opción no republicana en la boleta, así que es una contienda entre dos y la participación la decide. El senador Dan Foreman (R) ganó este escaño por 2.1 puntos en 2022 y por 6.7 puntos en 2024 con los mismos límites de distrito, así que es competitivo, pero las dos veces lo ganó el Partido Republicano. El Distrito 6 abarca el condado de Latah (Moscow), el condado de Lewis y parte del condado de Nez Perce, incluida parte de Lewiston; en 2024, cerca de tres de cada cuatro votos para este escaño se emitieron en el condado de Latah.
+  approved: true
+review_flags: []
+unverified:
+- The 2026 primary results (Foreman 52.7% to McCann 47.3%; Weldy 52.3% to Gayler 47.7%) come from Ballotpedia and were not checked against the Secretary of State's primary canvass.
+- Foreman's quote is from 2022. No 2026 campaign website or survey answers from him were found.
+- Foreman's record on abortion access, climate, and power bills or data centers was not reviewed beyond H0897 (the 2026 data-center tax bill), where he is recorded absent. His 2022 survey says he will "work to abolish abortions", so a match on abortion access is unlikely.
+- Which parts of Lewiston are in District 6 was not checked against the district map. The 2022 and 2024 results show part of Nez Perce County in the district, and Weldy's filing address and Rep. Lori McCann's legislative address are in Lewiston.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho News (CBS2/FOX9), 2026 general election survey, State Senate District 6
+  url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-senate-district-6
+  date: '2026-08-24'
+- name: Ballotpedia, Dan Foreman (secondary source; 2022 survey and 2026 primary result)
+  url: https://ballotpedia.org/Dan_Foreman
+- name: Ballotpedia, Robin Weldy (secondary source; biography and 2026 primary result)
+  url: https://ballotpedia.org/Robin_Weldy
+- name: Weldy for Idaho campaign site
+  url: https://www.weldyforidaho.com/
+- name: Idaho Legislature, H0897 (2026) bill page
+  url: https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/
+updated: '2026-09-26'

@@ -1,0 +1,54 @@
+office:
+  en: State House, District 23, Seat A
+  es: Cámara estatal, Distrito 23, Puesto A
+level: legislative
+district: LD23
+seat: House A
+order: 170
+depth: short
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Chris Bruce
+  party: R
+  incumbent: true
+- name: Paul M Smith
+  party: C
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD23 House A
+  result: Bruce (R) 80.1, Coome (D) 19.9
+  margin: R+60.2
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: no-pick
+  candidate: null
+  rule: none (rule 5 exception)
+  approved: true
+  reasoning:
+    en: There's no candidate to team up behind here. The Democratic nominee, Emily Fisher, withdrew on 2026-08-26, and the only other name on the ballot is Constitution Party candidate Paul M Smith. The Constitution Party's platform runs to the right of the Republican Party, so backing its candidate would not bring non-Republican voters together, which is what this method is for. If you vote in this race, compare the candidates yourself.
+    es: Aquí no hay una candidatura alrededor de la cual unirse. La candidatura demócrata, Emily Fisher, se retiró el 2026-08-26, y el único otro nombre en la boleta es Paul M Smith, del Partido de la Constitución. La plataforma del Partido de la Constitución está a la derecha del Partido Republicano, así que apoyar a su candidato no uniría a los votantes no republicanos, que es el propósito de este método. Si vota en esta contienda, compare las candidaturas usted mismo.
+review_flags:
+- Only non-Republican on the ballot is Constitution Party candidate Paul M Smith; no pick by rule 5 exception (same handling as LD14 Senate). Owner to confirm.
+unverified:
+- Emily Fisher (D) withdrew on 2026-08-26 according to the Secretary of State filing list (before the Sept. 4 ballot-certification deadline), so the name is left out; not confirmed against the printed ballot.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Constitution Party of Idaho platform
+  url: https://idahocp.com/platform/
+updated: '2026-09-26'

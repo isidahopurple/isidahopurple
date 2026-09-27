@@ -1,0 +1,83 @@
+office:
+  en: Ada County Coroner
+  es: Médico forense del Condado de Ada
+level: county
+district: Ada
+order: 305
+depth: full
+controls:
+  en: The Coroner investigates deaths that are suspected homicides, suicides, accidents, overdoses, deaths in jail, or unattended or unexplained deaths, and determines the cause and manner of death. The Ada County office also identifies the dead and flags public health risks.
+  es: El médico forense investiga las muertes que podrían ser homicidios, suicidios, accidentes, sobredosis, muertes en la cárcel o muertes sin atención médica o sin explicación, y determina la causa y la forma de la muerte. La oficina del Condado de Ada también identifica a los fallecidos y alerta sobre riesgos para la salud pública.
+controls_source:
+  name: Idaho Code 19-4301 (county coroner to investigate deaths)
+  url: https://legislature.idaho.gov/statutesrules/idstat/title19/t19ch43/sect19-4301/
+candidates:
+- name: Brett Harding
+  party: R
+  incumbent: false
+  bio:
+    en: Chief Deputy Coroner of Ada County since 2021, with more than three decades in death investigation; endorsed by retiring Coroner Richard Riffle.
+    es: Médico forense adjunto principal del Condado de Ada desde 2021, con más de tres décadas en la investigación de muertes; cuenta con el respaldo del médico forense saliente, Richard Riffle.
+  website: https://hardingforadacounty.com/
+  quote:
+    text: I am running for Ada County Coroner because this office requires experienced leadership. Working alongside the tremendous staff, utilizing our state-of-the-art facility, and collaborating with law enforcement, medical, and community partners, I am committed to continuing to elevate the professionalism, accountability, and service of the Coroner’s Office for the citizens of Ada County.
+    translation_es: Me postulo para médico forense del Condado de Ada porque esta oficina requiere un liderazgo con experiencia. Trabajando junto a un personal extraordinario, usando nuestras instalaciones de última generación y colaborando con las fuerzas del orden, el sector médico y la comunidad, me comprometo a seguir elevando el profesionalismo, la rendición de cuentas y el servicio de la Oficina del Médico Forense para los ciudadanos del Condado de Ada.
+    date: '2026-09-26'
+    context: Home page of his campaign website (the page is undated; the date is when it was read).
+    source:
+      name: Brett Harding for Ada County Coroner (campaign website)
+      url: https://hardingforadacounty.com/
+    verified: true
+- name: Dotti Owens
+  party: D
+  incumbent: false
+  bio:
+    en: Ada County Coroner from 2015 until January 2023; she lost re-election in 2022 by 795 votes and is running to win the office back.
+    es: Médica forense del Condado de Ada desde 2015 hasta enero de 2023; perdió la reelección en 2022 por 795 votos y se postula para recuperar el cargo.
+  website: https://reelectdotti4coroner.com/
+  quote:
+    text: I have personally conducted thousands of medicolegal death investigations, provided court testimony, and completed death certificates with precision and accuracy. Additionally, my focus is on our deceased and those left behind.
+    translation_es: He realizado personalmente miles de investigaciones médico-legales de muertes, he testificado en los tribunales y he completado certificados de defunción con precisión y exactitud. Además, mi enfoque está en nuestros fallecidos y en quienes quedan atrás.
+    date: '2026-06-18'
+    context: Home page of her campaign website; the date is when the page was last updated.
+    source:
+      name: Dotti Owens for Ada County Coroner (campaign website)
+      url: https://reelectdotti4coroner.com/
+    verified: true
+history:
+- year: 2022
+  label: 2022 Ada County Coroner
+  result: Riffle (R) 50.2, Owens (D) 49.8
+  margin: R+0.5
+  source:
+    name: Ada County Elections, November 2022 official results
+    url: https://adacounty.id.gov/clerk/wp-content/uploads/sites/9/2023/01/01-Ada-County-Results-Election-Night-November-2022.pdf
+pick:
+  label: two-way
+  candidate: Dotti Owens
+  rule: '3'
+  reasoning:
+    en: 'Dotti Owens is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. In 2022 she lost this office by 795 votes out of about 175,500 (R+0.5), the closest county-office race in Ada that year; it is an open seat now, but that result does not guarantee a close race in 2026.'
+    es: 'Dotti Owens es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. En 2022 perdió este cargo por 795 votos de unos 175,500 (R+0.5), la contienda por un cargo del condado más cerrada en Ada ese año; ahora es un escaño abierto, pero ese resultado no garantiza que la contienda de 2026 sea igual de reñida.'
+  approved: true
+review_flags: []
+unverified:
+- Harding's quote is from an undated campaign homepage; the date shown is when it was read. Owens's page date comes from her site's own "last modified" data (June 18, 2026).
+- Harding's "Chief Deputy Coroner since 2021" and "three decades" come from his own campaign website and Ballotpedia survey (April 12, 2026). Riffle's endorsement is on Harding's endorsements page and in that survey.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Ada County Elections, November 2026 candidate filings (incumbent Richard D. Riffle, not running)
+  url: https://adacounty.id.gov/elections/candidate-filings/
+- name: Ada County Elections, May 2026 primary official results (Harding 59.2, Flaherty 40.8 in the Republican primary)
+  url: https://apps.adacounty.id.gov/ElectionResults/01%20Ada%20County%20Results%20Election%20Night%20May%202026.pdf
+- name: Ada County Coroner's Office
+  url: https://adacounty.id.gov/coroner/
+- name: Brett Harding for Ada County Coroner, Endorsements
+  url: https://www.hardingforadacounty.com/endorsements
+- name: Ballotpedia, Brett Harding
+  url: https://ballotpedia.org/Brett_Harding
+- name: Ballotpedia, Dotti Owens
+  url: https://ballotpedia.org/Dotti_Owens
+updated: '2026-09-26'

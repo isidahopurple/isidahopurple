@@ -129,6 +129,7 @@ COPY = {
         "brand": "IS IDAHO PURPLE?",
         "home": ("How to vote\nin Idaho", "Check your registration, register,\nor get a mail ballot. Official links.", "Deadline: Fri Oct 23, 5 p.m."),
         "default": ("Is Idaho\nPurple?", "An open experiment for the\nNov 3, 2026 election.", "Let’s find out Nov 3"),
+        "counted": ("I’m in.\nAre you?", "Testing whether Idaho is as\nred as everyone says.", "Register by Fri Oct 23, 5 p.m."),
         "race_sub": "Who’s running, the polls\nand the vote math.",
         "race_chip": "Election Day: Tue Nov 3",
     },
@@ -136,6 +137,7 @@ COPY = {
         "brand": "¿ES IDAHO MORADO?",
         "home": ("Cómo votar\nen Idaho", "Revise su registro, regístrese\no pida su boleta por correo.", "Fecha límite: vie 23 oct, 5 p.m."),
         "default": ("¿Es Idaho\nmorado?", "Un experimento abierto para la\nelección del 3 de noviembre de 2026.", "Averigüémoslo el 3 de nov"),
+        "counted": ("Estoy dentro.\n¿Y tú?", "Probando si Idaho es tan\nrojo como todos dicen.", "Regístrate antes del 23 de oct"),
         "race_sub": "Quién se postula, las encuestas\ny las matemáticas del voto.",
         "race_chip": "Día de la elección: mar 3 nov",
     },
@@ -145,7 +147,8 @@ for lang, c in COPY.items():
     sfx = "" if lang == "en" else "-es"
     og(f"{OG}/home{sfx}.jpg", c["brand"], *c["home"])
     og(f"{OG}/default{sfx}.jpg", "", *c["default"])
-    for f in glob.glob(os.path.join(ROOT, "data", "idaho", "races", "*.yaml")):
+    og(f"{OG}/counted{sfx}.jpg", c["brand"], *c["counted"])
+    for f in ([] if os.environ.get("CARDS_QUICK") else glob.glob(os.path.join(ROOT, "data", "idaho", "races", "*.yaml"))):
         r = yaml.safe_load(open(f))
         office = r["office"] if isinstance(r["office"], str) else r["office"].get(lang) or r["office"]["en"]
         rid = os.path.basename(f)[:-5]

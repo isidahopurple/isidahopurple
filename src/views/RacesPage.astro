@@ -47,7 +47,7 @@ const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick
   {districts.length > 0 && (
     <section>
       <h2>{t(lang, 'races.legislative')}</h2>
-      <p class="small muted">{es ? 'Distritos del condado de Ada y distritos reñidos. Más distritos pronto.' : 'Ada County districts and close districts elsewhere. More districts coming.'}</p>
+      <p class="small muted">{es ? 'Los 35 distritos legislativos. Use la búsqueda de arriba para encontrar el suyo.' : 'All 35 legislative districts. Use the lookup above to find yours.'}</p>
       {districts.map((dist) => (
         <details open={byLevel('legislative').some((r) => r.data.district === dist && r.data.depth === 'full')}>
           <summary>{es ? 'Distrito' : 'District'} {dist.replace('LD', '')}</summary>

@@ -1,0 +1,86 @@
+office:
+  en: Ada County Commissioner, District 1
+  es: Comisionado del Condado de Ada, Distrito 1
+level: county
+district: Ada
+seat: District 1
+order: 300
+depth: full
+controls:
+  en: The three-member Board of County Commissioners is Ada County's chief policy-making and administrative body; it adopts the county budget, sets the county property tax levy, and hears land-use and property-assessment appeals. Commissioners must live in their district, but every Ada County voter votes in both commissioner races on the ballot.
+  es: La Junta de Comisionados del Condado, de tres miembros, es el principal órgano de políticas y de administración del Condado de Ada; aprueba el presupuesto del condado, fija el impuesto a la propiedad del condado y resuelve apelaciones sobre uso de suelo y avalúos de propiedades. Los comisionados deben vivir en su distrito, pero todos los votantes del Condado de Ada votan en las dos contiendas de comisionado que aparecen en la boleta.
+controls_source:
+  name: Ada County Board of Commissioners
+  url: https://adacounty.id.gov/commissioners/
+candidates:
+- name: Ryan Davidson
+  party: R
+  incumbent: true
+  bio:
+    en: Ada County Commissioner for District 1 since January 2021; re-elected in 2024 and running for a four-year term.
+    es: Comisionado del Condado de Ada por el Distrito 1 desde enero de 2021; reelegido en 2024 y ahora busca un periodo de cuatro años.
+  website: https://ryanforidaho.com/
+  quote:
+    text: I’ve kept my promise to deliver on property tax relief. For the first time in over 40 years, Ada County cut your taxes. We’ve saved the taxpayers millions of dollars and have kept property taxes under control, while maintaining the high-quality level of service residents expect.
+    translation_es: He cumplido mi promesa de dar alivio en el impuesto a la propiedad. Por primera vez en más de 40 años, el Condado de Ada le bajó los impuestos. Les hemos ahorrado millones de dólares a los contribuyentes y hemos mantenido bajo control los impuestos a la propiedad, sin dejar de dar el servicio de alta calidad que esperan los residentes.
+    date: '2026-09-26'
+    context: Opening section of his re-election campaign website (the page is undated; the date is when it was read).
+    source:
+      name: Re-Elect Ryan Davidson (campaign website)
+      url: https://ryanforidaho.com/
+    verified: true
+- name: Kelceymarie Warner
+  party: D
+  incumbent: false
+  bio:
+    en: Ada County business owner who works in nonprofit communications and volunteers in Garden City, where she co-chairs a marketing committee.
+    es: Dueña de un negocio en el Condado de Ada que trabaja en comunicaciones para organizaciones sin fines de lucro y es voluntaria en Garden City, donde copreside un comité de mercadeo.
+  website: https://kelceymariewarnerforidaho.com/
+  quote:
+    text: I’m running for Ada County Commissioner to bring practical leadership, responsible financial management, and strong community engagement to ensure our county grows in a way that supports residents, businesses, and long-term sustainability.
+    translation_es: Me postulo para comisionada del Condado de Ada para aportar un liderazgo práctico, un manejo financiero responsable y una fuerte participación comunitaria, y así asegurar que nuestro condado crezca de una manera que apoye a los residentes, a los negocios y la sostenibilidad a largo plazo.
+    date: '2026-09-26'
+    context: Her campaign statement in the League of Women Voters VOTE411 voter guide (undated; the date is when it was read).
+    source:
+      name: VOTE411 Voter Guide (League of Women Voters), Ada County Commissioner, District 1
+      url: http://onyourballot.vote411.org/m/race-detail.do?id=72146543
+    verified: true
+history:
+- year: 2024
+  label: 2024 Ada County Commissioner, District 1
+  result: Davidson (R) 57.5, Lashley (D) 42.5
+  margin: R+15.0
+  source:
+    name: Ada County Elections, November 2024 official results
+    url: https://adacounty.id.gov/elections/wp-content/uploads/sites/38/01-Ada-County-Results-Election-Night-November-2024-2.pdf
+pick:
+  label: two-way
+  candidate: Kelceymarie Warner
+  rule: '3'
+  reasoning:
+    en: 'Kelceymarie Warner is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Be realistic: Davidson won this seat by 15 points countywide in 2024, a presidential year.'
+    es: 'Kelceymarie Warner es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Seamos realistas: Davidson ganó este escaño por 15 puntos en todo el condado en 2024, un año de elección presidencial.'
+  approved: true
+review_flags: []
+unverified:
+- Both quotes come from undated pages (a campaign website and the VOTE411 guide); the date shown is when they were read.
+- Warner's own campaign website did not load without JavaScript, so her bio comes from her VOTE411 answers.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Ada County Elections, November 2026 candidate filings
+  url: https://adacounty.id.gov/elections/candidate-filings/
+- name: Ada County Elections, May 2026 primary official results
+  url: https://apps.adacounty.id.gov/ElectionResults/01%20Ada%20County%20Results%20Election%20Night%20May%202026.pdf
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx); the race appears in all 197 Ada precincts
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Code 31-703 (commissioner terms)
+  url: https://legislature.idaho.gov/statutesrules/idstat/title31/t31ch7/sect31-703/
+- name: Idaho Code 34-617 (commissioner qualifications, residency in district)
+  url: https://legislature.idaho.gov/statutesrules/idstat/title34/t34ch6/sect34-617/
+- name: VOTE411 (League of Women Voters), description of the Board of County Commissioners
+  url: http://onyourballot.vote411.org/m/race-detail.do?id=72146543
+- name: Ballotpedia, Ryan Davidson
+  url: https://ballotpedia.org/Ryan_Davidson
+updated: '2026-09-26'

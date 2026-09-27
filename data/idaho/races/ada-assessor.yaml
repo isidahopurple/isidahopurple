@@ -1,0 +1,78 @@
+office:
+  en: Ada County Assessor
+  es: Tasador del Condado de Ada
+level: county
+district: Ada
+order: 303
+depth: full
+controls:
+  en: The Assessor sets the taxable value of property in Ada County, runs property tax relief programs such as the homeowner's exemption and the property tax reduction program, and handles vehicle registrations and titles (DMV). The Assessor does not set tax rates; those are set by the county, cities, schools and other taxing districts.
+  es: El tasador fija el valor gravable de las propiedades en el Condado de Ada, maneja los programas de alivio del impuesto a la propiedad, como la exención para dueños de vivienda y el programa de reducción del impuesto a la propiedad, y se encarga de los registros y títulos de vehículos (DMV). El tasador no fija las tasas de impuestos; esas las fijan el condado, las ciudades, las escuelas y otros distritos.
+controls_source:
+  name: Ada County Assessor's Office
+  url: https://adacounty.id.gov/assessor/
+candidates:
+- name: Rebecca W. Arnold
+  party: R
+  incumbent: true
+  bio:
+    en: Ada County Assessor since January 2023; attorney and former CPA who served on the Ada County Highway District commission from 2005 to 2021.
+    es: Tasadora del Condado de Ada desde enero de 2023; abogada y excontadora pública que formó parte de la comisión del Distrito de Carreteras del Condado de Ada (ACHD) de 2005 a 2021.
+  website: https://arnoldforidaho.com/
+  quote:
+    text: We can deliver fair and equitable assessments and provide excellent service to our community. Both. That’s the standard.
+    translation_es: Podemos hacer avalúos justos y equitativos y dar un servicio excelente a nuestra comunidad. Las dos cosas. Ese es el estándar.
+    date: '2026-09-26'
+    context: Pull quote on her re-election campaign website (the page is undated; the date is when it was read).
+    source:
+      name: Re-Elect Rebecca Arnold (campaign website)
+      url: https://arnoldforidaho.com/
+    verified: true
+- name: Erik Olson
+  party: D
+  incumbent: false
+  bio:
+    en: Running on modernizing the Assessor's Office, adding digital services and helping homeowners get every property tax exemption they qualify for.
+    es: Hace campaña para modernizar la Oficina del Tasador, ofrecer más servicios en línea y ayudar a los dueños de vivienda a recibir todas las exenciones del impuesto a la propiedad que les corresponden.
+  website: https://erikforidaho.com/
+  quote:
+    text: My first promise to every voter is to provide a different type of campaign, free from mudslinging and muckraking, and focused on the changes I intend to bring to this office! I don't believe the current incumbent is a bad person, I simply believe I can do better for Ada County.
+    translation_es: ¡Mi primera promesa a cada votante es hacer un tipo de campaña diferente, sin ataques ni escándalos, y enfocada en los cambios que pienso traer a esta oficina! No creo que la titular actual sea una mala persona; simplemente creo que yo puedo hacerlo mejor por el Condado de Ada.
+    date: '2026-09-26'
+    context: Introduction on the home page of his campaign website (the page is undated; the date is when it was read).
+    source:
+      name: Erik for Idaho (campaign website)
+      url: https://erikforidaho.com/
+    verified: true
+history:
+- year: 2022
+  label: 2022 Ada County Assessor
+  result: Arnold (R) 58.7, Berg (D) 41.3
+  margin: R+17.4
+  source:
+    name: Ada County Elections, November 2022 official results
+    url: https://adacounty.id.gov/clerk/wp-content/uploads/sites/9/2023/01/01-Ada-County-Results-Election-Night-November-2022.pdf
+pick:
+  label: two-way
+  candidate: Erik Olson
+  rule: '3'
+  reasoning:
+    en: 'Erik Olson is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Be realistic: Arnold won this office by about 17 points in 2022.'
+    es: 'Erik Olson es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Seamos realistas: Arnold ganó este cargo por unos 17 puntos en 2022.'
+  approved: true
+review_flags: []
+unverified:
+- Both quotes are from undated campaign homepages; the date shown is when they were read.
+- No independent background on Erik Olson was found; his bio is based on his campaign's stated goals. (He is not the 2022 Democratic nominee, Erik Steven Berg.)
+- Arnold's ACHD years (2005 to 2021) come from Ballotpedia; her attorney and former CPA background comes from her campaign website.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Ada County Elections, November 2026 candidate filings
+  url: https://adacounty.id.gov/elections/candidate-filings/
+- name: Ada County Elections, May 2026 primary official results
+  url: https://apps.adacounty.id.gov/ElectionResults/01%20Ada%20County%20Results%20Election%20Night%20May%202026.pdf
+- name: Ballotpedia, Rebecca Arnold
+  url: https://ballotpedia.org/Rebecca_Arnold
+updated: '2026-09-26'

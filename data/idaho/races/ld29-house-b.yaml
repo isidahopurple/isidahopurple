@@ -1,0 +1,98 @@
+office:
+  en: State House, District 29, Seat B
+  es: Cámara estatal, Distrito 29, Puesto B
+level: legislative
+district: LD29
+seat: House B
+order: 189
+depth: full
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Jennifer Miles
+  party: R
+  incumbent: false
+  bio:
+    en: Pocatello clinical social worker and owner of two small businesses, raised in Soda Springs; she beat Rep. Tanya Burgoyne in the May 2026 Republican primary by 40 votes.
+    es: Trabajadora social clínica de Pocatello y dueña de dos pequeños negocios, criada en Soda Springs; ganó a la representante Tanya Burgoyne en la primaria republicana de mayo de 2026 por 40 votos.
+  website: https://www.milesforidaho.com/
+  quote:
+    text: I have spent years working with families and small businesses here in Southeast Idaho, and know that decisions made closest to home are the ones that serve people best. I’m focused on strengthening neighborhoods, supporting local leadership, and making sure government listens to the people it serves.
+    translation_es: He pasado años trabajando con familias y pequeños negocios aquí en el sureste de Idaho, y sé que las decisiones que se toman más cerca de casa son las que mejor sirven a la gente. Me enfoco en fortalecer los vecindarios, apoyar el liderazgo local y asegurar que el gobierno escuche a la gente a la que sirve.
+    date: '2026-04-28'
+    context: One of the three key messages of her campaign, in the Ballotpedia candidate survey.
+    source:
+      name: Ballotpedia candidate survey (secondary source)
+      url: https://ballotpedia.org/Jennifer_Miles
+      date: '2026-04-28'
+    verified: true
+- name: Nate Roberts
+  party: D
+  incumbent: false
+  bio:
+    en: Pocatello union electrician and IBEW Local 449 officer who held this seat for one term (2023–2024) before losing it to Tanya Burgoyne (R) in 2024.
+    es: Electricista sindicalizado de Pocatello y dirigente del sindicato IBEW Local 449, que ocupó este escaño durante un periodo (2023–2024) antes de perderlo ante Tanya Burgoyne (R) en 2024.
+  website: https://robertsforidaho.com/
+  quote:
+    text: I’m not running to be the loudest person in the room. I’m running to be effective. I will work across the aisle when it helps District 29, stand my ground when our values or interests are at stake, and always be willing to explain my vote to the people I represent.
+    translation_es: No me postulo para ser la persona que más grita en la sala. Me postulo para ser eficaz. Trabajaré con el otro partido cuando eso ayude al Distrito 29, me mantendré firme cuando estén en juego nuestros valores o intereses, y siempre estaré dispuesto a explicar mi voto a la gente que represento.
+    date: '2026-08-24'
+    context: From his answer to "why should people vote for you?" in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election survey, State Representative District 29B
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-29b
+      date: '2026-08-24'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD29 House B
+  result: Roberts (D) 50.4, Stevens (R) 49.6
+  margin: D+0.8
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD29 House B
+  result: Burgoyne (R) 52.6, Roberts (D) 47.4
+  margin: R+5.2
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Nate Roberts
+  rule: '3'
+  reasoning:
+    en: 'Nate Roberts is the only non-Republican on the ballot, so this is a two-way race and turnout decides it. Open seat: Rep. Tanya Burgoyne (R) lost the May primary to Jennifer Miles, so neither nominee is the incumbent. Roberts won this Pocatello (Bannock County) seat by 0.8 points (112 votes) in 2022 and lost it by 5.2 points in 2024 on the same district lines, so turnout can decide it.'
+    es: 'Nate Roberts es la única opción no republicana en la boleta, así que es una contienda entre dos y la participación la decide. Escaño abierto: la representante Tanya Burgoyne (R) perdió la primaria de mayo ante Jennifer Miles, así que ninguno de los dos candidatos ocupa el escaño. Roberts ganó este escaño de Pocatello (condado de Bannock) por 0.8 puntos (112 votos) en 2022 y lo perdió por 5.2 puntos en 2024 con los mismos límites de distrito, así que la participación puede decidirlo.'
+  approved: true
+review_flags: []
+unverified:
+- The 2026 Republican primary result (Miles 1,814 to Burgoyne 1,774) comes from Ballotpedia and was not checked against the Secretary of State's primary canvass.
+- Jennifer Miles's positions on abortion access, climate, and power bills or data centers were not found. Her campaign site loads by script and could not be read, and she did not answer the CBS2/FOX9 survey. Her Ballotpedia survey supports keeping public lands public and strong public schools, but does not mention those three issues.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho News (CBS2/FOX9), 2026 general election survey, State Representative District 29B
+  url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-29b
+  date: '2026-08-24'
+- name: Ballotpedia, Jennifer Miles (secondary source; survey and 2026 primary result)
+  url: https://ballotpedia.org/Jennifer_Miles
+- name: Ballotpedia, Nate Roberts (secondary source)
+  url: https://ballotpedia.org/Nate_Roberts
+- name: Roberts for Idaho campaign site
+  url: https://robertsforidaho.com/
+updated: '2026-09-26'

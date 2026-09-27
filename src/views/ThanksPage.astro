@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { href, type Lang } from '../i18n/ui';
+import ShareButtons from '../components/ShareButtons.astro';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
@@ -11,6 +12,14 @@ const m = es
 <Base lang={lang} title={es ? 'Gracias' : 'Thanks'}>
   <h1 id="thanks-title">{m.none}</h1>
   <p id="remind" hidden>{m.remind}</p>
+  <section id="share-counted" hidden>
+    <h2>{es ? 'Dígales a sus amigos que usted está dentro' : 'Tell your friends you’re in'}</h2>
+    <p>{es ? 'Es el mejor momento para invitar a tres personas. Un toque:' : 'This is the best moment to invite three people. One tap:'}</p>
+    <ShareButtons lang={lang}
+      url={es ? 'https://isidahopurple.com/es/counted' : 'https://isidahopurple.com/counted'}
+      title={es ? 'Estoy dentro. ¿Y usted?' : 'I’m in. Are you?'}
+      text={es ? 'Me uní al experimento ¿Es Idaho morado? ¿Y tú? Primero asegúrate de poder votar (fecha límite: 23 de octubre):' : 'I just joined the Is Idaho Purple? experiment. Are you in? First make sure you can vote (deadline Oct 23):'} />
+  </section>
   <p>{m.next}</p>
   <p><a class="btn" href={href(lang, '/vote')}>{es ? 'Cómo votar' : 'How to vote'}</a></p>
   <script define:vars={{ m }}>
@@ -18,7 +27,10 @@ const m = es
     const st = q.get('status');
     if (st && m[st]) document.getElementById('thanks-title').textContent = m[st];
     // Remember on this device so the form shows "You're counted" instead of asking again.
-    if (st === 'counted' || st === 'already') { try { localStorage.setItem('iip-pledge', 'counted'); } catch {} }
+    if (st === 'counted' || st === 'already') {
+      try { localStorage.setItem('iip-pledge', 'counted'); } catch {}
+      document.getElementById('share-counted').hidden = false;
+    }
     if (q.get('remind')) document.getElementById('remind').hidden = false;
   </script>
 </Base>

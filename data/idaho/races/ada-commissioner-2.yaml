@@ -1,0 +1,82 @@
+office:
+  en: Ada County Commissioner, District 2
+  es: Comisionado del Condado de Ada, Distrito 2
+level: county
+district: Ada
+seat: District 2
+order: 301
+depth: full
+controls:
+  en: The three-member Board of County Commissioners is Ada County's chief policy-making and administrative body; it adopts the county budget, sets the county property tax levy, and hears land-use and property-assessment appeals. Commissioners must live in their district, but every Ada County voter votes in both commissioner races on the ballot. This seat is for a two-year term.
+  es: La Junta de Comisionados del Condado, de tres miembros, es el principal órgano de políticas y de administración del Condado de Ada; aprueba el presupuesto del condado, fija el impuesto a la propiedad del condado y resuelve apelaciones sobre uso de suelo y avalúos de propiedades. Los comisionados deben vivir en su distrito, pero todos los votantes del Condado de Ada votan en las dos contiendas de comisionado que aparecen en la boleta. Este escaño es por un periodo de dos años.
+controls_source:
+  name: Ada County Board of Commissioners
+  url: https://adacounty.id.gov/commissioners/
+candidates:
+- name: Rod W. Beck
+  party: R
+  incumbent: true
+  bio:
+    en: Ada County Commissioner for District 2 since January 2021 and current board chair; former executive director of the Idaho Housing and Finance Association.
+    es: Comisionado del Condado de Ada por el Distrito 2 desde enero de 2021 y actual presidente de la junta; exdirector ejecutivo de la Idaho Housing and Finance Association.
+  quote:
+    text: Commissioner Rod Beck is most passionate about providing the best service to Ada County residents without raising property taxes. And I've proven that we can do just that.
+    translation_es: Lo que más le apasiona al comisionado Rod Beck es dar el mejor servicio a los residentes del Condado de Ada sin subir los impuestos a la propiedad. Y he demostrado que eso se puede lograr.
+    date: '2022'
+    context: His answer, partly in the third person, to "What areas of public policy are you personally passionate about?" in Ballotpedia's 2022 candidate survey; he had not filled out the 2026 survey and no 2026 campaign site was found.
+    source:
+      name: Ballotpedia candidate survey (2022), Rod W. Beck
+      url: https://ballotpedia.org/Rod_W._Beck
+    verified: true
+- name: Michael Fitzgerald
+  party: D
+  incumbent: false
+  bio:
+    en: Idaho native who has worked in construction, including managing subdivision projects; he is raising two children in the Treasure Valley.
+    es: Nacido y criado en Idaho; ha trabajado en la construcción, incluida la gestión de proyectos de subdivisiones, y cría a dos hijos en el Treasure Valley.
+  website: https://fitzgerald4idaho.com/
+  quote:
+    text: Putting home over party by making every decision based on what is best for our community, not political interests.
+    translation_es: Poner el hogar por encima del partido, tomando cada decisión según lo que sea mejor para nuestra comunidad y no según intereses políticos.
+    date: '2026-09-26'
+    context: '"Priority Two" on his campaign website (the page is undated; the date is when it was read).'
+    source:
+      name: Michael Fitzgerald for Ada County (campaign website)
+      url: https://fitzgerald4idaho.com/
+    verified: true
+history:
+- year: 2022
+  label: 2022 Ada County Commissioner, District 2
+  result: Beck (R) 54.4, Ridgeway (D) 45.6
+  margin: R+8.7
+  source:
+    name: Ada County Elections, November 2022 official results
+    url: https://adacounty.id.gov/clerk/wp-content/uploads/sites/9/2023/01/01-Ada-County-Results-Election-Night-November-2022.pdf
+pick:
+  label: two-way
+  candidate: Michael Fitzgerald
+  rule: '3'
+  reasoning:
+    en: 'Michael Fitzgerald is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters. Beck won this seat by about 9 points in 2022, a midterm year like 2026, so it is uphill but closer than most Ada County races.'
+    es: 'Michael Fitzgerald es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación. Beck ganó este escaño por unos 9 puntos en 2022, un año de elecciones intermedias como 2026, así que es cuesta arriba, pero más cerrada que la mayoría de las contiendas del Condado de Ada.'
+  approved: true
+review_flags: []
+unverified:
+- The Beck quote is from Ballotpedia's 2022 candidate survey; Ballotpedia does not show the exact date it was submitted.
+- Fitzgerald's quote is from an undated campaign homepage; the date shown is when it was read.
+- Fitzgerald's bio comes from his own Ballotpedia survey answers (2026), not an independent source.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Ada County Elections, November 2026 candidate filings (District 2, 2-year term)
+  url: https://adacounty.id.gov/elections/candidate-filings/
+- name: Ada County Elections, May 2026 primary official results
+  url: https://apps.adacounty.id.gov/ElectionResults/01%20Ada%20County%20Results%20Election%20Night%20May%202026.pdf
+- name: Idaho Code 31-703 (commissioner terms)
+  url: https://legislature.idaho.gov/statutesrules/idstat/title31/t31ch7/sect31-703/
+- name: VOTE411 (League of Women Voters), description of the Board of County Commissioners
+  url: http://onyourballot.vote411.org/m/race-detail.do?id=72146543
+- name: Ballotpedia, Michael Fitzgerald (Idaho)
+  url: https://ballotpedia.org/Michael_Fitzgerald_(Idaho)
+updated: '2026-09-26'

@@ -1,18 +1,21 @@
 ---
 // Address → legislative district, county, US House district. Uses /api/district (US Census geocoder).
-import { href, type Lang } from '../i18n/ui';
+import { href, tx, type Lang } from '../i18n/ui';
 import { getRaces } from '../lib/data';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const es = lang === 'es';
-const ids = (await getRaces()).map((r) => r.id);
+const all = await getRaces();
+const ids = all.map((r) => r.id);
+// County races, keyed by county name, so an address in Ada also lists Ada County offices.
+const countyRaces = all.filter((r) => r.data.level === 'county').map((r) => ({ id: r.id, county: r.data.district ?? '', title: tx(r.data.office, lang) }));
 const strings = es
   ? { useLoc: 'Usar mi ubicación', locating: 'Buscando su ubicación…', locDenied: 'No pudimos usar su ubicación. Escriba su dirección.', approx: 'Ubicación aproximada: si vive cerca del límite de un distrito, confírmelo con la búsqueda oficial.', matchedLabel: 'Encontramos', ld: 'Distrito legislativo', county: 'Condado', cd: 'Distrito del Congreso de EE. UU.', see: 'Ver sus contiendas', notFound: 'No encontramos esa dirección en Idaho. Pruebe con calle, ciudad y código postal, o use la búsqueda oficial.', error: 'La búsqueda no está disponible ahora. Use la búsqueda oficial.', looking: 'Buscando…', senate: 'Senado estatal', houseA: 'Cámara, puesto A', houseB: 'Cámara, puesto B', usHouse: 'Cámara de EE. UU.', notYet: 'Aún no tenemos página para este distrito.' }
   : { useLoc: 'Use my location', locating: 'Finding your location…', locDenied: 'We couldn’t use your location. Type your address instead.', approx: 'Approximate match: if you live near a district line, confirm with the official lookup.', matchedLabel: 'Found', ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
 const base = href(lang, '/races/');
 ---
-<form class="finder card" id="finder" data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
+<form class="finder card" id="finder" data-county-races={JSON.stringify(countyRaces)} data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
   <label for="addr"><strong>{es ? '¿En qué distrito vivo?' : 'Which district am I in?'}</strong></label>
   <div class="row">
     <input id="addr" name="address" autocomplete="street-address" placeholder={es ? 'Calle, ciudad, código postal' : 'Street, city, ZIP'} required minlength="5" />
@@ -31,6 +34,7 @@ const base = href(lang, '/races/');
 <script>
   for (const form of document.querySelectorAll<HTMLFormElement>('form.finder')) {
     const ids: string[] = JSON.parse(form.dataset.ids!);
+    const countyRaces: { id: string; county: string; title: string }[] = JSON.parse(form.dataset.countyRaces!);
     const s = JSON.parse(form.dataset.strings!);
     const base = form.dataset.base!;
     const out = form.querySelector<HTMLDivElement>('.out')!;
@@ -48,7 +52,8 @@ const base = href(lang, '/races/');
         if (!r.ok) { out.textContent = d.error === 'lookup_unavailable' ? s.error : s.notFound; return; }
         const n = Number.isInteger(d.ld) ? d.ld : null;
         const cd = Number.isInteger(d.cd) ? d.cd : null;
-        const items = [link(`us-house-${cd}`, `${s.usHouse} ${cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB)].filter(Boolean) as HTMLElement[];
+        const items = [link(`us-house-${cd}`, `${s.usHouse} ${cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB),
+          ...countyRaces.filter((c) => c.county === d.county).map((c) => link(c.id, c.title))].filter(Boolean) as HTMLElement[];
         out.replaceChildren();
         if (d.matched) { const m = el('p', `${s.matchedLabel}: ${d.matched}`); m.className = 'small muted'; out.append(m); }
         const head = el('p'); head.append(el('strong', `${s.ld}: ${n ?? '?'}`), ` · ${s.county}: ${d.county ?? '?'} · ${s.cd}: ${cd ?? '?'}`);

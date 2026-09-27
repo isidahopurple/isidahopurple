@@ -1,0 +1,31 @@
+---
+// Landing page for links shared after someone is counted. Its preview card says "I'm in. Are you?"
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { href, type Lang } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+---
+<Base lang={lang}
+  title={es ? 'Estoy dentro. ¿Y usted?' : 'I’m in. Are you?'}
+  description={es ? 'Me uní al experimento ¿Es Idaho morado? Primero asegúrese de poder votar: la fecha límite es el 23 de octubre.' : 'I joined the Is Idaho Purple? experiment. First make sure you can vote: the deadline is Oct 23.'}
+  ogImage={`/og/counted${es ? '-es' : ''}.jpg`}>
+  <section class="hero-c">
+    <p class="kicker">{es ? 'Alguien que usted conoce se unió' : 'Someone you know just joined'}</p>
+    <h1><span class="purple-text">{es ? '¿Es Idaho morado?' : 'Is Idaho purple?'}</span></h1>
+    <p class="lede">{es
+      ? 'Idahoanos de todo el estado están poniendo a prueba si este estado es tan rojo como todos dicen. Lo primero: asegúrese de poder votar. Toma unos minutos.'
+      : 'Idahoans across the state are testing whether this state is as red as everyone says. First things first: make sure you can vote. It takes a few minutes.'}</p>
+    <p><a class="btn big" href={href(lang, '/')}><Icon name="check" size={22} /> {es ? 'Empezar: paso 1 de 10' : 'Start: step 1 of 10'}</a></p>
+    <p><a class="btn ghost" href={href(lang, '/experiment#join')}>{es ? 'Cuenten conmigo también' : 'Count me in too'}</a></p>
+    <p class="small muted">{es ? 'Fecha límite para registrarse o pedir boleta por correo: viernes 23 de octubre, 5 p.m.' : 'Deadline to register or request a mail ballot: Fri Oct 23, 5 p.m.'}</p>
+  </section>
+</Base>
+<style>
+  .hero-c { padding: 30px 0; text-align: center; }
+  .hero-c h1 { font-size: clamp(2.4rem, 10vw, 4rem); margin: 0.2rem 0 0.6rem; }
+  .kicker { font-weight: 800; color: var(--ok); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; margin: 0; }
+  .lede { font-size: 1.15rem; max-width: 36ch; margin: 0 auto 18px; }
+  .big { font-size: 1.2rem; min-height: 56px; padding: 12px 26px; gap: 8px; }
+</style>

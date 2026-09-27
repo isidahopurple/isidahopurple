@@ -1,0 +1,50 @@
+office:
+  en: State House, District 11, Seat B
+  es: Cámara estatal, Distrito 11, Puesto B
+level: legislative
+district: LD11
+seat: House B
+order: 135
+depth: short
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Debbie Geyer
+  party: R
+  incumbent: false
+- name: Joshua Preminger
+  party: D
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD11 House B
+  result: Cayler (R) 65.4, Pesina (D) 34.6
+  margin: R+30.7
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Joshua Preminger
+  rule: '3'
+  reasoning:
+    en: Joshua Preminger is the only non-Republican on the ballot, so this is a two-way race and turnout is what matters.
+    es: Joshua Preminger es la única opción no republicana en la boleta, así que es una contienda entre dos y lo que importa es la participación.
+  approved: true
+unverified:
+- The incumbent, Lucas Cayler (R), filed for the 2026 primary but is not on the general-election ballot; the primary result was not checked.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-26'

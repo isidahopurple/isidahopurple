@@ -111,6 +111,7 @@ const isCurrent = (p: string) => path.replace(/\/$/, '').endsWith(p) || path.inc
           <a href={href(lang, '/share')}>{t(lang, 'nav.share')}</a>
           <a href={href(lang, '/about')}>{t(lang, 'nav.about')}</a>
           <a href={href(lang, '/privacy')}>{t(lang, 'nav.privacy')}</a>
+          <a href={href(lang, '/press')}>{lang === 'es' ? 'Prensa' : 'Press'}</a>
         </nav>
       </div>
     </footer>

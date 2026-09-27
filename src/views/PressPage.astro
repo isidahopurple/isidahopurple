@@ -1,0 +1,63 @@
+---
+// For journalists: what it is, facts, images, contact. Numbers come from the data so they stay current.
+import Base from '../layouts/Base.astro';
+import { href, CONTACT_EMAIL, REPO_URL, ATTRIBUTION, type Lang } from '../i18n/ui';
+import { getRaces, getMeasures } from '../lib/data';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const races = await getRaces();
+const measures = await getMeasures();
+const quotes = races.reduce((n, r) => n + r.data.candidates.filter((c) => c.quote).length, 0);
+const sources = new Set(races.flatMap((r) => [...r.data.sources.map((s) => s.url), ...r.data.candidates.flatMap((c) => (c.quote ? [c.quote.source.url] : []))])).size;
+const facts = es
+  ? [
+      `Cubre ${races.length} contiendas y ${measures.length} medidas de la boleta del 3 de noviembre de 2026, con ${quotes} citas de candidatos y más de ${sources} fuentes enlazadas.`,
+      'La página de inicio es una guía de 10 pasos; los pasos 1 a 4 llevan directamente a las herramientas oficiales de VoteIdaho.',
+      'Búsqueda por dirección de distrito legislativo, condado y distrito del Congreso (Oficina del Censo de EE. UU. y OpenStreetMap; no se guarda nada).',
+      'Todo en inglés y español.',
+      'Lo hizo una persona de Idaho, Ronald Baird, en pocos días con ayuda de un asistente de IA. Costo: unos $10 por el dominio. Sin donaciones ni vínculos con campañas.',
+      'Código y datos abiertos; otros estados pueden copiarlo.',
+      'Plantea abiertamente una hipótesis y publica su método para recomendar en cada contienda.',
+    ]
+  : [
+      `Covers ${races.length} races and ${measures.length} ballot measures on Idaho’s Nov 3, 2026 ballot, with ${quotes} candidate quotes and ${sources}+ linked sources.`,
+      'The home page is a 10-step roadmap; steps 1–4 go straight to the official VoteIdaho tools.',
+      'Address lookup for legislative district, county and US House district (US Census Bureau and OpenStreetMap; nothing stored).',
+      'Fully in English and Spanish.',
+      'Built by one Idahoan, Ronald Baird, in a few days with help from an AI assistant. Cost: about $10 for the domain. No donations, no campaign ties.',
+      'Open-source code and data; other states can fork it.',
+      'Openly states a hypothesis and publishes its method for picks in each race.',
+    ];
+const images = [
+  { src: '/og/home.jpg', label: es ? 'Tarjeta: Cómo votar en Idaho (inglés)' : 'Card: How to vote in Idaho' },
+  { src: '/og/home-es.jpg', label: es ? 'Tarjeta en español' : 'Card, Spanish' },
+  { src: '/share/howto-feed.jpg', label: 'Instagram 4:5' },
+  { src: '/share/purple-feed.jpg', label: es ? '¿Es Idaho morado? 4:5' : 'Is Idaho purple? 4:5' },
+];
+---
+<Base lang={lang} title={es ? 'Prensa' : 'Press'} description={es ? 'Información para periodistas sobre ¿Es Idaho morado?' : 'Information for journalists about Is Idaho Purple?'}>
+  <h1>{es ? 'Para la prensa' : 'For the press'}</h1>
+  <p class="lede">{es
+    ? '¿Es Idaho morado? es un sitio gratuito y de código abierto que guía a los votantes de Idaho paso a paso hasta el 3 de noviembre, y que publica abiertamente un experimento: ¿es Idaho más competitivo de lo que parece?'
+    : 'Is Idaho Purple? is a free, open-source site that walks Idaho voters step by step to Nov 3, and openly runs an experiment: is Idaho more competitive than it looks?'}</p>
+  <h2>{es ? 'Datos clave' : 'Key facts'}</h2>
+  <ul>{facts.map((f) => <li>{f}</li>)}</ul>
+  <h2>{es ? 'Fechas' : 'Dates'}</h2>
+  <ul>
+    <li>{es ? 'Lanzamiento: 25 de septiembre de 2026' : 'Launched: Sept 25, 2026'}</li>
+    <li>{es ? 'Fecha límite para registrarse o pedir boleta por correo: viernes 23 de octubre, 5 p.m.' : 'Registration and mail-ballot request deadline: Fri Oct 23, 5 p.m.'}</li>
+    <li>{es ? 'Elección: martes 3 de noviembre; resultados del experimento después' : 'Election: Tue Nov 3; experiment results published after'}</li>
+  </ul>
+  <h2>{es ? 'Imágenes' : 'Images'}</h2>
+  <p class="small muted">{es ? 'Libres de usar con crédito a isidahopurple.com.' : 'Free to use with credit to isidahopurple.com.'}</p>
+  <div class="imgs">{images.map((i) => <a href={i.src} download><img src={i.src} alt={i.label} loading="lazy" /><span>{i.label}</span></a>)}</div>
+  <h2>{es ? 'Contacto' : 'Contact'}</h2>
+  <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> · <a href={REPO_URL} rel="noopener">GitHub</a> · <a href={href(lang, '/experiment#method')}>{es ? 'El método' : 'The method'}</a> · <a href={href(lang, '/about')}>{es ? 'Quiénes somos' : 'About'}</a></p>
+  <p class="card small">{ATTRIBUTION[lang]}</p>
+</Base>
+<style>
+  .imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .imgs a { display: grid; gap: 4px; font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+  .imgs img { width: 100%; border-radius: 8px; border: 1px solid var(--line); }
+</style>

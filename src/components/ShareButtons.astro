@@ -4,14 +4,14 @@
 import Icon from './Icon.astro';
 import { type Lang } from '../i18n/ui';
 
-interface Props { lang: Lang }
+interface Props { lang: Lang; url?: string; title?: string; text?: string }
 const { lang } = Astro.props;
 const es = lang === 'es';
-const url = es ? 'https://isidahopurple.com/es/' : 'https://isidahopurple.com/';
-const title = es ? 'Cómo votar en Idaho' : 'How to vote in Idaho';
-const text = es
+const url = Astro.props.url ?? (es ? 'https://isidahopurple.com/es/' : 'https://isidahopurple.com/');
+const title = Astro.props.title ?? (es ? 'Cómo votar en Idaho' : 'How to vote in Idaho');
+const text = Astro.props.text ?? (es
   ? '¿Ya estás registrado para votar? Aquí están los enlaces oficiales de Idaho, paso a paso. Fecha límite: 23 de octubre.'
-  : 'Are you registered to vote? Here are Idaho’s official links, step by step. Deadline is Oct 23.';
+  : 'Are you registered to vote? Here are Idaho’s official links, step by step. Deadline is Oct 23.');
 const e = encodeURIComponent;
 const apps = [
   { key: 'sms', label: es ? 'Mensaje de texto' : 'Text message', href: `sms:?&body=${e(`${text} ${url}`)}` },

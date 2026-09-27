@@ -1,0 +1,104 @@
+office:
+  en: State House, District 29, Seat A
+  es: Cámara estatal, Distrito 29, Puesto A
+level: legislative
+district: LD29
+seat: House A
+order: 188
+depth: full
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Dustin W. Manwaring
+  party: R
+  incumbent: true
+  bio:
+    en: Pocatello business and estate-planning attorney who has held this seat since 2020 (and served 2016–2018); he sits on the Appropriations Committee.
+    es: Abogado de Pocatello especializado en empresas y planificación patrimonial, que ocupa este escaño desde 2020 (y lo ocupó de 2016 a 2018); forma parte del Comité de Asignaciones Presupuestarias.
+  website: https://manwaringforidaho.org/
+  quote:
+    text: 'Good government should solve problems before they become crises, invest wisely where doing so will save money and remain transparent and accountable to the people. My commitment to Pocatello is simple: I will listen, respond and act.'
+    translation_es: 'Un buen gobierno debe resolver los problemas antes de que se conviertan en crisis, invertir con prudencia cuando eso ahorre dinero y ser transparente y rendir cuentas a la gente. Mi compromiso con Pocatello es sencillo: escucharé, responderé y actuaré.'
+    date: '2026-08-24'
+    context: Closing lines of his answer to "why should people vote for you?" in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election survey, State Representative District 29A
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-29a
+      date: '2026-08-24'
+    verified: true
+- name: Mary Shea
+  party: D
+  incumbent: false
+  bio:
+    en: Pocatello attorney focused on child welfare cases and former Idaho State University instructor; the Democratic nominee for this seat in 2022 and 2024.
+    es: Abogada de Pocatello dedicada a casos de bienestar infantil y exinstructora de la Universidad Estatal de Idaho; fue la candidata demócrata a este escaño en 2022 y 2024.
+  website: https://www.maryforidaho.com/
+  quote:
+    text: I am not running to score political points. I am running to bring practical leadership, real-world experience, and a proven record of public service to the Idaho Legislature.
+    translation_es: No me postulo para ganar puntos políticos. Me postulo para llevar a la Legislatura de Idaho un liderazgo práctico, experiencia real y una trayectoria comprobada de servicio público.
+    date: '2026-08-24'
+    context: From her answer to "why should people vote for you?" in a TV-station candidate survey.
+    source:
+      name: Idaho News (CBS2/FOX9), 2026 general election survey, State Representative District 29A
+      url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-29a
+      date: '2026-08-24'
+    verified: true
+history:
+- year: 2022
+  label: 2022 LD29 House A
+  result: Manwaring (R) 52.2, Shea (D) 47.8
+  margin: R+4.4
+  source:
+    name: Idaho Secretary of State, 2022 general election canvass (legislative)
+    url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- year: 2024
+  label: 2024 LD29 House A
+  result: Manwaring (R) 55.2, Shea (D) 44.8
+  margin: R+10.4
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Mary Shea
+  rule: '3'
+  reasoning:
+    en: 'Mary Shea is the only non-Republican on the ballot, so this is a two-way race and turnout decides it. This is the third straight matchup: Rep. Dustin Manwaring (R) beat Shea by 4.4 points in 2022 and by 10.4 points in 2024, on the same district lines in Pocatello (Bannock County). A 10-point gap is a lot to close, so this is a reach seat rather than a toss-up, and it would take a large turnout shift.'
+    es: 'Mary Shea es la única opción no republicana en la boleta, así que es una contienda entre dos y la participación la decide. Es la tercera vez seguida que se enfrentan: el representante Dustin Manwaring (R) le ganó a Shea por 4.4 puntos en 2022 y por 10.4 puntos en 2024, con los mismos límites de distrito en Pocatello (condado de Bannock). Una diferencia de 10 puntos es mucho por recuperar, así que este escaño es difícil y no un empate, y haría falta un gran cambio en la participación.'
+  approved: true
+review_flags:
+- 'Rep. Dustin Manwaring (R): Voted aye on H0897 (2026 bill that narrows the data-center sales tax exemption and adds energy and water criteria) when it passed the House 68-0. The vote was unanimous, so it is weak evidence of a match on power bills and data centers, and his campaign site also calls for more power generation and transmission "to support a growing population and demand from data centers." Mary Shea''s position on data centers was not found. A human should review.'
+unverified:
+- Manwaring's voting record on abortion access and climate was not reviewed. His campaign site's issues page does not mention abortion or climate.
+- Mary Shea's position on data centers and power bills was not found. Her site's 2024 questionnaire answers support a clean-energy transition and "Idaho's energy providers and their fair applications of prices."
+- The date of Manwaring's campaign issues page (quoted in the review flag) is unknown.
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Secretary of State, 2022 general election canvass (legislative)
+  url: https://archive.sos.idaho.gov/elections/data/results/2022/2022_General_Canvass.zip
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+- name: Idaho News (CBS2/FOX9), 2026 general election survey, State Representative District 29A
+  url: https://idahonews.com/politics/know-your-candidates/2026-general-election-survey-state-representative-district-29a
+  date: '2026-08-24'
+- name: Idaho Legislature, H0897 (2026) bill page and statement of purpose
+  url: https://legislature.idaho.gov/sessioninfo/2026/legislation/H0897/
+- name: Manwaring for Idaho campaign site, issues page
+  url: https://manwaringforidaho.org/read-me
+- name: Mary for Idaho campaign site, priorities page
+  url: https://www.maryforidaho.com/priorities
+- name: Ballotpedia, Dustin W. Manwaring (secondary source)
+  url: https://ballotpedia.org/Dustin_W._Manwaring
+- name: Ballotpedia, Mary Shea (secondary source)
+  url: https://ballotpedia.org/Mary_Shea
+updated: '2026-09-26'

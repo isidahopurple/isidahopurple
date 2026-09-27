@@ -1,0 +1,52 @@
+office:
+  en: State Senate, District 11
+  es: Senado estatal, Distrito 11
+level: legislative
+district: LD11
+seat: Senate
+order: 133
+depth: short
+controls:
+  en: The Idaho Legislature has 35 senators and 70 representatives, each elected for two-year terms; it levies taxes, appropriates public funds and oversees state agencies, and each district elects one senator and two representatives.
+  es: La Legislatura de Idaho tiene 35 senadores y 70 representantes, y cada uno se elige por un periodo de dos años. La Legislatura fija los impuestos, asigna los fondos públicos y supervisa las agencias estatales. Cada distrito elige a un senador y a dos representantes.
+controls_source:
+  name: Idaho Legislature, Idaho's Citizen Legislature
+  url: https://legislature.idaho.gov/resources/citizenlegislature/
+candidates:
+- name: Camille Blaylock
+  party: R
+  incumbent: true
+- name: Esther Ma
+  party: C
+  incumbent: false
+- name: Susan Counsil
+  party: D
+  incumbent: false
+history:
+- year: 2024
+  label: 2024 LD11 Senate
+  result: Blaylock (R) 65.9, Ferro (D) 34.1
+  margin: R+31.9
+  source:
+    name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+    url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+pick:
+  label: two-way
+  candidate: Susan Counsil
+  rule: 3 (rule 5 note)
+  approved: true
+  reasoning:
+    en: Susan Counsil is the one candidate in reach for non-Republican voters. The other non-Republican on the ballot is from the Constitution Party, whose platform is generally to the right of the Republican Party, so this works as a two-way race where turnout matters.
+    es: Susan Counsil es la única candidatura con posibilidades para los votantes no republicanos. La otra opción no republicana en la boleta es del Partido de la Constitución, cuya plataforma suele estar a la derecha del Partido Republicano, así que funciona como una contienda entre dos donde la participación decide.
+review_flags: []
+sources:
+- name: 'Idaho Secretary of State, candidate filing portal: 2026 General (final list)'
+  url: https://run.voteidaho.gov/search
+  date: '2026-09-26'
+- name: Idaho Secretary of State, 2024 general election results by precinct (raw_races_general.xlsx)
+  url: https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx
+- name: Idaho Legislature, Senate membership
+  url: https://legislature.idaho.gov/senate/membership/
+- name: Idaho Legislature, House membership
+  url: https://legislature.idaho.gov/house/membership/
+updated: '2026-09-26'
