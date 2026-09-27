@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t, href, ATTRIBUTION, CONTACT_EMAIL, type Lang } from '../i18n/ui';
+import { t, href, ATTRIBUTION, CONTACT_EMAIL, REPO_URL, type Lang } from '../i18n/ui';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -28,6 +28,9 @@ const es = lang === 'es';
   <p>{es
     ? 'Escribí este sitio con la ayuda de Claude, un asistente de inteligencia artificial. La IA ayudó a investigar y a escribir código; cada recomendación y cada cita las reviso yo. Si encuentra un error, avíseme y lo corrijo.'
     : 'I built this site with help from Claude, an AI assistant. The AI helped with research and code; I review every pick and every quote. If you find a mistake, tell me and I’ll fix it.'}</p>
+
+  <h2>{es ? 'El código' : 'The code'}</h2>
+  <p>{es ? 'Todo el código y los datos están en GitHub. Cualquiera puede revisarlos, corregirlos o copiarlos para su estado: ' : 'All the code and data are on GitHub. Anyone can check them, fix them, or copy them for their own state: '}<a href={REPO_URL} rel="noopener">github.com/isidahopurple/isidahopurple</a>. <a href={`${REPO_URL}/blob/main/docs/FORKING.md`} rel="noopener">{es ? 'Guía para copiarlo (en inglés)' : 'How to fork it for your state'}</a>.</p>
 
   <h2>{es ? 'Contacto' : 'Contact'}</h2>
   <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>

@@ -8,7 +8,7 @@ export const ATTRIBUTION = {
 
 export const REPO_URL = 'https://github.com/isidahopurple/isidahopurple';
 // Flip to true when the repo goes public; it turns on "edit this page" links.
-export const REPO_PUBLIC = false;
+export const REPO_PUBLIC = true;
 export const CONTACT_EMAIL = 'contact@isidahopurple.com';
 
 export const ui = {
@@ -29,7 +29,7 @@ export const ui = {
     'deadline.cta': 'How to vote →',
     'footer.source': 'Every fact links to its source. Found an error?',
     'footer.contact': 'Tell us',
-    'footer.open': 'Open source. Anyone can check the data or fork it for their state.',
+    'footer.open': 'Open source on GitHub. Anyone can check the data or fork it for their state.',
     'footer.edit': 'Edit this page on GitHub',
     'footer.updated': 'Last updated',
     'preview.banner': 'Preview build. Not public yet; picks and quotes are awaiting review.',
@@ -101,7 +101,7 @@ export const ui = {
     'deadline.cta': 'Cómo votar →',
     'footer.source': 'Cada dato enlaza a su fuente. ¿Encontró un error?',
     'footer.contact': 'Avísenos',
-    'footer.open': 'Código abierto. Cualquiera puede revisar los datos o copiarlos para su estado.',
+    'footer.open': 'Código abierto en GitHub. Cualquiera puede revisar los datos o copiarlos para su estado.',
     'footer.edit': 'Editar esta página en GitHub',
     'footer.updated': 'Última actualización',
     'preview.banner': 'Versión preliminar. Aún no es pública; las recomendaciones y citas están en revisión.',
