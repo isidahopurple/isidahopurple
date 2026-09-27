@@ -78,12 +78,11 @@ const s = es
         </label>
         <label>{s.ld} <input type="number" name="ld" min="1" max="35" inputmode="numeric" /></label>
         <p class="small"><a href={href(lang, '/races')}>{es ? '¿No sabe su distrito? Búsquelo aquí.' : 'Don’t know your district? Look it up.'}</a></p>
-        <div class="cf-turnstile" data-sitekey={sitekey} data-language={lang}></div>
+        <div class="ts-box" data-sitekey={sitekey} data-language={lang}></div>
         <button class="btn" type="submit">{s.button}</button>
         <p class="small muted">{s.fine} <a href={href(lang, '/privacy')}>{es ? 'Privacidad' : 'Privacy'}</a></p>
         <p class="msg" aria-live="polite"></p>
       </form>
-      <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     </>
   ) : (
     <p>{s.soon}</p>
@@ -96,6 +95,25 @@ const s = es
     fetch('/api/tally').then((r) => r.json()).then((d) => {
       if (d.show && d.total) count.textContent = count.dataset.line!.replace('[N]', Number(d.total).toLocaleString());
     }).catch(() => {});
+  }
+  // Load the Turnstile check only when someone starts filling in the form, so readers aren't
+  // challenged and nearly every token issued is actually verified (Cloudflare flags unverified tokens).
+  let tsLoaded = false;
+  const loadTurnstile = () => {
+    if (tsLoaded) return; tsLoaded = true;
+    (window as any).onTurnstileReady = () => {
+      for (const box of document.querySelectorAll<HTMLElement>('.ts-box')) {
+        (window as any).turnstile.render(box, { sitekey: box.dataset.sitekey, language: box.dataset.language, 'response-field-name': 'cf-turnstile-response' });
+      }
+    };
+    const sc = document.createElement('script');
+    sc.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileReady';
+    sc.async = true;
+    document.head.append(sc);
+  };
+  for (const f of document.querySelectorAll<HTMLFormElement>('form.pledge-form')) {
+    f.addEventListener('focusin', loadTurnstile, { once: true });
+    f.addEventListener('pointerdown', loadTurnstile, { once: true });
   }
   // Per-device memory of where this visitor is in the flow (convenience only; the server is the source of truth).
   const KEY = 'iip-pledge';
@@ -168,6 +186,7 @@ const s = es
   label { display: grid; gap: 4px; font-weight: 600; }
   input, select { min-height: 46px; padding: 8px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
   .msg { font-weight: 700; color: var(--red); }
+  .ts-box { min-height: 65px; }
   .done { border: 3px solid var(--ok); border-radius: 14px; padding: 22px 18px; background: color-mix(in srgb, var(--ok) 8%, var(--surface)); text-align: center; outline: none; }
   .done-title { font-size: 1.45rem; font-weight: 800; color: var(--ok); margin: 0 0 10px; }
   .done-body { font-size: 1.05rem; }
