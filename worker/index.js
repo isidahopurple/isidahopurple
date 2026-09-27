@@ -13,38 +13,69 @@ function json(body, status = 200, extra = {}) {
   });
 }
 
-// GET /api/district?address=... → { county, ld, cd, matched } using the US Census geocoder.
-async function district(url) {
-  const address = (url.searchParams.get('address') || '').trim().slice(0, 200);
-  if (address.length < 5) return json({ error: 'address_required' }, 400);
-  const q = new URL(CENSUS);
-  q.searchParams.set('address', /\bid(aho)?\b/i.test(address) ? address : `${address}, Idaho`);
-  q.searchParams.set('benchmark', 'Public_AR_Current');
-  q.searchParams.set('vintage', 'Current_Current');
-  q.searchParams.set('format', 'json');
-  let data;
-  try {
-    const r = await fetch(q, { cf: { cacheTtl: 0 } });
-    if (!r.ok) return json({ error: 'lookup_unavailable' }, 502);
-    data = await r.json();
-  } catch {
-    return json({ error: 'lookup_unavailable' }, 502);
-  }
-  const match = data?.result?.addressMatches?.[0];
-  if (!match) return json({ error: 'not_found' }, 404);
-  const g = match.geographies || {};
-  const pick = (re) => Object.entries(g).find(([k]) => re.test(k))?.[1]?.[0];
-  const state = pick(/^States$/);
-  if (state?.STATE !== STATE_FIPS) return json({ error: 'not_idaho' }, 404);
+const CENSUS_COORDS = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates';
+const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
+const UA = 'isidahopurple.com district lookup (contact@isidahopurple.com)';
+const censusParams = (q) => { q.searchParams.set('benchmark', 'Public_AR_Current'); q.searchParams.set('vintage', 'Current_Current'); q.searchParams.set('format', 'json'); return q; };
+
+// Census geographies object → our answer, or an error code.
+function fromGeographies(g, matched, approx) {
+  const pick = (re) => Object.entries(g || {}).find(([k]) => re.test(k))?.[1]?.[0];
+  if (pick(/^States$/)?.STATE !== STATE_FIPS) return { error: 'not_idaho' };
   const upper = pick(/Legislative Districts - Upper/);
   const county = pick(/^Counties$/);
   const cd = pick(/Congressional Districts/);
-  return json({
-    matched: match.matchedAddress,
-    county: county?.BASENAME ?? null,
-    ld: upper ? Number(upper.BASENAME) : null,
-    cd: cd ? Number(cd.BASENAME ?? cd.CD119 ?? cd.CD120) : null,
-  });
+  return { matched, approx, county: county?.BASENAME ?? null, ld: upper ? Number(upper.BASENAME) : null, cd: cd ? Number(cd.BASENAME) : null };
+}
+
+async function byCoords(lat, lon, matched, approx) {
+  const q = censusParams(new URL(CENSUS_COORDS));
+  q.searchParams.set('x', String(lon));
+  q.searchParams.set('y', String(lat));
+  const r = await fetch(q);
+  if (!r.ok) return { error: 'lookup_unavailable' };
+  return fromGeographies((await r.json())?.result?.geographies, matched, approx);
+}
+
+// GET /api/district?address=... or ?lat=..&lon=.. → { county, ld, cd, matched, approx }.
+// 1) US Census address match. 2) If Census doesn't know the address (common for new homes),
+// OpenStreetMap's free geocoder finds the spot and Census names its districts. Nothing is stored.
+async function district(url) {
+  try {
+    const lat = Number(url.searchParams.get('lat'));
+    const lon = Number(url.searchParams.get('lon'));
+    if (url.searchParams.has('lat')) {
+      if (!(lat > 41.9 && lat < 49.1 && lon > -117.3 && lon < -110.9)) return json({ error: 'not_idaho' }, 404);
+      const out = await byCoords(lat.toFixed(4), lon.toFixed(4), null, false);
+      return json(out, out.error ? 404 : 200);
+    }
+    const address = (url.searchParams.get('address') || '').trim().slice(0, 200);
+    if (address.length < 5) return json({ error: 'address_required' }, 400);
+    const full = /\bid(aho)?\b/i.test(address) ? address : `${address}, Idaho`;
+    const q = censusParams(new URL(CENSUS));
+    q.searchParams.set('address', full);
+    const r = await fetch(q);
+    const match = r.ok ? (await r.json())?.result?.addressMatches?.[0] : null;
+    if (match) {
+      const out = fromGeographies(match.geographies, match.matchedAddress, false);
+      return json(out, out.error ? 404 : 200);
+    }
+    const n = new URL(NOMINATIM);
+    n.searchParams.set('format', 'jsonv2');
+    n.searchParams.set('limit', '1');
+    n.searchParams.set('countrycodes', 'us');
+    n.searchParams.set('viewbox', '-117.3,49.1,-110.9,41.9');
+    n.searchParams.set('bounded', '1');
+    n.searchParams.set('q', full);
+    const nr = await fetch(n, { headers: { 'user-agent': UA, 'accept-language': 'en' } });
+    const hit = nr.ok ? (await nr.json())?.[0] : null;
+    if (!hit) return json({ error: 'not_found' }, 404);
+    const label = String(hit.display_name || '').split(',').slice(0, 4).join(',');
+    const out = await byCoords(Number(hit.lat).toFixed(5), Number(hit.lon).toFixed(5), label, true);
+    return json(out, out.error ? 404 : 200);
+  } catch {
+    return json({ error: 'lookup_unavailable' }, 502);
+  }
 }
 
 // POST /api/click with a home-page step name: count taps, nothing else.

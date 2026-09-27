@@ -8,8 +8,8 @@ const { lang } = Astro.props;
 const es = lang === 'es';
 const ids = (await getRaces()).map((r) => r.id);
 const strings = es
-  ? { ld: 'Distrito legislativo', county: 'Condado', cd: 'Distrito del Congreso de EE. UU.', see: 'Ver sus contiendas', notFound: 'No encontramos esa dirección en Idaho. Pruebe con calle, ciudad y código postal, o use la búsqueda oficial.', error: 'La búsqueda no está disponible ahora. Use la búsqueda oficial.', looking: 'Buscando…', senate: 'Senado estatal', houseA: 'Cámara, puesto A', houseB: 'Cámara, puesto B', usHouse: 'Cámara de EE. UU.', notYet: 'Aún no tenemos página para este distrito.' }
-  : { ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
+  ? { useLoc: 'Usar mi ubicación', locating: 'Buscando su ubicación…', locDenied: 'No pudimos usar su ubicación. Escriba su dirección.', approx: 'Ubicación aproximada: si vive cerca del límite de un distrito, confírmelo con la búsqueda oficial.', matchedLabel: 'Encontramos', ld: 'Distrito legislativo', county: 'Condado', cd: 'Distrito del Congreso de EE. UU.', see: 'Ver sus contiendas', notFound: 'No encontramos esa dirección en Idaho. Pruebe con calle, ciudad y código postal, o use la búsqueda oficial.', error: 'La búsqueda no está disponible ahora. Use la búsqueda oficial.', looking: 'Buscando…', senate: 'Senado estatal', houseA: 'Cámara, puesto A', houseB: 'Cámara, puesto B', usHouse: 'Cámara de EE. UU.', notYet: 'Aún no tenemos página para este distrito.' }
+  : { useLoc: 'Use my location', locating: 'Finding your location…', locDenied: 'We couldn’t use your location. Type your address instead.', approx: 'Approximate match: if you live near a district line, confirm with the official lookup.', matchedLabel: 'Found', ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
 const base = href(lang, '/races/');
 ---
 <form class="finder card" id="finder" data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
@@ -18,10 +18,11 @@ const base = href(lang, '/races/');
     <input id="addr" name="address" autocomplete="street-address" placeholder={es ? 'Calle, ciudad, código postal' : 'Street, city, ZIP'} required minlength="5" />
     <button class="btn" type="submit">{es ? 'Buscar' : 'Look up'}</button>
   </div>
+  <button class="btn ghost loc" type="button">{es ? '⌖ Usar mi ubicación' : '⌖ Use my location'}</button>
   <p class="small muted">
     {es
-      ? 'Su dirección va a la Oficina del Censo de EE. UU. para la búsqueda. No la guardamos. '
-      : 'Your address goes to the US Census Bureau for the lookup. We don’t store it. '}
+      ? 'Su dirección (o ubicación) va a la Oficina del Censo de EE. UU., y si no la encuentra, a OpenStreetMap. No la guardamos. '
+      : 'Your address (or location) goes to the US Census Bureau, and to OpenStreetMap if the Census can’t find it. We don’t store it. '}
     <a href="https://legislature.idaho.gov/legislators/whosmylegislator/" rel="noopener" target="_blank">{es ? 'Búsqueda oficial' : 'Official lookup'}</a>
   </p>
   <div class="out" aria-live="polite"></div>
@@ -39,24 +40,40 @@ const base = href(lang, '/races/');
       if (!ids.includes(id)) return null;
       const li = el('li'); const a = el('a', label) as HTMLAnchorElement; a.href = base + id; li.append(a); return li;
     };
-    form.addEventListener('submit', async (ev) => {
-      ev.preventDefault();
-      const address = (new FormData(form).get('address') as string).trim();
+    const lookup = async (query: string) => {
       out.textContent = s.looking;
       try {
-        const r = await fetch(`/api/district?address=${encodeURIComponent(address)}`);
+        const r = await fetch(`/api/district?${query}`);
         const d = await r.json();
         if (!r.ok) { out.textContent = d.error === 'lookup_unavailable' ? s.error : s.notFound; return; }
         const n = Number.isInteger(d.ld) ? d.ld : null;
         const cd = Number.isInteger(d.cd) ? d.cd : null;
         const items = [link(`us-house-${cd}`, `${s.usHouse} ${cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB)].filter(Boolean) as HTMLElement[];
+        out.replaceChildren();
+        if (d.matched) { const m = el('p', `${s.matchedLabel}: ${d.matched}`); m.className = 'small muted'; out.append(m); }
         const head = el('p'); head.append(el('strong', `${s.ld}: ${n ?? '?'}`), ` · ${s.county}: ${d.county ?? '?'} · ${s.cd}: ${cd ?? '?'}`);
-        out.replaceChildren(head);
+        out.append(head);
+        if (d.approx) { const a = el('p', s.approx); a.className = 'small note'; out.append(a); }
         if (items.length) { const ul = el('ul'); ul.append(...items); out.append(el('p', `${s.see}:`), ul); }
         else { const p = el('p', s.notYet); p.className = 'small muted'; out.append(p); }
       } catch {
         out.textContent = s.error;
       }
+    };
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const address = (new FormData(form).get('address') as string).trim();
+      lookup(`address=${encodeURIComponent(address)}`);
+    });
+    const loc = form.querySelector<HTMLButtonElement>('.loc')!;
+    if (!('geolocation' in navigator)) loc.hidden = true;
+    loc.addEventListener('click', () => {
+      out.textContent = s.locating;
+      navigator.geolocation.getCurrentPosition(
+        (pos) => lookup(`lat=${pos.coords.latitude.toFixed(4)}&lon=${pos.coords.longitude.toFixed(4)}`),
+        () => { out.textContent = s.locDenied; },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 },
+      );
     });
   }
 </script>
@@ -66,4 +83,5 @@ const base = href(lang, '/races/');
   .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
   input { flex: 1 1 220px; min-height: 46px; padding: 8px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
   .out :global(p) { margin: 0.4rem 0; }
+  .loc { width: 100%; margin-bottom: 6px; }
 </style>
