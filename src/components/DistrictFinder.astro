@@ -12,7 +12,7 @@ const strings = es
   : { ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
 const base = href(lang, '/races/');
 ---
-<form class="finder card" data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
+<form class="finder card" id="finder" data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
   <label for="addr"><strong>{es ? '¿En qué distrito vivo?' : 'Which district am I in?'}</strong></label>
   <div class="row">
     <input id="addr" name="address" autocomplete="street-address" placeholder={es ? 'Calle, ciudad, código postal' : 'Street, city, ZIP'} required minlength="5" />

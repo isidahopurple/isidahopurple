@@ -1,9 +1,10 @@
 ---
-// Home: the shortest path to voting. Four official links, one line each, then out of the way.
-// Everything else (hypothesis, polls, picks, pledge) lives at /experiment.
+// Home: a roadmap of numbered steps, one button each. Part 1 goes to official VoteIdaho tools;
+// parts 2 and 3 go to this site. Steps check themselves off on this device (localStorage).
 import Base from '../layouts/Base.astro';
 import { href, type Lang } from '../i18n/ui';
 import { getElection } from '../lib/data';
+import Icon from '../components/Icon.astro';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -15,22 +16,68 @@ const url = (k: string) => {
   return s.match(/https?:\/\/\S+/)?.[0] ?? e[k]?.source.url ?? 'https://voteidaho.gov/';
 };
 
-const actions = es
+type Step = { key: string; icon: string; title: string; sub: string; url: string; external?: boolean; share?: boolean };
+type Part = { title: string; sub: string; steps: Step[]; note?: boolean };
+const parts: Part[] = es
   ? [
-      { key: 'check', icon: '✓', title: '¿Estoy registrado?', sub: 'Revíselo en un minuto en el sitio oficial.', url: url('check_registration_url') },
-      { key: 'register', icon: '✎', title: 'Registrarme para votar', sub: 'En línea con su licencia de Idaho o identificación estatal. Fecha límite: viernes 23 de octubre, 5 p.m.', url: url('register_online_url') },
-      { key: 'absentee', icon: '✉', title: 'Votar por correo', sub: 'Pida su boleta de voto ausente. Cualquier votante puede. Su solicitud debe llegar antes del viernes 23 de octubre, 5 p.m.', url: url('absentee_request_url') },
-      { key: 'where', icon: '⌖', title: '¿Dónde voto?', sub: 'Su lugar de votación el 3 de noviembre. En Ada, la votación anticipada es del 19 al 30 de octubre.', url: url('find_polling_place_url') },
+      {
+        title: 'Prepárese para votar', sub: 'Enlaces oficiales del estado. Unos minutos cada uno.', note: true,
+        steps: [
+          { key: 'check', icon: 'check', title: '¿Estoy registrado?', sub: 'Revíselo en un minuto en el sitio oficial.', url: url('check_registration_url'), external: true },
+          { key: 'register', icon: 'pencil', title: 'Registrarme para votar', sub: 'En línea con su licencia de Idaho o identificación estatal. Fecha límite: viernes 23 de octubre, 5 p.m.', url: url('register_online_url'), external: true },
+          { key: 'absentee', icon: 'mail', title: 'Votar por correo', sub: 'Pida su boleta de voto ausente. Cualquier votante puede. Su solicitud debe llegar antes del viernes 23 de octubre, 5 p.m.', url: url('absentee_request_url'), external: true },
+          { key: 'where', icon: 'pin', title: '¿Dónde voto?', sub: 'Su lugar de votación el 3 de noviembre. En Ada, la votación anticipada es del 19 al 30 de octubre.', url: url('find_polling_place_url'), external: true },
+        ],
+      },
+      {
+        title: 'Conozca su boleta', sub: 'Lo esencial, sin tener que leerlo todo.',
+        steps: [
+          { key: 'ballot', icon: 'list', title: '¿Qué hay en mi boleta?', sub: 'Escriba su dirección y vea cada contienda y quién se postula.', url: href(lang, '/races#finder') },
+          { key: 'watch', icon: 'star', title: 'Las dos contiendas clave', sub: 'Senado de EE. UU. y gobernador: las encuestas y las matemáticas del voto en un minuto.', url: href(lang, '/experiment#races-to-watch') },
+          { key: 'measures', icon: 'scale', title: 'Las 4 preguntas de la boleta', sub: 'La Propuesta 1 y tres más, en lenguaje sencillo y sin opinar.', url: href(lang, '/races#measures') },
+          { key: 'plan', icon: 'clock', title: 'Planee su voto', sub: 'Por correo antes del 27 de octubre, temprano del 19 al 30 de octubre, o el 3 de noviembre. Elija uno.', url: href(lang, '/vote#dates') },
+        ],
+      },
+      {
+        title: 'Haga que cuente', sub: 'Dos cosas pequeñas que suman mucho.',
+        steps: [
+          { key: 'join', icon: 'heart', title: 'Cuenten conmigo', sub: 'Únase al experimento: ¿es Idaho tan rojo como todos dicen?', url: href(lang, '/experiment#join') },
+          { key: 'share', icon: 'share', title: 'Traiga a tres amigos', sub: 'Mándeles esta página. Es lo más útil que puede hacer hoy.', url: href(lang, '/share'), share: true },
+        ],
+      },
     ]
   : [
-      { key: 'check', icon: '✓', title: 'Am I registered?', sub: 'Check in about a minute on the official site.', url: url('check_registration_url') },
-      { key: 'register', icon: '✎', title: 'Register to vote', sub: 'Online with your Idaho driver’s license or state ID. Deadline: Fri Oct 23, 5 p.m.', url: url('register_online_url') },
-      { key: 'absentee', icon: '✉', title: 'Vote by mail', sub: 'Request your absentee ballot. Any voter can. Your request must arrive by Fri Oct 23, 5 p.m.', url: url('absentee_request_url') },
-      { key: 'where', icon: '⌖', title: 'Where do I vote?', sub: 'Your polling place for Nov 3. In Ada County, early voting runs Oct 19–30.', url: url('find_polling_place_url') },
+      {
+        title: 'Get ready to vote', sub: 'Official state links. A few minutes each.', note: true,
+        steps: [
+          { key: 'check', icon: 'check', title: 'Am I registered?', sub: 'Check in about a minute on the official site.', url: url('check_registration_url'), external: true },
+          { key: 'register', icon: 'pencil', title: 'Register to vote', sub: 'Online with your Idaho driver’s license or state ID. Deadline: Fri Oct 23, 5 p.m.', url: url('register_online_url'), external: true },
+          { key: 'absentee', icon: 'mail', title: 'Vote by mail', sub: 'Request your absentee ballot. Any voter can. Your request must arrive by Fri Oct 23, 5 p.m.', url: url('absentee_request_url'), external: true },
+          { key: 'where', icon: 'pin', title: 'Where do I vote?', sub: 'Your polling place for Nov 3. In Ada County, early voting runs Oct 19–30.', url: url('find_polling_place_url'), external: true },
+        ],
+      },
+      {
+        title: 'Know your ballot', sub: 'The essentials, without reading everything.',
+        steps: [
+          { key: 'ballot', icon: 'list', title: 'What’s on my ballot?', sub: 'Type your address. See every race and who’s running.', url: href(lang, '/races#finder') },
+          { key: 'watch', icon: 'star', title: 'The two races to watch', sub: 'US Senate and Governor: the polls and the vote math in a minute.', url: href(lang, '/experiment#races-to-watch') },
+          { key: 'measures', icon: 'scale', title: 'The 4 ballot questions', sub: 'Prop 1 and three more, in plain English, no spin.', url: href(lang, '/races#measures') },
+          { key: 'plan', icon: 'clock', title: 'Plan your vote', sub: 'Mail by Oct 27, vote early Oct 19–30, or vote Nov 3. Pick one.', url: href(lang, '/vote#dates') },
+        ],
+      },
+      {
+        title: 'Make it count', sub: 'Two small things that add up.',
+        steps: [
+          { key: 'join', icon: 'heart', title: 'Count me in', sub: 'Join the experiment: is Idaho as red as everyone says?', url: href(lang, '/experiment#join') },
+          { key: 'share', icon: 'share', title: 'Bring three friends', sub: 'Send them this page. It’s the most useful thing you can do today.', url: href(lang, '/share'), share: true },
+        ],
+      },
     ];
+const total = parts.reduce((n, p) => n + p.steps.length, 0);
+const numbered = parts.map((p, pi) => p.steps.map((s, si) => ({ ...s, n: parts.slice(0, pi).reduce((n, q) => n + q.steps.length, 0) + si + 1 })));
 const shareText = es
-  ? 'Cómo votar en Idaho: revise su registro, regístrese o pida su boleta por correo. Fecha límite: 23 de octubre.'
-  : 'How to vote in Idaho: check your registration, register, or get a mail ballot. Deadline Oct 23.';
+  ? 'Cómo votar en Idaho, paso a paso: revise su registro, regístrese, pida su boleta por correo y vea qué hay en su boleta. Fecha límite: 23 de octubre.'
+  : 'How to vote in Idaho, step by step: check your registration, register, get a mail ballot, and see what’s on your ballot. Deadline Oct 23.';
 ---
 <Base lang={lang}
   title={es ? 'Cómo votar en Idaho' : 'How to vote in Idaho'}
@@ -38,81 +85,109 @@ const shareText = es
   ogImage={`/og/home${es ? '-es' : ''}.jpg`}>
   <section class="intro">
     <h1>{es ? 'Vote en Idaho. Así se hace.' : 'Vote in Idaho. Here’s how.'}</h1>
-    <p class="lede">{es ? 'Cuatro enlaces oficiales. Unos minutos cada uno.' : 'Four official links. A few minutes each.'}</p>
+    <p class="lede">{es ? `${total} pasos, un botón cada uno. Vaya en orden.` : `${total} steps, one button each. Go in order.`}</p>
+    <p class="progress" id="progress" hidden data-tpl={es ? '{n} de {t} pasos hechos en este dispositivo' : '{n} of {t} steps done on this device'} data-total={total}>
+      <span class="bar"><span></span></span><span class="label"></span>
+    </p>
   </section>
 
-  <ul class="actions">
-    {actions.map((a) => (
-      <li>
-        <a class="action" href={a.url} target="_blank" rel="noopener" data-click={a.key}>
-          <span class="icon" aria-hidden="true">{a.icon}</span>
-          <span class="text"><span class="title">{a.title}</span><span class="sub">{a.sub}</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
-    ))}
-  </ul>
-  <p class="official small muted">{es
-    ? <>Se abre <strong>VoteIdaho</strong>, el sitio oficial del estado, en una pestaña nueva. La dirección debe terminar en <strong>voteidaho.gov</strong>.</>
-    : <>Opens <strong>VoteIdaho</strong>, Idaho’s official site, in a new tab. The address should end in <strong>voteidaho.gov</strong>.</>}</p>
+  {parts.map((part, pi) => (
+    <section class="part">
+      <h2><span class="part-no">{es ? 'Parte' : 'Part'} {pi + 1}</span> {part.title}</h2>
+      <p class="part-sub">{part.sub}</p>
+      <ol class="actions">
+        {numbered[pi].map((st) => (
+          <li>
+            <a class="action" href={st.url} data-step={st.key} data-click={st.key}
+              {...(st.external ? { target: '_blank', rel: 'noopener' } : {})}
+              {...(st.share ? { 'data-share': shareText } : {})}>
+              <span class="icon" aria-hidden="true"><span class="n">{st.n}</span><span class="g"><Icon name={st.icon} /></span></span>
+              <span class="text"><span class="title">{st.title}</span><span class="sub">{st.sub}</span></span>
+              <span class="state" aria-hidden="true"><Icon name={st.external ? 'external' : 'arrow'} size={20} /></span>
+              <span class="done-badge" aria-hidden="true"><Icon name="check" size={16} /></span>
+            </a>
+          </li>
+        ))}
+      </ol>
+      {part.note && (
+        <p class="official small muted">{es
+          ? <>Estos botones abren <strong>VoteIdaho</strong>, el sitio oficial del estado, en una pestaña nueva. La dirección debe terminar en <strong>voteidaho.gov</strong>.</>
+          : <>These buttons open <strong>VoteIdaho</strong>, Idaho’s official site, in a new tab. The address should end in <strong>voteidaho.gov</strong>.</>}</p>
+      )}
+    </section>
+  ))}
 
-  <p class="more">
-    <a href={href(lang, '/vote')}>{es ? 'Guía paso a paso, fechas y qué identificación llevar →' : 'Step-by-step guide, dates and what ID to bring →'}</a>
+  <p class="why small">
+    <span class="purple-text">{es ? '¿Es Idaho morado?' : 'Is Idaho purple?'}</span>
+    {es ? ' Este sitio también es un experimento abierto, hecho por una persona de Idaho, sin donaciones. ' : ' This site is also an open experiment, made by one Idahoan, with no donations. '}
+    <a href={href(lang, '/about')}>{es ? 'Quiénes somos →' : 'Who made this →'}</a>
   </p>
 
-  <section class="share card">
-    <p class="share-title">{es ? '¿Conoce a alguien que nunca ha votado?' : 'Know someone who’s never voted?'}</p>
-    <p class="small muted">{es ? 'Mándele esta página. Es lo más útil que puede hacer hoy.' : 'Send them this page. It’s the most useful thing you can do today.'}</p>
-    <button class="btn" type="button" id="share" data-text={shareText} data-copied={es ? '¡Enlace copiado!' : 'Link copied!'}>{es ? 'Compartir' : 'Share'}</button>
-    <p class="small"><a href={href(lang, '/share')}>{es ? 'Imágenes para Instagram →' : 'Images for Instagram →'}</a></p>
-  </section>
-
-  <section class="why">
-    <p>
-      <span class="purple-text why-q">{es ? '¿Es Idaho morado?' : 'Is Idaho purple?'}</span>
-      {es ? ' Este sitio también es un experimento abierto. ' : ' This site is also an open experiment. '}
-      <a href={href(lang, '/experiment')}>{es ? 'Vea la hipótesis →' : 'See the hypothesis →'}</a>
-    </p>
-    <p class="small"><a href={href(lang, '/races')}>{es ? 'Qué hay en su boleta →' : 'What’s on your ballot →'}</a></p>
-  </section>
-
   <script>
-    // Count outbound clicks by button only (no personal data). See /privacy.
-    for (const a of document.querySelectorAll<HTMLAnchorElement>('a[data-click]')) {
-      a.addEventListener('click', () => { try { navigator.sendBeacon?.('/api/click', a.dataset.click!); } catch {} });
+    // Progress lives on this device only. Visiting a step marks it; "Count me in" is done once the email link is clicked.
+    const KEY = 'iip-steps';
+    const read = (): string[] => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
+    const write = (v: string[]) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} };
+    const isCounted = () => { try { return localStorage.getItem('iip-pledge') === 'counted'; } catch { return false; } };
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('a[data-step]')];
+    const progress = document.getElementById('progress')!;
+    const render = () => {
+      const done = new Set(read());
+      if (isCounted()) done.add('join'); else done.delete('join');
+      let n = 0;
+      for (const a of links) { const d = done.has(a.dataset.step!); a.classList.toggle('done', d); if (d) n++; }
+      const t = Number(progress.dataset.total);
+      progress.hidden = n === 0;
+      progress.querySelector<HTMLElement>('.bar > span')!.style.width = `${(100 * n) / t}%`;
+      progress.querySelector<HTMLElement>('.label')!.textContent = progress.dataset.tpl!.replace('{n}', String(n)).replace('{t}', String(t));
+    };
+    const mark = (key: string) => { const s = new Set(read()); s.add(key); write([...s]); render(); };
+    for (const a of links) {
+      a.addEventListener('click', async (ev) => {
+        const key = a.dataset.step!;
+        try { navigator.sendBeacon?.('/api/click', a.dataset.click!); } catch {}
+        if (key !== 'join') mark(key);
+        if (a.dataset.share && navigator.share) {
+          ev.preventDefault();
+          try { await navigator.share({ title: document.title, text: a.dataset.share, url: location.origin + location.pathname }); } catch {}
+        }
+      });
     }
-    const btn = document.getElementById('share') as HTMLButtonElement | null;
-    btn?.addEventListener('click', async () => {
-      const data = { title: document.title, text: btn.dataset.text!, url: location.origin + location.pathname };
-      try {
-        if (navigator.share) { await navigator.share(data); return; }
-        await navigator.clipboard.writeText(`${data.text} ${data.url}`);
-        btn.textContent = btn.dataset.copied!;
-      } catch {}
-    });
+    render();
+    window.addEventListener('pageshow', render);
   </script>
 </Base>
 
 <style>
-  .intro { padding: 22px 0 6px; }
+  .intro { padding: 22px 0 0; }
   .intro h1 { font-size: clamp(2rem, 8.5vw, 3.2rem); margin: 0.2rem 0 0.3rem; }
   .lede { font-size: 1.15rem; margin: 0; color: var(--muted); }
-  .actions { list-style: none; padding: 0; margin: 18px 0 8px; display: grid; gap: 12px; }
+  .progress { display: flex; align-items: center; gap: 10px; margin: 12px 0 0; font-size: 0.9rem; color: var(--ok); font-weight: 700; }
+  .progress .bar { flex: 0 0 120px; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .progress .bar > span { display: block; height: 100%; background: var(--ok); transition: width 0.3s; }
+  .part { margin-top: 26px; }
+  .part h2 { margin: 0; font-size: 1.35rem; }
+  .part-no { display: inline-block; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--purple); border-radius: 999px; padding: 3px 10px; vertical-align: middle; margin-right: 6px; }
+  @media (prefers-color-scheme: dark) { .part-no { background: #7b3fc0; } }
+  .part-sub { margin: 4px 0 0; color: var(--muted); }
+  .actions { list-style: none; padding: 0; margin: 12px 0 6px; display: grid; gap: 12px; }
   .actions li { max-width: none; }
-  .action { display: grid; grid-template-columns: 48px 1fr 20px; gap: 14px; align-items: center; padding: 16px; min-height: 76px;
+  .action { position: relative; display: grid; grid-template-columns: 52px 1fr 24px; gap: 14px; align-items: center; padding: 14px 16px; min-height: 76px;
     background: var(--surface); border: 2px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow); }
   .action:hover, .action:focus-visible { border-color: var(--purple); }
-  .icon { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; font-size: 1.5rem; font-weight: 800; color: #fff;
+  .icon { position: relative; width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; color: #fff;
     background: linear-gradient(135deg, var(--red), #7b3fc0 55%, var(--blue)); }
+  .icon .g { display: grid; }
+  .icon .n { position: absolute; top: -8px; left: -8px; width: 24px; height: 24px; border-radius: 50%; background: var(--surface); color: var(--purple-ink);
+    border: 2px solid var(--purple); font-size: 0.78rem; font-weight: 800; display: grid; place-items: center; }
   .text { display: grid; gap: 2px; }
-  .title { font-size: 1.2rem; font-weight: 800; }
+  .title { font-size: 1.15rem; font-weight: 800; }
   .sub { font-size: 0.92rem; color: var(--muted); line-height: 1.35; }
-  .arrow { color: var(--purple); font-weight: 800; font-size: 1.2rem; }
+  .state { color: var(--purple); font-weight: 800; font-size: 1.15rem; }
+  .done-badge { display: none; }
+  .action.done { border-color: color-mix(in srgb, var(--ok) 55%, var(--line)); }
+  .action.done .state { display: none; }
+  .action.done .done-badge { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--ok); color: #fff; font-weight: 800; font-size: 0.85rem; grid-column: 3; grid-row: 1; }
   .official { margin: 6px 2px 0; }
-  .more { margin: 18px 0; font-weight: 600; }
-  .share { margin: 22px 0; text-align: center; }
-  .share-title { font-size: 1.15rem; font-weight: 800; margin: 0 0 4px; }
-  .share .btn { margin-top: 8px; min-width: 160px; }
-  .why { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 14px; }
-  .why-q { font-weight: 800; font-size: 1.1rem; }
+  .why { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 14px; }
 </style>

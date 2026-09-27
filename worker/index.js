@@ -47,8 +47,8 @@ async function district(url) {
   });
 }
 
-// POST /api/click with body "check" | "register" | "absentee" | "where": count taps, nothing else.
-const BUTTONS = new Set(['check', 'register', 'absentee', 'where']);
+// POST /api/click with a home-page step name: count taps, nothing else.
+const BUTTONS = new Set(['check', 'register', 'absentee', 'where', 'ballot', 'watch', 'measures', 'plan', 'join', 'share']);
 async function click(request, env) {
   const key = (await request.text()).trim().slice(0, 20);
   if (env.DB && BUTTONS.has(key)) {

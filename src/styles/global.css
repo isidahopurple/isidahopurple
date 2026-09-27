@@ -37,6 +37,7 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+[id] { scroll-margin-top: 16px; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
