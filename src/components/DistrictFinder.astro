@@ -11,15 +11,16 @@ const ids = all.map((r) => r.id);
 // County races, keyed by county name, so an address in Ada also lists Ada County offices.
 const countyRaces = all.filter((r) => r.data.level === 'county').map((r) => ({ id: r.id, county: r.data.district ?? '', title: tx(r.data.office, lang) }));
 const strings = es
-  ? { useLoc: 'Usar mi ubicación', locating: 'Buscando su ubicación…', locDenied: 'No pudimos usar su ubicación. Escriba su dirección.', approx: 'Ubicación aproximada: si vive cerca del límite de un distrito, confírmelo con la búsqueda oficial.', matchedLabel: 'Encontramos', ld: 'Distrito legislativo', county: 'Condado', cd: 'Distrito del Congreso de EE. UU.', see: 'Ver sus contiendas', notFound: 'No encontramos esa dirección en Idaho. Pruebe con calle, ciudad y código postal, o use la búsqueda oficial.', error: 'La búsqueda no está disponible ahora. Use la búsqueda oficial.', looking: 'Buscando…', senate: 'Senado estatal', houseA: 'Cámara, puesto A', houseB: 'Cámara, puesto B', usHouse: 'Cámara de EE. UU.', notYet: 'Aún no tenemos página para este distrito.' }
-  : { useLoc: 'Use my location', locating: 'Finding your location…', locDenied: 'We couldn’t use your location. Type your address instead.', approx: 'Approximate match: if you live near a district line, confirm with the official lookup.', matchedLabel: 'Found', ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
+  ? { again: 'Buscar otra dirección', useLoc: 'Usar mi ubicación', locating: 'Buscando su ubicación…', locDenied: 'No pudimos usar su ubicación. Escriba su dirección.', approx: 'Ubicación aproximada: si vive cerca del límite de un distrito, confírmelo con la búsqueda oficial.', matchedLabel: 'Encontramos', ld: 'Distrito legislativo', county: 'Condado', cd: 'Distrito del Congreso de EE. UU.', see: 'Ver sus contiendas', notFound: 'No encontramos esa dirección en Idaho. Pruebe con calle, ciudad y código postal, o use la búsqueda oficial.', error: 'La búsqueda no está disponible ahora. Use la búsqueda oficial.', looking: 'Buscando…', senate: 'Senado estatal', houseA: 'Cámara, puesto A', houseB: 'Cámara, puesto B', usHouse: 'Cámara de EE. UU.', notYet: 'Aún no tenemos página para este distrito.' }
+  : { again: 'Look up another address', useLoc: 'Use my location', locating: 'Finding your location…', locDenied: 'We couldn’t use your location. Type your address instead.', approx: 'Approximate match: if you live near a district line, confirm with the official lookup.', matchedLabel: 'Found', ld: 'Legislative district', county: 'County', cd: 'US House district', see: 'See your races', notFound: 'We couldn’t find that address in Idaho. Try street, city and ZIP, or use the official lookup.', error: 'The lookup isn’t available right now. Use the official lookup.', looking: 'Looking up…', senate: 'State Senate', houseA: 'State House, seat A', houseB: 'State House, seat B', usHouse: 'US House', notYet: 'We don’t have pages for this district yet.' };
 const base = href(lang, '/races/');
 ---
 <form class="finder card" id="finder" data-county-races={JSON.stringify(countyRaces)} data-ids={JSON.stringify(ids)} data-base={base} data-strings={JSON.stringify(strings)}>
   <label for="addr"><strong>{es ? '¿En qué distrito vivo?' : 'Which district am I in?'}</strong></label>
+  <div class="inputs">
   <div class="row">
     <input id="addr" name="address" autocomplete="street-address" placeholder={es ? 'Calle, ciudad, código postal' : 'Street, city, ZIP'} required minlength="5" />
-    <button class="btn" type="submit">{es ? 'Buscar' : 'Look up'}</button>
+    <button class="btn go" type="submit">{es ? 'Buscar' : 'Look up'}</button>
   </div>
   <button class="btn ghost loc" type="button">{es ? '⌖ Usar mi ubicación' : '⌖ Use my location'}</button>
   <p class="small muted">
@@ -28,7 +29,9 @@ const base = href(lang, '/races/');
       : 'Your address (or location) goes to the US Census Bureau, and to OpenStreetMap if the Census can’t find it. We don’t store it. '}
     <a href="https://legislature.idaho.gov/legislators/whosmylegislator/" rel="noopener" target="_blank">{es ? 'Búsqueda oficial' : 'Official lookup'}</a>
   </p>
+  </div>
   <div class="out" aria-live="polite"></div>
+  <button class="btn ghost again" type="button" hidden></button>
 </form>
 
 <script>
@@ -44,12 +47,27 @@ const base = href(lang, '/races/');
       if (!ids.includes(id)) return null;
       const li = el('li'); const a = el('a', label) as HTMLAnchorElement; a.href = base + id; li.append(a); return li;
     };
+    const inputs = form.querySelector<HTMLElement>('.inputs')!;
+    const go = form.querySelector<HTMLButtonElement>('.go')!;
+    const again = form.querySelector<HTMLButtonElement>('.again')!;
+    again.textContent = s.again;
+    const goLabel = go.textContent;
+    const busy = (on: boolean) => {
+      go.disabled = on; form.classList.toggle('busy', on);
+      go.innerHTML = on ? `<span class="spin" aria-hidden="true"></span>${s.looking}` : '';
+      if (!on) go.textContent = goLabel;
+    };
+    again.addEventListener('click', () => {
+      inputs.hidden = false; again.hidden = true; out.replaceChildren();
+      form.querySelector<HTMLInputElement>('input[name="address"]')?.focus();
+    });
     const lookup = async (query: string) => {
-      out.textContent = s.looking;
+      out.textContent = '';
+      busy(true);
       try {
         const r = await fetch(`/api/district?${query}`);
         const d = await r.json();
-        if (!r.ok) { out.textContent = d.error === 'lookup_unavailable' ? s.error : s.notFound; return; }
+        if (!r.ok) { out.textContent = d.error === 'lookup_unavailable' ? s.error : s.notFound; busy(false); return; }
         const n = Number.isInteger(d.ld) ? d.ld : null;
         const cd = Number.isInteger(d.cd) ? d.cd : null;
         const items = [link(`us-house-${cd}`, `${s.usHouse} ${cd}`), link(`ld${n}-senate`, s.senate), link(`ld${n}-house-a`, s.houseA), link(`ld${n}-house-b`, s.houseB),
@@ -61,8 +79,14 @@ const base = href(lang, '/races/');
         if (d.approx) { const a = el('p', s.approx); a.className = 'small note'; out.append(a); }
         if (items.length) { const ul = el('ul'); ul.append(...items); out.append(el('p', `${s.see}:`), ul); }
         else { const p = el('p', s.notYet); p.className = 'small muted'; out.append(p); }
+        // Collapse the form into the result, and open this district in the list below (Races page).
+        inputs.hidden = true; again.hidden = false;
+        const det = n ? document.getElementById(`ld${n}`) as HTMLDetailsElement | null : null;
+        if (det) { document.querySelectorAll<HTMLDetailsElement>('details[id^="ld"]').forEach((x) => (x.open = x === det)); det.classList.add('mine'); }
+        busy(false);
       } catch {
         out.textContent = s.error;
+        busy(false);
       }
     };
     form.addEventListener('submit', (ev) => {
@@ -74,9 +98,10 @@ const base = href(lang, '/races/');
     if (!('geolocation' in navigator)) loc.hidden = true;
     loc.addEventListener('click', () => {
       out.textContent = s.locating;
+      busy(true);
       navigator.geolocation.getCurrentPosition(
         (pos) => lookup(`lat=${pos.coords.latitude.toFixed(4)}&lon=${pos.coords.longitude.toFixed(4)}`),
-        () => { out.textContent = s.locDenied; },
+        () => { out.textContent = s.locDenied; busy(false); },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 },
       );
     });
@@ -89,4 +114,9 @@ const base = href(lang, '/races/');
   input { flex: 1 1 220px; min-height: 46px; padding: 8px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
   .out :global(p) { margin: 0.4rem 0; }
   .loc { width: 100%; margin-bottom: 6px; }
+  .again { margin-top: 8px; }
+  .go { min-width: 110px; }
+  :global(.finder .spin) { width: 20px; height: 20px; border: 3px solid rgb(255 255 255 / 0.35); border-top-color: #fff; border-radius: 50%; display: inline-block; vertical-align: middle; margin-right: 8px; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .finder.busy .out { opacity: 0.8; }
 </style>

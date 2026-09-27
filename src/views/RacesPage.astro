@@ -49,7 +49,7 @@ const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick
       <h2>{t(lang, 'races.legislative')}</h2>
       <p class="small muted">{es ? 'Los 35 distritos legislativos. Use la búsqueda de arriba para encontrar el suyo.' : 'All 35 legislative districts. Use the lookup above to find yours.'}</p>
       {districts.map((dist) => (
-        <details open={byLevel('legislative').some((r) => r.data.district === dist && r.data.depth === 'full')}>
+        <details id={dist.toLowerCase()}>
           <summary>{es ? 'Distrito' : 'District'} {dist.replace('LD', '')}</summary>
           <ul class="race-list">
             {byLevel('legislative').filter((r) => r.data.district === dist).map((r) => (
@@ -79,3 +79,7 @@ const pickOf = (r: Race) => r.data.candidates.find((c) => c.name === r.data.pick
     </section>
   )}
 </Base>
+
+<style>
+  details.mine { border-color: var(--ok); border-width: 2px; }
+</style>
