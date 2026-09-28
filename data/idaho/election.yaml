@@ -208,11 +208,18 @@ ada_drop_boxes:
     en: Ada County ballot drop boxes
     es: "Buzones de boletas en el condado de Ada"
   value:
-    en: "Ada County Elections, 400 N Benjamin Ln, Ste 100, Boise 83704; Boise City Hall, 150 N Capitol Blvd, Boise 83702; Meridian City Hall, 33 E Broadway Ave, Meridian 83642; Eagle City Hall, 660 E Civic Ln, Eagle 83616; Kuna City Hall, 751 W 4th St, Kuna 83634; Star City Hall, 10769 W State St, Star 83669."
-    es: "Ada County Elections, 400 N Benjamin Ln, Ste 100, Boise 83704; Boise City Hall, 150 N Capitol Blvd, Boise 83702; Meridian City Hall, 33 E Broadway Ave, Meridian 83642; Eagle City Hall, 660 E Civic Ln, Eagle 83616; Kuna City Hall, 751 W 4th St, Kuna 83634; Star City Hall, 10769 W State St, Star 83669."
+    en: "Six boxes, open to any Ada County voter."
+    es: "Seis buzones, para cualquier votante del condado de Ada."
   note:
     en: "The last drop-off time is 8 p.m. on Nov 3. Ada County does not post drop box opening hours."
     es: "La última hora para dejar su boleta es a las 8 p.m. del 3 de noviembre. El condado de Ada no publica el horario de los buzones."
+  sites:
+    - "Ada County Elections, 400 N Benjamin Ln, Ste 100, Boise 83704"
+    - "Boise City Hall, 150 N Capitol Blvd, Boise 83702"
+    - "Meridian City Hall, 33 E Broadway Ave, Meridian 83642"
+    - "Eagle City Hall, 660 E Civic Ln, Eagle 83616"
+    - "Kuna City Hall, 751 W 4th St, Kuna 83634"
+    - "Star City Hall, 10769 W State St, Star 83669"
   source: { name: "Ada County Elections, Absentee Voting", url: "https://adacounty.id.gov/elections/absentee-voting/" }
   verified: true
 
@@ -262,11 +269,22 @@ ada_early_voting:
     en: Early voting in Ada County
     es: "Votación anticipada en el condado de Ada"
   value:
-    en: "Mon Oct 19 to Fri Oct 30, 2026. Weekdays only, 8 a.m. to 5 p.m. Go to any site: Ada County Elections, 400 N Benjamin Ln, Boise; Boise City Hall, 150 N Capitol Blvd, Boise; Eagle Public Library, 100 N Stierman Way, Eagle; Meridian City Hall, 33 E Broadway Ave, Meridian; Library! at Bown Crossing, 2153 E Riverwalk Dr, Boise; Star City Hall, 10769 W State St, Star; Kuna City Hall Council Chambers, 757 W 4th St, Kuna; Lake Hazel Library, 10489 W Lake Hazel Rd, Boise; Orchard Park Library, 1268 W Orch Pk Dr, Meridian; Expo Idaho Western Town Building, 5610 N Glenwood St, Garden City."
-    es: "Del lunes 19 al viernes 30 de octubre de 2026. Solo entre semana (de lunes a viernes), de 8 a.m. a 5 p.m. Vaya a cualquier sitio: Ada County Elections, 400 N Benjamin Ln, Boise; Boise City Hall, 150 N Capitol Blvd, Boise; Eagle Public Library, 100 N Stierman Way, Eagle; Meridian City Hall, 33 E Broadway Ave, Meridian; Library! at Bown Crossing, 2153 E Riverwalk Dr, Boise; Star City Hall, 10769 W State St, Star; Kuna City Hall Council Chambers, 757 W 4th St, Kuna; Lake Hazel Library, 10489 W Lake Hazel Rd, Boise; Orchard Park Library, 1268 W Orch Pk Dr, Meridian; Expo Idaho Western Town Building, 5610 N Glenwood St, Garden City."
+    en: "Mon Oct 19 to Fri Oct 30, 2026. Weekdays only, 8 a.m. to 5 p.m. Go to any of 10 sites in the county."
+    es: "Del lunes 19 al viernes 30 de octubre de 2026. Solo entre semana (de lunes a viernes), de 8 a.m. a 5 p.m. Vaya a cualquiera de los 10 sitios del condado."
   note:
-    en: "Ten sites. You can use any site no matter where you live in the county. More at https://adacounty.id.gov/elections/early-voting/"
-    es: "Diez sitios. Puede usar cualquier sitio, sin importar en qué parte del condado viva. Más información en https://adacounty.id.gov/elections/early-voting/"
+    en: "You can use any site no matter where you live in the county. More at https://adacounty.id.gov/elections/early-voting/"
+    es: "Puede usar cualquier sitio, sin importar en qué parte del condado viva. Más información en https://adacounty.id.gov/elections/early-voting/"
+  sites:
+    - "Ada County Elections, 400 N Benjamin Ln, Boise"
+    - "Boise City Hall, 150 N Capitol Blvd, Boise"
+    - "Eagle Public Library, 100 N Stierman Way, Eagle"
+    - "Meridian City Hall, 33 E Broadway Ave, Meridian"
+    - "Library! at Bown Crossing, 2153 E Riverwalk Dr, Boise"
+    - "Star City Hall, 10769 W State St, Star"
+    - "Kuna City Hall Council Chambers, 757 W 4th St, Kuna"
+    - "Lake Hazel Library, 10489 W Lake Hazel Rd, Boise"
+    - "Orchard Park Library, 1268 W Orch Pk Dr, Meridian"
+    - "Expo Idaho Western Town Building, 5610 N Glenwood St, Garden City"
   source: { name: "Ada County Elections, Early Voting", url: "https://adacounty.id.gov/elections/early-voting/" }
   verified: true
 

@@ -18,6 +18,8 @@ const urlOf = (item?: ElectionItem) => {
 };
 const val = (item?: ElectionItem) => (item ? tx(item.value, lang) : '');
 const note = (item?: ElectionItem) => (item?.note ? tx(item.note, lang) : '');
+// Stable anchors for items with a site list: /vote#early-voting, /vote#drop-boxes.
+const anchor = (k: string) => ({ ada_early_voting: 'early-voting', ada_drop_boxes: 'drop-boxes' } as Record<string, string>)[k] ?? k.replace(/_/g, '-');
 
 const steps = [
   {
@@ -65,8 +67,9 @@ const shown = new Set(steps.flatMap((s) => s.items));
         <h2 class="step-title">{s.title}</h2>
         <p>{s.body}</p>
         {s.items.filter((k) => e[k]).map((k) => (
-          <div class="fact">
+          <div class="fact" id={e[k].sites ? anchor(k) : undefined}>
             <p><strong>{tx(e[k].label, lang)}:</strong> {val(e[k])} <Source source={e[k].source} label={`(${t(lang, 'common.source')})`} /></p>
+            {e[k].sites && <ul class="sites">{e[k].sites.map((x) => <li>{x}</li>)}</ul>}
             {note(e[k]) && <p class="small muted">{note(e[k])}</p>}
             {!e[k].verified && <p class="small"><span class="tag draft">{es ? 'Por confirmar' : 'Being confirmed'}</span></p>}
           </div>
@@ -91,7 +94,7 @@ const shown = new Set(steps.flatMap((s) => s.items));
     <table>
       <tbody>
         {dateKeys.filter((k) => e[k]).map((k) => (
-          <tr><th scope="row">{tx(e[k].label, lang)}</th><td>{val(e[k])}</td><td><Source source={e[k].source} label={t(lang, 'common.source')} /></td></tr>
+          <tr><th scope="row">{tx(e[k].label, lang)}</th><td>{val(e[k])}{e[k].sites && <> <a href={`#${anchor(k)}`}>{es ? 'Ver la lista' : 'See the list'}</a></>}</td><td><Source source={e[k].source} label={t(lang, 'common.source')} /></td></tr>
         ))}
       </tbody>
     </table>
@@ -107,9 +110,10 @@ const shown = new Set(steps.flatMap((s) => s.items));
   ))}
 
   <h2>{es ? 'Más' : 'More'}</h2>
-  {Object.entries(e).filter(([k]) => !shown.has(k) && !dateKeys.includes(k) && !['voter_id_polls', 'no_id_affidavit', 'find_polling_place_url', 'sample_ballot_url', 'ballot_collection_warning', 'check_registration_url', 'register_online_url', 'absentee_request_url', 'absentee_track_url'].includes(k)).map(([, item]) => (
-    <div class="fact">
+  {Object.entries(e).filter(([k]) => !shown.has(k) && !dateKeys.includes(k) && !['voter_id_polls', 'no_id_affidavit', 'find_polling_place_url', 'sample_ballot_url', 'ballot_collection_warning', 'check_registration_url', 'register_online_url', 'absentee_request_url', 'absentee_track_url'].includes(k)).map(([k, item]) => (
+    <div class="fact" id={item.sites ? anchor(k) : undefined}>
       <p><strong>{tx(item.label, lang)}:</strong> {val(item)} <Source source={item.source} label={`(${t(lang, 'common.source')})`} /></p>
+      {item.sites && <ul class="sites">{item.sites.map((x) => <li>{x}</li>)}</ul>}
       {note(item) && <p class="small muted">{note(item)}</p>}
     </div>
   ))}
@@ -124,6 +128,9 @@ const shown = new Set(steps.flatMap((s) => s.items));
 <style>
   .step-title { margin: 6px 0 4px; font-size: 1.25rem; }
   .fact p { margin: 0.35rem 0; }
+  .sites { margin: 0.35rem 0 0.6rem; padding-left: 1.2rem; }
+  .sites li { margin: 0.15rem 0; }
+  .fact[id] { scroll-margin-top: 80px; }
   .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
   .warn { margin-top: 20px; }
   th[scope='row'] { color: var(--ink); font-size: 0.93rem; }

@@ -117,6 +117,7 @@ const election = defineCollection({
     label: text,
     value: text,
     note: text.optional(),
+    sites: z.array(z.string()).optional(), // addresses, shown as a list under the value
     source,
     verified: z.boolean(),
   }),
